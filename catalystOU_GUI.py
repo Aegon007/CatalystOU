@@ -37,14 +37,16 @@ def mock_analysis_engine():
     summary = f"Scholars {profile_a['name']} and {profile_b['name']} are highly complementary in methods and problem domains, ideal for theoretical-practical collaboration."
     insight1_text = f"**{profile_a['name']}'s** expertise in **{random.choice(profile_a['methods'])}** complements **{profile_b['name']}'s** focus on **{random.choice(profile_b['fields'])}**, enabling innovative cross-domain solutions."
     insight2_text = f"Both scholars address **AI Ethics** in their work, providing a shared foundation for impactful collaboration."
-
+    insight3_text = f"While **{profile_a['name']}** brings theoretical models, a potential gap may exist in securing the large-scale, specialized datasets that **{profile_b['name']}**'s research typically requires for validation."
+    
     return {
         "profile_a": profile_a, "profile_b": profile_b, "potential_score": score,
         "one_liner_summary": summary,
         "radar_data": {'categories': ['Domain Similarity', 'Method Complementarity', 'Technical Overlap', 'Resource Synergy', 'Network Proximity'], 'values': [random.randint(40, 90) for _ in range(5)]},
         "insights": [
             {"title": "Method Complementarity", "text": insight1_text, "icon": "💡"},
-            {"title": "Problem Domain Synergy", "text": insight2_text, "icon": "✅"}
+            {"title": "Problem Domain Synergy", "text": insight2_text, "icon": "✅"},
+             {"title": "Potential Gaps", "text": insight3_text, "icon": "🧩"}
         ]
     }
 
@@ -114,64 +116,70 @@ def render_input_page():
                 st.session_state.analysis_complete = True
             st.rerun()
 
-# --- RENDER RESULTS PAGE ---
-def render_results_page():
+# --- UI COMPONENTS ---
+def create_gauge_chart(score):
+    score_on_10 = score / 10.0
+    fig = go.Figure(go.Indicator(
+        mode = "gauge+number",
+        value = score_on_10,
+        number = {'suffix': "/10"},
+        title = {'text': "Synergy Score", 'font': {'size': 24}},
+        gauge = {
+            'axis': {'range': [0, 10]},
+            'bar': {'color': "#6897FF"}, # Bar color for the score
+            # Colored steps for the background
+            'steps': [
+                {'range': [0, 4], 'color': "#ea4335"},  # Red for low scores
+                {'range': [4, 7], 'color': "#fbbc05"},  # Yellow for medium scores
+                {'range': [7, 10], 'color': "#34a853"}   # Green for high scores
+            ],
+        }
+    ))
+    fig.update_layout(height=250, margin=dict(l=20, r=20, t=40, b=20))
+    return fig
+
+# --- PAGE 2: REPORT PAGE ---
+def render_synergy_report():
     results = st.session_state.results
-    profile_a = results["profile_a"]
-    profile_b = results["profile_b"]
-
-    st.title("Collaboration Potential Report")
+    st.title("Collaboration Synergy Report")
+    if st.button("⬅️ Start New Analysis"):
+        st.session_state.analysis_complete = False
+        if 'results' in st.session_state: del st.session_state.results
+        st.rerun()
     st.markdown("---")
-
-    # --- 1. Summary Section ---
-    st.header("Summary")
-    col1, col2 = st.columns([1, 1.5])
-
-    with col1:
-        st.markdown(f"<div style='text-align: center; font-size: 5em; font-weight: 600; color: #007AFF;'>{results['potential_score']}<span style='font-size: 0.5em; font-weight: 400;'>/100</span></div>", unsafe_allow_html=True)
-        st.markdown("<div style='text-align: center; font-size: 1.1em; color: #555;'>Collaboration Potential Index</div>", unsafe_allow_html=True)
-
-    with col2:
-        st.plotly_chart(create_radar_chart(results['radar_data']), use_container_width=True)
-
-    st.markdown(f"<div style='text-align: center; font-size: 1.1em; padding: 10px 0;'>{results['one_liner_summary']}</div>", unsafe_allow_html=True)
-    st.markdown("---")
-
-    # --- 2. Core Insights Section ---
-    st.header("Core Insights")
-    for insight in results['insights']:
-        st.markdown(f"""
-        <div class="insight-card">
-            <div class="insight-title">{insight['icon']} {insight['title']}</div>
-            <p>{insight['text']}</p>
-        </div>
-        """, unsafe_allow_html=True)
-    st.markdown("---")
-
-    # --- 3. Detailed Evidence Section (Restored Side-by-Side View) ---
-    st.header("Detailed Evidence: Side-by-Side Profile Comparison")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader(f"👤 {profile_a['name']}")
-        st.caption(f"🏢 {profile_a['affiliation']}")
-        with st.expander("Fields"):
-            for field in profile_a['fields']: st.markdown(f"- {field}")
-        with st.expander("Core Methods"):
-            for method in profile_a['methods']: st.markdown(f"- {method}")
-        with st.expander("Keywords"):
-            st.markdown("🔑 " + ", ".join(profile_a['keywords']))
     
-    with col2:
-        st.subheader(f"👤 {profile_b['name']}")
-        st.caption(f"🏢 {profile_b['affiliation']}")
-        with st.expander("Fields"):
-            for field in profile_b['fields']: st.markdown(f"- {field}")
-        with st.expander("Core Methods"):
-            for method in profile_b['methods']: st.markdown(f"- {method}")
-        with st.expander("Keywords"):
-            st.markdown("🔑 " + ", ".join(profile_b['keywords']))
+    # Using a smaller gap for the columns to bring them closer
+    col1, col2, col3 = st.columns([1, 1.5, 1], gap="small")
+    
+    def display_profile_header(profile):
+        st.subheader(f"👤 {profile['name']}")
+        st.caption(f"🏢 {profile.get('affiliation', '')}")
+        st.markdown("**Research Fields:**")
+        for field in profile.get('fields', []): st.markdown(f"- {field}")
+        st.markdown("**Methods:**")
+        for method in profile.get('methods', []): st.markdown(f"- {method}")
+        st.markdown("**Keywords:**")
+        for keyword in profile.get('keywords', []): st.markdown(f"- {keyword}")
 
-    # --- 4. Actions Section ---
+    with col1:
+        with st.container(border=True): display_profile_header(results['profile_a'])
+    with col2:
+        st.plotly_chart(create_gauge_chart(results['potential_score']), use_container_width=True)
+        with st.container(border=True):
+            st.subheader("💡 Summary", anchor=False)
+            st.markdown(results['one_liner_summary'])
+    with col3:
+        with st.container(border=True): display_profile_header(results['profile_b'])
+    st.markdown("---")
+    st.header("Detailed Analysis")
+    
+    tab_titles = [f"{insight['icon']} {insight['title']}" for insight in results['insights']]
+    tabs = st.tabs(tab_titles)
+    
+    for i, insight in enumerate(results['insights']):
+        with tabs[i]:
+            st.subheader(insight['title'])
+            st.markdown(insight['text'])
     st.markdown("---")
     col1, col2, col3 = st.columns([1, 1, 1])
     with col1:
@@ -182,8 +190,9 @@ def render_results_page():
         # Placeholder for Export functionality
         st.button("Export as PDF", use_container_width=True, type="primary")
 
+     
 # --- MAIN LOGIC to switch between pages ---
 if st.session_state.analysis_complete:
-    render_results_page()
+    render_synergy_report()
 else:
     render_input_page()

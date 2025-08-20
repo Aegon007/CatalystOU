@@ -9,5 +9,6 @@ In this project, we are trying to build a system that can find potential collabo
 
 
 ## Author
-Alexander Lee, 
+Alexander Lee, Alexander.Lee-1@ou.edu
+
 Chenggang Wang, chenggang.wang@ou.edu

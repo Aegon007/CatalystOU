@@ -1,56 +1,58 @@
 import os
 import json
-from openai import OpenAI
+import asyncio
+from openai import AsyncOpenAI, APITimeoutError
 from dotenv import load_dotenv
-# You must install this library first by running: !pip install PyPDF2
 import PyPDF2
+from io import BytesIO # Import BytesIO to handle in-memory files
 
 load_dotenv()
 
-# --- Part 1: Client Setup ---
-# Securely get the API key from Colab Secrets and set up the client.
+# --- Part 1: Client Setup (Async) ---
 try:
     api_key = os.getenv('OPENAI_API_KEY')
     if not api_key:
-        raise ValueError("API key not found in Colab Secrets. Please add it.")
+        raise ValueError("API key not found. Please add it to your environment variables.")
 
-    client = OpenAI(
+    client = AsyncOpenAI(
         api_key=api_key,
         base_url="https://llm.nrp-nautilus.io/"
     )
 except Exception as e:
-    print(f"Error setting up the client: {e}")
+    print(f"Error setting up the async client: {e}")
     client = None
 
-# --- Part 2: PDF and Summarization Functions ---
+# --- Part 2: PDF and Summarization Functions (Async) ---
 
-def extract_text_from_pdf(pdf_path: str) -> str:
-    """Extracts all text from a given PDF file."""
+def extract_text_from_pdf(pdf_content: BytesIO, file_name: str) -> str:
+    """
+    Extracts all text from an in-memory PDF file object.
+    This function now correctly accepts two arguments.
+    """
     try:
-        print(f"Reading text from {pdf_path}...")
+        print(f"Reading text from {file_name}...")
         text = ""
-        with open(pdf_path, 'rb') as file:
-            reader = PyPDF2.PdfReader(file)
-            for page in reader.pages:
-                page_text = page.extract_text()
-                if page_text:
-                    text += page_text + "\n"
-        print(f"Successfully extracted text from {pdf_path}.")
+        # The first argument is now treated as a file-like object
+        reader = PyPDF2.PdfReader(pdf_content)
+        for page in reader.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text + "\n"
+        print(f"Successfully extracted text from {file_name}.")
         return text
-    except FileNotFoundError:
-        print(f"Error: The file was not found at {pdf_path}")
-        return ""
     except Exception as e:
-        print(f"An error occurred while reading the PDF: {e}")
+        print(f"An error occurred while reading the PDF {file_name}: {e}")
         return ""
 
-def summarize_single_paper(paper_text: str) -> str:
+async def summarize_single_paper(paper_text: str, pdf_path: str) -> str:
     """
     Uses the LLM to create a detailed summary of a single paper's text.
-    This is the "Summarize" step.
+    This is now an asynchronous coroutine.
     """
     if not client or not paper_text:
         return ""
+
+    print(f"Sending text from {pdf_path} to LLM for summarization...")
 
     prompt = f"""
     You are an expert research analyst. Your task is to read the entire uploaded document and create a summary list for an academic audience.
@@ -68,8 +70,7 @@ def summarize_single_paper(paper_text: str) -> str:
     """
 
     try:
-        print("Sending full text to LLM for summarization...")
-        completion = client.chat.completions.create(
+        completion = await client.chat.completions.create(
             model="gemma3",
             messages=[
                 {"role": "system", "content": "You are a helpful research assistant that creates detailed summaries."},
@@ -79,19 +80,17 @@ def summarize_single_paper(paper_text: str) -> str:
             timeout=300.0, # 5-minute timeout
         )
         summary = completion.choices[0].message.content
-        print("Successfully generated detailed summary.")
+        print(f"Successfully generated detailed summary for {pdf_path}.")
         return summary
-    except openai.APITimeoutError:
-        print(f"Error: The request timed out after 5 minutes. The server is taking too long to process the PDF.")
+    except APITimeoutError:
+        print(f"Error: The request for {pdf_path} timed out after 5 minutes.")
         return ""
     except Exception as e:
-        print(f"An error occurred during summarization: {e}")
+        print(f"An error occurred during summarization for {pdf_path}: {e}")
         return ""
 
 # --- Part 3: Researcher Profile Creation (The "Synthesize" Step) ---
-# This function now takes the researcher's name as an argument for better accuracy.
-
-def create_researcher_profile(researcher_name: str, list_of_summaries: list[str], example_summaries: list[str], example_json_output: str) -> dict:
+async def create_researcher_profile(researcher_name: str, list_of_summaries: list[str], example_summaries: list[str], example_json_output: str) -> dict:
     """
     Uses the LLM to synthesize a structured profile from a list of detailed paper summaries,
     guided by a provided example and a specific researcher name.
@@ -104,14 +103,10 @@ def create_researcher_profile(researcher_name: str, list_of_summaries: list[str]
     actual_summaries_text = "\n\n---\n\n".join(f"Summary of Paper {i+1}:\n{summary}" for i, summary in enumerate(list_of_summaries))
 
     prompt = f"""
-    You are an expert academic analyst creating a profile for a formal, academic audience, such as for a university department webpage. The tone must be objective and focused on core technical contributions.
-    Your task is to synthesize a comprehensive and highly detailed researcher profile for '{researcher_name}' from the provided summaries.
-    Your primary instruction is to be exhaustive: do not omit details. If a specific technique, research domain, application area, or platform is mentioned in the summaries, it must be included in the final JSON profile. Base your analysis strictly on the information given in the source summaries and the provided example.
-
-... (the rest of the prompt with the example and actual task remains the same) ...
+    You are an expert academic analyst creating a profile for a formal, academic audience. Your task is to synthesize a comprehensive and highly detailed researcher profile for '{researcher_name}' from the provided summaries.
+    Your output must be a single, complete JSON object and nothing else.
 
     ### EXAMPLE ###
-
     [START OF EXAMPLE INPUT SUMMARIES]
     ---
     {example_summaries_text}
@@ -123,22 +118,18 @@ def create_researcher_profile(researcher_name: str, list_of_summaries: list[str]
     [END OF EXAMPLE JSON OUTPUT]
 
     ### ACTUAL TASK ###
-
-    Now, using the same format and level of analysis, create a profile for '{researcher_name}'
-    based on the following summaries.
-
+    Now, using the same format and level of analysis, create a profile for '{researcher_name}' based on the following summaries.
     [START OF ACTUAL INPUT SUMMARIES]
     ---
     {actual_summaries_text}
     ---
     [END OF ACTUAL INPUT SUMMARIES]
-
     [START OF ACTUAL JSON OUTPUT]
     """
 
     try:
         print("\nSending summaries to LLM for final profile synthesis...")
-        completion = client.chat.completions.create(
+        completion = await client.chat.completions.create(
             model="gemma3",
             messages=[
                 {"role": "system", "content": f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'."},
@@ -146,7 +137,6 @@ def create_researcher_profile(researcher_name: str, list_of_summaries: list[str]
             ],
             temperature=0.3,
         )
-
         response_content = completion.choices[0].message.content.replace("[END OF ACTUAL JSON OUTPUT]", "").strip()
 
         if response_content.strip().startswith("```json"):
@@ -164,33 +154,23 @@ def create_researcher_profile(researcher_name: str, list_of_summaries: list[str]
         print(f"An error occurred during profile creation: {e}")
         return {}
 
-# --- Part 4: Profile Matching Function (No changes needed) ---
-def match_profile_to_opportunity(researcher_profile: dict, opportunity_desc: str) -> str:
-    # This function remains the same.
-    pass
-
-
-# --- Part 5: Main Execution ---
-if __name__ == "__main__":
+# --- Part 4: Main Asynchronous Execution ---
+async def main():
+    """Main async function to run the summarization and synthesis process."""
     # --- 1. DEFINE YOUR TARGET RESEARCHER AND THEIR PDFS ---
-
-    # IMPORTANT: Specify the name of the researcher you want to profile.
     new_researcher_name = "Greg Muller"
-
-    # IMPORTANT: Upload your PDFs to Colab and list their filenames here.
-    new_researcher_pdf_paths = [ "2019_NoncommutativeResolutions_ToricVarieties_AdvMath.pdf",
-                                "2022_SuperunitaryRegions_ClusterAlgebras_GunawanMuller_arXiv.pdf",
-                                "2024_PoissonGeometry_AzumayaLoci_ClusterAlgebras_AdvMath.pdf",
-                                "2025_DeepPointsClusterAlgebra.pdf",
-                                "2025_ValuativeIndependence.pdf"
+    new_researcher_pdf_paths = [
+        "2019_NoncommutativeResolutions_ToricVarieties_AdvMath.pdf",
+        "2022_SuperunitaryRegions_ClusterAlgebras_GunawanMuller_arXiv.pdf",
+        "2024_PoissonGeometry_AzumayaLoci_ClusterAlgebras_AdvMath.pdf",
+        "2025_DeepPointsClusterAlgebra.pdf",
+        "2025_ValuativeIndependence.pdf"
     ]
 
     # --- 2. DEFINE YOUR HIGH-QUALITY EXAMPLE ---
-    # IMPORTANT: Provide the detailed summaries and the perfect JSON for your example researcher.
-
     example_summaries_for_prompt = [
-    # Summary 1
-    """• Primary Research Objective and Core Topic: The primary research objective is to introduce a pioneering approach that integrates digital twin (DT) technology with a federated learning management system (FLMS) to enhance the security and resilience of vehicular networks in the 6G era against adversarial attacks. The core topic focuses on developing novel federated unlearning (FUL) techniques to mitigate the influence of malicious or poisonous clients within already compromised networks, ensuring dependable and secure communication.
+        # Summary 1
+        """• Primary Research Objective and Core Topic: The primary research objective is to introduce a pioneering approach that integrates digital twin (DT) technology with a federated learning management system (FLMS) to enhance the security and resilience of vehicular networks in the 6G era against adversarial attacks. The core topic focuses on developing novel federated unlearning (FUL) techniques to mitigate the influence of malicious or poisonous clients within already compromised networks, ensuring dependable and secure communication.
 • Specific Methodologies and Techniques:
     ◦ Framework: DT-FU (Digital Twin-Driven Federated Unlearning for Resilient Vehicular Networks in the 6G Era).
     ◦ Machine Learning Approach: Federated Learning (FL).
@@ -395,36 +375,44 @@ if __name__ == "__main__":
 }
 """
 
-    # --- 3. RUN THE "SUMMARIZE THEN SYNTHESIZE" PROCESS ---
     if client:
-        # Step 1: Summarize - Create a detailed summary for each PDF.
-        print("--- Starting Step 1: Summarization ---")
-        detailed_summaries = []
+        # --- Step 1: Summarize (in parallel) ---
+        print("--- Starting Step 1: Summarization (in parallel) ---")
+        tasks = []
         for path in new_researcher_pdf_paths:
             full_text = extract_text_from_pdf(path)
             if full_text:
-                summary = summarize_single_paper(full_text)
-                if summary:
-                    # This line will print the summary as soon as it's created
-                    print(f"\n--- Summary for {path} ---\n{summary}\n")
-                    detailed_summaries.append(summary)
-
-        # Step 2: Synthesize - Create the final profile from the summaries.
-        if detailed_summaries:
+                tasks.append(summarize_single_paper(full_text, path))
+        
+        detailed_summaries = await asyncio.gather(*tasks)
+        valid_summaries = [s for s in detailed_summaries if s]
+        
+        # --- Step 2: Synthesize ---
+        if valid_summaries:
             print("\n--- Starting Step 2: Synthesis ---")
-            researcher_profile = create_researcher_profile(
-                researcher_name=new_researcher_name, # Pass the name to the function
-                list_of_summaries=detailed_summaries,
+            researcher_profile = await create_researcher_profile(
+                researcher_name=new_researcher_name,
+                list_of_summaries=valid_summaries,
                 example_summaries=example_summaries_for_prompt,
                 example_json_output=example_json_for_prompt
             )
 
+            # --- Step 3: Save to File ---
             if researcher_profile:
-                print("\n--- Created New Researcher Profile ---")
-                print(json.dumps(researcher_profile, indent=2))
+                filename = f"{new_researcher_name.replace(' ', '_')}_profile.json"
+                try:
+                    with open(filename, 'w') as f:
+                        json.dump(researcher_profile, f, indent=4)
+                    print(f"\n--- Success! ---")
+                    print(f"Profile saved to: {filename}")
+                except Exception as e:
+                    print(f"\nError saving profile to file: {e}")
             else:
                 print("\nCould not create the final researcher profile.")
         else:
-            print("\nCould not proceed to synthesis because no summaries were generated from the PDFs.")
+            print("\nCould not proceed to synthesis because no summaries were generated.")
     else:
         print("Script did not run because the OpenAI client could not be initialized.")
+
+if __name__ == "__main__":
+    asyncio.run(main())

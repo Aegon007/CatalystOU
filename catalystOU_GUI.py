@@ -9,12 +9,19 @@ from io import BytesIO
 from profile_extraction import extract_text_from_pdf, summarize_single_paper, create_researcher_profile
 from profile_matcher import analyze_collaboration_synergy
 
+
 # --- Page Configuration ---
 st.set_page_config(
     page_title="SynergyScout - Collaboration Discovery",
     page_icon="🔬",
     layout="wide"
 )
+
+# set this global variables
+#modelName = ''
+#researcherA = ''
+#researcherB = ''
+
 
 # ==============================================================================
 # --- Backend Orchestration Wrapper ---
@@ -265,6 +272,7 @@ async def generate_profile_wrapper(researcher_name, uploaded_files, status_conta
     )
     return final_profile
 
+
 # ==============================================================================
 # --- UI HELPER FUNCTIONS & STYLES ---
 # ==============================================================================
@@ -288,6 +296,7 @@ def create_gauge_chart(score):
     ))
     fig.update_layout(height=250, margin=dict(l=20, r=20, t=50, b=20))
     return fig
+
 
 # ==============================================================================
 # --- UI RENDERING LOGIC ---
@@ -324,7 +333,8 @@ def render_input_page():
             if st.session_state.use_json_a:
                 st.file_uploader("Upload Researcher A's JSON Profile", type=['json'], key='json_a', label_visibility="collapsed")
             else:
-                st.text_input("Researcher A's Name", key='name_a', placeholder="e.g., Dr. Evelyn Reed")
+                researcherA = st.text_input("Researcher A's Name", key='name_a', placeholder="e.g., Dr. Superman")
+                print('researcherA: ', researcherA)
                 st.file_uploader("Upload Researcher A's Publications (Max 5)", type=['pdf'], accept_multiple_files=True, key='pdfs_a')
 
         with col2:
@@ -332,7 +342,8 @@ def render_input_page():
             if st.session_state.use_json_b:
                 st.file_uploader("Upload Researcher B's JSON Profile", type=['json'], key='json_b', label_visibility="collapsed")
             else:
-                st.text_input("Researcher B's Name", key='name_b', placeholder="e.g., Dr. Kenji Tanaka")
+                researcherB = st.text_input("Researcher B's Name", key='name_b', placeholder="e.g., Dr. Batman")
+                print('researcherB: ', researcherB)
                 st.file_uploader("Upload Researcher B's Publications (Max 5)", type=['pdf'], accept_multiple_files=True, key='pdfs_b')
 
         st.markdown("")
@@ -344,29 +355,43 @@ def render_input_page():
             
             # Process Researcher A based on the toggle's session state
             if st.session_state.use_json_a:
-                if st.session_state.json_a: profile_a = json.load(st.session_state.json_a)
-                else: st.error("Please upload a JSON profile for Researcher A."); return
+                if st.session_state.json_a:
+                    profile_a = json.load(st.session_state.json_a)
+                else:
+                    st.error("Please upload a JSON profile for Researcher A."); return
             else:
                 if st.session_state.name_a and st.session_state.pdfs_a:
-                    if len(st.session_state.pdfs_a) > 5: st.error("Max 5 publications for Researcher A."); return
+                    if len(st.session_state.pdfs_a) > 5:
+                        st.error("Max 5 publications for Researcher A."); return
                     with st.status(f"Generating profile for {st.session_state.name_a}...", expanded=True) as status:
                         profile_a = await generate_profile_wrapper(st.session_state.name_a, st.session_state.pdfs_a, status)
-                        if profile_a: status.update(label="Profile for Researcher A is complete!", state="complete")
-                        else: status.update(label="Profile generation failed for A!", state="error"); return
-                else: st.error("Please provide a name and publications for Researcher A."); return
+                        if profile_a:
+                            status.update(label="Profile for Researcher A is complete!", state="complete")
+                            profile_a.update({'Researcher Profile:':researcherA})
+                        else:
+                            status.update(label="Profile generation failed for A!", state="error"); return
+                else:
+                    st.error("Please provide a name and publications for Researcher A."); return
 
             # Process Researcher B based on the toggle's session state
             if st.session_state.use_json_b:
-                if st.session_state.json_b: profile_b = json.load(st.session_state.json_b)
-                else: st.error("Please upload a JSON profile for Researcher B."); return
+                if st.session_state.json_b:
+                    profile_b = json.load(st.session_state.json_b)
+                else:
+                    st.error("Please upload a JSON profile for Researcher B."); return
             else:
                 if st.session_state.name_b and st.session_state.pdfs_b:
-                    if len(st.session_state.pdfs_b) > 5: st.error("Max 5 publications for Researcher B."); return
+                    if len(st.session_state.pdfs_b) > 5:
+                        st.error("Max 5 publications for Researcher B."); return
                     with st.status(f"Generating profile for {st.session_state.name_b}...", expanded=True) as status:
                         profile_b = await generate_profile_wrapper(st.session_state.name_b, st.session_state.pdfs_b, status)
-                        if profile_b: status.update(label="Profile for Researcher B is complete!", state="complete")
-                        else: status.update(label="Profile generation failed for B!", state="error"); return
-                else: st.error("Please provide a name and publications for Researcher B."); return
+                        if profile_b:
+                            status.update(label="Profile for Researcher B is complete!", state="complete")
+                            profile_b.update({'Researcher Profile:':researcherB})
+                        else:
+                            status.update(label="Profile generation failed for B!", state="error"); return
+                else:
+                    st.error("Please provide a name and publications for Researcher B."); return
 
             # Run Final Analysis
             if profile_a and profile_b:
@@ -382,6 +407,7 @@ def render_input_page():
                         status.update(label="Analysis failed!", state="error")
 
         asyncio.run(process_submission())
+
 
 def render_synergy_report():
     results = st.session_state.results

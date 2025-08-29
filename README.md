@@ -15,6 +15,9 @@ In the source code: we have 3 major files:
 * collaboration\_matcher
 
 
+## Web UI Interface
+![Web UI Interface](https://github.com/Aegon007/CatalystOU/blob/main/catalystOU_webUI.png)
+
 ## Usage
 This project does not develop new LLM, we are using existing LLM as a service.
 

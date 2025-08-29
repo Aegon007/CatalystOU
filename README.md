@@ -10,9 +10,9 @@ In this project, we are trying to build a system that can find potential collabo
 In this repo, we have source code and groundtruth of the project.
 
 In the source code: we have 3 major files:
-    * catalystOU\_UI
-    * profile\_extractor
-    * collaboration\_matcher
+* catalystOU\_UI
+* profile\_extractor
+* collaboration\_matcher
 
 
 ## Usage
@@ -23,16 +23,16 @@ To use our code, you need to first get your LLM\_API\_KEY and your LLM\_API\_URL
 Then, you need to set the environment variable for the LLM\_API\_KEY and LLM\_API_\URL.
 
 To run our code, you need to type the following command in a terminal:
-    * streamlit run catalystOU.py 
+* streamlit run catalystOU.py 
 
 
 ## Dependency
 To run our code, you need to install the following Python Package/Libraries:
-    * streamlit
-    * pandas
-    * plotly
-    * openai
-    * python-dotenv
+* streamlit
+* pandas
+* plotly
+* openai
+* python-dotenv
 
 
 ## Author

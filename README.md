@@ -23,7 +23,7 @@ To use our code, you need to first get your LLM\_API\_KEY and your LLM\_API\_URL
 Then, you need to set the environment variable for the LLM\_API\_KEY and LLM\_API_\URL.
 
 To run our code, you need to type the following command in a terminal:
-* streamlit run catalystOU.py 
+* streamlit run catalystOU\_GUI.py 
 
 
 ## Dependency

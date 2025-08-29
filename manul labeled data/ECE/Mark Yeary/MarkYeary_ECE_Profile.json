@@ -1,0 +1,38 @@
+{
+  "Researcher Profile:": "Dr. Mark Yeary",
+  "Affiliation:": "School of Electrical and Computer Engineering, University of Oklahoma",
+  "Research Domains": [
+    "Digital Radar Systems",
+    "Phased Array Radar (PAR) Technology",
+    "Signal Processing",
+    "Atmospheric and Meteorological Sciences"
+  ],
+  "Techniques Used": [
+    "Bezier-Surface Parameterization",
+    "Cross-polar Canceller",
+    "Annulus Masking",
+    "Mutual coupling calibration",
+    "Near-field and far-field calibration",
+    "Phase-only beamforming",
+    "Digital beamforming",
+    "Genetic Algorithm"
+  ],
+  "Data & Platforms": [
+    "Self-collected data from HORUS radar system",
+    "Public Datasets: KTLX WSR-88D, KCRI WSR-88D",
+    "Platforms: HORUS Radar System, MATLAB"
+  ],
+  "Application Areas": [
+    "Next-generation weather surveillance",
+    "Radar system design",
+    "Atmospheric Imaging",
+    "Aircraft Tracking"
+  ],
+  "Key Research Thinking Patterns": [
+    "Comparative Evaluation: Systematically compares metrics of the proposed solutions to established standards to properly assess performance (e.g., Horus radar data to WSR-88D data, comparing different beamforming techniques).",
+    "Optimization-Driven: Employs optimization algorithms and other mathematical frameworks to achieve the ideal performance for radar functionalities (e.g., Genetic Algorithm and Bezier Surface Parameterization to optimize beamforming).",
+    "Designing for Scalability: Intentionally allows for modular design principles into his proposed solutions to allow for future expansion and broader application (e.g., Horus radar’s architecture being digital allows for scalable elements).",
+    "Collaborative Research: Actively pursues partners and other institutions for coordinated experiments and data to reach for research objectives (e.g., Collaboration with DARPA, MIT-Lincoln Laboratory, Johns Hopskins)."
+  ],
+  "Summary Description": "Mark Yeary is a researcher focusing in advanced radar systems with a particular focus towards digital phased array radars like the Horus system. Their work focuses on developing and improving radar performance. They introduce innovative techniques regarding signal processing and beamforming, allowing for self-calibration within radar systems to become more advanced. Their contributions reflect a strong emphasis on systematic analysis and persistent optimization on proposed solutions, leading to more scalable and larger projects in the future."
+}

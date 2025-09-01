@@ -1,0 +1,27 @@
+{
+  "Researcher Profile:": "Dr. Samuel Cheng",
+  "Affiliation:": "School of Electrical and Computer Engineering, University of Oklahoma",
+  "Research Domains": [
+    "Machine Learning/Deep Learning",
+    "Artificial Intelligence, Medical Image Analysis",
+    "Anomaly Detection, Data Privacy",
+    "Cryptography",
+    "Digital Forensics"
+  ],
+  "Techniques Used": [
+    "Denoising Diffusion Models (DDPM, DDIM), Classifier Guidance, Polynomial Proxy Models (PolyMLP, PolyCNN), Kate Polynomial Commitment, Differential Privacy (DP), Federated Learning, Convolutional Neural Networks (CNN), Capsule Networks, Information Routing Techniques (Non-Iterative, Cluster), Image Pre-processing, Stochastic Gradient Descent (SGD)"
+  ],
+  "Data & Platforms": [
+    "Public Datasets: Medical Segmentation Decathlon (MSD) Dataset, University of Oklahoma Health Science Center (OUHSC) data, MNIST, CIFAR-10, Fashion-MNIST, smallNORB, Street View House Numbers (SVHN)\n\nPlatforms: Total Segmentator, ChatGPT, OpenMPI (Network Protocol), Python, PyTorch, OU Supercomputing center for Education and Research (OSCER), Research Rabbit"
+  ],
+  "Application Areas": [
+    "Image Classification, Deepfake Detection, Media Security, Education, ProxyZKP Framework, IoT and Edge Computing, Privacy-preservation in Machine Learning, Artificial Intelligence in Biomedical Image Processing, Data Processing"
+  ],
+  "Key Research Thinking Patterns": [
+    "Comparative Analysis: Systematically evaluated their proposed methods against already established techniques and baselines to measure performances (e.g., ProxyZKP proof generation times to other proofs, anomaly detection against autoencoders).",
+    "Interdisciplinary Application: Integrates concepts and methodologies from other distinct academic fields to solve complex problems (e.g., Deep Learning with Zero-Knowledge Proofs, Denoising Diffusion Models to Medical Imaging)",
+    "Trade-off Analysis: Identifies and evaluates compromises between desired but conflicting objectives in system designs (e.g., balance between privacy and model accuracy, explored classifier guidance and noise level for optimal anomaly detection).",
+    "Optimization in Design: Focuses on modifying or developing new algorithms or components to enhance the specific functional metrics that can address shortcomings (e.g., proposed non-iterative cluster routing for capsule networks, introduce entropy-adjusted dynamic routing for better routing decisions)."
+  ],
+  "Summary Description": "Samuel Cheng is a leading researcher in deep learning, applying advanced computational techniques to diverse fields including medical image analysis, decentralized federated learning, and media security. His work is characterized by innovative contributions such as efficient routing algorithms for capsule networks, secure and privacy-preserving machine learning frameworks using Zero-Knowledge Proofs, and the application of denoising diffusion models for medical anomaly detection. His research consistently features comparative analysis, interdisciplinary approaches, and a focus on design optimization to deliver robust, real-world solutions."
+}

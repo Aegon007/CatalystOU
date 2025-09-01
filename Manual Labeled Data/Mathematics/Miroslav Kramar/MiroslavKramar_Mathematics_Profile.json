@@ -1,0 +1,51 @@
+{
+  "Researcher Profile:": "Dr. Miroslav Kramar",
+  "Affiliation:": "Department of Mathematics, University of Oklahoma",
+  "Research Domains": [
+    "Granular Materials",
+    "Machine Learning",
+    "Computational Topology",
+    "Dynamic Systems",
+    "Photoelasticity",
+    "Soft Matter Physics",
+    "Material Science",
+    "Stress Analysis"
+  ],
+  "Techniques Used": [
+    "Convolutional Neural Networks (CNN) (VGG19, InceptionResNetV2, Xception)",
+    "Transfer Learning",
+    "Discrete Element Method (DEM) Simulations",
+    "Persistent Homology (PH)",
+    "Persistence Diagrams (PD)",
+    "Differential Force Network (DFN) Analysis",
+    "Statistical Analysis (e.g., time averaging)",
+    "Dark-field Polariscope Imaging",
+    "White-light Photography for Particle Tracking",
+    "MultiLayer Perceptrons (MLP)",
+    "Regression Perceptron",
+    "Conley Index Theory",
+    "Machine-Learned Cubical Decomposition (MLCD)",
+    "Synthetic Data Generation",
+    "Elasticity Theory"
+  ],
+  "Data & Platforms": [
+    "Self-collected and Simulated Datasets",
+    "Public Datasets: ImageNet Dataset for pre-training",
+    "Platforms: GUDHI Library for PH and PD, SHAPELY package for particle tracking, pyCHomP for computational homology"
+  ],
+  "Application Areas": [
+    "Granular Material Analysis",
+    "Stress Analysis in Photoelastic Materials",
+    "Predictive Modeling with Machine Learning",
+    "Earthquake Prediction and Geophysics",
+    "Granular Material Handling",
+    "Machine-Learned Dynamics"
+  ],
+  "Key Research Thinking Patterns": [
+    "Interdisciplinary Applications: Integrating concepts and methods of other diverse scientific disciplines to address complex problems (e.g., combined machine learning with photoelasticity).",
+    "Comparative Analysis: Examines different approaches, measures, and system behaviors against each other to obtain deeper insights (e.g., compared various CNN models for force reconstruction).",
+    "Data-Driven Analysis: Uses data (simulated, empirical, synthetic) as the primary basis of understanding and modeling the phenomena (e.g., force networks from experimental photo elastic images).",
+    "Modular Approach: Breaks down the problem into smaller and manageable sub-problems which are then addressed individually (e.g., force reconstruction was split into inferring its different properties individually)."
+  ],
+  "Summary Description": "Miroslav Kramár is a leading researcher in applied mathematics, computational topology, and granular physics, applying advanced theoretical and computational techniques to materials science, dynamical systems, and machine learning. His work innovatively reveals slip precursors in granular materials via topological measures, develops machine learning for accurate photoelastic force reconstruction, and pioneers data-driven methods for dynamical system attractor identification. His research consistently features interdisciplinary applications, comparative analysis, and data-driven insights into complex physical and mathematical systems."
+}

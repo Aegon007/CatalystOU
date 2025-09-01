@@ -10,13 +10,15 @@ load_dotenv()
 
 # --- Part 1: Client Setup (Async) ---
 try:
-    api_key = os.getenv('OPENAI_API_KEY')
+    api_key = os.getenv('LLM_API_KEY')
     if not api_key:
         raise ValueError("API key not found. Please add it to your environment variables.")
-
+    api_url = os.getenv('LLM_API_URL')
+    if not api_url:
+        raise ValueError("API URL not found. Please add it to your environment variables.")
     client = AsyncOpenAI(
         api_key=api_key,
-        base_url="https://llm.nrp-nautilus.io/"
+        base_url=api_url
     )
 except Exception as e:
     print(f"Error setting up the async client: {e}")

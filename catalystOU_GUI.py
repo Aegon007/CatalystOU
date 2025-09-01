@@ -366,10 +366,10 @@ def render_input_page():
                     with st.status(f"Generating profile for {st.session_state.name_a}...", expanded=True) as status:
                         profile_a = await generate_profile_wrapper(st.session_state.name_a, st.session_state.pdfs_a, status)
                         if profile_a:
-                            status.update(label="Profile for Researcher A is complete!", state="complete")
+                            status.update(label=f"Profile for {st.session_state.name_a} is complete!", state="complete")
                             profile_a.update({'Researcher Profile:':researcherA})
                         else:
-                            status.update(label="Profile generation failed for A!", state="error"); return
+                            status.update(label=f"Profile generation failed for {st.session_state.name_a}!", state="error"); return
                 else:
                     st.error("Please provide a name and publications for Researcher A."); return
 
@@ -386,10 +386,10 @@ def render_input_page():
                     with st.status(f"Generating profile for {st.session_state.name_b}...", expanded=True) as status:
                         profile_b = await generate_profile_wrapper(st.session_state.name_b, st.session_state.pdfs_b, status)
                         if profile_b:
-                            status.update(label="Profile for Researcher B is complete!", state="complete")
+                            status.update(label=f"Profile for {st.session_state.name_b} is complete!", state="complete")
                             profile_b.update({'Researcher Profile:':researcherB})
                         else:
-                            status.update(label="Profile generation failed for B!", state="error"); return
+                            status.update(label=f"Profile generation failed for {st.session_state.name_b}!", state="error"); return
                 else:
                     st.error("Please provide a name and publications for Researcher B."); return
 

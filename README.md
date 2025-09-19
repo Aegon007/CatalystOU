@@ -1,4 +1,5 @@
-# CatalystOU
+# CatalystOU: A Pilot for an LLM-Powered Researcher Collaboration Network
+
 
 ## Overview
 This is the repo for our 2025 summer project: CatalystOU: A Pilot for an LLM-Powered Researcher Collaboration Network

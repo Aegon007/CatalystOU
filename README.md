@@ -1,8 +1,8 @@
-# CatalystOU: A Pilot for an LLM-Powered Researcher Collaboration Network
+# CatalystOU: A Pilot Study for an LLM-Powered Researcher Collaboration Discovery Engine
 
 
 ## Overview
-This is the repo for our 2025 summer project: CatalystOU: A Pilot for an LLM-Powered Researcher Collaboration Network
+This is the repo for our 2025 summer project: CatalystOU: A Pilot Study for an LLM-Powered Researcher Collaboration Discovery Engine
 
 In this project, we are trying to build a system that can find potential collaboration opportunities by digesting the researcher's publications.
 

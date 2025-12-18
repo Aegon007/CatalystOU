@@ -1,2 +1,0 @@
-export OPENAI_API_KEY=sk-kbRCO6sTTAkQbvLPxUDItA
-streamlit run catalystOU_GUI.py

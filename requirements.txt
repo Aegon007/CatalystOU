@@ -1,6 +1,12 @@
+# requirements.txt
 streamlit
 pandas
 plotly
 openai
 python-dotenv
 PyPDF2
+sentence-transformers>=2.2.0
+scipy>=1.8.0
+numpy>=1.21.0
+bert-score>=0.3.11
+tqdm>=4.64.0

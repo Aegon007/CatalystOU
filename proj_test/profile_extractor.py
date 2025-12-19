@@ -5,10 +5,11 @@ import argparse
 import json
 import asyncio
 import PyPDF2
+import pdb
 
 from loguru import logger
 from pathlib import Path
-from openai import AsyncOpenAI, APITimeoutError
+from openai import OpenAI, AsyncOpenAI, APITimeoutError
 from dotenv import load_dotenv
 from io import BytesIO # Import BytesIO to handle in-memory files
 
@@ -27,7 +28,7 @@ logger.add(LOG_FILE, rotation="10 MB", level="DEBUG") # 文件记录更详细的
 
 # --- 1. Client 初始化 ---
 def get_client():
-    api_key = os.getenv('LLM_API_KEY')
+    api_key = os.getenv('OPENAI_API_KEY')
     api_url = os.getenv('LLM_API_URL')
     if not api_key:
         logger.critical("API key not found!")
@@ -160,7 +161,7 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
         return {}
 
 
-async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model_name: str, semaphore: asyncio.Semaphore) -> none:
+async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model_name: str, semaphore: asyncio.Semaphore) -> None:
     """
     An async wrapper in the frontend to orchestrate the profile extraction process
     by calling the imported backend functions.
@@ -374,10 +375,14 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
 """
 
     author_name = author_dir.name
-    save_path = out_dir / f"{author_name.replace(' ', '_')}_profile.json"
+    department_name = author_dir.parent.name
+    save_dir = os.path.join(out_dir, department_name)
+    os.makedirs(save_dir, exist_ok=True)
 
+    save_path = os.path.join(out_dir, department_name, f"{author_name.replace(' ', '_')}_profile.json")
+    pdb.set_trace()
     # if existing profile exists, skip processing
-    if save_path.exists():
+    if os.path.exists(save_path):
         logger.warning(f"Profile for {author_name} already exists at {save_path}. Skipping...")
         return
 
@@ -420,11 +425,11 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
             with open(save_path, 'w') as f:
                 json.dump(final_profile, f, indent=4)
             logger.info(f"Successfully saved profile for {researcher_name} at {save_path}.")
-    else
+    else:
         logger.error(label="Failed to summarize publications.", state="error")
 
 
-async def main(opts) -> none:
+async def main(opts) -> None:
     """ Main function to process the researcher profile extraction. """
     base_dir = Path(opts.pdf_directory)
     out_dir = Path(opts.output)
@@ -434,7 +439,13 @@ async def main(opts) -> none:
         logger.error(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
         return
     
-    author_dirs = [d for d in base_dir.iterdir() if d.is_dir()]
+    departments = [d for d in base_dir.iterdir() if d.is_dir()]
+
+    author_dirs = []
+    for department in departments:
+        tmp_author_dirs = [d for d in department.iterdir() if d.is_dir()]
+        author_dirs.extend(tmp_author_dirs)
+
     logger.info(f"Found {len(author_dirs)} author directories to process.")
 
     semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)  # Limit concurrent LLM calls to 5
@@ -448,7 +459,7 @@ def parseOpts(argv):
     parser = argparse.ArgumentParser(description="Researcher Profile Extractor")
     parser.add_argument('-p', '--pdf_directory', type=str, required=True, help='Directory containing researcher PDF files')
     parser.add_argument('-o', '--output', type=str, default='.', help='Output directory for the researcher profile JSON')
-    parser.add_argument('-m', '--model_name', type=str, default='gpt-4o', help='OpenAI model name to use')
+    parser.add_argument('-m', '--model_name', type=str, default='qwen3/gpt-oss/gemma3/llama3-sdsc', help='OpenAI model name to use')
     opts = parser.parse_args(argv)
     return opts
 

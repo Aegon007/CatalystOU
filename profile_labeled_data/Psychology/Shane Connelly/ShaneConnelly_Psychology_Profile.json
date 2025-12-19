@@ -1,0 +1,53 @@
+{
+  "Researcher Profile:": "Dr. Shane Connelly",
+  "Affiliation:": "Department of Psychology University of Oklahoma",
+  "Research Domains": [
+    "Social Psychology",
+    "Leadership Studies",
+    "Health Communication",
+    "Misinformation/Disinformation",
+    "Public Health",
+    "Behavioral Sciences",
+    "Management"
+  ],
+  "Techniques Used": [
+    "Two-Stage Least Square (2SLS) Analysis",
+    "Lewbel Procedure",
+    "Structural Equation Modeling (SEM)",
+    "Poisson regression",
+    "Cluster-Robust Standard Errors",
+    "Survey",
+    "Logistic Regression Analysis",
+    "Confirmatory Factor Analysis (CFA)",
+    "Bootstrapping",
+    "Multivariate Logistic Regression",
+    "Pearson Correlations",
+    "Grounded Theory of Constant Comparison Method",
+    "Replication Studies",
+    "Propensity Score Matching",
+    "Probit Model",
+    "Panel Probit Estimations",
+    "Sensitivity Analysis"
+  ],
+  "Data & Platforms": [
+    "Datasets: Self-collected data",
+    "Platforms: Qualtrics, BCT Commander, Cleanstart, ELAN Video Annotation Software, Stata 15, R programming language, Amazon Mechanical Turk, SONA (Departmental Research Pool), US Census Bureau"
+  ],
+  "Application Areas": [
+    "Organizational Development",
+    "Human Resources Management",
+    "Communication Training",
+    "Social Dynamics",
+    "Bias Mitigation",
+    "Academic Research Methodology",
+    "Public Health Policies and Campaign",
+    "Misinformation Intervention Strategies"
+  ],
+  "Key Research Thinking Patterns": [
+    "Empirical Testing of \nHypotheses: Formulates clear and testable predictions based on existing theory or observations and uses data to evaluate predictions (e.g., Babble Hypothesis and used 2SLS to test).",
+    "Controlling for \nConfounding Variables: Systematically accounts for individual traits and situational factors that could potentially obscure or distort relationships between variables and isolates their true relationship (e.g., Babble Hypothesis controls for intelligence, personality, role assignment, gender).",
+    "Replication and Extension: Systematically repeats a study’s procedure with new data to observe if prior findings occur while adding new elements to broaden understanding (e.g., Discusses replicated original findings and extended them by including more samples).",
+    "Reasoning and Motivation\nExploration: Demonstrates in-depth investigation to the “why” behind observed phenomena and participant’s thought processes, perceptions, and driving force (e.g., Open-ended survey questions to reveal specific motivations)."
+  ],
+  "Summary Description": "Shane Connelly is a prominent researcher in leadership, organizational behavior, and communication, with a notable focus on understanding complex social phenomena and their real-world implications. His work innovatively bridges traditional theories with modern challenges, such as leader emergence in group settings and public health issues like vaccine hesitancy. Connelly's research consistently features rigorous methodological approaches, including mixed-method designs and advanced statistical techniques to address issues like endogeneity. He emphasizes empirical testing of hypotheses, control for confounding variables, and the exploration of underlying motivations to provide data-driven insights into human judgment and behavior in dynamic social and organizational contexts."
+}

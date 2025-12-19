@@ -1,0 +1,54 @@
+{
+  "Researcher Profile:": "Dr. Greg Muller",
+  "Affiliation:": "Department of Mathematics, University of Oklahoma",
+  "Research Domains": [
+    "Algebraic Geometry",
+    "Commutative Algebra",
+    "Non-commutative Algebra",
+    "Representation Theory",
+    "Cluster Algebra",
+    "Differential Geometry",
+    "Topology",
+    "Combinatorics",
+    "Poisson Geometry",
+    "Azumaya Loci"
+  ],
+  "Techniques Used": [
+    "Homological Algebra",
+    "Category Theory",
+    "Polyhedral and Conical Geometry",
+    "CW Complex Decompositions",
+    "Poset Theory",
+    "Graph Theory",
+    "Manifolds with Corners",
+    "Local Analysis (Neighborhoods)",
+    "Quantization Theory",
+    "Valuation Theory",
+    "Mirror Symmetry",
+    "Inductive Proofs",
+    "Constructive Proofs",
+    "Scattering Diagrams and Theta Functions",
+    "Broken Line Analysis",
+    "Teichmuller Theory",
+    "Toric Geometry"
+  ],
+  "Data & Platforms": [
+    "N/A"
+  ],
+  "Application Areas": [
+    "Singularity Theory in Algebraic Geometry",
+    "Superunitary Regions",
+    "Integrable Systems",
+    "Mathematical Physics",
+    "Grassmanians",
+    "Quantum Cluster Algebra",
+    "Mirror Symmetry for Log Calabi-Yau Varieties"
+  ],
+  "Key Research Thinking Patterns": [
+    "Bridging Disparate Fields: Consistently connects algebraic structures with geometric, topological, and combinatorial concepts for deeper insights into complex mathematics (e.g., Toric variety singularities via endomorphism rings of conic modules).",
+    "Characterization and Classification: Commonly characterizes and classifies mathematical objects based on their inherent properties (e.g., singularities, special points, algebraic structures).",
+    "Categorical thinking: Frequently employs categorical concepts to establish correspondences and transfer properties between different mathematical domains (e.g., equivalences of categories, functorial relationships).",
+    "Connecting Algebraic Properties to Geometric Behavior: Focuses on specific algebraic properties and how it directly manifests as geometric features or behaviors with their associated varieties (e.g., showing singular point in cluster variety must be deep point)."
+  ],
+  "Summary Description": "Greg Muller is a leading researcher in algebraic geometry and non-commutative algebra, applying advanced theoretical and constructive techniques to diverse fields including commutative algebra, topology, and mathematical physics. His work is characterized by innovative contributions such as demonstrating that endomorphism rings of direct sums of conic modules provide non-commutative resolutions of Toric varieties , systematically studying and classifying \"deep points\" in cluster algebras , and proving that superunitary regions of finite type cluster algebras are homeomorphic to generalized associahedra. His research consistently features bridging disparate mathematical fields, characterizing and classifying complex structures, and connecting algebraic properties to geometric behaviors to deliver foundational insights into mathematical objects."
+}

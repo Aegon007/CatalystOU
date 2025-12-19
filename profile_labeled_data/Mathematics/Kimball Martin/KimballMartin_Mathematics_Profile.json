@@ -1,0 +1,71 @@
+{
+  "Researcher Profile:": "Dr. Kimball Martin",
+  "Affiliation:": "Department of Mathematics, University of Oklahoma",
+  "Research Domains": [
+    "Number Theory",
+    "Algebraic Number Theory",
+    "Algebraic Geometry",
+    "Representation Theory",
+    "Computational Algebra",
+    "Arithmetic Geometry",
+    "Elliptic Curves",
+    "Abelian Surfaces",
+    "Abelian Varieties",
+    "Moduli Theory",
+    "Complex Multiplication",
+    "L-Functions",
+    "Modular Forms",
+    "Automorphic Forms",
+    "Automorphic Representation",
+    "Quaternion Algebras"
+  ],
+  "Techniques Used": [
+    "Explicit Model Construction",
+    "Moduli Spaces",
+    "Birational Geometry",
+    "Mestre Conic/Cubic",
+    "Reduction of Quadratic Forms over Polynomial Rings",
+    "Minimisation Algorithms",
+    "Trace Formulas",
+    "Atkin-Lehner Theory",
+    "Class Number Relations",
+    "Dirichlet Convolution and Multiplicative Functions",
+    "Asymptotic Analysis",
+    "Numerical Computation/Visualization",
+    "CM Theory",
+    "Grössencharacters",
+    "Class Group Exponent Analysis",
+    "Generalized Riemann Hypothesis (GRH/ERH)",
+    "Quadratic Twists",
+    "Local Representation Theory (GL2)",
+    "Galois Group Computation",
+    "Modular Multiplicative Group Structure"
+  ],
+  "Data & Platforms": [
+    "Magma (Computational Algebra System)",
+    "SafeMath",
+    "GitHub",
+    "LMFDB",
+    "OSCAR Supercomputer (Brown University)",
+    "Center for Computation and Visualization (Brown University)",
+    "OU Supercomputing Center for Education and Research (OSCER)",
+    "Sutherland’s Murmuration Plots",
+    "Cremona's Elliptic Curve Database"
+  ],
+  "Application Areas": [
+    "Parameterization/Classification",
+    "Explicit Construction",
+    "Moduli Space Geometry",
+    "Modular Forms",
+    "Arithmetic Statistics",
+    "Number Field Theory",
+    "Computational Number Theory"
+  ],
+  "Key Research Thinking Patterns": [
+    "Explicit Construction and Computation: Derives specific formulas and develops computational algorithms to obtain concrete models for arithmetic objects and analyze complex cases numerically (e.g. derives explicit Atkin-Lehner trace formulas and co-develops conic minimization algorithms).",
+    "Connecting Diverse Mathematical Objects: Establishes explicit links between different mathematical structures like modular forms, number fields, varieties, and representations (e.g., relates CM form rationality fields to Grössencharacter value fields and links RM genus 2 curves to Hilbert modular surface points).",
+    "Leveraging Moduli Spaces: Employs moduli spaces as organizational tools to classify and parametrize families of objects with specific arithmetic properties (e.g., uses Hilbert modular surface models to parametrize RM genus 2 curves and analyze rationality obstructions).",
+    "Investigating Distributions, Biases, and Correlations: Analyzes the collective statistical behavior and properties of arithmetic invariants associated with families of objects using tools like trace formulas (e.g., calculates root number bias and explores murmuration's via Hecke/Atkin-Lehner traces)."
+  ],
+  "Summary Description": "Dr. Kimball Martin specializes in Number Theory, particularly focusing on modular forms and their intricate connections to Algebraic Geometry. His research delves into the arithmetic properties of modular forms, including rationality fields, root numbers, and Fourier coefficients. He investigates statistical behaviors like root number bias across different levels and the murmuration phenomenon correlating coefficients with root numbers. A significant part of his work involves deriving explicit formulas, often via trace formulas, and developing computational methods to construct generic models for algebraic varieties, notably genus 2 curves with real multiplication, frequently utilizing moduli spaces like Hilbert modular surfaces."
+}

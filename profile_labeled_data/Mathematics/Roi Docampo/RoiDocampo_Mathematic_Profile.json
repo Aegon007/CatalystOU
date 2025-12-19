@@ -1,0 +1,51 @@
+{
+  "Researcher Profile:": "Dr. Roi Docampo",
+  "Affiliation:": "Department of Mathematics, University of Oklahoma",
+  "Research Domains": [
+    "Algebraic Geometry",
+    "Commutative Algebra",
+    "Singularity Theory Birational Geometry",
+    "Combinatorics",
+    "Cluster Algebras",
+    "Linear Algebra",
+    "Representation Theory"
+  ],
+  "Techniques Used": [
+    "Sheaf Theory",
+    "Functor of Points / Representable Functors",
+    "Local Ring Analysis",
+    "Valuation Theory",
+    "Fitting Ideals and Invariants",
+    "Hasse-Schmidt Derivations",
+    "Artin-Rees Property Analysis",
+    "Power Series Ring Theory",
+    "Deformation Theory",
+    "Nash Blow-up Construction and Properties",
+    "Nash Transformation of Sheaves",
+    "Grassmannian Geometry",
+    "Matrix Operations",
+    "Linear Recurrence Relations Analysis",
+    "Duality Transformations",
+    "Combinatorial Bijections",
+    "Diagrammatic / Visual Proof Techniques",
+    "General Linear Projections",
+    "Base Change Arguments",
+    "Theorem Proving"
+  ],
+  "Data & Platforms": [
+    "N/A"
+  ],
+  "Application Areas": [
+    "Resolution of Singularities",
+    "Cluster Algebra Theory",
+    "Enumerative Combinatorics",
+    "Classification and understanding of singularities on algebraic varieties"
+  ],
+  "Key Research Thinking Patterns": [
+    "Generalization: Extending established concepts and results from specific or simpler settings (e.g., Noetherian rings, SL(k)-friezes, varieties) to more general contexts (e.g., arbitrary local rings, juggler's friezes, arc/jet schemes).",
+    "Structure Exploration & Characterization: Defining new mathematical objects or invariants (e.g., embedding codimension, juggler's friezes) and rigorously establishing their fundamental properties, equivalences, and relationships through theorems.",
+    "Unification via Different Perspectives: Demonstrating that a single concept or object can be understood and characterized through multiple viewpoints (e.g., characterizing friezes via determinants, linear recurrences, duality, and Grassmannians).",
+    "Functorial and Geometric Construction: Utilizing universal properties, functors (like arc/jet space functors), and geometric constructions (like blow-ups, Nash transformations, Grassmannians) to build and analyze mathematical structures."
+  ],
+  "Summary Description": "Dr. Roi Docampo specializes in Algebraic Geometry and Singularity Theory, focusing on the interplay between algebraic varieties, their singularities, and associated spaces like arc and jet schemes. His research investigates how geometric operations, such as Nash blow-ups, behave on jet schemes and analyzes the structure and finiteness properties of arc fibers induced by morphisms. He employs tools like sheaves of differentials and local ring invariants (embedding dimension/codimension) to explore the local structure of arc spaces, particularly near stable points and singularities. Additionally, his work generalizes combinatorial structures like SL(k)-friezes (termed juggler's friezes), connecting them to Grassmannians (positroid varieties), cluster algebras, and linear recurrences."
+}

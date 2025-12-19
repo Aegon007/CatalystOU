@@ -1,0 +1,64 @@
+{
+  "Researcher Profile:": "Dr. Adam Feltz",
+  "Affiliation:": "Department of Psychology, University of Oklahoma",
+  "Research Domains": [
+    "Decision Science",
+    "Cognitive Psychology",
+    "Risk Communication",
+    "Social Psychology",
+    "Educational Psychology",
+    "Conservation Biology",
+    "Public Policy",
+    "Environmental Psychology",
+    "Psychometrics"
+  ],
+  "Techniques Used": [
+    "Structural Equation Modeling",
+    "Dominance Analysis",
+    "Linear Regression Analysis",
+    "Psychometric Analysis",
+    "Extreme Group Analysis",
+    "Purposive Sampling",
+    "Multivariate Analysis of Variance",
+    "t-Tests",
+    "Correlation Analysis",
+    "Mediation Analysis",
+    "Correlation Analysis",
+    "Bootstrapping",
+    "Longitudinal Data Analysis",
+    "Confidence Interval Calculation",
+    "Exploratory Factor Analysis",
+    "Multiple Linear Regression",
+    "Construct Validity Testing"
+  ],
+  "Data & Platforms": [
+    "KnowledgePanel from GfK",
+    "Amazon Mechanical Turk",
+    "United States Department of Agriculture",
+    "USA 2020 Census Data",
+    "Animal Legal Defense Fund",
+    "Pew Research Center",
+    "Qualtrics",
+    "Self-collected data",
+    "CNN Health",
+    "Endangered Species Coalition",
+    "Defenders of Wildlife and Earthjustice",
+    "SONA System"
+  ],
+  "Application Areas": [
+    "Misinformation",
+    "Science Communication",
+    "Animal Welfare Advocacy",
+    "Education and Training",
+    "Environmental Policy",
+    "Conservation Advocacy",
+    "Natural Resource Management"
+  ],
+  "Key Research Thinking Patterns": [
+    "Comparative Analysis: Identify and contrast distinct groups to uncover differences in their attitudes and knowledge (e.g. comparing views on animal welfare between residents of how and low animal agriculture states).",
+    "Model-based Reasoning: Test integrated cognitive models to explain the underlying relationships between skills, beliefs, and judgments (e.g., using Skilled Decision Theory to model how numeracy and knowledge influence climate change beliefs)",
+    "Hypothesis Testing: Formulate and directly test specific, falsifiable claims about psychological processes (e.g., hypothesizing that more numerate people are less biased because they have stronger scientific reasoning skills)",
+    "Replication and Refinement: Systematically repeat and build upon their own studies to confirm initial findings and improve their measurements and models (e.g., using a second study to verify, cross-validate, and extend the findings from an initial study on science reporting)."
+  ],
+  "Summary Description": "Adam Feltz is a researcher in decision science and cognitive psychology, focusing on how skills like numeracy shape public judgment on complex issues like industrial animal welfare and climate change. His work bridges cognitive theory with contemporary challenges using rigorous quantitative methods, such as structural equation modeling and longitudinal synthesis, to test predictive models. Feltz explores underlying factors like knowledge and scientific reasoning to provide data-driven insights into how people navigate risk, misinformation, and controversial topics like the Endangered Species Act."
+}

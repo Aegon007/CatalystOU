@@ -1,0 +1,51 @@
+{
+  "Researcher Profile:": "Dr. Edward T. Cokely",
+  "Affiliation:": "Department of Psychology, University of Oklahoma",
+  "Research Domains": [
+    "Risk Perception",
+    "Decision Making",
+    "Emotions and Affect",
+    "Cognitive Biases",
+    "Risk Literacy",
+    "Ethics",
+    "Numeracy and Knowledge"
+  ],
+  "Techniques Used": [
+    "Case-Control Studies",
+    "Psychometric Instrument Validation",
+    "Principal Component Analysis (PCA)",
+    "Confirmatory Factor Analysis (CFA)",
+    "Structural Equation Modeling (SEM)",
+    "ANOVA (Analysis of Variance)",
+    "Pearson Correlations",
+    "Linear Regression Analysis",
+    "Multiple Regression Analysis",
+    "Bootstrapping",
+    "Cochran’s Q Test",
+    "Gilliam’s Autism Rating Scale (GARS)",
+    "Social Network Index (SNI)",
+    "Kaiser-Meyer-Olkin (KMO)",
+    "Barlett’s Test of Sphericity",
+    "Likert Scale"
+  ],
+  "Data & Platforms": [
+    "Public Datasets: https://osf.io/p6kha/?view_only=bb377b2e36ab4a9abbd83481942bf381, https://osf.io/p6kha/?view_only=bb377b2e36ab4a9abbd83481942bf381, https://osf.io/pyj9t/",
+    "Platforms: IBM SPSS statistics version 22.0, R statistical environment, PROCESS macro, G*Power calculator, Qualtrics, KnowledgePanel from GfK, Amazon Mechanical Turk,"
+  ],
+  "Application Areas": [
+    "Risk Communication and Perception",
+    "Decision Making",
+    "Public Health",
+    "Behavioral Economics",
+    "Nudge Theory",
+    "Risk Literacy",
+    "Cognitive Psychology"
+  ],
+  "Key Research Thinking Patterns": [
+    "Comparative Analysis: Systematically examines and contrasts effects, characteristics, or ethical implications of different variables or groups to determine relative merits and outcomes (e.g., default nudge vs. educational boosts).",
+    "Focus on “Knowledge is Power”: Heavily pushes that accurate, acquired knowledge is the primary driver for informed and less biased decision-making and judgement (e.g., numeracy leads to more accurate climate change knowledge).",
+    "Basic Cognitive Sciences into \nApplied Problems: Applies foundational psychological theories and cognitive science principles to understand and address real-world issues (e.g., using Skilled Decision Theory to explain knowledge influences in climate change).",
+    "Multifactorial Assessment: Employs comprehensive measurement strategies that consider and analyze multiple interacting factors simultaneously to gain a nuanced understanding of complex phenomena (e.g., investigating family quality of life in ASD by assessing multiple variables)."
+  ],
+  "Summary Description": "Edward T. Cokely is a leading researcher in risk perception and communication, decision making, and risk literacy. His work innovatively bridges basic cognitive science with applied problems, leveraging multifactorial assessments to understand complex phenomena. His research consistently features comparative analysis of interventions and influential factors, and a strong focus on the \"knowledge is power\" concept in risk literacy, offering data-driven insights into human judgment and behavior in high-stakes situations."
+}

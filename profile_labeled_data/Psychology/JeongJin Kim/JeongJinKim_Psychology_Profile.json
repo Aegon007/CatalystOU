@@ -1,0 +1,68 @@
+{
+  "Researcher Profile:": "Dr. JeongJin Kim",
+  "Affiliation:": "Department of Psychology, University of Oklahoma",
+  "Research Domains": [
+    "Affective Science",
+    "Applied Psychology",
+    "Behavioral Health",
+    "Behavioral Sciences",
+    "Emotion Regulation",
+    "Human Resource Management",
+    "Human-Computer Interaction",
+    "Industrial-Organizational Psychology",
+    "Occupational Health Psychology",
+    "Occupational Psychology",
+    "Psychometrics"
+  ],
+  "Techniques Used": [
+    "Bivariate Correlations",
+    "Bootstrapping",
+    "Confirmatory Factor Analysis",
+    "Convenience Sampling",
+    "Ecological Momentary Intervention",
+    "Experimental Design",
+    "Experience Sampling Method",
+    "Exploratory Factor Analysis",
+    "Grand-Mean Centering",
+    "Hierarchical Multiple Regression",
+    "Hierarchical Regression Analysis",
+    "Latent Change Score Modeling",
+    "Latent Variable Measurement Modeling",
+    "Moderated Mediation Analysis",
+    "Monte Carlo Method",
+    "Multilevel Confirmatory Factor Analysis",
+    "Multilevel Modeling",
+    "Multilevel Path Analysis",
+    "Online Survey",
+    "Person-Mean Centering",
+    "Previous-Day Outcome Variables",
+    "Scale Development Methodology",
+    "Scale Translation",
+    "Simple Slope Analysis",
+    "t-tests",
+    "Within-Person Micro-Randomized Trial"
+  ],
+  "Data & Platforms": [
+    "Amazon Mechanical Turk",
+    "Craigslist",
+    "IBM SPSS Statistics",
+    "Mplus 6.0",
+    "PROCESS macro for SPSS",
+    "PsycInfo",
+    "R software",
+    "Self-collected data"
+  ],
+  "Application Areas": [
+    "Human Resources and Management",
+    "Employee Well-Being and Performance",
+    "Career Counseling",
+    "AI Development and Education"
+  ],
+  "Key Research Thinking Patterns": [
+    "Within-Person Dynamics: Focuses on how variables change over time within a single individual, rather than comparing differences between people (e.g., used a 10-day study to model the reciprocal, daily influence between job boredom and counterproductive work behavior).",
+    "Moderated Mediation: Explains how an effect occurs via a mediator and when that indirect effect changes depending on a moderator (e.g. showed that overqualification leads to less helpful behavior via boredom, but this effect was buffered for those with a strong career calling).",
+    "Ecological Momentary Intervention: Delivers real-time interventions to participants in their natural envrionments to test causal effects (e.g. randomly sent employees real-time emotion regulation exercises during workday to prove exercises caused a reduction in negative effect).",
+    "Scale Development and Validation: Created and tested a set of questions to ensure it accurately measures the psychological construct in question (e.g. created and validated new 25-item scale to reliably measure six facets of worker attitudes toward AI)."
+  ],
+  "Summary Description": "JeongJin Kim is a researcher in organizational psychology and affective science with a notable focus on the within-person dynamics of employee emotions and their real-world impact. His work innovatively examines the daily fluctuations of states like job boredom and attitudes toward AI, connecting them to outcomes like burnout and counterproductive behaviors. Kim's research consistently features rigorous longitudinal methods, including daily diary studies and ecological momentary interventions, analyzed with advanced techniques like latent change score modeling. He emphasizes developing validated scales and empirically testing underlying affective mechanisms to provide data-driven insights into the modern workplace experience."
+}

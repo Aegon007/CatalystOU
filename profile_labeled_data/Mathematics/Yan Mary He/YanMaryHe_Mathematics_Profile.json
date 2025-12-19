@@ -1,0 +1,71 @@
+{
+  "Researcher Profile:": "Dr. Yan Mary He",
+  "Affiliation:": "Department of Mathematics, University of Oklahoma",
+  "Research Domains": [
+    "Complex Dynamics",
+    "Hyperbolic Geometry",
+    "Thermodynamic Formalism",
+    "Geometric Group Theory (including Kleinian/Fuchsian/Mapping Class Groups)",
+    "Low-Dimensional Topology",
+    "Differential Geometry (Metrics on Moduli/Parameter Spaces)",
+    "Teichmüller Theory (and Higher Teichmüller Theory)",
+    "Quasiconformal Mappings",
+    "Complex Analysis",
+    "Fractal Geometry"
+  ],
+  "Techniques Used": [
+    "Dynamical Systems & Analysis: Sullivan's Dictionary",
+    "Poincaré Series Analysis (classical, weighted, for rational maps)",
+    "Critical Exponent Analysis",
+    "Thermodynamic Formalism (Pressure functions, Equilibrium states, Transfer operators, Ruelle zeta function, Bowen-type theorems)",
+    "Spectral Gap Theory for Transfer Operators (including on Tower Spaces, handling non-uniform hyperbolicity)",
+    "Hausdorff Dimension Calculation & Analysis",
+    "Volume Dimension Analysis (for higher dimensions)",
+    "Asymptotic Analysis (Counting periodic orbits/geodesics, Correlation numbers)",
+    "Ikehara's Tauberian Theorem",
+    "Suspension Flows",
+    "Livsic Theorem",
+    "Holomorphic Motion",
+    "Przyticki Formula",
+    "Green's Function Analysis",
+    "Holomorphic Index Formula",
+    "Infinitesimal Marked Multiplier Rigidity Analysis",
+    "Tower Space Construction (for Misiurewicz maps)",
+    "Lasota-Yorke Estimates",
+    "Mating of Dynamical Systems",
+    "Geometric & Topological Techniques: Patterson-Sullivan Theory",
+    "Markovic's Minimal Decomposition Theory",
+    "Birman-Hilden Theory",
+    "Nielsen Realization Problem Analysis",
+    "Analysis of Group Actions on Surfaces (Fixed points, Symmetries)",
+    "Short Exact Sequences (Group Theory)",
+    "Fiber Bundle Homotopy Arguments",
+    "Braid Group Relations",
+    "Simultaneous Uniformization (Bers' theorem analogy)",
+    "Quasiconformal Surgery & Mappings",
+    "Conformal Welding",
+    "Beltrami Equation Solving (Measurable Riemann Mapping Theorem)",
+    "Metric Geometry & Analysis on Parameter Spaces: Pressure Metric Construction (including Hessian Form)",
+    "Path Metric Verification",
+    "McShane-Whitney Extension Theorem",
+    "Kato-Rellich Perturbation Theorem",
+    "Analysis of Zero Sets of Analytic Functions (Mityagin's Theorem)",
+    "Complex Parameter Extension for Analyticity Proofs"
+  ],
+  "Data & Platforms": [
+    "N/A"
+  ],
+  "Application Areas": [
+    "Theoretical Physics",
+    "Geometric Modeling",
+    "Dynamical Systems Theory Advancement",
+    "Rigidity Phenomena Analysis"
+  ],
+  "Key Research Thinking Patterns": [
+    "Analogical Reasoning: Transferring concepts and techniques between different mathematical fields using established analogies. (e.g. Utilizing Sullivan's dictionary to relate problems and methods between Kleinian groups/hyperbolic geometry and rational maps/complex dynamics).",
+    "Generalization: Extending established theories from simpler, more structured mathematical settings to encompass more complex or less uniform situations. (e.g., Applying thermodynamic formalism, originally developed for uniformly hyperbolic systems, to settings with non-uniform hyperbolicity like Misiurewicz or parabolic dynamics).",
+    "Connecting Dynamics and Geometry: Using tools and concepts from dynamical systems to define or analyze geometric structures, and conversely, applying geometric methods to understand dynamics. (e.g., Employing thermodynamic formalism, a dynamical tool, to construct and study geometric objects like pressure metrics on parameter spaces such as Teichmüller space or spaces of Blaschke products).",
+    "Rigorous Analysis of Irregularity/Non-uniformity: Developing and applying advanced analytical techniques to precisely handle mathematical systems that lack uniform expansion or exhibit complex limiting behaviors. (e.g. Using tower space constructions and spectral theory for adapted transfer operators to rigorously analyze dynamics involving critical points in the Julia set or parabolic points)."
+  ],
+  "Summary Description": "Dr. Yan Mary He specializes in Complex Dynamics, exploring its profound interplay with Hyperbolic Geometry, Geometric Group Theory, and Teichmüller Theory, often leveraging Sullivan's dictionary. Her research examines the dynamics and geometry of rational maps and polynomials, including Blaschke products, quasi-Blaschke products, and families exhibiting non-uniform hyperbolicity like Misiurewicz and parabolic types. She applies techniques from Thermodynamic Formalism, such as pressure functions, transfer operators, and spectral gap theory, to study Julia sets and define geometric structures like Pressure/Weil-Petersson metrics on moduli spaces. Significant contributions include simultaneous uniformization theorems, analyzing metric non-degeneracy, establishing the analyticity of dynamical invariants like Hausdorff dimension, exploring multiplier spectra correlations via Manhattan curves, and investigating the Nielsen realization problem for mapping class groups."
+}

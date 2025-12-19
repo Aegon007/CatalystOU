@@ -1,0 +1,61 @@
+{
+  "Researcher Profile:": "Dr. Adrienne R. Carter-Sowell",
+  "Affiliation:": "Department of Psychology, University of Oklahoma",
+  "Research Domains": [
+    "Social Psychology",
+    "Gender Studies",
+    "Higher Education Studies",
+    "Pain Research",
+    "Health Psychology",
+    "Social Neuroscience",
+    "Sociology",
+    "Education Research",
+    "Cross-Cultural Psychology",
+    "Behavioral Science",
+    "Political Psychology"
+  ],
+  "Techniques Used": [
+    "Survey Research",
+    "Experimental Design",
+    "Thematic Taxonomy Development",
+    "Case Study",
+    "t-tests",
+    "Chi-square tests",
+    "Mediation analysis",
+    "Econometrics",
+    "Quantitative Sensory Testing",
+    "Moderation Analysis",
+    "Johnson-Neyman Technique",
+    "Binary Logistic Regression",
+    "Analysis of Variance",
+    "Poisson Regression",
+    "Analysis of Covariance",
+    "Sensitivity Power Analysis"
+  ],
+  "Data & Platforms": [
+    "Self-collected data",
+    "Cyberball",
+    "SPSS v27",
+    "National Science Foundation",
+    "TxARM AGEP",
+    "G*Power software",
+    "Ostracism Online",
+    "SPSS v28"
+  ],
+  "Application Areas": [
+    "Diversity, Equity, and Inclusion Initiatives",
+    "Institutional Research",
+    "University Administration Policy",
+    "Clinical Pain Management",
+    "Public Policy",
+    "Intercultural Relationships",
+    "Conflict Prevention"
+  ],
+  "Key Research Thinking Patterns": [
+    "Systems Thinking: Views individual behavior as a product of interconnected systems where personal history and social environment interact (e.g., linking lifetime ostracism to pain sensitivity and campus safety to academic gender gaps).",
+    "Comparative Analysis: Uses comparisons between distinct groups to test how culture and identity shape psychological responses (e.g., comparing honor vs. dignity cultures' reactions to insults and liberals vs. conservatives' responses to exclusion).",
+    "Hypothesis Testing: Tests specific psychological pathways that explain \nhow and why an effect occurs using mediation and moderation (e.g., testing if anger explains the link between political exclusion and antisociality).",
+    "Causal Inference: Combines multiple methods to strengthen causal claims about real-world issues (e.g., using surveys, experiments, and university swipe-card data to confirm the impact of safety concerns on women in academia)."
+  ],
+  "Summary Description": "Adrienne R. Carter-Sowell is a prominent researcher in social psychology and higher education, with a notable focus on social exclusion, group dynamics, and their real-world consequences. Her work innovatively bridges social psychological theories with pressing challenges in DEI, political polarization, and health disparities. Carter-Sowell's research consistently features rigorous mixed-methods, combining experiments with large-scale archival data and advanced statistical techniques. She emphasizes comparative analysis and systems-thinking to provide data-driven insights into human behavior in dynamic academic and political contexts."
+}

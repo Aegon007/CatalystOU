@@ -6,6 +6,7 @@ import json
 import asyncio
 import PyPDF2
 import pdb
+import traceback
 
 from loguru import logger
 from pathlib import Path
@@ -17,13 +18,46 @@ from io import BytesIO # Import BytesIO to handle in-memory files
 # --- 配置区域 ---
 load_dotenv()
 CONCURRENT_LIMIT = 5  # 限制同时并发请求数
-LOG_FILE = "experiment.log"
+LOG_FILE = "profile_extraction.log"
 
 
 # 配置日志：同时输出到屏幕和文件
 logger.remove()
 logger.add(sys.stderr, level="INFO")
 logger.add(LOG_FILE, rotation="10 MB", level="DEBUG") # 文件记录更详细的 DEBUG 信息
+
+
+# --- 0. Helper Function ---
+def extract_response_text(response) -> str:
+    """
+    Safely extract all assistant output text from an OpenAI Responses API object.
+    """
+    texts = []
+    for item in response.output:
+        if item.type == "message":
+            for block in item.content:
+                if block.type == "output_text":
+                    texts.append(block.text)
+    return "\n".join(texts).strip()
+
+
+MODEL_CAPS = {
+    "gpt-5": {
+        "temperature": True,
+        "tools": True,
+    },
+    "gpt-5-mini": {
+        "temperature": True,
+        "tools": True,
+    },
+    "gpt-5-nano": {
+        "temperature": False,
+        "tools": False,
+    },
+    "gpt-4.1": {
+        "supports_temperature": True,
+    }
+}
 
 
 # --- 1. Client 初始化 ---
@@ -33,7 +67,7 @@ def get_client():
     if not api_key:
         logger.critical("API key not found!")
         sys.exit(1)
-    return AsyncOpenAI(api_key=api_key, base_url=api_url)
+    return AsyncOpenAI(api_key=api_key)
 
 client = get_client()
 
@@ -78,22 +112,33 @@ async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str
 
             Paper Text (first 50000 characters):
             ---
-            {paper_text[:50000]}
+            {paper_text[:200000]}
             ---
             """
 
             logger.info(f"Sending text from {pdf_path} to LLM for summarization...")
 
-            resp = await client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {"role": "system", "content": "You are a helpful research assistant that creates detailed summaries."},
-                    {"role": "user", "content": prompt},
+            params = {
+                "model": model_name,
+                "input": [
+                    {
+                        "role": "system",
+                        "content": "You are a helpful research assistant that creates detailed summaries."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
                 ],
-                temperature=0.2,
-                timeout=1200.0, # 20-minute timeout
-            )
-            summary = resp.choices[0].message.content
+                "max_output_tokens": 10240
+            }
+            
+            if MODEL_CAPS[model_name]["temperature"]:
+                params["temperature"] = 0.3
+            
+            resp = await client.responses.create(**params)
+            summary = extract_response_text(resp)
+
             logger.info(f"Successfully generated detailed summary for {pdf_path}.")
             return summary
         except Exception as e:
@@ -139,16 +184,28 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
     """
 
     try:
-        logger.info("\nSending summaries to LLM for final profile synthesis...")
-        resp = await client.chat.completions.create(
-            model=model_name,
-            messages=[
-                {"role": "system", "content": f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'."},
-                {"role": "user", "content": prompt},
+        logger.info("Sending summaries to LLM for final profile synthesis...")
+        
+        params = {
+            "model": model_name,
+            "input": [
+                {
+                    "role": "system",
+                    "content": f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
             ],
-            temperature=0.3,
-        )
-        response_content = resp.choices[0].message.content.replace("[END OF ACTUAL JSON OUTPUT]", "").strip()
+            "max_output_tokens": 10240
+        }
+
+        if MODEL_CAPS[model_name]["temperature"]:
+            params["temperature"] = 0.3
+            
+        resp = await client.responses.create(**params)
+        response_content = extract_response_text(resp)
 
         if response_content.startswith("```json"):
             response_content = response_content[7:-3].strip()
@@ -376,11 +433,11 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
 
     author_name = author_dir.name
     department_name = author_dir.parent.name
-    save_dir = os.path.join(out_dir, department_name)
+    save_dir = os.path.join(out_dir, model_name, department_name)
     os.makedirs(save_dir, exist_ok=True)
 
-    save_path = os.path.join(out_dir, department_name, f"{author_name.replace(' ', '_')}_profile.json")
-    pdb.set_trace()
+    save_path = os.path.join(save_dir, f"{author_name.replace(' ', '_')}_profile.json")
+
     # if existing profile exists, skip processing
     if os.path.exists(save_path):
         logger.warning(f"Profile for {author_name} already exists at {save_path}. Skipping...")
@@ -394,7 +451,7 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
 
     # Step 1: Extract text from all PDFs (in parallel), using asyncio.to_thread to prevent blocking
     text_extraction_tasks = []
-    for fpath in enumerate(uploaded_files):
+    for i, fpath in enumerate(uploaded_files):
         logger.info(f"Extracting text from file {fpath}...")
         text_extraction_tasks.append(asyncio.to_thread(extract_text_from_pdf, fpath))
     
@@ -403,9 +460,9 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
     # Step 2: Summarize papers in parallel
     logger.info("AI is summarizing publications...")
     summarization_tasks = []
-    for text in enumerate(extracted_texts):
+    for i, one_text in enumerate(extracted_texts):
         file_name = uploaded_files[i]
-        summarization_tasks.append(summarize_single_paper(text, file_name, model_name, semaphore))
+        summarization_tasks.append(summarize_single_paper(one_text, file_name, model_name, semaphore))
     
     detailed_summaries = await asyncio.gather(*summarization_tasks)
     valid_summaries = [s for s in detailed_summaries if s]
@@ -414,7 +471,7 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
     if valid_summaries:
         logger.info("AI is synthesizing the final profile...")
         final_profile = await synthesize_profile(
-            researcher_name,
+            author_name,
             valid_summaries,
             example_summaries_for_prompt,
             example_json_for_prompt,
@@ -424,9 +481,9 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
         if final_profile:
             with open(save_path, 'w') as f:
                 json.dump(final_profile, f, indent=4)
-            logger.info(f"Successfully saved profile for {researcher_name} at {save_path}.")
+            logger.info(f"Successfully saved profile for {author_name} at {save_path}.")
     else:
-        logger.error(label="Failed to summarize publications.", state="error")
+        logger.error(label="Failed to summarize publications because there is no valid summaries", state="error")
 
 
 async def main(opts) -> None:
@@ -459,7 +516,7 @@ def parseOpts(argv):
     parser = argparse.ArgumentParser(description="Researcher Profile Extractor")
     parser.add_argument('-p', '--pdf_directory', type=str, required=True, help='Directory containing researcher PDF files')
     parser.add_argument('-o', '--output', type=str, default='.', help='Output directory for the researcher profile JSON')
-    parser.add_argument('-m', '--model_name', type=str, default='qwen3/gpt-oss/gemma3/llama3-sdsc', help='OpenAI model name to use')
+    parser.add_argument('-m', '--model_name', type=str, default='gpt-5-nano', help='Available model: qwen3/gpt-oss/gemma3/gpt-5/gpt-5-mini/gpt-5-nano')
     opts = parser.parse_args(argv)
     return opts
 
@@ -469,4 +526,4 @@ if __name__ == "__main__":
     try:
         asyncio.run(main(opts))
     except Exception as e:
-        logger.error("An error occurred during execution:", e)
+        logger.error(f"An error occurred during execution:\n{traceback.format_exc()}")

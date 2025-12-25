@@ -9,10 +9,8 @@ def compute_f1(tp, fp, fn):
     f1 = 2 * prec * rec / (prec + rec) if (prec + rec) > 0 else 0.0
     return prec, rec, f1
 
-def compute_profile_aggregate_metrics(
-    all_results: List[Dict[str, Any]], 
-    bootstrap_samples: int = 1000
-) -> Dict[str, Any]:
+
+def compute_profile_aggregate_metrics(all_results: List[Dict[str, Any]], bootstrap_samples: int = 1000) -> Dict[str, Any]:
     """
     Aggregates results across multiple researchers.
     

@@ -1,0 +1,52 @@
+{
+    "Researcher Profile:": "Dr. Wei Qin",
+    "Affiliation:": "School of Biological Sciences, Institute for Environmental Genomics, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Ammonia-oxidizing archaea (AOA) ecology and evolution",
+        "Taxonomy, phylogenomics, and pan-genomics of archaeal lineages (e.g., Nitrosomirales)",
+        "Marine and terrestrial nitrogen cycling and nitrogen metabolism",
+        "Environmental genomics and biogeography of Archaea",
+        "Horizontal gene transfer and metabolic gene content across AOA",
+        "Energy conservation and copper homeostasis in archaea",
+        "Subsurface and geothermal microbiology in the context of AOA and nitrate cycling"
+    ],
+    "Techniques Used": [
+        "Phylogenomics with 70 conserved single-copy marker genes; IQ-TREE with UL3 (three-matrix) model and 1000 ultrafast bootstrap; supplementary analyses with LG+F+R9",
+        "Genome-scale taxonomy: ANI (pyani), AAI (EzAAI), and GTDB-Tk for taxonomic placement confirmation",
+        "Orthology and pan-genome analyses via OrthoFinder; core/pan-genome delineation; annotations against arCOGs, Nr, KEGG; visualization with Anvi\u2019o",
+        "Gene- and genome-level phylogenies for key functional markers (e.g., amoA, atpA, atpC, nirK, ureC) using IQ-TREE; alignments with MAFFT; trimming with Gblocks",
+        "Functional annotation against Nr, KEGG, arCOGs; CAZy and TCDB for transporters and enzymes; identification of enriched orthogroups (Nitrosomirales-enriched OGs)",
+        "Assessment of energy-conserving machinery and ammonia-oxidation components (AMO subunits); carbon fixation pathways (3-HP/4-HB cycle); copper homeostasis genes",
+        "Investigation of HGT events introducing formate oxidation and nitrate reduction pathways (FdhA, NarG, etc.); analysis of ATPase operons (A-type and V-type)",
+        "Data deposition and reproducibility: genomes in NCBI/JGI; supplementary datasets and figures documenting pipelines"
+    ],
+    "Data & Platforms": [
+        "Genomes: 161 genomes in total (134 AOA genomes including 23 Nitrosomirales MAGs/SAGs; plus 27 non-ammonia-oxidizing Thaumarchaeota genomes as outgroups)",
+        "Global distribution and environmental data: subsurface terrestrial environments, groundwater, geothermal habitats, marine environments; GTDB and NCBI/JGI repositories",
+        "Software and workflows: Trimmomatic; MEGAHIT; MetaBAT; GeneMarkS; CheckM; DIAMOND; MAFFT; Gblocks; IQ-TREE; OrthoFinder; EzAAI; pyANI; Anvi\u2019o; GTDB-Tk; arCOGs; KEGG; CAZy; TCDB",
+        "Platforms and languages: Linux-based bioinformatics pipelines; Python and R for data processing and visualization",
+        "Accessibility: accession numbers and supplementary materials provided in associated publications"
+    ],
+    "Application Areas": [
+        "Microbial ecology and evolution of ammonia-oxidizing archaea",
+        "Biogeography and environmental genomics of Nitrosomirales and other AOA lineages",
+        "Global nitrogen cycling and energy metabolism in marine and terrestrial ecosystems",
+        "Subsurface, geothermal, and sponge-associated microbiomes",
+        "Horizontal gene transfer as a driver of metabolic versatility in archaea",
+        "Taxonomic framework refinement for Nitrososphaeria and related AOA lineages"
+    ],
+    "Key Research Thinking Patterns": [
+        "Taxonomic delimitation and phylogenomic placement to redefine broad archaeal lineages and their ecological breadth",
+        "Pan-genome openness and gene-content analyses to reveal adaptive potential and habitat-driven diversification",
+        "Investigation of horizontal gene transfer as a major mechanism shaping metabolism (e.g., formate oxidation, urease, nitrite reduction, copper homeostasis)",
+        "Integration of multi-omics and ecological distribution to illuminate nitrogen cycling across marine-terrestrial boundaries"
+    ],
+    "Summary Description": "Wei Qin is a leading figure in environmental genomics and microbial ecology, focusing on ammonia-oxidizing archaea (AOA) and the evolution, metabolism, and ecological distribution of major AOA lineages such as Ca. Nitrosomirales. His work combines rigorous phylogenomics, pan-genomics, and gene-content analyses to refine archaeal taxonomy, elucidate metabolic capabilities (including formate utilization, nitrate reduction, copper homeostasis, and AMO machinery), and map global biogeography across marine and terrestrial habitats. Through integrating horizontal gene transfer events with ecological distributions, his research advances our understanding of the nitrogen cycle and the evolutionary history of archaeal ammonia oxidation across diverse environments.",
+    "Representative Highlights": [
+        "Identification and robust phylogenomic placement of Ca. Nitrosomirales as a distinct order within Nitrososphaeria, with substructure including potential family Nitrosomiraceae and genus Nitrosomirus; comprehensive pan-genome analyses reveal openness and lineage-specific enrichment",
+        "Genomic and metabolic characterizations uncover unique features in Nitrosomirales, including formate oxidation potential (e.g., FdhA) and nitrate reduction pathways (NarG/NarH/NarI/NarJ clusters), alongside copper homeostasis adaptations (CopD, small copper proteins)",
+        "Evidence for extensive horizontal gene transfer shaping ammonia-oxidation metabolism and associated pathways, indicating ecological flexibility across marine, subsurface, and geothermal environments",
+        "Integration of 16S rRNA, amoA, and other marker genes with genome-scale data to map global distribution and ecological breadth of Nitrosomirales and related AOA across biogeographic contexts",
+        "Cross-environmental insights supporting a nuanced view of AOA evolution, where environmental transitions between marine and terrestrial contexts have occurred multiple times across major AOA lineages"
+    ]
+}

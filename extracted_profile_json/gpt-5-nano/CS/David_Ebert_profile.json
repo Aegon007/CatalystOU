@@ -1,0 +1,83 @@
+{
+    "Researcher Profile:": "Dr. David Ebert",
+    "Affiliation:": "Data Institute for Societal Challenges, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Visual Analytics",
+        "Data Visualization and Interactive Visualization",
+        "Explainable AI and Trustworthy ML Visualization",
+        "Crisis and Public Health Visualization",
+        "Misinformation Analytics and Social Media Visualization",
+        "Biomedical Imaging and Radiomics Visualization",
+        "Interoperability and Standards for Visual Analytics",
+        "Human\u2013Computer Interaction in Data-Driven Decision Support",
+        "Interdisciplinary Data-Driven Decision Support for Societal Challenges"
+    ],
+    "Techniques Used": [
+        "RampVis: visualization capability framework for large-scale emergency responses",
+        "Ontological framework for visual analytics (design and evaluation of VAS in complex domains)",
+        "DashSpace: live collaborative immersive analytics platform",
+        "Four-level visualization tasks for crisis-driven visualization workflows",
+        "Uncertainty analysis, ensemble visualization, and model explainability in visualization",
+        "Explainable/Trustworthy ML visualization to increase transparency in pandemic analytics",
+        "Emerging-technology\u2013integrated visualization; harmonizing visualization with AI/ML and edge/distributed computing (C6 concepts)",
+        "Agent-based flexible data transformation for heterogeneous data integration",
+        "Data-visualization service rapid development for emergency response",
+        "Federated Learning Unlearning (FUL) concepts and Unlearning as a Service (UaaS-SFL) in FL systems",
+        "RoBERTa-based regression with 13 NLP dimensions for trustworthiness scoring (TRUExT)",
+        "Multimodal ML architectures and DRL/MARL approaches in networked/edge contexts (as context for visualization-driven decision support)"
+    ],
+    "Data & Platforms": [
+        "Code ecosystems and data platforms referenced: CODEX (COVID-19 Data Exchange Platform), NUM RDP (Network University Medicine Research Data Platform), FDPG (German Portal for Medical Research Data)",
+        "Datasets across papers: 50,092 English-language news articles (TRUExT); WELFake subset for validation; 50 AIS patient data; 370 geo-tagged tweets from SMART 2.0 case study; SEM image dataset from 14 unconventional plays with 3,000 crops",
+        "Software and libraries: Python, PyTorch, TensorFlow, Keras; ITK-SNAP for segmentation; RoBERTa/BERT/DistilBERT family for NLP/ML experiments; Transformer-based frameworks (Hugging Face)",
+        "Platforms and hardware mentioned: Google Colab Pro GPU; AWS (SageMaker) in related privacy-focused studies; SEM instrumentation (FEI Helios Nanolab 650 DualBeam) for imaging",
+        "Data types: real-world health data and epidemiological inputs; surveillance/social media data; radiological and clinical data; SEM microstructure images"
+    ],
+    "Application Areas": [
+        "Pandemic preparedness and emergency response visualization",
+        "Trustworthiness and misinformation assessment in news and social media",
+        "Biomedical imaging analytics and stroke outcome prognostics",
+        "Real-time social media surveillance for crisis/event tracking",
+        "Subsurface rock mechanics estimation from SEM imagery for energy exploration",
+        "Cross-institution data infrastructures and interoperable visualization ecosystems"
+    ],
+    "Key Research Thinking Patterns": [
+        "Interdisciplinary integration: bridging visualization science with health, security, and geoscience domains to support rapid, informed decisions",
+        "Visualization as a core capability: embedding visualization into data infrastructures and workflows to empower stakeholders",
+        "Stakeholder-centric design and rapid evaluation: engaging diverse users early and employing rapid, instance-based evaluation methods",
+        "Explainability and trust: combining ML/AI with visualization to make model decisions transparent to non-experts",
+        "Scalability and standards: advocating standardized data representations and interoperable architectures for cross-institution collaboration",
+        "Human-in-the-loop learning and adaptation: leveraging expert feedback to iteratively improve models and visual analytics systems"
+    ],
+    "Summary Description": "Dr. David Ebert is a multidisciplinary scholar whose work centers on visual analytics and data-driven decision support across health, information integrity, crisis response, and energy geoscience contexts. He contributes to the design and evaluation of visualization-centric infrastructures and AI-assisted analytics that enable rapid, trustworthy insights in dynamic, multi-stakeholder environments. His research emphasizes integrating visualization with emerging AI/ML techniques, collaborative platforms, and interoperable data ecosystems to advance preparedness, situational awareness, and evidence-based decision making in complex societal challenges.",
+    "Representative Publications": [
+        {
+            "Title": "Preparedness for visualization in the next pandemic",
+            "Contributions": " articulates a systemic view of visualization for pandemic preparedness, outlines infrastructure and workflow challenges (C1\u2013C6), discusses platforms (CODEX, NUM RDP, FDPG), and promotes visualization as a first-class citizen in emergency response; highlights RampVis, ontological visual analytics framework, and DashSpace as foundational components."
+        },
+        {
+            "Title": "TRUExT: Trustworthiness Regressor Unified Explainable Tool",
+            "Contributions": "proposes an explainable regression tool that integrates 13 communication-based NLP dimensions with a RoBERTa base to output a 0\u2013100 trustworthiness score for news articles; demonstrates superiority of RoBERTa over BERT/DistilBERT across centralized and distributed settings; provides explainability factors for the score."
+        },
+        {
+            "Title": "Development of Composite Clinical-Radiological Tool to Predict Functional Outcomes after Ischemic Stroke Treatment",
+            "Contributions": "develops a composite tool combining radiomic markers (CIV relative to AP/PA regions) with clinical features to predict discharge mRS; employs LOCO cross-validation with SVM, LR, RF, XGBoost, and feature engineering (FS1/FS2); demonstrates strong AUC performance and highlights potential for reducing inter-rater variability in AIS prognosis."
+        },
+        {
+            "Title": "SMART 2.0: Social Media Analytics and Reporting Tool Applied to Misinformation Tracking",
+            "Contributions": "updates a real-time misinformation analytics platform with ML-driven misinfo detection, geo-spatial visualization, multilingual support, and human-in-the-loop feedback; demonstrates iterative accuracy improvements and case-study insights from the 2024 UK riots; emphasizes visualization-driven situational awareness and cross-platform data integration."
+        },
+        {
+            "Title": "An image-based data-driven approach to estimate rock mechanical properties from SEM images",
+            "Contributions": "links SEM texture and pore geometry (notably pore aspect ratio) to Young\u2019s modulus using regression models; compares feature sets with and without deep learning features; finds texture plus pore shape features best predict modulus, highlighting the limited added value of DL features given small sample sizes and dataset constraints."
+        }
+    ],
+    "Collaborations & Affiliations": [
+        "University of Oklahoma, Norman, OK, USA",
+        "Data Institute for Societal Challenges, University of Oklahoma",
+        "Interdisciplinary teams spanning visualization, health informatics, social media analytics, and geoscience domains"
+    ],
+    "Contact:": {
+        "Email": "ebert@ou.edu"
+    }
+}

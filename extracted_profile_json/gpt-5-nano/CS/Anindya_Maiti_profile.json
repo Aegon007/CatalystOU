@@ -1,0 +1,51 @@
+{
+    "Researcher Profile:": "Dr. Anindya Maiti",
+    "Affiliation:": "University of Oklahoma",
+    "Research Domains": [
+        "Dataset Curation and Longitudinal Data",
+        "AI Safety, Robustness, and Reliability in Generative AI",
+        "Data Provenance, FAIR Data Practices and Governance",
+        "Human-AI Interaction and Iterative Prompting",
+        "Cross-disciplinary Data Ethics and Governance",
+        "Information Retrieval, Metadata Matching, and Data Integration",
+        "Data-centric Empirical Research Methodologies"
+    ],
+    "Techniques Used": [
+        "Longitudinal data collection and analysis (e.g., MagnetDB)",
+        "BitTorrent DHT crawling and filename-based metadata extraction",
+        "IMDb augmentation using Elasticsearch BM25 ranking with a 2-sigma threshold",
+        "Relational and vector data storage (SQLite, CSV, vector databases for RAG)",
+        "Retrieval Augmented Generation (RAG); Self-Refinement; Supervised Fine-Tuning; Ensemble",
+        "Prompt-based evaluation of LLMs; large-scale prompt datasets (Python/JS)",
+        "Code quality benchmarking (HumanEval) for assessing mitigation impact",
+        "Iterative human-driven prompt refinement in image-generation tasks (ISMs: PS, CLIP; ImageHash)",
+        "Intraclass Correlation Coefficient (ICC); REML-based mixed-effects models; AR(1) residuals",
+        "Dataset Value Taxonomy (DVT) framework and Incremental Uplift Ratio (IUR)",
+        "Ethical governance, licensing, and responsible data sharing practices"
+    ],
+    "Data & Platforms": [
+        "MagnetDB torrent metadata and IMDb-mapped dataset",
+        "BitTorrent DHT crawler magnetico; Bindlish-tom parsing",
+        "Elasticsearch-based IMDb matching; BM25 ranking",
+        "SQLite database; CSV extracts; OSF repository; Academic Torrents",
+        "Prompt/LLM datasets for Python and JavaScript; Llama-2 70B prompts; GPT-4 family",
+        "Hugging Face Transformers; GPTQ quantization; Retrieval-Augmented Generation",
+        "Image generation experiments with Stable Diffusion 3.0; CLIP/PS metrics",
+        "Code quality evaluation via HumanEval benchmarks; Zenodo and GitHub artifacts"
+    ],
+    "Application Areas": [
+        "Data-centric empirical research and dataset governance",
+        "AI safety in code generation and software engineering",
+        "Multimodal AI evaluation and human-in-the-loop workflows",
+        "Quality and reproducibility in AI-assisted research",
+        "Policy, ethics, and governance of AI data assets"
+    ],
+    "Key Research Thinking Patterns": [
+        "Data-centric valuation of datasets over raw volume",
+        "Cross-domain calibrations and field-specific norms for data valuation",
+        "Reproducibility, openness, and FAIR data governance",
+        "Human-in-the-loop approaches to alignment and evaluation",
+        "Comprehensive mitigation strategies for AI systems (RAG, self-refinement, fine-tuning, ensembles)"
+    ],
+    "Summary Description": "Dr. Anindya Maiti's research spans building and analyzing large-scale, reproducible datasets (e.g., MagnetDB) to enable empirical analyses of distribution and dynamics, advancing AI safety and reliability in code generation through systematic studies of package hallucinations and mitigations, and developing governance-oriented frameworks for dataset valuation and stewardship (Dataset Value Taxonomy). His work emphasizes data-centric methodologies, cross-disciplinary applicability, reproducibility, and ethical data sharing while bridging AI, data science, and policy."
+}

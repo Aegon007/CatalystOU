@@ -1,0 +1,67 @@
+{
+    "Researcher Profile:": "Dr. Miroslav Kram\u00e1r",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Topological data analysis (TDA) and persistent homology in physical and engineering systems",
+        "Computational topology and its application to granular matter and force networks",
+        "Dynamical systems theory with topological invariants (Conley index, Morse decompositions)",
+        "Data-driven mathematics and machine learning integration with topology (ML-assisted discretization of phase space)",
+        "Granular physics, stick-slip dynamics, and force-network analysis",
+        "Multiscale statistics and phase-space representations for complex systems"
+    ],
+    "Techniques Used": [
+        "Persistent homology (PH) and persistence diagrams (PD0, PD1) for force-network analysis",
+        "Wasserstein and bottleneck distances between PDs (W2\u03b20, W2\u03b21, L\u221e) to quantify topology changes",
+        "Differential force networks (DFN) and force-network analysis (CN, FN) in granular systems",
+        "Discrete Element Method (DEM) simulations for granular dynamics (2D disks)",
+        "Topological data analysis workflows integrated with experimental data (PH-based precursors to slip)",
+        "Conley index theory and Morse decompositions for global dynamical structure",
+        "Machine-Learned Cubical Decomposition (MLCD) for discretizing phase space compatible with cubical homology",
+        "Cubical complexes and pyCHomP-based computations for Conley indices",
+        "GUDHI for persistent homology computations; SHAPELY for geometric contact detection in polygonal systems",
+        "Transfer learning and CNN-based force reconstruction (from synthetic to experimental data)"
+    ],
+    "Data & Platforms": [
+        "2D granular DEM simulations (disks) with force-network and PH analyses",
+        "Experimental force-network data and photoelastic measurements in granular experiments",
+        "PH computations using GUDHI; cubical/homology computations via pyCHomP",
+        "MLCD framework implemented with Python-based ML libraries (TensorFlow/PyTorch)",
+        "Code and data resources referenced in the MLCD framework for reproducibility"
+    ],
+    "Application Areas": [
+        "Intermittent dynamics and slip forecasting in granular systems",
+        "Topology-informed analysis of force networks in experimental and simulated granular media",
+        "Data-driven dynamical systems analysis and phase-space discretization",
+        "Multiscale modeling of complex systems where global averages fail to predict critical events"
+    ],
+    "Key Research Thinking Patterns": [
+        "Disentangling global (system-wide) versus local/mesoscale descriptors to identify precursors of critical transitions",
+        "Leveraging robust, noise-tolerant topological features (PH) to extract meaningful structure from both simulations and experiments",
+        "Pursuing scalable discretizations (MLCD) that enable topological invariants (Conley indices) in higher-dimensional systems",
+        "Integrating machine learning with rigorous mathematical theory to translate trajectory data into topological summaries",
+        "Demonstrating cross-domain generalization (e.g., disks vs. pentagons; varying dimensions) and emphasizing interpretability of topological metrics"
+    ],
+    "Summary Description": "Dr. Miroslav Kram\u00e1r specializes in the interface between mathematics and physics, with a focus on computational topology, persistent homology, and dynamical systems applied to granular matter and complex networks. His work advances topological methods to analyze force networks, stick-slip phenomena, and global dynamical structure, while integrating data-driven approaches (e.g., MLCD) to discretize phase space and compute Conley indices. This combination enables robust, scalable analyses that extract meaningful global insights from high-dimensional, noisy data and experimental measurements, with demonstrated applicability across disk and polygon granular systems and beyond.",
+    "Representative Publications": [
+        {
+            "Title": "On intermittency in sheared granular systems",
+            "Context": "Introduces local/mesoscale PH-based measures and differential force networks to signal impending slips in 2D granular systems; contrasts global vs local indicators for slip forecasting."
+        },
+        {
+            "Title": "Machine learning approach to force reconstruction in photoelastic materials",
+            "Context": "Combines CNN-based force reconstruction with transfer learning to infer inter-particle forces from photoelastic patterns; demonstrates cross-size transferability and efficiency improvements over traditional methods."
+        },
+        {
+            "Title": "Evolution of force networks during stick-slip motion of an intruder in a granular material: Topological measures extracted from experimental data",
+            "Context": "Applies persistent homology to experimental force networks (disks and pentagons) to identify slip precursors and characterize topology-driven evolution during stick-slip cycles."
+        },
+        {
+            "Title": "Intruder in a two-dimensional granular system: statics and dynamics of force networks in an experimental system experiencing stick-slip dynamics",
+            "Context": "Examines G2-derived force networks and PH-based metrics to reveal stick-slip precursors and network evolution, highlighting differences between disk and pentagon packings."
+        },
+        {
+            "Title": "Machine-Learned Cubical Decomposition (MLCD) for Conley indices",
+            "Context": "Introduces a data-driven cubical decomposition approach to approximate attractors and Conley indices with substantially fewer cells than regular grids, enabling higher-dimensional analysis and providing a scalable pipeline for dynamical systems in data."
+        }
+    ]
+}

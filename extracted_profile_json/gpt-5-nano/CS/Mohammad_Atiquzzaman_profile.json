@@ -1,0 +1,60 @@
+{
+    "Researcher Profile:": "Dr. Mohammad Atiquzzaman",
+    "Affiliation:": "School of Computer Science, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Federated Learning (FL)",
+        "Machine Learning Security and Privacy",
+        "6G Networks, Edge Computing and IoT",
+        "UAV/UGV Communications and RIS-enabled Networking",
+        "Energy-Efficient Wireless Communications",
+        "Disaster Response and Smart City Applications",
+        "Unlearning in AI / Post-Compromise ML Mitigation",
+        "Digital Twin (DT) in ML Security"
+    ],
+    "Techniques Used": [
+        "Federated Unlearning (FUL) / Unlearning as a Service (UaaS-SFL)",
+        "Unlearning at the client level via gradient ascent with L1 regularization",
+        "Median aggregation for robust initial model construction",
+        "Early stopping with Expected Calibration Error (ECE) to prevent over-unlearning",
+        "DT-FU: Digital Twin-driven federated unlearning for vehicular networks",
+        "DIRECT: a centralized-training, decentralized-execution MARL framework for UAV trajectory and RIS control",
+        "MADDPG / MAPPO-style multi-agent reinforcement learning (MARL)",
+        "Game theory-based offloading and Nash Equilibrium (NE) / potential games",
+        "NOMA with SIC for uplink data transmission in RIS-assisted networks",
+        "RIS (Reconfigurable Intelligent Surfaces) and RIS ON/OFF energy-saving strategies",
+        "Wireless Energy Transfer (WET) and energy-harvesting models",
+        "GA for UGV patrol routing and DE for RIS phase-shift optimization",
+        "Proximal Policy Optimization (PPO) / MAPPO for UAV trajectory and energy management",
+        "GA-based UGV routing combined with UAV-assisted data relaying",
+        "Adversarial Threat Simulation Tools (Adversarial Robustness Toolbox) for backdoor data",
+        "\u03b3-AdvNoise privacy guarantees for privacy-utility trade-offs",
+        "Rician fading channel models for HAP/UAV/UGV links",
+        "Non-Orthogonal Multiple Access (NOMA) with SIC at receivers",
+        "Digital Twins for monitoring client behavior in FL security"
+    ],
+    "Data & Platforms": [
+        "Public Datasets: MNIST, Fashion-MNIST, CIFAR-10, Pins Face Recognition",
+        "Models: LeNet-5 (MNIST/Fashion-MNIST), VGG-11 (CIFAR-10), AlexNet (perturbation workflow)",
+        "Platforms/Libraries: Python, PyTorch, TensorFlow",
+        "Cloud/Compute: AWS SageMaker (Paper2, Paper3), RACE (RMIT AWS Cloud), 6G-enabled simulation environments",
+        "Hardware/Systems: High-Altitude Platform (HAP) with solar energy, UAVs with RIS, Ground Devices (GDs/UGVs/UGVs), RIS phase-shift configurations",
+        "Applications: Edge computing for disaster response, vehicular networks, smart-city surveillance",
+        "Tooling for threat simulation: Adversarial Robustness Toolbox"
+    ],
+    "Application Areas": [
+        "Security and resilience of Federated Learning in 6G-enabled vehicular networks",
+        "Privacy-preserving ML in distributed surveillance and smart-city settings",
+        "Disaster response and energy-efficient communications using UAV-mounted RIS and HAP edge computing",
+        "Real-time urban monitoring with UAV-UGV-RIS coordination and energy management",
+        "Post-compromise mitigation in IoT/edge ML via unlearning services",
+        "Secure IoT deployments with DT-enabled monitoring and autonomous defense mechanisms"
+    ],
+    "Key Research Thinking Patterns": [
+        "Adversarial Modeling and Post-Compromise Mitigation: designing defenses against data poisoning, backdoors, and compromised clients in FL via unlearning and detection in DT-enabled systems",
+        "Integration Across Disciplines: combining federated learning, MARL, game theory, RIS-enabled communications, and energy-aware optimization for end-to-end system improvements in 6G contexts",
+        "Scalability and Practicality: robust methods that work across varying client counts, malicious fractions, and large-scale IoT/edge deployments with attention to computational efficiency",
+        "Privacy-Utility Trade-offs: formal privacy guarantees (\u03b3-AdvNoise) and calibration-aware unlearning (ECE) to balance privacy and model utility",
+        "Comparative Evaluation and Benchmarking: rigorous use of baselines (Retrain, FedAvg, FedEraser, FedRecovery, S-DDQN, MADQN, etc.) to demonstrate gains in reliability, energy efficiency, and latency"
+    ],
+    "Summary Description": "Dr. Mohammad Atiquzzaman is a leading researcher at the intersection of federated learning, 6G-enabled wireless networks, and intelligent autonomous systems. His work spans privacy-preserving distributed ML, security of FL in vehicular and IoT networks, and the deployment of energy-aware, RIS-assisted UAV/UGV architectures for disaster response and smart-city applications. Notable contributions include unlearning-centric frameworks such as UaaS-SFL and DT-FU that enable post-compromise mitigation without full retraining, as well as MARL-based joint control of UAV trajectories and RIS configurations (DIRECT, MAPPO/PPO) for robust, low-latency, energy-efficient communication. He also explores privacy guarantees (\u03b3-AdvNoise), robust initialization via median aggregation, and calibration-aware early stopping to prevent over-unlearning. Across these works, he demonstrates a strong emphasis on scalable, real-world-aligned solutions that fuse ML security, wireless communications, energy management, and autonomous aerial-ground coordination in 6G-era networks."
+}

@@ -1,0 +1,66 @@
+{
+    "Researcher Profile": "Dr. Kimball Martin",
+    "Affiliations": [
+        "University of Oklahoma, Norman, OK, USA",
+        "International Research and Education Center, Graduate School of Science, Osaka Metropolitan University, Osaka, Japan"
+    ],
+    "Research Domains": [
+        "Arithmetic Geometry",
+        "Number Theory",
+        "Algebraic Geometry",
+        "Moduli of Curves and Abelian Varieties",
+        "Real Multiplication (RM) on genus 2 curves",
+        "CM Modular Forms",
+        "Endomorphism Algebras and GL(2) Type Varieties",
+        "Hilbert Modular Surfaces and Humbert Surfaces",
+        "Automorphic Forms and L-Functions",
+        "Explicit Computational Methods in Arithmetic Geometry"
+    ],
+    "Techniques Used": [
+        "Mestre obstruction theory and Mestre conics for genus 2 curves",
+        "Explicit parametric models of RM genus 2 curves (RM-5, RM-D) via Weierstrass equations",
+        "Elkies\u2013Kumar models for Hilbert modular surfaces Y\u2212(D) and associated birational parametrisations",
+        "Igusa\u2013Clebsch invariants and reductions to explicit moduli coordinates",
+        "Conic minimisation over polynomial rings to simplify Mestre constructions",
+        "Gr\u00f6ssencharaktere (Grossencharaktere) and CM theory to study rationality fields of CM modular forms",
+        "Value field analyses L = EK_f and CM endomorphism algebras",
+        "Trace formulas for Fricke Atkin\u2013Lehner operators on newform spaces and Murmurations",
+        "SageMath and Magma for symbolic and numerical verifications; LMFDB for data cross-checks"
+    ],
+    "Data, Platforms, and Tools": [
+        "SageMath",
+        "Magma",
+        "Elkies\u2013Kumar Hilbert modular surface models (EK14)",
+        "Igusa\u2013Clebsch invariants",
+        "Wilson coordinates for RM-5",
+        "Hilbert modular surfaces Y\u2212(D) and Humbert surfaces",
+        "LMFDB (modular forms database)",
+        "Brumer/Mestre frameworks for RM-5 and RM curves",
+        "Computational resources (e.g., OU OSCER / Magma computations) for explicit model generation"
+    ],
+    "Application Areas": [
+        "Explicit arithmetic geometry",
+        "Computational number theory",
+        "Explicit moduli problems in RM and CM settings",
+        "Construction of CM abelian varieties of GL(2) type",
+        "Modular forms with complex multiplication and their rationality fields",
+        "Algorithmic approaches to Mestre obstructions and RM curve models"
+    ],
+    "Key Research Thinking Patterns": [
+        "Explicit constructive modeling: turning abstract moduli problems into workable, explicit equations and parametric families",
+        "Interdisciplinary integration: combining RM theory, CM theory, modular forms, and Hilbert modular surfaces within a unified computational framework",
+        "Scalable methodology development: creating minimisation algorithms (Mestre conic minimisation) to handle higher discriminants and general D",
+        "Bridging theory and computation: translating moduli-theoretic results into actionable algorithms and verifiable curve models",
+        "Comparative evaluation: situating new RM/CM constructions against known Brumer/Mestre families and existing CM databases",
+        "Data-driven verification: leveraging Sage/Magma and LMFDB to validate explicit constructions and invariants"
+    ],
+    "Summary Description": "Kimball Martin\u2019s research coalesces explicit arithmetic geometry, RM and CM theory, and computational methods to build and analyze concrete models of genus 2 curves with real multiplication, and to understand the rationality fields of CM modular forms. His work provides explicit moduli descriptions and Weierstrass models for RM-5 and broader RM settings, develops practical algorithms to simplify Mestre obstructions, and connects CM form theory with explicit CM abelian varieties. Additionally, his investigations into local root numbers, Atkin\u2013Lehner theory, and murmurations extend the understanding of root-number distributions and their correlations with Fourier coefficients in modular forms, often employing Sage, Magma, and data resources like LMFDB to ground theory in computation. Overall, his contributions create a coherent framework that blends deep arithmetic geometry with actionable computational techniques, enabling explicit constructions, verifications, and potential future counts of RM-type curves and CM modular forms across discriminants and levels.",
+    "Representative Works": [
+        "Moduli for rational genus 2 curves with real multiplication for discriminant 5 (Cowen & Martin)",
+        "Rationality Fields of CM Modular Forms (Kimball Martin)",
+        "Generic Models for Genus 2 Curves with Real Multiplication (Cowan, Frengley, Martin)",
+        "Distribution of Local Signs of Modular Forms and Murmurations of Fourier Coefficients (Kimball Martin)",
+        "Root Number Bias for New Forms (Kimball Martin)"
+    ],
+    "Notes": "The profile synthesizes Kimball Martin\u2019s contributions across RM genus 2 curves, CM modular forms, and modular forms root-number phenomena, emphasizing explicit models, moduli-theoretic interpretations, and computational approaches that unify theory with verifiable constructions."
+}

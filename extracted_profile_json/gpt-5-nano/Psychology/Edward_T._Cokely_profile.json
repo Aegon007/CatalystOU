@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Edward T. Cokely",
+    "Affiliation:": "The University of Oklahoma (Department of Psychology); Harding Center for Risk Literacy, Max Planck Institute for Human Development, Berlin, Germany",
+    "Research Domains": [
+        "Risk literacy and numeracy",
+        "Scientific reasoning and causal inference",
+        "Decision making under risk and uncertainty",
+        "Risk communication and public understanding of science",
+        "Measurement and instrument development in psychology (risk-related constructs)",
+        "Policy-relevant behavioral science (ethical and practical implications of decision architectures)",
+        "Cross-cultural validation of risk-related instruments",
+        "Health, climate, and environmental risk judgments"
+    ],
+    "Techniques Used": [
+        "Structural Equation Modeling (SEM) using lavaan in R",
+        "Mediation and indirect effects estimation with bootstrap confidence intervals",
+        "Latent variable modeling (e.g., latent judgment-bias factor)",
+        "Dominance analysis for relative predictor importance (Dominance Analysis SAS macro)",
+        "Experimental manipulation of education vs. default-based interventions",
+        "Measurement development and validation (e.g., BERRI; Berlin Numeracy Test; SRS; causal misunderstanding measures)",
+        "Cross-domain replication and cross-cultural validation (English, Polish, Spanish contexts)",
+        "Model comparison, replication, and out-of-sample validation",
+        "Open data practices and preregistration-friendly study design (OSF data/materials)"
+    ],
+    "Data & Platforms": [
+        "Open Science Framework (OSF) repositories with materials and datasets for multiple studies",
+        "Survey and experimental platforms: Qualtrics (survey administration for several studies)",
+        "Statistical software: R for SEM and bootstrapping; SAS for Dominance Analysis",
+        "Representative datasets include risk-literacy and numeracy measures (e.g., Berlin Numeracy Test), scientific reasoning scales, and risk-communication stimuli",
+        "Cross-domain stimuli and real-world articles (e.g., CNN Health excerpts) used in SEM studies"
+    ],
+    "Application Areas": [
+        "Risk literacy education and public risk communication",
+        "Climate change judgments and knowledge-based persuasion",
+        "Health and environmental risk perception research",
+        " ASD-family risk literacy and quality-of-life outcomes (risk-informed decision support)",
+        "Water recycling acceptance and ethical considerations of defaults vs. education",
+        "Cross-cultural instrument development and validation in risk psychology"
+    ],
+    "Key Research Thinking Patterns": [
+        "Risk literacy as enabling knowledge acquisition (Knowledge is Power) and better judgment under uncertainty",
+        "Skilled Decision Theory-informed framing of numeracy, reasoning, and calibration in risk contexts",
+        "Metacognitive mediation: overconfidence as a central mechanism linking reasoning to downstream biases",
+        "Valuing knowledge over worldviews in predicting beliefs and risk perceptions (dominance of expert consensus knowledge in domains like climate risk)",
+        "Comparative evaluation of intervention modalities (education vs. default nudges) for ethical and practical decision support",
+        "Emphasis on cross-domain validity, cultural translation, and generalizability of risk-psychology measures"
+    ],
+    "Summary Description": "Dr. Edward T. Cokely is a leading scholar in risk literacy and numeracy, focusing on how statistical numeracy, scientific reasoning, and metacognitive monitoring shape judgments, risk perceptions, and decision-making across health, climate, and policy domains. He co-developed and validated measurement instruments (notably the Berlin Emotional Responses to Risk Instrument, BERRI) and conducted SEM-based investigations that reveal numeracy fosters scientific reasoning, reduces causal misinterpretations, and buffers judgment biases. His work extends to risk-communication interventions, contrasting educational boosts with default-based nudges, and demonstrates that knowledge-centered approaches (Knowledge is Power) often trump purely affective or worldview-driven influences in predicting accurate beliefs and risk appraisals. Cokely\u2019s research spans diverse populations and contexts, including cross-cultural validation of risk instruments and ASD-family outcomes, and emphasizes ethical and practical implications for risk communication, public health messaging, and policy design. His methodological innovations\u2014combining SEM, bootstrapping, mediation analyses, dominance analysis, and robust replication\u2014provide a comprehensive framework for understanding and enhancing risk literacy in real-world decision making."
+}

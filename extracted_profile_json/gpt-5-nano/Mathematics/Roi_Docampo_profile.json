@@ -1,0 +1,52 @@
+{
+    "Researcher Profile:": "Roi Docampo",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Arc spaces and jet schemes",
+        "K\u00e4hler differentials on arc spaces",
+        "Birational geometry and singularity theory",
+        "Mather\u2013Jacobian discrepancies",
+        "Non-Noetherian commutative algebra",
+        "Drinfeld\u2013Grinberg\u2013Kazhdan (DGK) theory and Drinfeld models",
+        "Nash blow-ups and Nash transformations",
+        "Toric geometry and Jacobian-related invariants",
+        "Grassmannians, positroids, and frieze combinatorics"
+    ],
+    "Techniques Used": [
+        "Embedding codimension ecodim and formal embedding codimension fcodim; comparison theorems linking ecodim \u2264 fcodim with conditions for equality",
+        "DGK decomposition and its converses; Drinfeld models and efficient DGK decompositions via projections",
+        "Cotangent-space and tangent-space analysis for arc spaces and their morphisms",
+        "Jacobian ideals, Fitting ideals, and modules of K\u00e4hler differentials; connections to Mather\u2013Jacobian discrepancies",
+        "Weierstrass/Weierstrass-preparation-type arguments in infinite-variable/complete contexts",
+        "Formal embeddings, completion techniques, and non-Noetherian algebraic tools (Artin\u2013Rees properties, finite presentation concepts)",
+        "Nash transformations and jet-space manipulations; explicit construction of relative compactifications for jets",
+        "Hasse\u2013Schmidt derivations and determinantal/minor-based constructions for jet/n-th order data",
+        "Semicontinuity arguments in arc spaces; analysis of stable/divisorial arcs and their embedding dimensions",
+        "Nash blow-ups of jet schemes; explicit BM (blow-up/minor) frameworks and twist operations in frieze-type structures",
+        "Grassmannian/positroid viewpoint and determinant-based constructions; combinatorial methods in the juggler\u2019s frieze framework"
+    ],
+    "Data & Platforms": [
+        "Data: None (theoretical work; no empirical datasets reported)",
+        "Platforms: Pure mathematical frameworks; arc spaces, jet schemes, formal schemes, Grassmannians, and combinatorial geometry",
+        "Software/Computational Tools: Not employed; proofs rely on algebraic and geometric constructions"
+    ],
+    "Application Areas": [
+        "Algebraic geometry and singularity theory",
+        "Arc-space geometry and jet-scheme techniques",
+        "Birational geometry and Nash-type problems",
+        "Mather\u2013Jacobian discrepancies and related invariants",
+        "Non-Noetherian algebra and formal neighborhood theory",
+        "Toric geometry and Jacobian-invariant considerations",
+        "Grassmannians, positroids, and frieze combinatorics in algebraic contexts"
+    ],
+    "Key Research Thinking Patterns": [
+        "Bridging frameworks: unify non-Noetherian commutative algebra with arc-space geometry to extract geometric invariants",
+        "Constructive bounds: derive sharp inequalities linking embedding dimensions to Jacobian data and to formal model parameters",
+        "Model comparison: analyze and relate multiple formalisms (DGK decompositions, Drinfeld models, and Drinfeld\u2013Grinberg\u2013Kazhdan theory) to understand when they coincide or provide different insights",
+        "Geometry\u2013algebra interplay: translate geometric properties of arc spaces (smoothness, stability) into algebraic invariants (ecodim, fcodim, ord\u03b1(Jac)) and vice versa",
+        "Stability and semicontinuity: develop semicontinuity results for embedding dimensions and Mather discrepancies under specialization",
+        "Explicit constructions: provide computable descriptions of local structures (e.g., DGK vs Drinfeld models) and concrete tools (minors, matrices, and derivations) to realize these structures",
+        "Cross-disciplinary synthesis: connect arc-space theory to combinatorics and Grassmannian frameworks (e.g., juggler\u2019s friezes) to enrich parameterization and visualization"
+    ],
+    "Summary Description": "Roi Docampo is a mathematician at the University of Oklahoma whose research sits at the intersection of arc-space geometry, commutative algebra, and birational geometry. He co-authored foundational work with C. Chiu and T. de Fernex on embedding codimension of arc spaces, formal embeddings, and their connections to Drinfeld\u2013Grinberg\u2013Kazhdan (DGK) decompositions and Mather\u2013Jacobian discrepancies, delivering sharp bounds and a unified view of the local structure of arc spaces. He contributed to understanding the finiteness properties and ramification phenomena of arc fibers under morphisms, and to the Nash blow-up program through explicit descriptions of differential sheaves on arcs and jets. In collaboration with Tommaso de Fernex, he developed a comprehensive framework for Nash transformations of jet components, yielding relative compactifications and deteminantal constructions that formalize how morphisms extend to jet spaces. He also co-authored work with Greg Muller on juggler\u2019s friezes, extending SL(k)-frieze theory into the Grassmannian/positroid setting via \u03c0-unimodular matrices, dualities, and Grassmannian parametrizations. Across these works, Docampo demonstrates a consistent emphasis on explicit, constructive frameworks that synthesize non-Noetherian algebra with geometric invariants, yielding practical tools for analyzing arc spaces, jet schemes, and their singularities, while also engaging combinatorial geometry through the juggler\u2019s frieze program. His research has clear implications for arc-space singularities, Nash problems, and Mather invariants, and it reflects a broad and integrative approach to modern algebraic geometry."
+}

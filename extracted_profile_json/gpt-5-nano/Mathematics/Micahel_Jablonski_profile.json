@@ -1,0 +1,121 @@
+{
+    "Researcher Profile:": "Dr. Michael Jablonski",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK 73019-3103, USA",
+    "Research Domains": [
+        "Lie theory and differential geometry of Lie groups",
+        "Solvmanifolds and Einstein solvmanifolds",
+        "Ricci solitons and solvsolitons",
+        "Symmetry in homogeneous spaces and isometry group structure",
+        "Iwasawa theory and semisimple Lie algebras",
+        "Nilradical, derivations, and Lie algebra modifications"
+    ],
+    "Techniques Used": [
+        "Maximal, infinitesimal maximal, and almost maximal symmetry frameworks",
+        "Algebraic isometry groups (AlgIsom) and standard position (Gordon\u2013Wilson theory)",
+        "Equivalence classes of solvable Lie groups via modification theory",
+        "Ricci soliton theory on Lie groups (solvsolitons and nilsolitons)",
+        "Pre-Einstein derivation and one-dimensional Einstein extensions",
+        "Einstein solvmanifold theory and nilsoliton structure",
+        "GIT-style orbit closure arguments in bracket varieties",
+        "Iwasawa decomposition, Satake and Dynkin diagram analysis",
+        "Reconstruction of semisimple algebras from Iwasawa data",
+        "Embedding solvable groups into triangular matrix groups T(n,R) with invariant metrics",
+        "Ado\u2019s theorem, Nash embedding concepts (theoretical, non-empirical)"
+    ],
+    "Data & Platforms": [
+        "Data: None (theoretical mathematics)",
+        "Platforms/Tools: Lie theory, differential geometry, representation theory, geometric invariant theory",
+        "No computational datasets or software packages reported"
+    ],
+    "Application Areas": [
+        "Theoretical differential geometry",
+        "Homogeneous spaces and geometric analysis",
+        "Lie group theory and algebraic structures",
+        "Mathematical aspects of symmetry in geometric flows and Einstein metrics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Maximal symmetry as a guiding principle to canonically model isometry groups of solvable and semisimple structures",
+        "Equivalence-class reasoning to transfer symmetry and geometric properties across related Lie groups",
+        "Construction of canonical models (completely solvable representatives) to achieve universality results",
+        "Interplay between algebraic structure (nilradical, derivations, Iwasawa data) and geometric objects (Ricci solitons, Einstein metrics)",
+        "Rigidity and uniqueness phenomena for solitons within equivalence classes",
+        "Embedding and representation-based approaches to relate solvmanifolds to symmetric spaces"
+    ],
+    "Summary Description": "Dr. Michael Jablonski\u2019s research sits at the intersection of Lie theory and differential geometry, with a focus on the symmetry properties of solvable and semisimple Lie groups and their homogeneous spaces. His work establishes maximal and infinitesimal maximal symmetry results for unimodular solvable groups, develops robust equivalence-class frameworks that transfer symmetry and soliton properties across related groups, and demonstrates that Einstein solvmanifolds and Ricci solitons exhibit maximal symmetry in precise senses. He further provides constructive embedding results, showing how Einstein solvmanifolds can be realized as submanifolds of symmetric spaces via explicit representations, and he advances the reconstruction of real semisimple Lie algebras from Iwasawa subalgebras. Collectively, these contributions deepen the understanding of how algebraic structure governs geometric symmetry in homogeneous spaces and elucidate the rigid, canonical forms such structures must take under various curvature and symmetry constraints. His work often blends deep Lie-theoretic constructions (Iwasawa theory, Satake diagrams, nilradical analysis) with geometric analytic tools (Einstein metrics, Ricci solitons, solvsolitons) to produce unified, canonical pictures of symmetry in noncompact settings.",
+    "Representative Publications & Core Contributions": [
+        {
+            "Publication": "Maximal Symmetry and Unimodular Solvmanifolds",
+            "Core Contributions": [
+                "Shows unimodular solvable Lie groups admit left-invariant metrics with maximal symmetry (largest possible isometry group up to conjugation)",
+                "Links Ricci solitons with maximal symmetry, showing the soliton metric realizes maximal symmetry among invariant metrics",
+                "Develops the framework of AlgIsom and standard modifications to describe transitive solvable isometry groups",
+                "Identifies a canonical completely solvable subgroup that yields maximal symmetry (Theorem 3.2, Gordon\u2013Wilson lineage)",
+                "Highlights structural relations via normal/standard modifications and completely solvable ideals"
+            ],
+            "Funding/Notes": [
+                "Simons Foundation grant #360562",
+                "NSF DMS-1612357"
+            ]
+        },
+        {
+            "Publication": "Infinitesimal Maximal Symmetry and Ricci Soliton Solvmanifolds",
+            "Core Contributions": [
+                "Introduces almost maximal and infinitesimal maximal symmetry notions for left-invariant metrics",
+                "Establishes an equivalence relation on simply-connected solvable Lie groups via modification theory, yielding a unique completely solvable representative per class",
+                "Proves that every left-invariant Ricci soliton on a simply-connected solvable Lie group is infinitesimally maximally symmetric",
+                "Shows uniqueness of left-invariant Ricci solitons up to scaling and isometry within a class (Corollaries 1.6, 1.8 in the paper\u2019s framework)"
+            ]
+        },
+        {
+            "Publication": "Einstein Solvmanifolds Have Maximal Symmetry",
+            "Core Contributions": [
+                "Proves every left-invariant Einstein metric with negative Ricci curvature on a solvable Lie group is maximally symmetric",
+                "Provides a detailed mechanism via standard position, solvsolitons, and Einstein extensions to relate symmetry of the ambient Einstein metric to the solvable group",
+                "Gives explicit descriptions of Isom0(S,g) in the completely solvable unimodular case (Isom0(S,g) = S \u22ca Aut(S) \u2229 O(g))",
+                "Connects to the Alekseevskii conjecture program and Ricci-flow stability considerations"
+            ]
+        },
+        {
+            "Publication": "Einstein Solvmanifolds as Submanifolds of Symmetric Spaces",
+            "Core Contributions": [
+                "Shows that simply-connected, completely solvable Einstein solvmanifolds embed isometrically and isomorphically into the lower-triangular matrix group T(n,R) endowed with a left-invariant symmetric metric",
+                "Provides constructive embedding results that extend Tamaru\u2019s explicit examples to a general existence theorem",
+                "Introduces the admissible metric Lie algebra framework and explicit embedding steps (nilradical control, scaling alignment, abelian extension) to realize embeddings",
+                "Relates to Nash/Ado-type theorems in a homogeneous, left-invariant setting and clarifies limitations in the compact case"
+            ]
+        },
+        {
+            "Publication": "Semi-Simple Lie Algebras Are Determined by Their Iwasawa Subalgebras",
+            "Core Contributions": [
+                "Proves that non-compact real semisimple Lie algebras are completely determined by their Iwasawa subalgebras (s = a \u2295 n)",
+                "Shows that if Iwasawa subalgebras s1 and s2 are isomorphic, the ambient semisimple algebras g1 and g2 are isomorphic, and any isomorphism extends from s1 to g1",
+                "Outlines an explicit reconstruction procedure for g from data in its Iwasawa subalgebra, including recovering a Satake diagram from g\u22650 = m \u2295 s and Der(s)\u2013based identification of m",
+                "Discusses nilradical considerations, pre-Einstein derivations, and the role of split vs non-split forms in reconstruction"
+            ],
+            "Coauthors": [
+                "Jonathan Epstein (co-author)"
+            ]
+        }
+    ],
+    "Representative Funding & Open Questions": [
+        {
+            "Area": "Funding",
+            "Details": [
+                "Simons Foundation grant #360562 (referred to in Paper 1)",
+                "NSF DMS-1612357 (referred to in Paper 1)"
+            ]
+        },
+        {
+            "Area": "Open Questions & Future Directions",
+            "Details": [
+                "Whether all Lie groups admit an infinitesimally maximally symmetric metric remains open (discussed in Paper 2).",
+                "Optimal target dimension n for embedded representations into T(n,R) and whether a universal scale can be fixed across all S (Paper 4 discussions).",
+                "Limitations in extending Lemma 2 to non-compact reductive derivations and the split vs non-split phenomena (Paper 5).",
+                "Further exploration of intermediate subalgebras between R(\u03d5) and a that yield symmetric space embeddings (Paper 4)."
+            ]
+        }
+    ],
+    "Notes on Authors & Affiliations": [
+        "Dr. Michael Jablonski is a co-author on multiple works with affiliations primarily at the University of Oklahoma (Dept. of Mathematics) and collaborations with other institutions (e.g., Gordon). The profile consolidates his role across these papers and emphasizes his central contributions to solvmanifold symmetry, Einstein solitons, and Iwasawa-related reconstruction."
+    ]
+}

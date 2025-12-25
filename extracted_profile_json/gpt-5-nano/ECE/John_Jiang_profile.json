@@ -1,0 +1,48 @@
+{
+    "Researcher Profile:": "Dr. John N. Jiang",
+    "Affiliation:": "Department of Electrical and Computer Engineering, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Power systems",
+        "Data-driven system identification",
+        "Nonlinear dynamics in electrical grids",
+        "Inverter-based resources (IBRs) integration",
+        "Sparse Identification of Nonlinear Dynamics (SINDy)",
+        "Hankel Alternative View of Koopman (HAVOK)",
+        "Volterra-based nonlinearity metrics (VNI) and VIN profiles",
+        "Time-delay embedding and Hilbert transform in signal processing",
+        "Measurement-based grid analysis and monitoring"
+    ],
+    "Techniques Used": [
+        "Sparse Identification of Nonlinear Dynamics (SINDy)",
+        "HAVOK (Hankel Alternative View of Koopman)",
+        "Volterra-based Nonlinearity Index (VNI) and VIN profile",
+        "Hilbert transform for analytic signal and instantaneous phase",
+        "Time-delay embeddings / delay coordinates",
+        "Polynomial libraries up to second/third order; higher-order terms",
+        "SINDy variants: SINDy with control, ensemble-SINDy, SINDy-PI",
+        "Three-section data analysis framework (linear, nonlinear, negligible components)",
+        "Measurement-based analysis of IEEE 15-bus power system with SG/IBR scenarios"
+    ],
+    "Data & Platforms": [
+        "IEEE 15-bus power grid test network; SG-only, SG+IBR, and 100% IBR penetration scenarios",
+        "Simulation-based data with 20,000 samples per second over 10 seconds (200,000 samples per run)",
+        "MATLAB (R2021a) as primary computational environment",
+        "Hilbert transform, delay-embedding, SINDy/HAVOK algorithms implemented in MATLAB"
+    ],
+    "Application Areas": [
+        "Grid operation and planning under high penetration of inverter-based resources",
+        "Real-time/near-real-time measurement-based modeling",
+        "Interpretable model discovery for power-system dynamics",
+        "Stability assessment and transient analysis with IBR integration",
+        "Grid modernization and monitoring"
+    ],
+    "Key Research Thinking Patterns": [
+        "Data-driven modeling with emphasis on interpretability and sparsity",
+        "Systematic cross-scenario validation (SG-only, SG+IBR, 100% IBR)",
+        "Integration of complementary methods (SINDy and HAVOK) to capture multi-scale dynamics",
+        "Robustness checks against higher-order SG models and different libraries",
+        "Bridging theory with practical grid analysis and measurement-based inference",
+        "Exploration of scalability to larger networks and near real-time applications"
+    ],
+    "Summary Description": "Dr. John N. Jiang specializes in data-driven analysis of power systems under high inverter-based resource penetration. He co-develops and applies methods like Sparse Identification of Nonlinear Dynamics (SINDy) and HAVOK, often augmented with Volterra-based nonlinearity metrics and time-delay embeddings, to identify and interpret nonlinear energy-flow dynamics on IEEE 15-bus test networks. His work emphasizes interpretable, scalable models that distinguish SG-dominated, SG+IBR, and IBR-dominated regimes, enabling improved grid operation, planning, and measurement-based state understanding in modern grids."
+}

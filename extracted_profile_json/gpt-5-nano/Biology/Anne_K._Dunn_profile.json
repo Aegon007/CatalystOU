@@ -1,0 +1,58 @@
+{
+    "Researcher Profile:": "Dr. Anne K. Dunn",
+    "Affiliation:": "Department of Microbiology and Plant Biology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Bacterial physiology and metabolism",
+        "Alternative oxidases (AOX) in bacteria",
+        "Nitric oxide (NO) stress responses",
+        "Host\u2013microbe interactions and symbiosis",
+        "Vibrio fischeri biology",
+        "Interbacterial competition and T6SS",
+        "Biofilm regulation and morphogenesis",
+        "Transcriptomics, proteomics, and systems biology",
+        "Molecular genetics and genome engineering",
+        "Structural bioinformatics"
+    ],
+    "Techniques Used": [
+        "Allelic exchange and gene deletion to create defined Vibrio fischeri mutants (e.g., hmp, aox, tasL, tssF, amiB, envC, nlpD, VF_1477)",
+        "Complementation with inducible plasmids (e.g., IPTG-inducible Aox, AmiB expression, RscS, BcsA)",
+        "RNA sequencing (RNA-seq) and differential expression analysis (Rockhopper), with qRT-PCR validation",
+        "Protein-level quantification and localization via mass spectrometry (NSAF%) and proteomics comparisons (e.g., TasL, T6SS components)",
+        "NO exposure assays using NO donors (DPTA-NONOate) and NO-detoxifying pathway perturbations",
+        "ROS detection (APF dye) and membrane integrity assays (LIVE/DEAD BacLight)",
+        "NADH/NAD+ quantification to assess redox balance and metabolic coupling",
+        "Growth and viability assays (microplate readers, CFU counts, plating efficiency)",
+        "Transcriptome datasets deposited in SRA (SRS2800744, SRS2800745) and Data Set S1",
+        "Bioinformatic and structural analyses (RaptorX, SMART domain analysis, Signal peptide predictions)",
+        "In vivo infections and host colonization assays using Euprymna scolopes (squid)",
+        "In vivo and in vitro imaging (GFP-tagged proteins, VipA-GFP for T6SS activity, luminescence measurements for colonization)",
+        "Hydrogel-based accumulation and aggregation assays to model host-like contact environments",
+        "Crystal violet and Congo red colony-based biofilm assays"
+    ],
+    "Data & Platforms": [
+        "RNA-seq datasets analyzed with Rockhopper; Data Set S1",
+        "NCBI Sequence Read Archive (SRA): SRS2800744, SRS2800745",
+        "Mass spectrometry-derived NSAF% data for TasL and T6SS components",
+        "Hydrogel and high-viscosity in vitro models to simulate host-like contact environments",
+        "In vivo squid colonization model (Euprymna scolopes) with luminescence readouts",
+        "Structural bioinformatics tools (RaptorX for TasL structure, SMART for domain annotation)",
+        "Inducible expression systems and genetic constructs (e.g., pAKD601B, pAmiB, pBcsA, pRscS, pSNS119 VipA-GFP)"
+    ],
+    "Application Areas": [
+        "Microbiology and cellular physiology",
+        "Marine biology and host-associated microbiomes",
+        "Symbiosis research (bacterial\u2013invertebrate systems)",
+        "Antimicrobial target discovery and novel regulatory pathways in bacteria",
+        "Biofilm biology and surface-attached communities",
+        "Interbacterial interactions and competition (T6SS-related)"
+    ],
+    "Key Research Thinking Patterns": [
+        "Mechanistic integration across scales: connecting gene-level changes (AOX, AmiB, TasL) to cellular outcomes (NADH balance, ROS, membrane integrity, biofilm state) and organismal outcomes (squid colonization).",
+        "Comparative, multi-omics evaluation: using transcriptomics, proteomics, and metabolite/ redox readouts to triangulate stress responses and regulatory networks under NO stress or during interbacterial competition.",
+        "Host-context validation: employing in vivo models (Euprymna scolopes) to corroborate in vitro findings from hydrogel and surface-based assays, thereby linking laboratory observations to ecological relevance.",
+        "Structure\u2013function inference: utilizing bioinformatic structure predictions (TasL, AOX) and domain analyses (fibronectin-type III\u2013like regions) to hypothesize mechanisms of adhesion, receptor-like interactions, and effector delivery.",
+        "Regulatory network dissection: exploring environmental triggers (NO, iron availability) and regulators (NsrR, EnvC/NlpD) to map control points for AOX expression, AmiB activity, and T6SS gating.",
+        "Evolutionary and ecological framing: interpreting distribution patterns of AOX and TasL-like adhesins across host-associated vibrios and related taxa to understand microbiome assembly and interspecies interactions."
+    ],
+    "Summary Description": "Dr. Anne K. Dunn is a microbiologist whose work integrates molecular genetics, omics technologies, and host-microbe ecology to illuminate how bacteria balance energy and stress under reactive nitrogen conditions, how they regulate cell division and biofilm states, and how they engage in host-associated interbacterial competition. Her research spans the functional characterization of bacterial alternative oxidases (AOX) and their role in NO stress resilience, the pleiotropic regulation of envelope remodeling and biofilms in Vibrio fischeri, and the discovery of TasL as a contact-dependent specificity factor for T6SS-mediated antagonism within the squid light-organ microbiome. By combining in vitro mechanistic assays, in vivo colonization models, and structural/bioinformatic analyses, Dunn contributes a comprehensive, systems-level view of bacterial physiology in environmental and host contexts, with broad implications for microbial ecology, symbiosis, and potential antimicrobial targets."
+}

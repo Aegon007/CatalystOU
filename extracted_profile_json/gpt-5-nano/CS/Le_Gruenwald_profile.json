@@ -1,0 +1,131 @@
+{
+    "Researcher Profile:": "Dr. Le Gruenwald",
+    "Affiliation:": "School of Computer Science, The University of Oklahoma",
+    "Research Domains": [
+        "Federated Learning",
+        "Quantum Computing in Machine Learning",
+        "Database Systems and Index Tuning",
+        "Reinforcement Learning",
+        "Streaming Data Analytics",
+        "Energy-Efficient Cloud/Edge Computing",
+        "Serverless and Serverful Cloud Architectures",
+        "Security and Robustness in ML (Fed Learning defenses)"
+    ],
+    "Techniques Used": [
+        "Hybrid quantum\u2013classical reinforcement learning (QRLIT-style framework)",
+        "Grover\u2019s search-based action selection for reinforcement learning",
+        "TD-learning with linear function approximation for Q-values",
+        "Experience replay in reinforcement learning",
+        "Kernel-based and non-kernel defenses for federated learning (RBF defense; comparison with KPCA+KMeans and LoMar)",
+        "Online PCA and cross-stream correlation modeling (DBPCA)",
+        "Incremental/online clustering (sequential k-means) for streaming contexts",
+        "Linear SVM with L1 regularization for attribute explanations",
+        "Tumbling windows for streaming data processing",
+        "Kubernetes-based autoscaling and dynamic resource allocation"
+    ],
+    "Data & Platforms": [
+        {
+            "Paper": "QRLIT (Quantum Reinforcement Learning for Database Index Tuning)",
+            "Data/Benchmarks": "TPC-H workload; initial DB size 10 MB, sizes {10, 20, 30, 40, 70, 100} MB",
+            "Platforms/Tools": "MySQL as DBMS; QGen for workload generation; Qiskit quantum simulator; Docker; macOS (MacBook Pro, Apple M1 Pro) with Ubuntu 22.04; GitHub repository"
+        },
+        {
+            "Paper": "EXOS",
+            "Data/Benchmarks": "Real-world multisource data streams (Intel Lab, Microtremor in Delta region, AMPds2); synthetic 5/4-group correlated streams with injected outliers",
+            "Platforms/Tools": "Python 3; single-pass online PCA (DBPCA); incremental online KMeans; linear SVM with SGD; GitHub repository",
+            "Hardware/Environment": "MacBook Pro (macOS Catalina)"
+        },
+        {
+            "Paper": "GUESS (Serverless vs Serverful Spark monitoring)",
+            "Data/Benchmarks": "TPC-DS join workloads; datasets 10/25/50 GB",
+            "Platforms/Tools": "Apache Spark (Scala) on Kubernetes (serverless) and virtual machines (serverful); MinIO for object storage; Prometheus; Grafana; Spark History Server; Dell iDRAC/OpenManage for energy measurement",
+            "Hardware/Infrastructure": "Private cloud with 5 physical servers (7 VMs per host); 6 vCPU per executor; 12 GB driver memory; 10 Gbps links"
+        },
+        {
+            "Paper": "RBF Defense for Federated Learning",
+            "Data/Benchmarks": "Fashion-Mashion (MNIST variant), CIFAR-10, Adult Census",
+            "Platforms/Tools": "Python-based experiments; publicly available GitHub resources; models include linear regression and DNN variants across datasets"
+        }
+    ],
+    "Application Areas": [
+        "Database systems optimization via AI/ML (index tuning in DB systems)",
+        "Real-time streaming analytics and explainability (EXOS-style explanations in data streams)",
+        "Cloud-native vs traditional serverful deployments for analytics workloads (GUESS evaluation)",
+        "Energy-efficient data center and edge deployments (serverless/serverful comparisons, energy instrumentation)",
+        "Robust federated learning under non-IID data and poisoning attacks (RBF defense)"
+    ],
+    "Key Research Thinking Patterns": [
+        "Hybridizing emerging computing paradigms (quantum computing) with established ML workflows to accelerate convergence and performance in practical tasks (QRLIT)",
+        "Real-time, memory-bounded streaming analytics with interpretable explanations (EXOS-like approach to outlier attribute explanations)",
+        "empirical, reproducible evaluation of energy-performance trade-offs in cloud-native deployments (GUESS and serverless/serverful studies)",
+        "Security-focused ML research that rigorously compares defense mechanisms under realistic non-IID data and adversarial models (RBF vs KPCA+KMeans vs LoMar)",
+        "System-oriented AI research emphasizing deployment realities, workload benchmarks, and hardware-energy instrumentation"
+    ],
+    "Summary Description": "Dr. Le Gruenwald's research portfolio spans quantum-assisted machine learning for database optimization, streaming data explainability and real-time analytics, and energy-aware, cloud-native evaluation of analytics workloads. His work consistently blends theoretical innovations (quantum\u2013classical RL, online PCA, robust FL defenses) with practical system benchmarks (TPC-H/TPC-DS workloads, serverless/serverful Spark, real energy measurements) to address end-to-end performance, scalability, and security in real-world settings. Across these works, he emphasizes reproducibility, benchmark-driven evaluation, and the integration of AI methods into complex data-management and distributed-system contexts, including IoT, smart-city scenarios, and data-center operations.",
+    "Authors and Affiliations": [
+        {
+            "Name": "Le Gruenwald",
+            "Affiliation": "School of Computer Science, The University of Oklahoma, Norman, OK, USA"
+        },
+        {
+            "Name": "Diogo Barbosa",
+            "Affiliation": "Instituto de Engenharia de Coimbra\u2014ISEC, Polytechnic University of Coimbra, Coimbra, Portugal"
+        },
+        {
+            "Name": "Laurent D\u2019Orazio",
+            "Affiliation": "IRISA, CNRS, University of Rennes, France"
+        },
+        {
+            "Name": "Jorge Bernardino",
+            "Affiliation": "Institute of Engineering of Coimbra\u2014ISEC, Polytechnic University of Coimbra, Coimbra, Portugal"
+        },
+        {
+            "Name": "An-Truong TRAN PHAN",
+            "Affiliation": "Vinh Long University of Technology Education, Vietnam"
+        },
+        {
+            "Name": "Thuong-Cang PHAN",
+            "Affiliation": "Can Tho University, Vietnam"
+        },
+        {
+            "Name": "Omar Sami Oubbati",
+            "Affiliation": "LIGM, University Gustave Eiffel, Marne-la-Vall\u00e9e, France"
+        },
+        {
+            "Name": "Jamal Alotaibi",
+            "Affiliation": "Department of Computer Engineering, College of Computer, Qassim University, Buraydah, Saudi Arabia"
+        },
+        {
+            "Name": "Fares Alromithy",
+            "Affiliation": "Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia"
+        },
+        {
+            "Name": "Mohammed Atiquzzaman",
+            "Affiliation": "The University of Oklahoma, Norman, OK, USA"
+        },
+        {
+            "Name": "Mohammad Rashed Altimania",
+            "Affiliation": "Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia"
+        },
+        {
+            "Name": "Wathsara Daluwatta",
+            "Affiliation": "School of Computing Technologies, RMIT University, Melbourne, Australia"
+        },
+        {
+            "Name": "Ibrahim Khalil",
+            "Affiliation": "School of Computing Technologies, RMIT University, Melbourne, Australia"
+        },
+        {
+            "Name": "Shehan Edirimannage",
+            "Affiliation": "School of Computing Technologies, RMIT University, Melbourne, Australia"
+        },
+        {
+            "Name": "Divya Bhatt",
+            "Affiliation": "The University of Oklahoma, Norman, OK, USA"
+        },
+        {
+            "Name": "M.A.P. Chamikara",
+            "Affiliation": "CSIRO\u2019s Data61, Melbourne, Australia"
+        }
+    ]
+}

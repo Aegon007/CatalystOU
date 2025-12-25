@@ -1,10 +1,74 @@
 # matching.py
 import re
+import pdb
 import numpy as np
 from typing import List, Tuple, Dict, Any, Optional
 from scipy.optimize import linear_sum_assignment
 # Note: sentence_transformers should be imported in the orchestrator 
 # and the model object passed in to avoid reloading it frequently.
+
+
+# ------------------------------------------------------------
+# Schema-aware normalization for researcher profile evaluation
+# ------------------------------------------------------------
+def get_matching_fields():
+    LIST_FIELDS = [
+        "Research Domains",
+        "Techniques Used",
+        "Data & Platforms",
+        "Application Areas",
+        "Key Research Thinking Patterns"
+    ]
+    SUMMARY_FIELD = "Summary Description"
+
+    return LIST_FIELDS, SUMMARY_FIELD
+
+
+LIST_FIELDS, SUMMARY_FIELD = get_matching_fields()
+
+
+def normalize_profile_field(field_name: str, field_value: Any) -> List[str]:
+    """
+    Normalize a profile field into List[str] suitable for matching.
+
+    Rules:
+    - List[str] → unchanged
+    - List[dict] → extract all string values
+    - str → wrap into singleton list
+    - Anything else → ignored
+    """
+
+    if field_name not in LIST_FIELDS:
+        return []
+
+    if field_value is None:
+        return []
+
+    # Case 1: already List[str]
+    if isinstance(field_value, list) and all(isinstance(x, str) for x in field_value):
+        return field_value
+
+    normalized = []
+
+    # Case 2: List[dict]
+    if isinstance(field_value, list):
+        for item in field_value:
+            if isinstance(item, dict):
+                for v in item.values():
+                    if isinstance(v, str) and v.strip():
+                        normalized.append(v.strip())
+            elif isinstance(item, str):
+                normalized.append(item.strip())
+
+        return normalized
+
+    # Case 3: single string
+    if isinstance(field_value, str):
+        return [field_value.strip()]
+
+    # Everything else: drop
+    return []
+
 
 def normalize_phrase(s: str) -> str:
     """
@@ -18,6 +82,7 @@ def normalize_phrase(s: str) -> str:
     s = re.sub(r"[^a-z0-9\s\-]", " ", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
+
 
 def _exact_match_helper(preds: List[str], golds: List[str]) -> Tuple[int, int, int, List[Tuple[str, Optional[str]]]]:
     """
@@ -43,6 +108,7 @@ def _exact_match_helper(preds: List[str], golds: List[str]) -> Tuple[int, int, i
     fn = len(golds) - tp
     
     return tp, fp, fn, matches
+
 
 def _semantic_match_helper(preds: List[str], golds: List[str], model, tau: float) -> List[Tuple[str, str, float]]:
     """
@@ -70,12 +136,8 @@ def _semantic_match_helper(preds: List[str], golds: List[str], model, tau: float
             
     return matches
 
-def match_profile_list_field(
-    pred_list: List[str], 
-    gold_list: List[str], 
-    embedding_model=None, 
-    tau: float = 0.65
-) -> Dict[str, Any]:
+
+def match_profile_list_field(pred_list: List[str], gold_list: List[str], embedding_model=None, tau: float = 0.65) -> Dict[str, Any]:
     """
     Main matching logic for list-based profile fields (e.g., "Research Domains").
     
@@ -85,6 +147,7 @@ def match_profile_list_field(
     4. Aggregates results separating exact vs semantic counts.
     """
     # 0. Schema Validation
+
     if not isinstance(pred_list, list) or not isinstance(gold_list, list):
         raise ValueError("Inputs to match_profile_list_field must be lists.")
     if pred_list and not isinstance(pred_list[0], str):
@@ -139,6 +202,7 @@ def match_profile_list_field(
         "avg_similarity": avg_sim,
         "matches": final_matches
     }
+
 
 def compute_summary_similarity(pred_text: str, gold_text: str, model) -> Dict[str, float]:
     """

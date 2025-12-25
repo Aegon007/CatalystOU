@@ -1,0 +1,47 @@
+{
+    "Researcher Profile:": "Dr. Mark B. Yeary",
+    "Affiliation:": "Advanced Radar Research Center (ARRC); School of Electrical and Computer Engineering, The University of Oklahoma (OU); Norman, OK, USA; also affiliated with OU Meteorology",
+    "Research Domains": [
+        "Weather radar technology",
+        "Fully digital polarimetric phased-array radar (PAR)",
+        "Software-defined radar architecture and beamforming",
+        "Large-scale antenna array design and calibration",
+        "Mutual coupling-based calibration and in-field calibration methods",
+        "High-throughput data handling and real-time signal processing for radar",
+        "Radar system validation with field experiments and comparison against legacy systems",
+        "Interdisciplinary applications bridging radar science with ML/security research"
+    ],
+    "Techniques Used": [
+        "Fully digital, element-level beamforming with FPGA-based processing",
+        "Polarimetric radar calibration methods including mutual coupling, boresight corrections, and cross-polar cancellation",
+        "Near-field and UAS-based far-field calibration techniques",
+        "S-band Horus PAR architecture with 1600 radiating elements organized into 25 panels (8\u00d78 elements per panel)",
+        "MVDR beamforming and Space-Time Adaptive Processing (STAP) concepts for interference suppression",
+        "Progressive pulse compression for improved range resolution",
+        "High-throughput data handling with RapidIO interconnect and PCIe data ingestion",
+        "Software-defined radar architecture enabling multi-mission reconfigurability",
+        "Phase-only and phase-plus-amplitude beamforming with optimization methods such as B\u00e9zier-surface parameterization (as demonstrated in Horus MSB work)"
+    ],
+    "Data & Platforms": [
+        "Horus fully digital polarimetric PAR experiments at OU ARRC; collaboration with NOAA/NSSL",
+        "Hardware: 1600 dual-polarization elements, 8\u00d78 panel tiles, AD9371 transceivers, Arria 10 FPGAs, Cyclone V SoC, DDR4 memory, RapidIO interconnect",
+        "Measurement and validation tools: near-field Velmex scanner, UAS-based far-field calibration (RF-Sonde), anechoic chamber measurements",
+        "Software and analysis: MATLAB (GA-based pattern synthesis in Horus studies), HFSS panel simulations (element/panel validation)",
+        "Data characteristics: high data rates (theoretical up to 1.5 Gbps), large-scale datasets (multi-terabyte scale in field campaigns)"
+    ],
+    "Application Areas": [
+        "Next-generation weather observation and hydrometeor classification",
+        "High-temporal-resolution polarimetric weather sensing for QPE",
+        "Airborne and ground-based remote sensing with software-defined radar",
+        "DARPA BLiP program context for Beyond Linear Processing and non-linear signal processing readiness",
+        "Interdisciplinary collaborations spanning radar engineering, meteorology, and ML-based security/robustness research"
+    ],
+    "Key Research Thinking Patterns": [
+        "Systems-level integration: co-design of hardware architecture, software, calibration, and data management for scalable radar arrays",
+        "Field-driven validation: combining near-field, far-field, and in-field meteorological data to verify calibration and performance",
+        "Scalability and reproducibility: modular panel-based architecture enabling large-element-count deployments and repeatable experiments",
+        "Cross-disciplinary exploration: bridging radar technology with machine learning and security-oriented research to broaden impact",
+        "Optimization-driven design: leveraging optimization (GA, B\u00e9zier parameterization) to explore trade-offs between beam quality, agility, and data handling"
+    ],
+    "Summary Description": "Dr. Mark Yeary leads pivotal work at OU\u2019s Advanced Radar Research Center on next-generation, fully digital polarimetric weather radars (notably Horus). His contributions span the design and evaluation of large-scale PAR architectures, distributed and software-defined beamforming, real-time data handling, and robust calibration via mutual coupling and UAS-based calibration techniques. This work enables high-fidelity, high-temporal-resolution polarimetric weather observations and scalable deployment strategies. In addition to radar-focused efforts, his collaboration on interdisciplinary topics\u2014such as ML-enabled security research\u2014highlights a breadth of methodological expertise and a commitment to advancing sensing technologies through robust, field-tested, and scalable solutions."
+}

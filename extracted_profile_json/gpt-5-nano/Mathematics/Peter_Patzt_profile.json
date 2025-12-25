@@ -1,0 +1,51 @@
+{
+    "Researcher Profile:": "Dr. Peter Patzt",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Twisted homological stability for families of groups",
+        "Steinberg representations and Steinberg monoids",
+        "Representation stability and coefficient systems (Littlewood theory)",
+        "Algebraic K-theory and Rognes' stable rank filtration",
+        "Higher Tits buildings and apartment theory",
+        "Cohomology of congruence and arithmetic subgroups",
+        "Koszul duality and monoidal functor frameworks",
+        "Bar constructions and spectral sequences in group homology",
+        "Partial resolutions and combinatorial models (PBW bases, apartment classes)",
+        "Applications to mapping class groups, Aut(F_n), and braid groups (twisted stability contexts)"
+    ],
+    "Techniques Used": [
+        "Steinberg module and apartment class framework (Solomon\u2013Tits theory)",
+        "Bar complexes and the reduced bar construction for Steinberg monoids (Bn*(St))",
+        "Filtration techniques via PBW bases and lexicographic order (FIBn_p(St))",
+        "Explicit homotopy construction (\u03a6) to prove acyclicity and vanishing results",
+        "Levi subgroup analysis and the Reeder map for Steinberg induction",
+        "Spectral sequences relating Levi components to homology with Steinberg coefficients",
+        "Destabilization and splitting complexes (W\u2022(G;n), SE1\u2022, E1-splitting)",
+        "Littlewood complexes and coefficient systems (M\u03bb(n), E\u03bb(n), W\u03bb,\u03bc(n)) and filtrations \u03a3M\u03bb, \u03a3E\u03bb, \u03a3W\u03bb,\u03bc",
+        "Koszul duality and Tor computations for Steinberg monoids; field-case isomorphisms TorSt(F)(Z,Z)n \u2245 Stn(F)\u2297Stn(F)",
+        "Higher Tits buildings and the comparison between Rognes\u2019 models and split models (Da,b(M))",
+        "Shapiro\u2019s lemma and induction in group homology",
+        "Computer-assisted connectivity verifications for finite complexes (Qm^n) and public code repositories"
+    ],
+    "Data & Platforms": [
+        "Datasets: N/A",
+        "Software/Libraries: SageMath, Python, and GUDHI used in computer-assisted verifications ( Papers involving connectivity of complexes )",
+        "Platforms/Frameworks: Waldhausen S\u2022-construction, representation stability (VB-modules), spectral sequences, Levi-subgroup induced complexes, higher Tits buildings, Koszul duality framework"
+    ],
+    "Application Areas": [
+        "Algebraic K-theory and Rognes' stable rank filtration",
+        "Representation stability and coefficient systems in GLn, Aut(F_n), Mod_g, and braid groups",
+        "Steinberg representations in linear algebraic groups",
+        "Arithmetic groups and congruence subgroup cohomology",
+        "Rognes' connectivity and common basis complexes CBn",
+        "Koszul duality in representation-stable contexts"
+    ],
+    "Key Research Thinking Patterns": [
+        "Uniform stability across arbitrary polynomial degrees of coefficient systems",
+        "Explicit combinatorial/topological models for deep representation-theoretic objects (Steinberg module, CBn, Tits buildings)",
+        "Bridging topology, algebra, and arithmetic through spectral sequences and filtrations",
+        "Constructive resolutions and homotopies to derive vanishing theorems and identification of duals",
+        "Integration of computational verifications to support and illustrate theoretical frameworks"
+    ],
+    "Summary Description": "Peter Patzt is a mathematician whose work sits at the intersection of representation stability, algebraic K-theory, and the homology of arithmetic and geometric groups. He has co-authored foundational results on uniform twisted homological stability with broad applications to mapping class groups, Aut(F_n), handlebody groups, and braid groups, employing coefficient systems, Littlewood theory, and spectral sequences to obtain stable vanishing ranges independent of coefficient degree. Patzt has contributed to explicit vanishing and structural results for the cohomology of congruence subgroups through constructive resolutions of the Steinberg module and high-connectivity frameworks built from higher Tits buildings and the common basis CBn complexes. In algebraic K-theory, he co-authored work on rank filtrations and Koszul duality for the Steinberg monoid, linking Rognes\u2019 stable rank filtration to a concrete Koszul dual description in the field case, tying together combinatorial models with representation stability and stability phenomena. Across these projects, Patzt\u2019s approach blends explicit combinatorial/algebraic constructions (PBW bases, apartment classes, PBW filtrations), topological tools (bar complexes, spectral sequences, connectivity), and a commitment to translating stability from target to source families to yield arithmetic, geometric, and topological consequences."
+}

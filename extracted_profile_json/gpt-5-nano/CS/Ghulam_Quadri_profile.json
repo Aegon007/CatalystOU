@@ -1,0 +1,52 @@
+{
+    "Researcher Profile:": "Dr. Ghulam Jilani Quadri",
+    "Affiliation:": "University of Oklahoma; also affiliated with University of North Carolina at Chapel Hill",
+    "Research Domains": [
+        "Information Visualization",
+        "Data Visualization",
+        "Human-Computer Interaction (HCI)",
+        "Perception and Cognition in Visualization",
+        "Multidimensional Data Visualization",
+        "Dimensionality Reduction (DR) and MD Projections",
+        "Visual Analytics",
+        "Trust, Decision-Making, and Evaluation in Visualization",
+        "Temporal Data Visualization"
+    ],
+    "Techniques Used": [
+        "Distortion-aware brushing for Multidimensional Projections (MDP): MD density computation, Shared Nearest Neighbors (SNN) similarity, \u03ba-nearest seeds, lens-based relocation, inner convex hull boundary, outer isotropic boundary via offset, centroidal Voronoi tessellation for uniformization, Lloyd\u2019s algorithm, dynamic brush growth, and an erasing mode to refine clusters",
+        "MD proximity and closeness metrics to reflect MD relationships in 2D projections and to enable reliable cluster extraction across distorted projections",
+        "Visual Stenography: novel sketch-based workflow to externalize user priorities in time-series sketches under noise; FFT-based trend estimation, LOESS-based smoothing for large-scale patterns, persistence diagrams (Topological Data Analysis) for peaks/valleys, Pixel Approximate Entropy (PAE) for noise estimation; iPad-based sketching with Vega-Lite stimuli; data-driven stimulus design with real-world time-series",
+        "Subitizing and Fechner\u2019s Law as foundational theories for visualization perception; dual-system theory (System 1 vs System 2) to interpret perceptual biases in projection evaluation",
+        "Trust-game methodology for evaluating density-reduction line-chart designs in decision contexts",
+        "Comparative evaluation of line-chart density designs (Standard, Aggregated, Trellis, Spiral) using chi-square and t-tests to assess trend identification, prediction, and trust-based decisions",
+        "Empirical methods for perceptual biases in DR projection choices, including phase-wise experiments, correlation analyses (Spearman), two-way ANOVA with Tukey\u2019s HSD, and regression modeling with feature analyses",
+        "Topological Data Analysis (where applicable), Gaussian Mixture Models with Bayesian Information Criterion (BIC) for cluster structure assessment, and Silhouette scores for cluster quality",
+        "Active ranking (Jamieson & Nowak, 2011) to efficiently converge projection rankings from pairwise comparisons"
+    ],
+    "Data & Platforms": [
+        "- Projections derived from 96 real-world datasets to maximize pattern diversity; 80 projections per condition for the DR projection study",
+        "- Visual Stenography: nine real-world time-series datasets (e.g., stock prices, crime rates, weather) used as stimuli; Vega-Lite for stimulus generation; iPad Air with Apple Pencil for sketches; custom web application for sketch capture",
+        "- Paper on distortion-aware brushing: simulated and real-world MD datasets; simulated IoT/MDP scenarios; Adversarial robustness toolkit referenced for context in broader literature",
+        "- Papers leveraging a mix of platforms and tools: Zoom sessions for experiments, custom stimulus interfaces, Python/R-based analysis stacks; Gaussian Mixture Models (GMM) and Silhouette scoring; LIS (Lloyd\u2019s) for lens uniformization; OSF repositories for supplementary materials",
+        "- Visualization and analysis tools cited across the corpus include Vega-Lite, D3.js, scikit-learn (for certain datasets), and standard statistical packages for ANOVA and regression"
+    ],
+    "Application Areas": [
+        "Data Visualization best practices and perceptual guidance",
+        "Visualization-driven education and training in interpretation of high-dimensional data",
+        "Interactive visualization tools for clustering and MD-space exploration",
+        "Temporal data visualization and sketch-based feature prioritization in noisy time-series",
+        "Trust-aware visualization design for decision-making under uncertainty",
+        "Dimensionality reduction validation and robustness to projection distortions",
+        "Visualization design guidelines informed by cognitive psychology"
+    ],
+    "Key Research Thinking Patterns": [
+        "Empirical grounding of visualization design in cognitive psychology (dual-system theory, subitizing, Fechner\u2019s Law) to explain perceptual biases and performance",
+        "Integrative evaluation across multiple modalities (quantitative experiments, qualitative observations, and user studies) to validate new visualization techniques",
+        "Development of robust, scalable interactive methods that explicitly address distortions introduced by dimensionality reduction and projections",
+        "Cross-pollination between perception research and practical visualization design (e.g., trust, decision-making, and feature preservation under noise)",
+        "Emphasis on reproducibility and transparency through open datasets, supplementary materials, and OSF repositories",
+        "Comparison and ablation studies to identify which features and components most strongly drive user performance and trust",
+        "Design for generalization across domains: from multi-dimensional projections to time-series sketches to density-reduced line charts"
+    ],
+    "Summary Description": "Dr. Ghulam Jilani Quadri is a multi-disciplinary visualization researcher whose work spans perception, interaction, and evaluation in data visualization. Across five co-authored papers, his research consistently addresses how humans perceive and interact with complex representations, from dimensionality-reduction projections to dense temporal data. He advances interactive techniques that improve robustness and interpretability, such as distortion-aware brushing for MD projections and Visual Stenography for sketch-based feature prioritization under noise. He also investigates perceptual phenomena (subitizing, faithfulness vs. visual interestingness) and trust in visualization through empirical studies and design guidelines. Quadri\u2019s work exemplifies a rigorous, theory-informed, and user-centered approach to visualization research, with a strong emphasis on empirical validation, cross-domain applicability, and reproducibility."
+}

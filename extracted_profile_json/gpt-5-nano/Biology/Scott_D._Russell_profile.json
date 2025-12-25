@@ -1,0 +1,53 @@
+{
+    "Researcher Profile:": "Dr. Scott D. Russell",
+    "Affiliation:": "Department of Microbiology and Plant Biology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Plant molecular biology",
+        "Epigenetics and small RNA biology",
+        "Rice gamete and zygote biology",
+        "RNA-directed DNA methylation (RdDM)",
+        "Embryogenesis and early plant development",
+        "Zygotic cell cycle regulation and plant cell cycle networks",
+        "Protein\u2013protein interactions and proteostasis in plants",
+        "Translational plant genetics and functional genomics"
+    ],
+    "Techniques Used": [
+        "Genome-wide small RNA sequencing (sRNA-seq) and locus analysis",
+        "Bisulfite sequencing (PBAT and methylC-seq) for DNA methylation (mCHH, CHG, CG)",
+        "CRISPR-Cas9 DRM2 knockout and ddm1-related analyses",
+        "Locus-specific methylation and siRNA distribution analyses",
+        "Transfection of isolated rice egg cells/zygotes using PEG-Ca2+",
+        "Y2H (Yeast Two-Hybrid) and Co-immunoprecipitation for protein interactions",
+        "Bimolecular Fluorescence Complementation (BiFC; mcBiFC) for in vivo interactions",
+        "Kinase activity assays (CDKB1/CDKB2 with CYCD5; inhibition by KRP4/5; FB3-mediated rescue)",
+        "Proteasome degradation assays with MG132",
+        "RT-qPCR for gene expression across tissues",
+        "Seed-set phenotyping and cross-pollination experiments",
+        "Fluorescence microscopy and image analysis (EYFP, mCherry; BiFC signals)",
+        "Cytoscape for network visualization",
+        "Standard molecular genetics workflows (cloning, transfection, crosses)"
+    ],
+    "Data & Platforms": [
+        "Datasets: Rice genome references (MSU7/IRGSP), rice egg/sperm/zygote sequencing data, DRM2/ddm1 datasets",
+        "Public data: NCBI BioProject PRJNA533115",
+        "Code repositories: https://github.com/cxli233/gamete_smRNA_revision; https://github.com/cxli233/zygote_smRNA",
+        "Software: BWA, Cutadapt, PRINSEQ, ShortStack, CGmapTools, BEDTools, BS-Seeker2, R (edgeR, emmeans), Cytoscape, IGVtools",
+        "Platforms and labs: Rice protoplasts, isolated egg cells/zygotes, rice ovary extracts; OU/OU lab facilities; imaging and transfection infrastructure"
+    ],
+    "Application Areas": [
+        "Rice reproductive biology",
+        "Epigenetic reprogramming and embryo development in plants",
+        "Zygotic cell cycle regulation and developmental genetics",
+        "Plant genomics and functional genetics",
+        "Crop improvement through understanding early embryogenesis"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrative, multi-omics approach combining sRNA, DNA methylation, transcriptomics",
+        "Mechanistic dissection of regulatory networks using orthogonal methods",
+        "Maternal carryover vs paternal contributions in early embryogenesis",
+        "Cross-validation using complementary approaches (in vitro, in vivo, in planta) to confirm interactions",
+        "Functional genetics with gain- and loss-of-function alleles to establish causality",
+        "Context-dependent regulation across tissues and developmental stages"
+    ],
+    "Summary Description": "Dr. Scott D. Russell is a plant molecular biologist whose research centers on epigenetic regulation and cell-cycle control during rice gametogenesis and early embryogenesis. He co-authored studies mapping genome-wide 24-nt siRNA distributions in rice gametes and zygotes, revealing dynamic RdDM landscapes and maternal/paternal contributions, and contributed to methodological innovations enabling isolation and transient transfection of rice egg cells and zygotes to study cell-cycle regulators. In a subsequent line of work, he helped define a conserved zygotic cell-cycle core complex (CYCD5\u2013CDKB1) inhibited by Kip-Related Proteins (KRP4/5) and activated via FB3-mediated proteolysis, integrating yeast-two-hybrid, BiFC, kinase assays, and genetic analyses to show how precise proteolysis and CDK regulation govern the first zygotic divisions and seed formation. His work employs a rich toolkit\u2014from high-throughput sequencing and methylation analyses to protein interaction assays and plant genetic crosses\u2014bridging fundamental plant biology with insights relevant to crop reproduction and yield."
+}

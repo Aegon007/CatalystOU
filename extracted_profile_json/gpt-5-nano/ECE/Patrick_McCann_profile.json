@@ -1,0 +1,46 @@
+{
+    "Researcher Profile:": "Dr. Patrick J. McCann",
+    "Affiliation:": "School of Electrical and Computer Engineering, Gallogly College of Engineering, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Mid-infrared spectroscopy and chemical sensing",
+        "Bioreactor-integrated sensing and cancer metabolism readouts",
+        "Thermophotovoltaic (TPV) device design and optimization",
+        "IV\u2013VI semiconductor quantum well materials (PbSe, PbSrSe, PbSnSe) grown on silicon",
+        "Energy storage integration and grid-scale TPV systems",
+        "Device modeling and analytical transport theory",
+        "Epitaxial growth and materials integration on silicon"
+    ],
+    "Techniques Used": [
+        "Mid-infrared laser absorption spectroscopy using interband cascade lasers (ICLs)",
+        "Online/offline acetaldehyde headspace sensing in cell-culture media within hydrogel scaffolds",
+        "Lock-in detection, Allan-Werle variance analysis for noise and detection limit assessment",
+        "Long-path gas sensing with Herriott cells, high-sensitivity spectral acquisition",
+        "Spectral calibration and reference using HITRAN data and peak-to-peak absorption metrics",
+        "Dual- and multi-junction TPV device design and performance modeling (diffusion-based IQE analyses)",
+        "Strain engineering and quantum confinement in IV\u2013VI MQWs for band-structure tuning",
+        "Diffusion-based charge transport modeling, including IQE_h and IQE_e derivations",
+        "Current matching optimization for TPV stacks and spectral-band partitioning",
+        "Molecular beam epitaxy (MBE) growth context for IV\u2013VI MQWs on silicon substrates"
+    ],
+    "Data & Platforms": [
+        "Laboratory instrumentation: Nanoplus mid-IR DFB ICL, HgCdTe detector with TEC, ILX Lightwave current source, NI-6052E DAQ, SR810 lock-in amplifier, LabVIEW control/processing",
+        "Optical hardware: 100 m Herriott multi-pass gas cell, high-frequency modulation and detection setup",
+        "Bioreactor platform: Flow-perfusion bioreactor with six collagen hydrogel chambers for EMT-6 cells (Paper 1)",
+        "TPV device modeling platforms: Analytic diffusion- and transport-based TPV models for 2J/3J configurations (Papers 2\u20135)",
+        "Spectral references: HITRAN database for spectral line positions"
+    ],
+    "Application Areas": [
+        "Cancer metabolism monitoring via metabolic gas markers in 3D cell culture systems",
+        "Real-time bioprocess monitoring and lab-on-a-system integration",
+        "Low-cost, high-density TPV power conversion for grid-scale energy storage and renewable integration",
+        "Silicon-substrate-based TPV device research with potential for scalable manufacturing",
+        "Cross-disciplinary energy and sensing technologies bridging biology, photonics, and energy systems"
+    ],
+    "Key Research Thinking Patterns": [
+        "Interdisciplinary integration of biology, photonics, and energy systems to address real-world monitoring and energy challenges.",
+        "System-level optimization with explicit attention to trade-offs among sensitivity, speed, and robustness against artifacts.",
+        "Scalability and manufacturability emphasis, favoring silicon-based, cost-aware material platforms and modular sensing/energy solutions.",
+        "Model-driven design and experimental validation cycle, prioritizing practical deployment, reliability, and contribution to translational research."
+    ],
+    "Summary Description": "Dr. Patrick J. McCann is an interdisciplinary researcher at the University of Oklahoma whose work bridges mid-infrared photonics and thermophotovoltaic (TPV) energy conversion. He co-develops compact mid-IR laser-based sensors for metabolic readouts in hydrogel-based cell cultures and leads analytic TPV device design and modeling using IV\u2013VI MQW materials on silicon. His research demonstrates a blend of experimental sensing platforms (including inline acetaldehyde headspace measurements and lock-in spectroscopy) with advanced materials design and device-level calculations, targeting applications from cancer metabolism sensing to grid-scale, low-cost TPV power generation. The work collectively advances both sensing technology for bioprocess monitoring and scalable, silicon-compatible TPV architectures for energy storage and conversion, highlighting practical pathways toward manufacturability and real-world deployment."
+}

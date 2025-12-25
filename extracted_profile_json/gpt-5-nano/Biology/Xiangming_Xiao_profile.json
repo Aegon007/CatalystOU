@@ -1,0 +1,48 @@
+{
+    "Researcher Profile:": "Dr. Xiangming Xiao",
+    "Affiliations:": [
+        "School of Biological Sciences, University of Oklahoma, Norman, OK, USA",
+        "State Key Laboratory of Earth Surface Processes and Resource Ecology, College of Global Change and Earth System Science, Beijing Normal University, Beijing, China"
+    ],
+    "Research Domains": [
+        "Urban climate and land surface temperature (LST)",
+        "Local Climate Zone (LCZ) analysis and greenspace interactions",
+        "Interpretable machine learning in geospatial science (XGBoost-SHAP)",
+        "Remote sensing of urban and peri-urban environments",
+        "High-resolution satellite imagery analytics for agriculture (oil palm mapping) and forestry",
+        "Landscape ecology and urban design implications for climate resilience"
+    ],
+    "Techniques Used": [
+        "RF-based LST downscaling from 30 m to 10 m using Landsat 8 and Radiative Transfer Equation",
+        "XGBoost regression with SHAP for interpretability of drivers of LST and land-surface patterns",
+        "Local Climate Zone (LCZ) mapping and cross-scale analysis (block/grid scales)",
+        "Fragstats landscape metrics (PLAND, LSI, ENN_MN, COHESION, PD)",
+        "ArcGIS Pro for LCZ mapping and spatial analysis",
+        "Radiative transfer-based LST retrieval; NDVI/NDBI derived indices",
+        "Morphology-based, sample-free oil palm mapping from sub-meter RGB imagery (GDWD, DRSD, AIE, OTSU thresholds)"
+    ],
+    "Data & Platforms": [
+        "Landsat 8 (LST via Radiative Transfer Equation; NDVI/NDBI)",
+        "ECOSTRESS LST products",
+        "Sentinel-2 (multispectral data)",
+        "Google Earth sub-meter RGB imagery for oil palm mapping",
+        "ArcGIS Pro 3.0; Fragstats 4.2; SAGA-GIS (LCZ classification in some work)",
+        "Python (XGBoost, SHAP, scikit-learn); TensorFlow 2.8.0 (where used); Google Earth imagery platform",
+        "Open-source datasets and reproducible code (GitHub repository referenced in papers)"
+    ],
+    "Application Areas": [
+        "Urban climate resilience and heat-mitigation policy",
+        "Greenspace planning and urban greenspace morphology",
+        "Oil palm plantation mapping and single-tree information for forestry management",
+        "City-scale environmental planning and land-use decision support",
+        "Global change biology and environmental monitoring"
+    ],
+    "Key Research Thinking Patterns": [
+        "Cross-scale and cross-domain integration: applying intra-urban scales to policy-relevant outcomes and transferring methods to agricultural monitoring",
+        "Explainable AI in environmental science: using SHAP to interpret complex drivers of LST in different LCZ types",
+        "Data-driven, reproducible workflows with robust validation against ground truth",
+        "Leveraging high-resolution imagery to minimize downscaling errors and misinterpretations in environmental governance",
+        "Hybrid using multiple data sources and open datasets to enable scalable, policy-relevant insights"
+    ],
+    "Summary Description": "Xiangming Xiao conducts interdisciplinary geospatial and environmental science research, bridging urban climatology, remote sensing, and sustainable land-use planning. His work emphasizes explainable machine learning approaches to quantify how urban form, greenspace, and landscape structure drive microclimates at fine scales, supporting scalable, LCZ-informed urban planning for climate resilience. He also contributes to high-resolution, morphology-based oil palm mapping using sub-meter RGB imagery, providing global-scale data products for forestry and agricultural management with minimal reliance on training data. Together, his research advances reproducible, interpretable analytics that inform urban design, land-use policy, and environmental stewardship across rapidly changing urban and agricultural landscapes."
+}

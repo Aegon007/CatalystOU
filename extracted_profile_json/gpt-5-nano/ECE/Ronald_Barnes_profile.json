@@ -1,0 +1,46 @@
+{
+    "Researcher Profile:": "Ronald D. Barnes",
+    "Affiliation:": "The University of Oklahoma, Norman, OK, USA; School of Electrical and Computer Engineering",
+    "Research Domains": [
+        "Hardware Architecture",
+        "Microarchitectural Design",
+        "Context Switching and Thread Migration",
+        "Runahead Execution and Memory Systems",
+        "Heterogeneous/Multi-Core Processors (HMP)",
+        "Performance Modeling and Simulation",
+        "Energy-Efficient Computing",
+        "Edge/IoT Infrastructure"
+    ],
+    "Techniques Used": [
+        "Hardware-assisted context switching via a Shared Context Unit (SCU)",
+        "Context Sets (CSs) and crossbar-based CS switching with CSI/PR pointers",
+        "Active Thread List (ATL) management and CST_ID tracking for thread migration",
+        "CACTI-based area and energy estimation (32 nm process)",
+        "Two-cycle context-switching latency with scalability analysis (m \u00d7 l + 2m \u2212 1 for multitasking)",
+        "Cycle-accurate architectural simulation using Soonergy",
+        "SPEC CPU2006 benchmarking for evaluating runahead strategies",
+        "Runahead Execution with Result Reuse (RU) evaluation in in-order and out-of-order pipelines (IORARU, OORARU)"
+    ],
+    "Data & Platforms": [
+        "CACTI 6.x for 32 nm area and energy estimates",
+        "Soonergy cycle-accurate simulator for runahead studies",
+        "SPEC CPU2006 benchmarks (C/C++) for performance evaluation",
+        "X86-64-like context models and multi-core/multi-cluster configurations",
+        "Hardware architecture simulations with IO and OO pipeline variants up to 8-wide"
+    ],
+    "Application Areas": [
+        "Multi-core and many-core processor design",
+        "Heterogeneous and clustered computing architectures",
+        "Real-time and energy-constrained systems",
+        "High-performance computing and edge computing",
+        "Microarchitectural research on context management and memory-system optimization"
+    ],
+    "Key Research Thinking Patterns": [
+        "Hardware-software co-design: prioritizing hardware mechanisms to reduce OS-level overheads (e.g., context switching, thread migration, and scheduling)",
+        "Latency-centric optimization: aggressive reduction of context-switch and migration costs to improve responsiveness in heterogeneous systems",
+        "Comparative evaluation: contrasting hardware SCU-based approaches with traditional OS-based switching, SMT, and checkpointing strategies",
+        "Performance-energy trade-off analysis: rigorous quantification of area, energy, and latency implications of design choices",
+        "Memory-system optimization via runahead and result reuse to mitigate memory bottlenecks in memory-bound workloads"
+    ],
+    "Summary Description": "Ronald D. Barnes is a computer-architecture researcher whose work centers on hardware-enabled thread management and memory-system optimization in heterogeneous multi-core and multi-cluster systems. He co-authored foundational work introducing a Shared Context Unit (SCU) and associated mechanisms (Context Sets, crossbar switching, CSI/PR pointers, and ATL) to achieve ultra-low-latency thread migration and fine-grained scheduling across cores. He also contributed to the evaluation of runahead execution with result reuse (IORARU vs OORARU) across in-order and out-of-order pipelines, demonstrating substantial performance gains for memory-bound workloads, especially in IO-dominated configurations. His research employs cycle-accurate simulation (Soonergy), CACTI-based area/energy estimates, and SPEC CPU2006 benchmarks to quantify latency, throughput, and energy benefits, positioning hardware-assisted context management and runahead techniques as compelling alternatives or complements to traditional OS-based scheduling, SMT, and checkpointing in modern heterogeneous and edge-oriented computing environments."
+}

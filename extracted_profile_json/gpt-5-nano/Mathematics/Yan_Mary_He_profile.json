@@ -1,0 +1,55 @@
+{
+    "Researcher Profile:": "Dr. Yan Mary He",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK 73019, USA",
+    "Research Domains": [
+        "Complex dynamics",
+        "Holomorphic dynamics",
+        "Thermodynamic formalism and statistical mechanics in dynamical systems",
+        "Fractal geometry and dimension theory (Hausdorff dimension)",
+        "Transfer operator theory and spectral analysis",
+        "Tower dynamics and generalized Cantor-set models",
+        "Teichm\u00fcller theory and Weil\u2013Petersson-type metrics on moduli/parameter spaces",
+        "Moduli spaces and deformation theory in complex dynamics",
+        "Symbolic dynamics and nonlinear dynamics",
+        "Non-realizability and mapping class group theory in infinite-type surfaces"
+    ],
+    "Techniques Used": [
+        "Holomorphic perturbation theory and real-analytic dependence on parameters",
+        "Transfer operators on H\u00f6lder spaces and spectral-gap analysis",
+        "Tower constructions and generalized conformal Cantor sets",
+        "Lasota\u2013Yorke-type estimates for quasi-compact operators",
+        "Four-parameter transfer operator framework L(t1, \u03bb1, t2, \u03bb2) and potential decomposition",
+        "Holomorphic motions and conjugacy of Julia sets",
+        "Equilibrium states and Gibbs measures",
+        "Hessian and pressure forms: \u27e8\u00b7,\u00b7\u27e9G and \u27e8\u00b7,\u00b7\u27e9P and their relation",
+        "Weil\u2013Petersson-type metric constructions on \u039b-hyperbolic components",
+        "Bowen parameters, Bowen\u2019s pressure equations, and analyticity of P and \u03b4",
+        "Holomorphic extension frameworks (SU10) for operator families",
+        "Ruelle zeta function, Ikehara Tauberian arguments, and periodic-orbit counting",
+        "Misiurewicz families, \u039b-hyperbolic components, and algebraic perturbations",
+        "Lyapunov exponents, equilibrium states, and their analytic dependence"
+    ],
+    "Data & Platforms": [
+        "Datasets: N/A (theoretical work)",
+        "Software/Languages: N/A",
+        "Theoretical platforms: Tower dynamics, H\u00f6lder spaces, transfer operators, perturbation theory, holomorphic motions, Teichm\u00fcller theory, and thermodynamic formalism"
+    ],
+    "Application Areas": [
+        "Complex dynamics and holomorphic dynamics",
+        "Thermodynamic formalism and statistical properties of dynamical systems",
+        "Fractal geometry and dimension theory",
+        "Teichm\u00fcller theory and geometric structures on moduli spaces",
+        "Deformation theory of dynamical systems",
+        "Higher-dimensional complex dynamics and volume-dimension analysis",
+        "Mapping class groups and infinite-type surface dynamics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Analytic variation of fractal invariants and thermodynamic quantities with respect to system parameters",
+        "Interplay between dynamics and geometry: metrics on parameter spaces and Hessian structures derived from pressure",
+        "Spectral-gap stability and quasi-compact operators as a backbone for perturbation analysis",
+        "Holomorphic motions and conjugacies enabling transfer of local dynamics to a global analytic framework",
+        "Coboundary/non-coboundary dichotomy via pressure/variance forms",
+        "Rigidity results and deformation-theoretic constraints used to deduce global geometric properties"
+    ],
+    "Summary Description": "Yan Mary He is a mathematician specializing in complex and holomorphic dynamics, dynamical systems, and the geometry of parameter spaces. Her collaborative work with Fabrizio Bianchi develops an analytic, thermodynamic-formalism\u2013driven framework for studying how fractal invariants such as the Hausdorff dimension vary analytically across families of polynomial and rational maps, and for constructing Weil\u2013Petersson\u2013type metrics on bounded \u039b-hyperbolic components. Their research integrates tower dynamics, transfer-operator spectral theory, holomorphic perturbation theory, and holomorphic motions to establish real-analytic dependence of pressure and dimension, linking dynamics with geometric structures on moduli spaces. She also contributes to the study of big mapping class groups and Nielsen realization in infinite-type surfaces, highlighting the interaction between dynamical systems and geometric group theory."
+}

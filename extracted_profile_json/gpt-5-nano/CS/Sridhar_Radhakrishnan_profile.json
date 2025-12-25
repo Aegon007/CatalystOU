@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Sridhar Radhakrishnan",
+    "Affiliation:": "School of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Information diffusion and disinformation",
+        "Interdependent networks and cross-layer resilience",
+        "Optimization under uncertainty and operations research",
+        "Drone-based information gathering and disaster response",
+        "Network security and cyber-physical systems",
+        "Power and transport infrastructure resilience",
+        "Applied ML/OR methods for infrastructure systems"
+    ],
+    "Techniques Used": [
+        "Integer Linear Programming (ILP) / Mixed-Integer Linear Programming (MILP)",
+        "NP-hardness proofs via reductions (e.g., Knapsack, MAX-2SAT)",
+        "McCormick relaxation for bilinear term linearization",
+        "Fractional programming to MILP reformulations",
+        "Branch-and-cut MILP solving with Gurobi",
+        "Greedy approximation algorithms (AMC) for large-scale survivability under causal failures",
+        "Monte Carlo simulation for stochastic utilities",
+        "Gradient-based switching-cost optimization",
+        "Shortest-path computation and network centrality measures (Dijkstra, betweenness centrality)",
+        "Two-layer/ multilayer network modeling and diffusion-infrastructure coupling"
+    ],
+    "Data & Platforms": [
+        "Twitter diffusion graph (\u224880,000 nodes, \u22481.8M edges)",
+        "New York City subway network (\u2248450 stations, >500 links)",
+        "Subway ridership data (\u22485.5 million daily riders, pre-pandemic)",
+        "Rumor belief datasets (1,160 participants; Big Five traits)",
+        "Power network instance (power2000) for cascading causal failures",
+        "Datasets/benchmarks and software: Gurobi, NetworkX, Python",
+        "Route/delay data from transit datasets (Blume et al., MTA data)"
+    ],
+    "Application Areas": [
+        "Disinformation interdiction in interdependent information-physical networks (e.g., subway resilience)",
+        "Risk and reliability analysis of critical infrastructure under information-driven disruptions",
+        "Disaster response planning via drone-based information gathering with dynamic utilities",
+        "Cascading failures and cross-layer protection in cyber-physical systems",
+        "Resilience of power and transportation networks to causal link failures"
+    ],
+    "Key Research Thinking Patterns": [
+        "Cross-layer systems engineering: explicitly coupling information diffusion dynamics with physical network performance",
+        "Exact and approximate optimization: leveraging MILP formulations alongside scalable heuristics for large networks",
+        "Uncertainty integration: stochastic utilities, Monte Carlo estimation, and robust/sensitivity analyses",
+        "Scalability and practicality: designing models that can be solved with standard solvers on real-world networks",
+        "Decision-support for resilience: translating complex network dynamics into actionable interdiction/protection strategies"
+    ],
+    "Summary Description": "Dr. Sridhar Radhakrishnan specializes in the intersection of information diffusion, cyber-physical resilience, and optimization for critical infrastructures. His work develops cross-layer models that connect social-media-driven disinformation with physical networks (e.g., subway and power systems), advancing exact and heuristic optimization techniques (MILP, MC-based uncertainty, McCormick linearization, branch-and-cut) to design interdiction and protection strategies. He investigates drone-based information gathering under dynamic and stochastic utilities, causal link failures in network systems, and resilience frameworks under disinformation pressures, contributing to theoretical foundations and practical solutions for reliable, secure, and robust infrastructure in the face of information-driven disruptions. His research emphasizes real-world networks, scalable algorithms, and transdisciplinary thinking across operations research, computer science, and systems engineering."
+}

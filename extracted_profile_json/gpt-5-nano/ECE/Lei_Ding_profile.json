@@ -1,0 +1,50 @@
+{
+    "Researcher Profile:": "Dr. Lei Ding",
+    "Affiliation:": "Stephenson School of Biomedical Engineering, University of Oklahoma; Institute for Biomedical Engineering, Science, and Technology, University of Oklahoma",
+    "Research Domains": [
+        "Biomedical imaging",
+        "Neural engineering",
+        "Spinal cord imaging",
+        "EEG-based brain network analysis",
+        "Resting-state and task-based fMRI",
+        "Multimodal data integration",
+        "Machine learning in biomedical contexts",
+        "Privacy-preserving machine learning in biomedicine"
+    ],
+    "Techniques Used": [
+        "Automated deep-learning-based spinal cord segmentation (sct_deepseg_sc)",
+        "Atlas-based tract delineation (PAM50) and slice-by-slice registration (SliceReg)",
+        "MAP-based estimation for region/tract magnetization transfer ratio (MTR)",
+        "Magnetization transfer MRI and MT-based quantitative metrics",
+        "Minimum-norm estimates (MNE) for cortical source localization in EEG",
+        "Finite forward model (BEM) and inverse solutions for source imaging",
+        "Group-level ICA in EEG alpha band and CAP (Recurring Transient Co-activation Pattern) analysis",
+        "ROI-based aggregations using Schaefer atlas; correlation-distance-based CAP clustering (k-means)",
+        "Spinal fMRI with task paradigms and RETROICOR physiological noise correction",
+        "Seed-based resting-state functional connectivity analyses (PCC-based DMN) via AFNI/MATLAB",
+        "Complementary behavioral correlations (mJOA, RBANS, MoCA; cognitive-performance linkages)",
+        "DFT/DFT-like surface/interface analyses (DFT cited in related interfacial studies; not central to Lei\u2019s own papers but reflects cross-domain methodological exposure)"
+    ],
+    "Data & Platforms": [
+        "Paper 1 (MTR tract-based DCM study): 27 DCM patients and 20 age-matched healthy controls; 3T GE MR750; 16-channel NovaCSpine coil; SCT v6.1; PAM50 atlas; Python and PyTorch; data not publicly available; tools include SCT, SliceReg, sct_extract_metric, and GraphPad Prism",
+        "Paper 2 (EEG CAPs and RSNs): Resting-state EEG from 34 healthy adults; 128-channel EEG; preprocessing with EEGLAB and FASTER; cortical source localization with FreeSurfer and BEM-based forward models; Schaefer atlas for ROI reduction; group ICA in alpha band; MATLAB (regressions and brain-behavior analyses)",
+        "Paper 3 (task-based spinal fMRI in DCM): 23 DCM patients and 23 age-matched healthy controls; 3T GE Signa; SCT v7; PAM50; MR-compatible median nerve stimulation paradigm; AFNI/FSL for GLM analyses; RETROICOR for physiological noise; data not publicly available; emphasis on sMRI/spinal cord segmentation and segmental localization",
+        "Paper 5 (DMN connectivity in post-COVID cognitive complaints): Resting-state fMRI at 3T; AFNI for seed-based DMN; MATLAB for brain-behavior covariation analyses; data not publicly available; aligns with OU infrastructure"
+    ],
+    "Application Areas": [
+        "Clinical biomarker development for CNS disorders (spinal cord pathologies such as degenerative cervical myelopathy)",
+        "Neuroimaging-guided diagnostics and prognosis",
+        "Cognitive neuroscience in post-viral contexts (e.g., post-COVID cognitive concerns)",
+        "Noninvasive brain/spinal cord functional assessment via MRI/EEG",
+        "Privacy-preserving AI and ML applications in biomedical imaging"
+    ],
+    "Key Research Thinking Patterns": [
+        "Multiscale, anatomically informed analysis: combining region-level and tract-level metrics with atlas-guided segmentation to capture heterogeneous pathology",
+        "Automated, reproducible pipelines: leveraging DL-based segmentation and atlas-guided registration to reduce manual bias and increase throughput",
+        "Robust estimation to mitigate partial volume and MT resolution issues (MAP-based MTR estimation)",
+        "Cross-modal integration: aligning MRI-based spinal metrics with functional/neural signals from EEG and fMRI to relate structure, function, and behavior",
+        "Clinical translation focus: designing methods and metrics with direct relevance to disease severity, motor function, and cognitive outcomes",
+        "Methodological transparency and reproducibility: detailing preprocessing, segmentation, and analysis steps to enable replication across labs"
+    ],
+    "Summary Description": "Dr. Lei Ding is a cross-disciplinary biomedical engineer at the University of Oklahoma whose work spans advanced biomedical imaging, neural engineering, and AI-driven analytical pipelines. He contributes to image-guided biomarker discovery in spinal cord pathology (notably degenerative cervical myelopathy) through automated, atlas-guided tract-level analysis and MAP-based MTR estimation on magnetization transfer MRI. His breadth extends to EEG-based neuroscience, including cortical source localization, alpha-band ICA, and recurring co-activation pattern analyses to map CAPs onto resting-state networks, alongside seed-based DMN connectivity studies in cognitive contexts such as post-COVID symptomatology. Across projects, Ding emphasizes robust, scalable pipelines that integrate machine learning with multimodal data (MRI, EEG, fMRI) to derive clinically actionable biomarkers, while fostering collaborations across neurosurgery, biomedical engineering, and cognitive neuroscience. His work reflects a strong orientation toward translational imaging science, methodological rigor, and the advancement of privacy-conscious ML approaches in biomedical contexts."
+}

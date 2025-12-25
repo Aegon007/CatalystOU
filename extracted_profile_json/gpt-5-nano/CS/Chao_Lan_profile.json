@@ -1,0 +1,64 @@
+{
+    "Researcher Profile:": "Dr. Chao Lan",
+    "Affiliation:": "School of Computer Science, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Data-Dependent Random Projections",
+        "Dimensionality Reduction",
+        "Regression Methods (LSR, KRR)",
+        "Kernel Methods",
+        "Machine Learning Theory",
+        "Fairness in ML and Active Learning",
+        "Debiasing and Distribution Shift",
+        "Random Features",
+        "Spectral-N norm Estimation",
+        "Multimodal Learning",
+        "Social Media Analytics",
+        "Prototype-Based Learning",
+        "Cross-Modal Fusion"
+    ],
+    "Techniques Used": [
+        "Efficient Data-Dependent Random Projection (D2RP) for regression with theoretical guarantees (distance distortion, reconstruction, empirical excess risk)",
+        "Data reconstruction bounds in projected spaces (Theorem II.2) and exponential decay of empirical excess risk (Theorem II.3)",
+        "Kernel Ridge Regression (KRR) acceleration via random projections (K replaced by K R or compressed forms)",
+        "Disagreement-Based Fairness-Aware Active Learning for Decoupled Models (D-FA2L) with \u03b1-distance, \u03b1-margin, and DI fairness metric",
+        "Rademacher complexity-based sample complexity analysis (Theorem 6) for decoupled models",
+        "Self-labeled data debiasing using Kernel Means Matching (KMM) in embedded space (DeFastText), bi-level SGD optimization",
+        "Kernel methods with Gaussian/RBF kernels and random feature mappings",
+        "Spectral-norm estimation of kernel matrices using Random Features and RFPI (Random Feature-based Power Iteration)",
+        "Power-iteration techniques integrated with random features to estimate spectral norms efficiently",
+        "Prototype-Based Fully Balanced Learning for multimodal fake news detection (PFBL): PMB, PCB, MFC losses, joint prototype updating (JPU)",
+        "Cross-transformer based multimodal fusion with BERT for text and CLIP for images, followed by a classifier",
+        "Ablation studies and statistical analyses (Kruskal-Wallis, t-SNE visualizations) to validate components"
+    ],
+    "Data & Platforms": [
+        "MNIST (subset, used in D2RP experiments) and High Dimensional Datascape (HDD) for regression analysis",
+        "COMPAS and Crime & Community datasets for fairness-aware active learning (D-FA2L)",
+        "Self-labeled vs Random Twitter gender/race datasets for debiasing with DeFastText",
+        "Crime and Wine datasets for spectral-norm estimation via RFPI",
+        "Weibo, Twitter, Fakeddit, and FakeSV for multimodal fake news detection (PFBL)",
+        "KMM, Gaussian/RBF kernels; proportional usage of FastText baseline in DeFastText",
+        "Pretrained embeddings: BERT (text), CLIP (image) for PFBL",
+        "Cross-modal transformer for multimodal fusion in PFBL",
+        "Software: Python; PyTorch; TensorFlow (as applicable across works; exact stacks vary by paper)",
+        "Hardware: GPUs including GTX 1080 Ti and NVIDIA A6000 used in PFBL experiments"
+    ],
+    "Application Areas": [
+        "Regression and Kernel Methods with Efficient Projections",
+        "Fairness-Aware Learning and Decoupled Models",
+        "Debiasing and Distribution Shift in Self-Labeled Data",
+        "Efficient Norm Estimation for Kernel Methods",
+        "Multimodal Fake News Detection and Social Media Analytics",
+        "Cross-Modal Fusion and Prototype-Based Learning",
+        "Data-Driven Dimensionality Reduction for Real-World ML Pipelines"
+    ],
+    "Key Research Thinking Patterns": [
+        "Efficiency-Driven Methodology: Prioritize computational efficiency (O(k) projection-gen in D2RP; RFPI O(nq)) while retaining strong theoretical guarantees",
+        "Theoretical Guarantees: Provide concrete distortion, reconstruction, and convergence bounds to underpin practical methods",
+        "Fairness and Bias Mitigation: Develop active learning and debiasing techniques to improve fairness without sacrificing accuracy",
+        "Data Distribution Awareness: Address distribution shifts between training/self-labeled data and population/test data (e.g., DeFastText)",
+        "Prototype-Centric Learning: Leverage prototypes to balance modalities and classes in multimodal tasks (PFBL)",
+        "Cross-Modal Representation: Combine pretrained embeddings with sophisticated fusion mechanisms to enhance multimodal tasks",
+        "Empirical Validation Across Diverse Domains: Demonstrate methods on regression, fairness, noise-robustness, spectral estimation, and multimodal detection"
+    ],
+    "Summary Description": "Dr. Chao Lan is a versatile ML researcher at the University of Oklahoma whose work spans theory-driven, efficient machine learning methods and real-world applications. His contributions illuminate a consistent theme: achieving strong performance with principled guarantees under practical constraints. He co-develops data-efficient projection techniques (D2RP) with reconstruction assurances for regression tasks, advances fairness in learning through decoupled models (D-FA2L) and debiasing self-labeled social data via kernel means matching (DeFastText), and tackles kernel-method bottlenecks through random-feature-based spectral-norm estimation (RFPI). Expanding into multimodal AI, he co-authors PFBL, a prototype-based fully balanced framework for DI-MFND that harmonizes modality and class balance via prototype-centric losses and cross-modal fusion. Across papers, Lan integrates theoretical insight with empirical validation on diverse datasets (MNIST, COMPAS, Twitter, Weibo, Fakeddit, Wine, Crime), employing tools such as BERT, CLIP, cross-transformers, and standard ML stacks to address scalable, responsible, and impactful ML challenges."
+}

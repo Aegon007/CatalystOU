@@ -1,0 +1,58 @@
+{
+    "Researcher Profile:": "Liu Hong",
+    "Affiliation:": "University of Oklahoma, School of Electrical and Computer Engineering, Norman, OK, USA",
+    "Research Domains": [
+        "Medical Imaging",
+        "Breast Cancer Imaging and Radiomics",
+        "Computer-Aided Detection and Diagnosis (CAD)",
+        "Deep Learning in Medical Imaging",
+        "Multi-View Imaging and Data Fusion",
+        "Radiomics and Quantitative Imaging",
+        "Image Reconstruction and Computational Imaging",
+        "Biomedical Optics and Fourier Ptychographic Microscopy (FPM)",
+        "Cytogenetics Imaging and Karyotyping",
+        "Semi-Supervised and Robust Learning in Medical Imaging"
+    ],
+    "Techniques Used": [
+        "Bilateral mammography radiomics-like markers to predict MRI-detectable occult cancers",
+        "Four-filter maps and bilateral feature differences in CC/MLO views",
+        "Pretrained multi-feature fusion artificial neural network for risk scoring",
+        "Pectoral muscle segmentation in MLO views",
+        "Bilateral asymmetry analysis and threshold-based MRI referral rule",
+        "Multi-view Vision Transformer (MVT) architecture with local/global transformer blocks for four unregistered mammograms",
+        "DeiT-tiny and DeiT-small backbones for multi-view fusion",
+        "Cross-view feature fusion and 4-view integration",
+        "Virtual Adversarial Training (VAT) for semi-supervised breast mass classification",
+        "Gaussian-Newton phase retrieval and embedded pupil function recovery in Fourier Ptychographic Microscopy",
+        "Fourier Ptychographic Microscopy with high-NA illumination and reconstruction for chromosome imaging",
+        "MTF-based resolution analysis using USAF 1951 targets",
+        "Amplitude/phase reconstruction for quantitative chromosome visualization"
+    ],
+    "Data & Platforms": [
+        "Two-case Mercy Health System (Oklahoma City) mammography study with BI-RADS 1\u20132 and MRI-confirmed occult cancers",
+        "Four-view full-field digital mammography (FFDM) dataset of 949 patients for MVT-based classification (histopathology ground truth)",
+        "FFDM-based dataset with 1024 labeled/unlabeled split for VAT semi-supervised learning",
+        "Adversarial Threats Simulator: Adversarial Robustness Toolbox",
+        "Python, PyTorch; ROCKIT ROC analysis; AWS SageMaker for some experiments",
+        "Four-view mammograms: CC and MLO views; pectoral muscle segmentation; pre-processing",
+        "Fourier Ptychographic Microscopy hardware: Thorlabs microscope platform, LED arrays, optical setups; USAF target for MTF",
+        "FPM-based chromosome imaging experiments on leukemia patient samples (blood and bone marrow)"
+    ],
+    "Application Areas": [
+        "Breast cancer screening and risk stratification; MRI adjunct imaging",
+        "Radiomics-based imaging biomarkers; early detection",
+        "Medical imaging with multi-view data fusion and transformer-based analysis",
+        "Semi-supervised learning in medical imaging with limited labels",
+        "High-resolution, wide-field cytogenetic imaging via Fourier Ptychographic Microscopy",
+        "Clinical translational AI for radiology and cytogenetics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Translational AI in medical imaging: bridging radiology workflows with AI-based risk markers and MRI referrals",
+        "Multi-view fusion and cross-domain integration: combining information across views and modalities via transformers",
+        "Robust learning under data constraints: semi-supervised learning, VAT, and minimal preprocessing pipelines",
+        "Computational imaging enhancements: leveraging FPM to push resolution and field of view beyond conventional optics",
+        "Cross-disciplinary methodology: integrating radiomics, AI, and optical physics for clinical impact",
+        "Rigorous evaluation: cross-validation, statistical significance testing (AUC, ROC), and benchmarking against baselines"
+    ],
+    "Summary Description": "Liu Hong's research lies at the intersection of medical imaging, radiomics, and computational optics. Across multiple papers, Liu develops AI-driven CAD and risk-stratification frameworks for breast cancer detection, leveraging bilateral mammographic symmetry, multi-feature neural fusion, and advanced transformer architectures to fuse information from multiple views. He also pursues data-efficient learning via semi-supervised methods (VAT) to maximize utility from limited labeled data. In addition, his work extends into computational imaging with Fourier Ptychographic Microscopy to achieve high-resolution, wide-field chromosome imaging for karyotyping, including phase and amplitude reconstructions and MTF-based performance benchmarks. Overall, his work aims to enable clinically feasible, robust, and scalable imaging analytics that augment radiology and cytogenetics, with careful attention to data handling, evaluation rigor, and potential translational impact."
+}

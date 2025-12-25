@@ -1,0 +1,50 @@
+{
+    "Researcher Profile:": "Dr. JeongJin Kim",
+    "Affiliation:": "George Mason University, Department of Psychology, Fairfax, VA, USA (collaborations and prior affiliations include Yonsei University and the University of Oklahoma in joint projects).",
+    "Research Domains": [
+        "Organizational psychology",
+        "Attitudes toward artificial intelligence and AI-enabled work processes",
+        "Emotion regulation and affect dynamics in workplace contexts",
+        "Job boredom, burnout, and counterproductive work behaviors (CWB)",
+        "Experience Sampling Method (ESM) and Ecological Momentary Interventions (EMI) in organizational settings",
+        "Scale development and psychometrics (factor analysis, validity testing)",
+        "Workplace training, recruitment signaling, and AI-driven HR practices",
+        "Applied multivariate methods (SEM, CFA, MLM, latent change scoring)"
+    ],
+    "Techniques Used": [
+        "Exploratory and Confirmatory Factor Analysis (EFA/CFA) for scale development and validation",
+        "Exploratory and Confirmatory Structural Equation Modeling (SEM) using lavaan and related tools",
+        "Measurement validation metrics: AVE, CR, Cronbach's alpha, Fornell\u2013Larker discriminant validity",
+        "Latent Change Score (LCS) modeling for within-person dynamic processes",
+        "Multilevel Modeling (MLM) and multilevel mediation/path analysis (2-1-1, 2-1-2 structures)",
+        "Experience Sampling Method (ESM) and Ecological Momentary Interventions (EMI)",
+        "Randomized controlled and quasi-experimental designs in workplace interventions",
+        "Moderated mediation and moderation analyses (e.g., career calling, detachment, AI attitudes)",
+        "Robust moderation and interaction analyses to examine boundary conditions and contextual factors",
+        "Cross-study psychometric validation across US and Korea contexts"
+    ],
+    "Data & Platforms": [
+        "Public data collection platforms: MTurk (US-based samples), Craigslist recruitment, online survey tools",
+        "Data repositories: Open Science Framework (OSF) for data and code sharing",
+        "Software and programming languages: R (lavaan, lme4) for SEM and MLM; Python (in some studies) for data processing and analyses",
+        "Experimental and longitudinal designs: ESM/EMI protocols, daily diaries, and multi-wave surveys",
+        "Datasets / samples referenced across papers include US-based and Korean-based cohorts"
+    ],
+    "Application Areas": [
+        "Workplace AI integration and attitudes toward AI in organizational settings",
+        "Recruitment signaling and organizational attractiveness in AI-enabled processes",
+        "Emotion regulation interventions in the workplace",
+        "Prevention and management of job boredom, burnout, and CWB",
+        "Real-world measurement and improvement of task performance through AI-driven tools",
+        "Development and validation of psychometric scales for AI attitudes and workplace constructs"
+    ],
+    "Key Research Thinking Patterns": [
+        "Theory-to-measurement integration: grounding scale development in TAM, expectancy-value theory, signaling theory, and emotion\u2013work frameworks",
+        "Rigorous psychometrics and cross-study validation to ensure reliability and construct validity of new scales (e.g., AAAW)",
+        "Dynamic, within-person methodological emphasis: leveraging ESM/LCS to capture day-to-day and short-term processes",
+        "Cross-cultural and cross-context replication to establish generalizability across US and East Asian samples",
+        "Integration of AI-focused topics with core organizational outcomes (recruitment, performance, engagement) to inform practical interventions",
+        "Balancing methodological rigor with practical applicability: translating theory into actionable workplace tools and interventions"
+    ],
+    "Summary Description": "Dr. JeongJin Kim is a multidisciplinary scholar at the intersection of organizational psychology, AI-human collaboration, and dynamic workplace behavior. His work advances psychometric measurement (notably attitudes toward AI at work) and applies advanced longitudinal and multilevel methods to understand how affect, attitudes, and cognitive processes unfold in real work settings. Across collaborations with US and Korean samples, Kim develops robust scales (e.g., AAAW) and employs experimental and quasi-experimental designs, experience sampling, and latent-structured modeling to illuminate how AI adoption, emotion regulation, and job dynamics shape recruitment signals, performance, and well-being. His research emphasizes translational impact\u2014providing theoretical insights and practical guidelines for AI integration, AI-driven HR practices, and interventions to mitigate boredom and associated counterproductive behaviors. His methodological portfolio combines CFA/SEM, LCS, MLM, and EMI/ESM, underpinned by open science practices and cross-context validation."
+}

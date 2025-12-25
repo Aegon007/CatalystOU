@@ -1,0 +1,56 @@
+{
+    "Researcher Profile:": "Dr. Sanjana Mudduluru",
+    "Affiliation:": "University of Oklahoma, Norman, OK, USA (Graduate College; School of Computer Science)",
+    "Research Domains": [
+        "Medical Image Analysis",
+        "Computer-Aided Diagnosis (CAD)",
+        "Retinal Imaging",
+        "Ophthalmology AI",
+        "Dermatology Imaging",
+        "Data-Centric AI",
+        "Data Augmentation and Synthetic Data",
+        "Transfer Learning",
+        "Multi-Task / Joint Learning",
+        "Data Curation"
+    ],
+    "Techniques Used": [
+        "Joint Segmentation and Classification (J-Net) with Encoder Sharing",
+        "U-Net-based Segmentation with a Classification Pathway",
+        "Combined Loss Functions (Segmentation + Classification)",
+        "SoftMax Thresholding for Stagewise Classification",
+        "Two-Stage Transfer Learning for Artifact-Free Retinal Images",
+        "Data Curation via Automated Filtering of Web-Sourced Retinal Images",
+        "Non-GAN Synthetic Data Generation for Medical Imaging (Lesion Blob Insertion)",
+        "Rotation and Flipping for Data Augmentation",
+        "Transfer Learning with ImageNet Pretraining",
+        "Randomized Seed Experiments and Bootstrap-like Validation"
+    ],
+    "Data & Platforms": [
+        "ORIGA-light (Glaucoma) retinal fundus images",
+        "GTSRB (German Traffic Sign Recognition Benchmark) for CNN benchmarking",
+        "IDRiD (Indian Diabetic Retinopathy Image Dataset) for synthetic data experiments",
+        "Kaggle Skin Cancer Dataset (image + segmentation masks)",
+        "Google-retrieved retinal fundus images (1,227 total)",
+        "60 healthy retinal fundus images for background lesions",
+        "PyTorch (Python) for modeling; Python 3.7.14 used in MCNN",
+        "Data augmentation: flips and rotations",
+        "Tooling: Standard deep learning frameworks"
+    ],
+    "Application Areas": [
+        "Medical Image Analysis",
+        "Ophthalmology and Retina Diagnostics",
+        "Skin Cancer Imaging",
+        "Medical AI for Low-Data Scenarios",
+        "Data Curation for Medical Imaging",
+        "Quality Assurance in CAD Pipelines"
+    ],
+    "Key Research Thinking Patterns": [
+        "Data-Centric AI: emphasize dataset quality and augmentation to improve model performance",
+        "Cross-Dataset Generalization: validate across ORIGA-light, IDRiD, Kaggle skin dataset",
+        "Multi-Task Learning: joint segmentation and classification (J-Net) for efficiency and accuracy",
+        "Two-Stage Learning: staged classification to increase reliability and reduce misclassification in artifact-heavy data",
+        "Synthetic Data for Medical Imaging: non-GAN approach to dramatically expand training data",
+        "Transparent Evaluation: seed variability, cross-validation, and statistical significance (p-values) to ensure robustness"
+    ],
+    "Summary Description": "Dr. Sanjana Mudduluru's research focuses on advancing medical image analysis through data-centric, multi-task deep learning approaches and data augmentation strategies that are practical for limited data regimes. Her work includes the development of J-Net, a joint segmentation-classification model for skin lesion analysis that leverages a shared encoder to improve both segmentation and classification, particularly in small datasets. She explores two-stage transfer learning to curate artifact-free retinal fundus datasets and improve classification reliability, using thresholding to separate easy and difficult cases and retraining on the difficult subset. She also proposes a lightweight, non-GAN synthetic data generation pipeline to dramatically expand medical image training data by projecting real lesion blobs onto healthy backgrounds in retinal imaging, yielding consistent performance gains across architectures. Her contributions span dermatology and ophthalmology imaging, with a strong emphasis on data quality, reproducibility, and practical deployment in clinical AI pipelines."
+}

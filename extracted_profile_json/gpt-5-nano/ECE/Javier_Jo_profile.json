@@ -1,0 +1,54 @@
+{
+    "Researcher Profile:": "Dr. Javier A. Jo",
+    "Affiliation:": "School of Electrical and Computer Engineering, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Biomedical Optics",
+        "Multispectral Autofluorescence Lifetime Imaging (maFLIM)",
+        "Fluorescence Lifetime Imaging (FLIM)",
+        "Unsupervised and Contrastive Learning for Medical Imaging",
+        "Machine Learning for Medical Imaging",
+        "Endoscopic Instrumentation and Real-time Imaging",
+        "Biomarker Imaging and Metabolic Imaging (NADH, FAD, Collagen, PpIX, REDOX)",
+        "Bias and Fairness in Medical ML",
+        "Clinical Translation of Imaging Technologies"
+    ],
+    "Techniques Used": [
+        "Unsupervised contrastive clustering for pixel-level maFLIM data to separate normal from lesion structure",
+        "Three-layer feedforward neural networks with dropout (0.5) for embedding generation",
+        "Adam optimizer and 50-epoch training",
+        "50 per-pixel maFLIM features reduced to 8-dimensional embeddings",
+        "K-means clustering with 3 centroids on embeddings",
+        "Contrastive pre-training with loss terms for clustering and separation (Lclust, Lsep) and class-mean embeddings",
+        "Multitask learning with pixel-level margin delineation and cancer-diagnosis classifiers; cross-task consistency regularization",
+        "Leave-one-out and k-fold cross-validation (LOOCV, 10-fold in related work) for evaluation",
+        "L1-regularized SVMs for feature selection and discrimination in tissue-location bias studies",
+        "Disentanglement experiments via feature swapping to assess overlap between tissue-type and disease-discrimination features",
+        "Tissue-location-specific fine-tuning (per-location models) to improve fairness across oral sites",
+        "Pseudo-color image generation for mammography CADx; VGG16 feature extraction; SVM-based fusion and feature selection (SFFS with SMOTE for balancing)",
+        "U-Net segmentation (manual GT and automated) for contour-driven pseudo-color channels",
+        "Frequentist (Delong) tests and AUC-based evaluation in breast CADx context"
+    ],
+    "Data & Platforms": [
+        "maFLIM imaging datasets across oral mucosa (dual-excitation 375 nm and 445 nm; seven emission bands) with 50 per-pixel features",
+        "8\u201350 feature engineering: normalization across emission/excitation bands; FPGA-based real-time maFLIM processing in hardware-enabled systems",
+        "In vivo and ex vivo datasets including oral lesions and contralateral normal mucosa; 88\u201380 patient cohorts reported across related works",
+        "Hardware platforms include frequency-domain FLIM instrumentation, FPGA-based lifetim e analysis, dual-wavelength excitation, and multi-spectral detectors",
+        "Programming and ML frameworks commonly cited: Python, PyTorch, scikit-learn",
+        "Clinical collaborators across The University of Oklahoma, UT Dallas, Texas A&M, and OU Health contexts"
+    ],
+    "Application Areas": [
+        "Oral cancer detection and risk stratification using maFLIM-derived features",
+        "Margin delineation and high-risk lesion localization without supervised labels",
+        "Fairness-aware ML for location biases in medical imaging (oral sites such as lip, cheek, tongue)",
+        "Breast cancer CADx using contour-informed pseudo-color augmentation in mammography",
+        "Label-free metabolic imaging with handheld FLIM endoscopes for real-time clinical workflows"
+    ],
+    "Key Research Thinking Patterns": [
+        "Data-driven discovery with minimal supervision (unsupervised contrastive learning to reveal clinically meaningful structure)",
+        "Bias and fairness considerations in ML for medical imaging, with location- and tissue-specific analyses",
+        "Scalability and generalization through per-location fine-tuning and multitask learning in small to moderate datasets",
+        "Integration of advanced imaging hardware with ML pipelines to enable real-time, clinically actionable outputs",
+        "Cross-domain transfer and multi-view fusion to improve diagnostic performance (oral imaging and mammography CADx)"
+    ],
+    "Summary Description": "Dr. Javier A. Jo is a leading researcher at the University of Oklahoma whose work sits at the intersection of biomedical optics, machine learning, and translational imaging. His research program spans the development and application of multispectral autofluorescence lifetime imaging (maFLIM) for in vivo tissue characterization, with a strong emphasis on unsupervised and contrastive learning to uncover clinically meaningful structure in high-dimensional imaging data without relying on lesion labels. He has contributed to the design and analysis of handheld, dual\u2011excitation FLIM systems and hardware-software co-design for real-time metabolic imaging, including REDOX mapping and lifetime mapping across multiple spectral channels. Jo has also explored fairness in ML models applied to medical imaging, demonstrating that tissue-location biases can persist in maFLIM-based diagnostics and proposing tissue-location\u2013aware fine-tuning to improve cross-site robustness. In addition to oral cancer applications, his work extends to breast imaging through pseudo-color augmentation and multi-view CADx pipelines, illustrating a broad interest in leveraging segmentation, contour information, and multi-modal data to enhance diagnostic performance. Across these efforts, Jo emphasizes clinically actionable metrics, rigorous validation (including cross-validation, compare with gold standards like pathology, and statistical significance testing), and the translation of imaging data into tools that support decision-making in biopsy workflows and patient management."
+}

@@ -1,0 +1,59 @@
+{
+    "Researcher Profile:": "Dr. Huajian Cai",
+    "Affiliation:": "CAS Key Laboratory of Behavioral Science, Institute of Psychology, Chinese Academy of Sciences, Beijing, China; Department of Psychology, University of Chinese Academy of Sciences, Beijing, China",
+    "Research Domains": [
+        "Developmental and social psychology (nostalgia trajectories in emerging adulthood)",
+        "Cross-cultural psychology and cultural psychology",
+        "Authenticity and well-being in natural/social contexts",
+        "Cultural change and naming behavior (macro-to-micro mechanisms)",
+        "Computational methods in psychology and psychometrics",
+        "Language and cognition in cross-cultural psychology",
+        "Representational analysis and embedding-based psychology"
+    ],
+    "Techniques Used": [
+        "Trait-State-Occasion (TSO) modeling",
+        "Longitudinal Multilevel Analysis (LMA)",
+        "Measurement invariance testing (CFA; metric and scalar invariance)",
+        "Power analysis for longitudinal designs (SIMR)",
+        "Granger causality and first-order differencing in time-series",
+        "Generalized linear models (logistic; binomial)",
+        "Correlation/regression analyses with domain-specific moderators",
+        "Clustering, PCA/ICA/EFA, and MDS for dimensionality reduction (Study 2)",
+        "UMAP for clustering prep; K-means and hierarchical clustering",
+        "Representational Similarity Analysis (RSA) and cross-regional validation",
+        "Orthogonal Procrustes alignment for cross-temporal embedding alignment",
+        "Language-model embeddings (Chinese-RoBERTa, BERT-ancient-Chinese) and embedding-based validation",
+        "WEAT/WEFAT style semantic association tests; RND measures",
+        "Bootstrap-based mediation analyses (bias-corrected; 5,000 resamples) and meta-analytic synthesis (metafor)",
+        "Mediation and serial mediation analyses; experimental-causal-chain framework",
+        "Open Science Framework (OSF) for data/materials sharing"
+    ],
+    "Data & Platforms": [
+        "Six-wave longitudinal nostalgia dataset: 327 first-year university students in China; six-month intervals across four years; analyzed with R (lavaan) and SPSS",
+        "OSF data/code resources for nostalgia longitudinal work",
+        "FAVEE-HPP cross-cultural dataset: 19 global regions, 10 languages; cross-regional validation with ancient-language PLMs",
+        "Nature Authenticity studies: multi-method data across 12 studies (field and lab; cross-cultural replication)",
+        "Naming behavior datasets: macro (2005 China census; People\u2019s Daily; Google Books Chinese corpora) and micro (334 online adults; 1460 naming-demands; 20th century corpora)",
+        "Word-embedding resources and tools: Word2Vec, GloVe, FastText; ELMo; BERT-family; GPT; HistWords; CEAT; WEAT/WEFAT; PsychWordVec R package",
+        "Languages/tools: R (lavaan, simr, metafor, PsychWordVec), Python (scikit-learn, transformers, gensim), TensorFlow/PyTorch",
+        "Platforms: OSF, GitHub repositories (e.g., FAVEE-HPP; PsychWordVec), pre-trained language models"
+    ],
+    "Application Areas": [
+        "Social and developmental psychology",
+        "Cross-cultural psychology and cross-temporal semantics",
+        "Well-being, authenticity, and nature-based interventions",
+        "Educational and university adaptation contexts",
+        "Naming practices and cultural trend analysis",
+        "Computational psychology and psychometrics",
+        "Linguistic-based cognitive assessment"
+    ],
+    "Key Research Thinking Patterns": [
+        "Convergent-methods approach: combining longitudinal, cross-cultural, experimental, and computational methods to triangulate findings",
+        "Focus on mechanism over correlation: emphasis on mediators and causal-chain frameworks to explain observed associations",
+        "Measurement invariance and cross-temporal validation to ensure comparability of constructs across time",
+        "Scalability and generalizability: testing universal structures across regions and historical contexts",
+        "Specificity of mechanisms: parsing macro-level values and micro-level traits for targeted explanations",
+        "Methodological transparency and openness via OSF and code sharing"
+    ],
+    "Summary Description": "Dr. Huajian Cai specializes in cross-cultural psychology and computational methods in psychology, with a strong emphasis on how culture and life-events shape core psychological constructs, as well as the development and testing of robust, generalizable models across time and space. His work spans nostalgia trajectories in emerging adulthood, universal representations of human relationships across cultures and history, mechanisms linking nature exposure to authenticity and well-being, and culturally specific changes in naming practices. Cai applies sophisticated longitudinal modeling (TSO; LMA), measurement invariance, time-series and Granger causality analyses, as well as modern embedding-based methods (word embeddings, RSA, WEAT/CEAT) to study cognition, social behavior, and cultural change. He also contributes to methodological tool development (e.g., PsychWordVec in R) and advocates open science via OSF repositories."
+}

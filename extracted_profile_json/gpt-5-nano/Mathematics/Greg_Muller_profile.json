@@ -1,0 +1,93 @@
+{
+    "Researcher Profile:": "Dr. Greg Muller",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK 73019, USA",
+    "Research Domains": [
+        "Cluster Algebras and Upper Cluster Algebras",
+        "Noncommutative Algebra and Endomorphism Rings",
+        "Noncommutative Resolutions (NCCR)",
+        "Poisson Geometry and Poisson Orders",
+        "Theta Functions, Scattering Diagrams, and MirrorSymmetry",
+        "Root-of-Unity Quantum Cluster Algebras and Azumaya Loci",
+        "Teichm\u00fcller Theory and Moduli of Local Systems",
+        "Representation Theory in Cluster Algebra Contexts"
+    ],
+    "Techniques Used": [
+        "End_R(A) construction and explicit projective resolutions for simple End_R(A)-modules via chain complexes",
+        "Chamber/combinatorial geometry of conic modules and chambers of constancy",
+        "Acyclicity Lemma for Hom_R(A, \u2212) complexes to obtain exact sequences",
+        "Morita equivalences between add(A) and proj(End_R(A)) and associated projective modules P_\u0394",
+        "Global dimension calculations for End_R(A) and Morita-equivalence results",
+        "Noncommutative crepant resolutions (NCCR) criteria and simpliciality analysis",
+        "Gekhtman\u2013Shapiro\u2013Vainshtein (GSV) Poisson structures on upper cluster algebras and Poisson orders",
+        "Root-of-unity upper quantum cluster algebras, central subalgebras, and Azumaya locus analysis",
+        "Theta functions, scattering diagrams, and seed-data \u039b-structures with reciprocity theorems",
+        "Seed-data formalism, dual seeds, and taunt/taut broken-line techniques",
+        "Teichm\u00fcller-type interpretations and skein/theta frameworks in surface settings"
+    ],
+    "Data & Platforms": [
+        "Theoretical frameworks and mathematical constructs rather than empirical datasets",
+        "Key frameworks: toric/toric-like algebras, conic modules, endomorphism rings End_R(A), chain complexes K_\u0394",
+        "Cluster algebra machinery: seeds, mutations, upper vs lower cluster algebras, GSV Poisson structure, scattering diagrams"
+    ],
+    "Application Areas": [
+        "Pure mathematics: Algebraic geometry and noncommutative algebra",
+        "Representation theory of algebras arising from cluster structures",
+        "Poisson and quantum cluster algebras with geometric/topological interpretations",
+        "Teichm\u00fcller theory, moduli spaces of local systems, and skein-theoretic perspectives"
+    ],
+    "Key Research Thinking Patterns": [
+        "Explicit constructive methodology: developing concrete endomorphism-ring realizations and explicit resolutions",
+        "Interplay between combinatorics and homological algebra: chambers, CW-cell decompositions, and chain complexes",
+        "Dualities and reciprocity across cluster-theoretic frameworks: Poisson-quantum correspondences, seed-duality, and Langlands-like perspectives",
+        "Geometric/topological interpretation of algebraic objects: connecting toric/conic module structures to geometric invariants and moduli spaces",
+        "Unification across settings: bridging classical NCCRs with Poisson orders and root-of-unity quantum phenomena"
+    ],
+    "Summary Description": "Greg Muller is a leading figure in the algebraic and geometric study of cluster algebras and their interactions with noncommutative algebra, Poisson geometry, and representation theory. His work emphasizes explicit, constructive approaches to deep problems: establishing finite global dimensions for endomorphism-ring constructions End_R(A) associated to conic modules on toric algebras, deriving explicit projective resolutions of simple End_R(A)-modules, and characterizing when End_R(A) yields noncommutative crepant resolutions (NCCRs) in relation to simplicial geometry. He has advanced the Poisson-geometry side of cluster algebras through the study of GSV Poisson structures on upper cluster algebras and the analysis of Azumaya loci for root-of-unity quantum cluster algebras, linking central subalgebras to classical upper cluster algebras. In addition, he co-authored foundational work on the superunitary region of cluster algebras, establishing a CW-structure and a tight correspondence with generalized associahedra in finite type, and contributed to theta-function theory in cluster algebras via scattering diagrams, valuations, and reciprocity theorems. Across these themes, his research blends combinatorial, homological, geometric, and topological methods to illuminate the structure and representations of cluster- and toric-algebraic objects, often via seed-data formalisms, dualities, and geometric interpretations on surfaces and moduli spaces.",
+    "Selected Publications": [
+        {
+            "Title": "Non-commutative resolutions of toric algebras via End_R(A)",
+            "Authors": [
+                "Eleonore Faber",
+                "Greg Muller",
+                "Karen Smith"
+            ],
+            "Notes": "Explicit constructions of End_R(A); finite global dimension equal to dim R; conditions for End_R(A) to be an NCCR via simpliciality; connections to Frobenius methods in positive characteristic"
+        },
+        {
+            "Title": "Deep Points of Cluster Algebras",
+            "Authors": [
+                "James Beyer",
+                "Greg Muller"
+            ],
+            "Notes": "Systematic study and classification of deep points across major families of cluster algebras; analysis via the deep locus and deep ideal D(A)"
+        },
+        {
+            "Title": "Poisson Geometry and Azumaya Loci of Cluster Algebras",
+            "Authors": [
+                "Greg Muller",
+                "Nguyen",
+                "Trampel",
+                "Yakimov"
+            ],
+            "Notes": "Linking Poisson geometry of upper cluster algebras with central subalgebras of root-of-unity quantum cluster algebras; description of fully Azumaya loci via Poisson data"
+        },
+        {
+            "Title": "Superunitary Regions of Cluster Algebras",
+            "Authors": [
+                "Emily Gunawan",
+                "Greg Muller"
+            ],
+            "Notes": "Introduction and structural study of A(R\u22651); CW-decomposition; connection to generalized associahedra; finiteness of friezes in finite type; Teichm\u00fcller-theoretic interpretations"
+        },
+        {
+            "Title": "VALUATIVE INDEPENDENCE AND CLUSTER THETA RECIPROCITY",
+            "Authors": [
+                "Cheung",
+                "Magee",
+                "Mandel",
+                "Muller"
+            ],
+            "Notes": "Theta functions from positive scattering diagrams; valuative independence; theta reciprocity; seed-data framework and reciprocity across dual seeds; applications to moduli of local systems and gluing phenomena"
+        }
+    ]
+}

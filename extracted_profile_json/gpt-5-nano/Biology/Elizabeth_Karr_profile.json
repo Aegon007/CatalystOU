@@ -1,0 +1,47 @@
+{
+    "Researcher Profile:": "Dr. Elizabeth A. Karr",
+    "Affiliation:": "Price Family Foundation Institute of Structural Biology; OU Microbiology & Plant Biology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Bacterial transcriptional regulation",
+        "Two-component signal transduction systems and regulon mapping",
+        "DNA-protein interactions and motif discovery",
+        "Structural biology of transcription regulators",
+        "Phosphorylation- and oligomerization-dependent regulation",
+        "Bioinformatics and integrative omics approaches"
+    ],
+    "Techniques Used": [
+        "Bacterial one-hybrid (B1H) screens for DNA-binding motif identification",
+        "Motif discovery and validation with MEME suite",
+        "RSAT suite for regulatory sequence analysis (pattern-search, footprint-scan, matrix-scan) and operon context",
+        "GO-based enrichment analyses (GOMo)",
+        "Electrophoretic mobility shift assays (EMSA)",
+        "GFP-based promoter-reporter assays in Escherichia coli",
+        "SEC-MALS for oligomerization and phosphorylation-state analysis",
+        "Protein expression and purification in E. coli (His-tagged constructs)",
+        "X-ray crystallography for structure determination (Phaser-MR, AUTOBUILD, COOT, Phenix)",
+        "GLAM2 and GLAM2Scan for motif discovery and genome-wide motif mapping",
+        "BLASTP-based orthology analyses and DOOR2 operon predictions",
+        "Geneious-based genome analyses and motif mapping"
+    ],
+    "Data & Platforms": [
+        "Public datasets and materials from RR_1586 regulon studies in Clostridioides difficile",
+        "cdPadR1 structure data (PDB coordinates and related analyses)",
+        "Software: MEME, RSAT, GOMo, GLAM2/GLAM2Scan, BLASTP, DOOR2, Geneious, DALI, PyMOL, COOT",
+        "Experimental platforms: B1H plasmid systems, GFP reporter plasmids in E. coli, SEC-MALS instrumentation, X-ray crystallography facilities"
+    ],
+    "Application Areas": [
+        "Pathogenic transcriptional regulation (Clostridioides difficile)",
+        "Antibiotic resistance and virulence regulation through transcription factors",
+        "Structure-guided understanding of PadR-family regulators",
+        "Regulon mapping and regulatory network reconstruction in bacteria",
+        "Protein-DNA interaction paradigms and motif evolution"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrative experimental\u2013bioinformatics pipelines to map transcriptional regulons",
+        "Motif-first design combined with cross-genome conservation to nominate targets and operons",
+        "Autoregulation and network-wide regulatory integration via motif distribution analyses",
+        "Phosphorylation- and oligomerization-dependent modulation of DNA-binding specificity",
+        "Cross-validation across in vitro binding, in vivo reporter activity, and structural context"
+    ],
+    "Summary Description": "Dr. Elizabeth A. Karr specializes in bacterial transcriptional regulation with a strong emphasis on integrating structural biology and bioinformatics to delineate regulon architecture and regulatory networks. Her work spans determining DNA-binding specificities of response regulators like RR_1586 in C. difficile through bacterial one-hybrid screens, motif discovery, and cross-species conservation analyses, to structural characterization of PadR-family transcription regulators and their DNA-binding modes. She employs a comprehensive toolkit\u2014ranging from MEME/RSAT-based motif analyses and GLAM2 motif discovery to EMSAs and GFP-based in vivo validations, and culminating in high-resolution X-ray crystallography\u2014to elucidate autoregulatory loops, phosphorylation- and oligomerization-dependent regulation, and broader regulatory dynamics relevant to pathogen virulence and stress responses. Her research exemplifies a rigorous, multi-layered approach to decoding transcriptional control in bacteria and demonstrates methodological innovation in marrying computational predictions with experimental verification and structural insights."
+}

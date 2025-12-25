@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Elizabeth Kelley",
+    "Affiliation:": "Department of Mathematics, University of Illinois at Urbana-Champaign, Urbana-Champaign, IL, USA",
+    "Research Domains": [
+        "Graph LP Algebras",
+        "Cluster Algebras and LP Algebras",
+        "Positivity in LP/Cluster Algebras",
+        "Hypergraph Combinatorics (Hypergraph Snake Graphs, Hyper T-paths)",
+        "Rooted Clusters for Graph LP Algebras",
+        "Reciprocal Generalized Cluster Algebras",
+        "Theta Functions and Scattering Diagrams",
+        "Skein Theory for Punctured Surfaces",
+        "Combinatorial Representation Theory and Algebraic Combinatorics"
+    ],
+    "Techniques Used": [
+        "Graph LP algebra constructions and Y_S expansions",
+        "Admissible matchings and \u03c7(G_S) positivity framework",
+        "Snake graphs and their hypergraph generalizations",
+        "Admissible matchings and hyper T-paths (rooted and weakly rooted structures)",
+        "Poset-based expansions via fence posets and decorated posets",
+        "Rooted clusters for trees and positivity proofs (X- and Y-variables)",
+        "Determinantal counting of admissible matchings (N_S and det(N_S))",
+        "Braid varieties, Deodhar components, and the affine symmetric group",
+        "Affine Hecke algebras and Opdam\u2019s trace formula",
+        "Generalized cluster scattering diagrams and theta functions",
+        "Broken lines, g-vectors, and mutation-invariant bases",
+        "Skein relations for punctured surfaces and poset-expansion proofs"
+    ],
+    "Data & Platforms": [
+        "N/A (the work is theoretical; no datasets)",
+        "SageMath and Sage-Combinat used for combinatorial explorations",
+        "Python-based symbolic computation and general mathematical software"
+    ],
+    "Application Areas": [
+        "Pure mathematics: algebraic combinatorics and cluster theory",
+        "Graph theory and discrete geometry",
+        "Algebraic geometry and representation theory (theta functions, scattering diagrams)",
+        "Combinatorial models for positivity and canonical bases",
+        "Skein theory in punctured surface cluster algebras"
+    ],
+    "Key Research Thinking Patterns": [
+        "Constructive bijections and explicit combinatorial models (graphs, paths, and trees)",
+        "Generalization and unification of frameworks (extending snake-graph techniques to hypergraphs and generalized cluster settings)",
+        "Positivity and canonical bases via explicit expansions (rooted clusters, hyper T-paths, theta functions)",
+        "Cross-disciplinary synthesis bridging combinatorics, geometry, and representation theory",
+        "Systematic use of combinatorial encodings (order-ideals, path structures) to prove algebraic properties"
+    ],
+    "Summary Description": "Elizabeth Kelley is a mathematician with a strong focus in algebraic combinatorics, cluster algebras, and their combinatorial encodings. Her work spans the development of graph LP algebras with positivity results through explicit combinatorial expansions, notably via the introduction of rooted clusters for trees and their associated hypergraph snake graphs and hyper T-paths. She contributes to the broader program of generalized and reciprocal cluster algebras by co-authoring foundational results on generalized cluster scattering diagrams and theta functions, establishing mutation-invariant frameworks and canonical bases for A- and X-type varieties. In related work on skein theory for punctured surfaces, she advances poset-based expansion formulas and skein relations that yield bases (such as bangles and bracelets) under natural topological hypotheses. Across these efforts, Kelley demonstrates a consistent pattern of constructing concrete combinatorial realizations, proving positivity for substantial classes, and forging deep connections between discrete combinatorics and geometric representation-theoretic structures."
+}

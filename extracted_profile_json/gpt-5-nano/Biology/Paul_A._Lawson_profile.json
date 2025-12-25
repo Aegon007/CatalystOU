@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Paul A. Lawson",
+    "Affiliation:": "School of Biological Sciences, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Microbial taxonomy and systematics",
+        "Prokaryotic nomenclature and taxonomy governance (SeqCode, IJSEM, LPSN, GTDB)",
+        "Anaerobic microbiology and cultivation techniques",
+        "Genomics, phylogenomics, and genome-based taxonomy",
+        "Culturomics and culture-based microbial discovery",
+        "Clinical microbiology and bacterial pathogenesis (model studies and relevance to antibiotics)"
+    ],
+    "Techniques Used": [
+        "SeqCode framework for sequence-based nomenclature",
+        "IJSEM validation workflow for prokaryotic taxa",
+        "LPSN and GTDB as standing resources for nomenclature and taxonomy",
+        "Classical anaerobic cultivation methods (Hungate, Balch, Holdeman\u2013Cato\u2013Moore) with modern adaptations",
+        "Anaerobic chambers, gas-phase control, reducing agents, and defined media formulations",
+        "MALDI-TOF MS, 16S rRNA sequencing, and whole-genome sequencing",
+        "Genome-scale metrics: ANI, AAI, dDDH; core-genome phylogeny; TYGS; FastANI; ezAAI; UBCG; MUSCLE; MEGA",
+        "Pangenome analyses (e.g., Anvi\u2019o) and multi-locus phylogenomics",
+        "Taxonomic description and species delineation within polyphasic frameworks",
+        "LTA\u2013PBPs/PGHs interaction studies and cell-wall biology (as part of collaborative work with clinical microbiology contexts)"
+    ],
+    "Data & Platforms": [
+        "SeqCode Registry; IJSEM; LPSN; GTDB for nomenclature and taxonomic standing",
+        "GenBank/RefSeq; GenBank/EMBL/DDBJ for 16S and draft genomes",
+        "EZBioCloud for 16S rRNA analyses and sequence-based similarity metrics",
+        "BV-BRC (where cited for genome resources and comparative genomics in taxonomy cases)",
+        "MALDI-TOF MS, 16S rRNA sequencing, and whole-genome sequencing workflows described across papers",
+        "Anvi\u2019o for pangenome analyses; ClustalW, MUSCLE, MEGA X, FastTree for phylogenetics",
+        "TYGS for genome-based species delineation; FastANI, GGDC for ANI/dDDH computations",
+        "Public culture collections and deposition (e.g., DSM, ATCC) when new taxa are described"
+    ],
+    "Application Areas": [
+        "Taxonomic nomenclature governance and policy development for prokaryotes",
+        "Anaerobic microbiology, culture collections, and phenotype\u2013genotype linkage",
+        "Environmental and industrial microbiology; culture-based discovery and taxonomy",
+        "Clinical microbiology relevance through collaborations on pathogenic Gram-positive systems",
+        "Genome-based systematics and integration of classical cultivation with genomics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrative taxonomy: combining phenotypic data with genome-scale metrics (ANI, dDDH, AAI) and phylogenomic context",
+        "Policy-oriented scholarship: clarifying routes from effective publication to valid publication under SeqCode and IJSEM",
+        "Pragmatic scalability: guidance and checklists to enable broader adoption of standards in diverse labs",
+        "Cross-disciplinary collaboration: bridging microbiology, genomics, and clinical contexts to inform nomenclature and taxonomy",
+        "Emphasis on culture collections and long-term phenotypic characterization despite genome-centric descriptions"
+    ],
+    "Summary Description": "Dr. Paul A. Lawson is a leading figure at the intersection of microbial taxonomy, nomenclature, and anaerobic cultivation. His work spans the governance and practical application of sequence-based naming under the SeqCode, the IJSEM validation pathway, and the public resources that track standing names (LPSN, GTDB). He is actively engaged in advancing anaerobic culture techniques, from classical Hungate and Balch methodologies to modern culture-based discovery and culturomics, highlighting the enduring value of culture collections for phenotypic context alongside genomic data. His collaborative research extends to clinical microbiology and cell-wall biology, illustrating the broad relevance of taxonomy-informed microbiology across environmental, medical, and industrial domains. Across studies, Lawson emphasizes polyphasic taxonomy, transparent data deposition, and the operationalization of nomenclature standards to support robust, scalable microbial systematics."
+}

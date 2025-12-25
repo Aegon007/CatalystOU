@@ -1,0 +1,54 @@
+{
+    "Researcher Profile:": "Hairong Song",
+    "Affiliation:": "Department of Psychology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Health Psychology",
+        "Cultural Psychology",
+        "Social Psychology",
+        "Gender Studies",
+        "Public Health",
+        "Longitudinal Data Analysis",
+        "Statistical Methods in Psychology",
+        "Applied Data Science in Behavioral Research"
+    ],
+    "Techniques Used": [
+        "Mediation analysis and bootstrapping (Hayes PROCESS macro; Model 6)",
+        "Sequential mediation with multiple mediators",
+        "Measurement invariance testing (configural, metric, scalar; multi-group CFA)",
+        "Partial invariance and MIMIC models",
+        "Generalized Linear Mixed Models (GLMM) and joint variable selection (random rPQL)",
+        "Adaptive LASSO and Adaptive Group LASSO for variable selection",
+        "Debiased estimation (REML) for post-selection inference",
+        "Bootstrapping and bootstrap-based stability analysis",
+        "Model-based clustering of intensive longitudinal data (VAR(p)) with LO/HO temporal orders",
+        "Gaussian Mixture Models (GMM) and K-means clustering; Gap statistic for cluster number",
+        "Ranking worth estimation using Plackett-Luce model for predictor importance",
+        "Data imputation (Amelia II; biobjective kNN imputation)"
+    ],
+    "Data & Platforms": [
+        "SPSS with PROCESS macro for mediation analyses",
+        "R (packages: mclust, Amelia II, PlackettLuce, random rPQL; GitHub: https://github.com/ild-clustering/temporal_order_selection; https://github.com/var-selection/variable_selection)",
+        "Mplus 8.7 for invariance testing",
+        "Python 3.8.10 and TensorFlow 2.8.0 for ML-based simulations",
+        "Data sources: Add Health; Millennium Cohort Study; HoeNuts dataset (HoeGekIsNL); Pins Face Recognition dataset; MNIST; Fashion-MNIST; CIFAR-10",
+        "Imputation: Amelia II; biobjective kNN imputation",
+        "Cloud/HPC resources cited for large-scale analyses (e.g., AWS and university HPC environments)"
+    ],
+    "Application Areas": [
+        "Public health and health behavior (e.g., HPV vaccination intentions, cigarette/e-cigarette trajectories)",
+        "Cultural influence on health decisions (feminine honor; honor ideology across gender/ethnicity)",
+        "Longitudinal psychology and development using large-scale cohort data",
+        "Cross-cultural and gender-differentiated measurement studies",
+        "Statistical methodology development for high-dimensional and correlated data"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrating cultural/psychological constructs with health behaviors to illuminate mechanisms",
+        "Emphasis on measurement invariance to enable valid cross-group comparisons",
+        "Combination of traditional statistical methods with modern data-science techniques for robust inference",
+        "Focus on reproducibility and accessibility through open code repositories and well-documented methodologies",
+        "Condition- and context-specific analyses (e.g., differentiating asthma versus non-asthmatic chronic disease in health trajectories)",
+        "Practical translation of complex models into policy-relevant insights and interventions",
+        "Sequential and staged modeling to balance bias-variance trade-offs and improve interpretability"
+    ],
+    "Summary Description": "Hairong Song is a psychology researcher at the University of Oklahoma whose work spans health psychology, cultural psychology, and advanced statistical methods for behavioral science. Across collaborations on five distinct studies, Song integrates cultural constructs (such as feminine honor) with health behaviors (HPV vaccination intentions, smoking trajectories) while employing rigorous longitudinal and cross-cultural methodologies. Methodologically, Song contributions include mediation analyses with bootstrapping, multi-group measurement invariance, GLMMs with sophisticated variable selection, and model-based clustering of intensive longitudinal data, complemented by ranking-based approaches to predictor importance. The work leverages diverse data sources and tools (SPSS, R, Mplus, Python, TensorFlow) and emphasizes reproducibility through publicly available code and transparent analytic pipelines. Collectively, Song\u2019s research advances theoretical understanding of how culture and gender intersect with health behaviors and demonstrates robust, scalable statistical approaches applicable to large-scale health and social data."
+}

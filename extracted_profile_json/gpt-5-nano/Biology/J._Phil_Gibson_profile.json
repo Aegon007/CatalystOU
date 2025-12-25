@@ -1,0 +1,102 @@
+{
+    "Researcher Profile:": "Dr. J. Phil Gibson",
+    "Affiliation(s):": [
+        "University of Oklahoma, Department of Biology, Norman, OK, USA",
+        "University of Oklahoma, Department of Microbiology and Plant Biology, Norman, OK, USA"
+    ],
+    "Contact:": {
+        "Email": "jpgibson@ou.edu",
+        "Corresponding affiliations": [
+            "Department of Biology, University of Oklahoma",
+            "Department of Microbiology and Plant Biology, University of Oklahoma"
+        ]
+    },
+    "Research Domains": [
+        "Plant ecology and conservation biology",
+        "Seed ecology, dormancy and germination dynamics",
+        "Root microbiomes and plant-microbe interactions",
+        "Evolutionary biology and bet-hedging",
+        "Phylogenetics education and tree-thinking",
+        "Biology education research and data literacy",
+        "Pedagogical tools and open educational resources"
+    ],
+    "Techniques Used": [
+        "Seed dormancy and germination experiments (in situ stratification, field seed-bank trials, temperature-regime germination)",
+        "Survival and time-to-event analyses (Kaplan\u2013Meier curves, Extended Cox Proportional Hazards models with heaviside functions)",
+        "ANOVA and Tukey\u2019s HSD post hoc tests for treatment comparisons",
+        "Nonlinear mixed-effects modeling (nlme in R) for leaf chemistry and isotope data",
+        "Root microbiome inoculation experiments in field transplants",
+        "Isotopic analyses (\u03b415N, %N) via continuous-flow EA-IRMS",
+        "Bayesian mixed-effects modeling (MCMCglmm in R) for predation and emergence data",
+        "Survival analyses and hazard modelling for seed-bank and seedling emergence",
+        "Life-cycle bet-hedging models and deterministic population models",
+        "Instrument development and validation for education (KR-20, split-half, test-retest; exploratory factor analysis)"
+    ],
+    "Data, Platforms & Tools": [
+        "R (nlme, survival/Survfit, vectors, Kaplan\u2013Meier, Cox models, MCMCglmm)",
+        "SPSS 25 (reliability analyses, item analysis, factor analysis for BETTSI)",
+        "Purdue Stable Isotope Facility (EA-IRMS) for \u03b415N measurements",
+        "HydroSense II SVWC sensors for soil moisture in field studies",
+        "Isolates and microbiome inoculum preparation tools (crushed nodules, field transplant protocol)",
+        "Germination incubators (Precision Model 818) and greenhouse facilities",
+        "Dryad data repository; QUBESHub (BETTSI open resources)",
+        "Field sites: Tishomingo National Wildlife Refuge, Blue River (OK), Oka\u2019 Yanahli Blue River Preserve"
+    ],
+    "Representative Publications (selected):": [
+        {
+            "Title": "Seed dormancy and germination under winter conditions in Alnus maritima (seaside alder) and the role of canopy disturbance",
+            "Year": "Not specified in provided summaries",
+            "Core Focus": "Ecology of regeneration and establishment in a rare riparian tree; seed dormancy/germination dynamics; microbiome interactions; disturbance regimes as recruitment constraints",
+            "Key Methods/Approach": "Seed stratification regimes (NS, 32D, 64D, 96D, 128D, 160D); field burial at 20 cm; two temperature regimes; ANOVA, Tukey\u2019s HSD; Kaplan\u2013Meier; Extended Cox with Hv functions; NLME for leaf chemistry and isotopes; field transplant and microbiome inoculation",
+            "Main Contributions": "Identified non-deep conditional dormancy; demonstrated that root microbiomes can transiently affect seedling establishment and that disturbance regimes can influence survival; advised management strategies emphasizing out-planting older individuals and assessing soil biota interactions"
+        },
+        {
+            "Title": "BETTSI: A tree-thinking diagnostic tool to assess individual elements of representational competence",
+            "Year": "2022",
+            "Core Focus": "Development, validation, and reliability testing of BETTSI (Basic Evolutionary Tree-Thinking Skills Instrument) for reading and interpreting phylogenetic trees",
+            "Key Methods/Approach": "Instrument development grounded in seven tree-thinking elements; validity (face, construct) and reliability (KR-20, split-half, test-retest); item analysis; exploratory factor analysis (EFA) using SPSS 25; open educational resource on QUBESHub",
+            "Main Contributions": "Provides a concise, reliable, and open-access diagnostic for tree-thinking proficiency suitable for formative and summative use in introductory biology"
+        },
+        {
+            "Title": "Bet-hedging against larval herbivory and seed-bank mortality in the evolution of heterocarpy",
+            "Year": "2016",
+            "Core Focus": "Integration of predispersal herbivory and postdispersal mortality into bet-hedging theory governing heterocarpy in Grindelia ciliata",
+            "Key Methods/Approach": "Two experiments: predispersal mortality with oviposition timing; seed-bank and seedling emergence experiments with stratification/scarification; Bayesian MCMCglmm for predation and survival; Kaplan\u2013Meier; Cox models; life-cycle bet-hedging models",
+            "Main Contributions": "Demonstrated that predispersal mortality can shape optimal seed-type allocation; extended bet-hedging theory to include predispersal mortality and environmental variability; provided empirical and theoretical synthesis"
+        },
+        {
+            "Title": "Data literacy in life sciences education: frameworks, pathways, and practical guidance",
+            "Year": "Not specified in provided summaries",
+            "Core Focus": "Synthesis of Life Discovery Conference discussions; framework for data literacy in biology education; practical steps for embedding data-literacy across curricula",
+            "Key Methods/Approach": "Conceptual framework with four facets of data literacy (collection, calculation, analysis, communication) and a three-level progression; matrix and pathway for developing data skills; emphasis on using existing teaching resources",
+            "Main Contributions": "Articulates a scalable, coordinated approach to teach data literacy in biology, with actionable guidance for instructors and departments"
+        },
+        {
+            "Title": "Botanical Phylo-Card Game: A hands-on activity integrating tree thinking with phenotypic and gene-pattern data",
+            "Year": "Not specified in provided summaries",
+            "Core Focus": "Card-sorting activity to teach plant evolution and tree thinking by combining phenotype-based grouping with rbcL dot-pattern data to illustrate data congruence",
+            "Key Methods/Approach": "Two-phase sorting rounds (phenotype-based, then data-backed with rbcL dot-patterns); visualization of phylogenies; NGSS alignment; large-format and standard card sets",
+            "Main Contributions": "Provides an engaging, scalable classroom/outreach activity that reinforces phylogenetic reasoning and data-congruence concepts for diverse learners"
+        }
+    ],
+    "Key Findings & Contributions Across Works:": [
+        "Demonstrated that seed and seedling-stage factors, including microbiomes and disturbance, can be stronger determinants of recruitment than seed survival alone in rare riparian taxa.",
+        "Advocated integrating empirical ecology with advanced statistical modeling (survival analysis, Bayesian mixed models) to understand complex life-history traits and recruitment constraints.",
+        "Established BETTSI as a validated, openly accessible diagnostic for tree-thinking, addressing a key instructional need in biology education.",
+        "Extended bet-hedging theory to include predispersal mortality, highlighting the role of herbivory and seed-bank dynamics in shaping reproductive strategies.",
+        "Created practical, scalable educational tools (Phylo-Card Game, data-literacy framework) that bridge theory and classroom practice, with broad applicability from K-12 to undergraduate settings."
+    ],
+    "Collaborations & Networks (select):": [
+        "Cassie Ehardt-Kistenmacher (OU)",
+        "Heather R. McCarthy (OU)",
+        "Wathsara Daluwatta (OU/Australia collaboration context from OU work)",
+        "Ibrahim Khalil (OU)",
+        "Shehan Edirimannage (OU)",
+        "Mohammed Atiquzzaman (OU/OK)",
+        "Kistenmacher (OU) and Michael Kistenmacher (OU) for Grindelia ciliata work",
+        "Joshua T. Cooper (OU)",
+        "Teresa Mourad (Ecological Society of America)",
+        "Kristin P. Jenkins, Louise Mead, David A. Baum, Kristy L. Daniel, Carrie J. Bucklin, E. Austin Leone, Erin Naegle (co-authors on BETTSI work)"
+    ],
+    "Summary Description:": "Dr. J. Phil Gibson is an OU-based researcher whose scholarly portfolio spans plant ecology and restoration genetics, seed biology and microbiome interactions, evolutionary bet-hedging theory, and biology education research. His work integrates rigorous field and greenhouse experiments with advanced statistical modeling (including survival analyses and Bayesian mixed models) and theoretical population models to address recruitment constraints in rare plant species and to illuminate factors shaping seed traits. He also contributes to education-focused scholarship by developing tools for tree-thinking assessment (BETTSI) and data-literacy frameworks, and by designing hands-on, scalable educational activities (e.g., Botanical Phylo-Card Game) that align with NGSS. His collaborative network spans multiple OU departments and interdisciplinary partners, reflecting a commitment to bridging ecological science, evolutionary theory, and science education."
+}

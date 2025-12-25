@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Adam Feltz",
+    "Affiliation:": "Department of Psychology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Numeracy and risk literacy in science communication",
+        "Climate change knowledge, beliefs, and risk perception",
+        "Interpersonal trust measurement and generalized trust constructs",
+        "Psychometrics and scale development (EFA, CFA, IRT, measurement invariance)",
+        "Public attitudes toward science policy, environmental issues, and animal welfare",
+        "Applied social and environmental psychology"
+    ],
+    "Techniques Used": [
+        "Structural Equation Modeling (SEM) with latent constructs",
+        "Mediation and moderation analyses",
+        "Latent variable modeling and latent factor development",
+        "Exploratory Factor Analysis (EFA) and Confirmatory Factor Analysis (CFA)",
+        "Item Response Theory (IRT) with graded response models",
+        "Item development, cross-study validation, and scale consolidation",
+        "Dominance Analysis (predictor importance) using SAS",
+        "Bootstrapping for indirect effects and confidence intervals",
+        "Cross-domain, multi-method data collection (university samples, online panels, MTurk)",
+        "Use of real-world stimuli and policy-relevant outcome measures",
+        "Open science practices: preregistration and sharing data/materials (OSF)"
+    ],
+    "Data & Platforms": [
+        "Open Science Framework (OSF) for data and materials",
+        "R (lavaan) for SEM analyses",
+        "SAS (Dominance Analysis macro) for predictor-importance evaluation",
+        "Qualtrics for online surveys",
+        "Samples from university participants (OU), KnowledgePanel (US adults), and MTurk",
+        "Stimuli include real-world science news excerpts and climate reports"
+    ],
+    "Application Areas": [
+        "Science communication and media literacy",
+        "Climate change communication, knowledge, and risk perception",
+        "Trust research and the development of trust measurement instruments",
+        "Environmental attitudes and policy preferences",
+        "Animal welfare attitudes and related public opinion",
+        "Educational psychology and measurement development"
+    ],
+    "Key Research Thinking Patterns": [
+        "Risk literacy framing: integrating numeracy with risk communication theories (e.g., Skilled Decision Theory, Knowledge is Power)",
+        "Measurement-centered theory building: developing concise, valid scales and validating across diverse samples",
+        "Cross-domain synthesis: linking cognitive abilities to beliefs, risk perceptions, and policy attitudes",
+        "Methodological rigor and transparency: multi-study replication, robust inference (bootstrapping), and open data practices",
+        "Applied impact orientation: translating cognitive and measurement insights into policy-relevant assessments"
+    ],
+    "Summary Description": "Dr. Adam Feltz is a psychology researcher at the University of Oklahoma whose work spans numeracy and risk literacy in science communication, climate-change knowledge and risk perception, trust measurement, and applied environmental attitudes. Across multiple studies, he demonstrates a consistent focus on how numeracy and knowledge influence judgments and policy-relevant beliefs, employing rigorous psychometric and structural-modeling approaches (SEM, CFA, EFA, IRT, bootstrapping) and cross-domain applications from climate cognition to trust scale development. His contributions include developing concise, valid measurement instruments (e.g., a four-factor General Interpersonal Trust Scale) and validating their predictive utility in real-world contexts (e.g., recycled water acceptance, animal welfare attitudes, Endangered Species Act attitudes). Committed to open science, Feltz emphasizes cross-sample replication, methodological transparency, and translating theoretical insights into practical tools for research and policy."
+}

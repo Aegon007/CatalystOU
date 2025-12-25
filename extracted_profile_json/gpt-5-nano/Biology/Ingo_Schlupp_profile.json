@@ -1,0 +1,44 @@
+{
+    "Researcher Profile:": "Dr. Ingo B. Schlupp",
+    "Affiliation:": "University of Oklahoma, Department of Biology; International Stock Center for Livebearing Fishes (ISCLF), Norman, OK, USA",
+    "Research Domains": [
+        "Behavioral Ecology and Evolutionary Biology of Poeciliid Fishes",
+        "Mating Systems and Sexual Selection",
+        "Cognition, Behavioral Syndromes, and Social Behavior",
+        "Hybridization, Prezygotic and Postzygotic Isolation",
+        "Ecological and Experimental Evolution in Controlled Environments",
+        "Aquatic Welfare and Ethics in Livebearing Fish Research"
+    ],
+    "Techniques Used": [
+        "Cross-species comparative behavioral experiments in ecologically controlled mesocosms and lab tanks",
+        "Dichotomous/binomial mate-choice assays (conspecific vs heterospecific; large vs small female stimuli)",
+        "Cognitive-behavioral test batteries: sociability, detour-reaching, route learning, scototaxis",
+        "Video tracking and recording with EthovisionXT15 and cameras (IR, Nikon)",
+        "Multivariate statistics: Linear Discriminant Analysis (LDA), Discriminant Function Analysis (DFA), Structural Equation Modeling (SEM) with lavaan",
+        "Model selection and comparison: GLMs, AIC-based selection, RMSEA, GFI, and other fit indices; Kruskal\u2013Wallis, Dunn\u2019s tests; t-tests and chi-square tests",
+        "Data handling: common garden and mesocosm experiments; side-bias handling in mate-choice tests",
+        "Data visualization and scripting in R; SPSS used in some papers; QGIS for mapping"
+    ],
+    "Data & Platforms": [
+        "Ecological and behavioral datasets across Poeciliid fishes (four species; Limia perugiae; Poecilia spp.)",
+        "Experimental settings: predator-free outdoor mesocosms (~800 gallons) and standard laboratory tanks (40-L, 5-L)",
+        "Behavioral tracking tools: EthovisionXT15; infrared video; Nikon D5200; other camera setups",
+        "Software: R (v4.x), SPSS (v25\u201329), lavaan for SEM, QGIS 3.2, possibly Noldus Ethovision",
+        "Data repositories and reproducibility: Dryad data (example DOI referenced: 10.5061/dryad.rfj6q57ht)"
+    ],
+    "Application Areas": [
+        "Behavioral Ecology and Evolutionary Biology of livebearing fishes",
+        "Sexual selection and mating-system evolution in Poeciliids",
+        "Cognition, learning, and behavioral syndromes in animals",
+        "Hybridization, speciation, and postzygotic isolation",
+        "Animal welfare and humane experimental design in aquatic research"
+    ],
+    "Key Research Thinking Patterns": [
+        "Cross-species and cross-context comparative analyses to identify conserved vs. divergent mating-system-related phenotypes",
+        "Investigation of sex-specific trait expression and dominance patterns in hybrids, revealing sex-linked regulatory effects",
+        "Integration of ecologically grounded experiments with advanced multivariate statistics (SEM, LDA, DFA) to uncover cognitive-behavioral syndromes",
+        "Linking behavioral ecology with evolutionary genetics and speciation processes in Poeciliids",
+        "Commitment to data transparency, reproducibility, and open data sharing"
+    ],
+    "Summary Description": "Dr. Ingo B. Schlupp is a leading figure in behavioral ecology and evolutionary biology focusing on Poeciliid fishes. His work spans mating systems, sexual selection, female cognition and behavioral syndromes, cross-species comparisons of mating tactics, geographic variation in mate choice, and the role of hybridization and postzygotic isolation in speciation. He also contributes to welfare-oriented aquaculture research by examining how environmental enrichment affects growth, health, reproduction, and welfare in livebearing fishes. Methodologically, he employs predator-free mesocosm and common-garden experiments, advanced multivariate statistics (SEM with lavaan, LDA, DFA), robust nonparametric and parametric tests, and state-of-the-art behavioral tracking, underscoring a strong commitment to experimental rigor, reproducibility, and cross-disciplinary collaboration."
+}

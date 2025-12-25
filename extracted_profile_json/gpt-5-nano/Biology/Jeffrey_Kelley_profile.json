@@ -1,0 +1,54 @@
+{
+    "Researcher Profile:": "Dr. Jeffrey F. Kelly",
+    "Affiliation:": "Oklahoma Biological Survey, University of Oklahoma; School of Biological Sciences, University of Oklahoma",
+    "Research Domains": [
+        "Aeroecology",
+        "Ornithology",
+        "Movement Ecology",
+        "Nocturnal Migration",
+        "Wildlife Monitoring and Surveillance",
+        "Ecology and Conservation Biology",
+        "Data Science in Ecology",
+        "Cross-disciplinary AI applications in biology"
+    ],
+    "Techniques Used": [
+        "LunAero automated moonwatching system for nocturnal bird detection (hardware: motorized spotting-scope mount, video camera, single-board computer; software/workflow described in Honeycutt & Bridge; field sites in Central Oklahoma)",
+        "Video-based silhouette extraction and flight-path reconstruction to obtain (x, y) positions with timestamps",
+        "Temporal co-occurrence detection and distance-direction matrices to identify potential groups",
+        "Hierarchical clustering of flight paths to delineate nocturnal groups (cutoff value 7.5; validation via visual inspection)",
+        "Nightly segmentation into octiles to analyze nocturnal activity patterns",
+        "Null-model simulations (5,000 simulations of uniform group proportions) and Fisher\u2019s exact tests to compare seasonality (spring vs fall) and nightly patterns",
+        "Moon-elevation bias assessment via moon-elevation simulations to quantify detection rate effects",
+        "Taxonomic inference through visual review of observed groups, with minimum estimates of composition",
+        "Faster R-CNN with Kalman Filter for radar-based roost detection (Paper 5) with temporal adaptors for multi-frame inputs",
+        "Temporal adaptor and 3-frame input (9 channels) for robust roost detection; COCO/ ImageNet-pretrained backbones; rain suppression via cross-correlation-based rain detection",
+        "Federated Unlearning (FUL) approaches: Median aggregation for initial model, gradient ascent unlearning with L1 regularization, early stopping via Expected Calibration Error (ECE), anomaly detection in updates",
+        "Adversarial threat simulations and data-poisoning attack modeling within Federated Learning frameworks",
+        "Multi-agent reinforcement learning (MAPPO) and deep RL variants (MADQN, DDPG) for energy-efficient, robust networked systems",
+        "Genetic Algorithm (GA) for route planning and patrol optimization; Differential Evolution (DE) for RIS phase-shift configuration; NOMA with SIC; Wireless Energy Transfer (WET)"
+    ],
+    "Data & Platforms": [
+        "Field data: LunAero moonwatching datasets from Central Oklahoma (Kessler Station, Norman residences, ARM Lab) for nocturnal group migration",
+        "Open data/code: OSF and Dryad repositories for LunAero analyses",
+        "Video and detection statistics: 68.85 hours of footage; 5,294 bird detections; 232 grouped birds; 4.4% grouped; analyses conducted in R with dist() and hclust()",
+        "Diverse ML/data science datasets used in related works by co-authors (MNIST, Fashion-MNIST, CIFAR-10) for ML methodology transfer to ecological contexts",
+        "Environment: Simulated IoT environment for federated-learning\u2013based safeguarding work; Computing Resources: RACE (RMIT AWS Cloud Supercomputing Hub)",
+        "Radar-based roost detection data (Paper 5) and open-source roost-dataset code (COCO-formatted annotations)"
+    ],
+    "Application Areas": [
+        "Nocturnal avian migration and group behavior",
+        "Aeroecology and automated wildlife monitoring",
+        "Security and unlearning in federated learning for IoT systems",
+        "6G-enabled disaster response and edge computing",
+        "Real-time urban monitoring and AI-driven energy-aware aerial systems"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrating field observations with advanced ML and computer-vision techniques to quantify elusive behavioral phenomena",
+        "Comparative evaluation of traditional observational methods against automated detection and clustering approaches",
+        "Emphasizing scalability, reproducibility, and open science through publicly available data and code",
+        "Exploring cross-domain applications of ML/AI to ecological questions and to networked intelligent systems",
+        "Investigating detection biases and validation strategies to ensure robust ecological inferences",
+        "Balancing ecological interpretability with methodological innovation across ornithology and AI/security domains"
+    ],
+    "Summary Description": "Dr. Jeffrey F. Kelly applies an interdisciplinary lens to aeroecology, ornithology, and AI-driven ecological monitoring. His work spans nocturnal migration and social group dynamics of birds using automated moonwatching (LunAero) and video-derived flight-path reconstruction, as well as radar-based roost detection and long-term phenology analyses. He contributes to machine-learning\u2013enabled ecological insights and to secure, scalable AI deployment in IoT and networked systems through approaches like Federated Unlearning and multi-agent reinforcement learning. His research emphasizes rigorous methodology, open data practices, and practical conservation implications, bridging field biology with computational methods and engineered systems to advance understanding of bird migration and to inform adaptive management under changing environmental conditions."
+}

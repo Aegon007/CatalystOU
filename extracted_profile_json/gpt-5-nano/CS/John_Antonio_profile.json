@@ -1,0 +1,44 @@
+{
+    "Researcher Profile:": "Dr. John K. Antonio",
+    "Affiliation:": "University of Oklahoma, School of Computer Science, Norman, OK, USA",
+    "Research Domains": [
+        "Analytical modeling of HPC and heterogeneous computing performance",
+        "GPU kernel occupancy and throughput modeling",
+        "CPU availability and memory modeling for multi-core and hyper-threaded architectures",
+        "Composite CPU+memory performance modeling and scheduling guidance",
+        "DAG-based workflow scheduling and robustness in distributed systems",
+        "Scheduling algorithms and biasing strategies for model-based resource management",
+        "Benchmarking and validation of performance models on commodity hardware and simulation platforms"
+    ],
+    "Techniques Used": [
+        "Occupancy/throughput-based analytical GPU kernel performance modeling with occupancy constraints (\u03be_rb, \u03be_rw, \u03ba)",
+        "Upper-bound and lower-bound CPU availability modeling for multi-core systems, including a sharpened lower bound via a \u03bc-term",
+        "Average CPU availability predictor for scheduling decisions",
+        "Memory availability and paging models (Ma, R, Bl, Bs, Ac, Ap, Av) and composite memory model with e = c \u00d7 m",
+        "Composite CPU+memory model for execution efficiency (including \u03bc for worst-case work-phase staggering)",
+        "Biasing strategies for modeled task requirements in scheduling (constant bias, proportionate bias, simple bias)",
+        "Partial feedback analysis and robustness evaluation in DAG scheduling using SOASim-based experiments",
+        "DAG-based scheduling algorithms and baselines (FCFS, PLLF, CMSA Quad, CMSA Sig)"
+    ],
+    "Data & Platforms": [
+        "Synthetic CPU/memory workloads and benchmarks across single-core and multi-core platforms",
+        "Hardware platforms referenced in related work: Intel Xeon E5540 (single-core) and quad-core Xeon W3520; related quad-core and dual-core configurations",
+        "Software/tools: Linux OS; GCC 4.6.3; Java JDK 1.6; SOASim scheduler simulator",
+        "Benchmark/ workload suites referenced in related work (e.g., piEstimation, FFT, supPrime, tridSolver) used to validate models"
+    ],
+    "Application Areas": [
+        "Performance forecasting and hardware-aware scheduling for multi-core and heterogeneous systems",
+        "Resource allocation and scheduling in distributed/clustered environments",
+        "DAG-based workflow management and robustness under model inaccuracy",
+        "Platform-aware optimization and hardware selection for scheduling workloads",
+        "Benchmark-driven validation of analytical models and schedulers"
+    ],
+    "Key Research Thinking Patterns": [
+        "Analytical modeling with explicit equations and parameter definitions to capture hardware bottlenecks",
+        "Bound-based performance prediction (upper/lower bounds) with empirical validation across configurations",
+        "Scalability and heterogeneity awareness in scheduling models and analyses",
+        "Practical scheduling guidance through biasing strategies and partial feedback mechanisms",
+        "Bridging microarchitectural performance (GPU/CPU) with higher-level scheduling decisions for real-world workloads"
+    ],
+    "Summary Description": "Dr. John K. Antonio specializes in model-driven performance prediction and scheduling for multi-core and heterogeneous computing environments. His work spans occupancy-aware GPU kernel modeling and occupancy constraints, CPU availability and memory paging analyses for multi-core and hyper-threaded systems, and composite CPU+memory models that guide task placement and hardware selection. He also investigates robust, model-based scheduling for DAG-based workloads, including the use of biasing strategies to mitigate errors when feedback is partial or unavailable. His research combines analytical models with rigorous empirical validation on commodity hardware and simulation platforms, delivering practical guidance for developers and schedulers operating in distributed and data-center environments."
+}

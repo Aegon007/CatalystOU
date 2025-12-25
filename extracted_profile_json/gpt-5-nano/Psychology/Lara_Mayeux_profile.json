@@ -1,0 +1,49 @@
+{
+    "Researcher Profile:": "Dr. Lara Mayeux",
+    "Affiliation:": "Department of Psychology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Adolescent Development and Peer Relationships",
+        "Gender Studies and Prototypicality",
+        "LGBTQ+ Mental Health and Resilience",
+        "Social Support and Well-Being",
+        "Disaster Psychology and Interdisciplinary Methods",
+        "Social/Developmental Psychology",
+        "Interdisciplinary Research Methods"
+    ],
+    "Techniques Used": [
+        "Cross-sectional correlational analyses",
+        "Hierarchical linear regression and moderation analyses",
+        "Probing of interactions with simple slopes/prototypical plots",
+        "Open-ended content coding and thematic analysis",
+        "Mixed-methods design (quantitative plus qualitative)",
+        "Fisher\u2019s r-to-z tests for comparing correlation magnitudes",
+        "Repeated-measures ANOVA (within-subjects design)",
+        "Experimental manipulations with random assignment (appearance- and activity-based prototypicality)",
+        "Parametric tornado wind-field modeling and wind-field conditioning (interdisciplinary)",
+        "Forensic data integration and wind/structural load-path analysis",
+        " preregistration (Study design in transgender health study)"
+    ],
+    "Data & Platforms": [
+        "Paper 1: N = 131 students (7th\u20138th grade) from a rural Midwestern middle school; cross-sectional, grade-standardized peer status measures; hierarchical regressions",
+        "Paper 2: N = 335 transgender/nonbinary young adults; mixed-methods; data collected via Qualtrics; recruitment via Prolific; scales include MSPSS (family, offline, online), Rosenberg Self-Esteem, GBS, Pride (Testa et al., 2015), Diener Life Satisfaction, WHO-5, UCLA Loneliness, BDI, STAI, and internalized transphobia; qualitative open-ended responses analyzed thematically",
+        "Paper 3: Interdisciplinary post-tornado protocol; Fulcrum data platform; on-site data capture with smartphones/360 cameras; wind-field conditioning using a parametric tornado model (Rhee & Lombardo 2018); 117 survivor interviews across nine tornado events; uses wind/structural data collaboration",
+        "Paper 4: Open-ended descriptions from 218 undergraduates; content coding into 11 categories across four targets (HS males/females, college males/females); reliability metrics include Cohen\u2019s kappa and Cronbach\u2019s alpha",
+        "Paper 5: Two experimental studies with undergraduate samples (Study 1 N \u2248 328; Study 2 N \u2248 249); online surveys presenting photographs or vignettes; within-subjects 2\u00d72\u00d72 designs; analyses via ANOVA/MANOVA"
+    ],
+    "Application Areas": [
+        "Adolescent and emerging adult development",
+        "Gender norms, prototypicality, and popularity",
+        "Resilience and mental health in transgender and nonbinary populations",
+        "Social support processes across family, offline, and online contexts",
+        "Disaster response, sheltering behavior, and load-path understanding",
+        "Interdisciplinary methodology bridging psychology with engineering/disaster science"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integration of multiple perspectives (psychology, education, LGBTQ+ health, disaster science) to address complex social phenomena",
+        "Rigorous examination of gender-related processes across development and contexts (adolescence to emerging adulthood; offline vs online environments; appearance vs behavior paradigms)",
+        "Emphasis on both predictive relationships (regression, moderation) and descriptive/qualitative insights (interviews, open-ended coding) to triangulate findings",
+        "Attention to ecological validity and real-world relevance (rural school context, transgender health, tornado shelters, urban monitoring) and cross-context generalizability",
+        "Commitment to methodological transparency, including preregistration and detailed reporting of analytic steps"
+    ],
+    "Summary Description": "Dr. Lara Mayeux is a psychologist at the University of Oklahoma whose research spans adolescent development, gender norms, LGBTQ+ health, and interdisciplinary approaches to social resilience. Across her work, she investigates how gender prototypicality and peer/status dynamics operate in adolescence and emerging adulthood, how various social support contexts (family, offline and online friends) relate to positive and negative adjustment for transgender and nonbinary individuals, and how interdisciplinary data streams can inform safety and resilience in disaster contexts. Her methodological repertoire combines robust quantitative analyses (regressions, interactions, ANOVAs, moderation) with qualitative methods (open-ended coding and thematic analysis), and increasingly integrates cross-disciplinary data (wind engineering, forensic analysis, and survivor narratives) to generate theory-driven, actionable insights across settings\u2014from rural middle schools to tornado-impacted communities and beyond."
+}

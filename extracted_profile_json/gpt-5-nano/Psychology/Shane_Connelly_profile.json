@@ -1,0 +1,55 @@
+{
+    "Researcher Profile:": "Dr. Shane Connelly",
+    "Affiliation:": "Department of Psychology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Vaccine hesitancy and health misinformation",
+        "Infodemiology and health communication",
+        "Public health behavior and decision-making during pandemics",
+        "Technology use, work adaptation, and employment outcomes in crises (COVID-19)",
+        "Leadership, group dynamics, and emergence in organizational settings",
+        "Methodology and research practices in social science (replications, registered reports, endogeneity)"
+    ],
+    "Techniques Used": [
+        "Mixed-methods research (qualitative content analysis; quantitative surveys; SEM and mediation analysis)",
+        "Structural Equation Modeling (SEM) and mediation analysis with bootstrapping",
+        "Logistic regression and Probit regression",
+        "Panel data analysis and fixed effects",
+        "Instrumental variable estimation and 2SLS (including Lewbel IV) for addressing endogeneity",
+        "Qualitative data coding using grounded theory approaches",
+        "Endogeneity robustness checks (Oster method; Diegert et al. 2022)",
+        "Qualtrics survey deployment; MTurk recruitment; SPSS; AMOS; Stata; R",
+        "ELAN for behavioral coding (speaking time in groups)"
+    ],
+    "Data & Platforms": [
+        "MTurk-based samples for misinformation exposure study (Study 1)",
+        "University of Oklahoma participant samples (SONA) for vaccine willingness and IT-work studies",
+        "Qualtrics for longitudinal survey data collection (three-wave panel in COVID-19 employment study)",
+        "ELAN for coding speaking time",
+        "SPSS for descriptive statistics and correlations",
+        "AMOS for CFA/SEM",
+        "Stata for 2SLS and Lewbel IV estimation",
+        "R for supplementary analyses",
+        "Data collection and coding detailed in respective papers"
+    ],
+    "Application Areas": [
+        "Public health communication and vaccine uptake strategies",
+        "Misinformation countermeasures and health information literacy",
+        "Workforce technology adoption and remote-work adaptation during crises",
+        "Organizational leadership, group dynamics, and emergence in crisis settings",
+        "Methodological best practices in psychology and social sciences (replications, preregistration, open science)"
+    ],
+    "Key Research Thinking Patterns": [
+        "Integrates health psychology, communication science, and behavioral economics to understand decision-making under uncertainty (e.g., vaccine decisions, employment outcomes during COVID-19)",
+        "Emphasizes endogeneity-aware causal inference (IV/2SLS; Lewbel) and robustness checks across studies",
+        "Advocates mixed-methods to connect qualitative insights with quantitative causal models",
+        "Promotes replication, preregistration, and open science practices to strengthen leadership and health science knowledge"
+    ],
+    "Representative Works": [
+        "Misinformation of COVID-19 vaccines and vaccine hesitancy (Lee, Sun, Jang, Connelly; Scientific Reports, 2022)",
+        "Technology use, work adaptation and economic vulnerability during COVID-19 (Khademorezaian et al.; University of Oklahoma, 2022)",
+        "Testing the Babble Hypothesis: Speaking Time Predicts Leader Emergence in Small Groups (MacLaren et al.; Connelly co-author; various affiliations)",
+        "Doing better leadership science via replications and registered reports (Carsten et al.; Connelly co-author; The Leadership Quarterly, 2023)",
+        "Understanding motivations and deterrents for COVID-19 vaccination among US working adults: A mixed-method approach (Jang, Lee, Connelly; Human Vaccines & Immunotherapeutics, 2022)"
+    ],
+    "Summary Description": "Dr. Shane Connelly is a cross-disciplinary scholar whose work integrates health communication, misinformation, and public health behavior in crisis contexts with organizational behavior, leadership, and group dynamics in technology-enabled environments. He employs rigorous mixed-methods designs and advanced econometric techniques to address endogeneity and causal mechanisms, while advocating replication and open-science practices to advance robust knowledge in psychology, public health, and leadership studies. His research offers actionable insights for vaccine messaging and counter-misinformation efforts, as well as understanding how technology and leadership processes influence organizational resilience during pandemics and crises."
+}

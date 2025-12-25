@@ -1,0 +1,73 @@
+{
+    "Researcher Profile:": "Dr. Patrick D. Manapat",
+    "Affiliation:": "Arizona State University, Department of Psychology",
+    "Research Domains": [
+        "Psychometrics and measurement theory",
+        "Hierarchical and second-order factor models",
+        "Exploratory Factor Analysis (EFA) and Principal Components Analysis (PCA)",
+        "Confirmatory Factor Analysis (CFA) and Structural Equation Modeling (SEM)",
+        "Item Response Theory (IRT) and Multidimensional IRT (MIRT)",
+        "Dynamic Fit Index (DFI) and hierarchical DFI approaches",
+        "Replication science and meta-science in psychology",
+        "Simulation-based methodology and Monte Carlo studies",
+        "Misophonia measurement and psychometric validation (e.g., DMQ)",
+        "Educational and cognitive assessment measurement"
+    ],
+    "Techniques Used": [
+        "Dynamic Fit Index (DFI) framework and hierarchical extension (two algorithms: hier1HB for measurement misspecification; hier2 for structural misspecification)",
+        "Monte Carlo SEM simulations to derive model-tailored fit index cutoffs",
+        "Hierarchical factor models (second-order and higher-order) and their misspecification testing",
+        "Two-stage misspecification generation and evaluation (measurement cross-loadings, disturbance correlations)",
+        "HB cutoffs vs model-tailored DFI cutoffs across hierarchical structures",
+        "Exploratory Factor Analysis (EFA) and Principal Components Analysis (PCA) with Parallel Analysis (PA-F, PA-C) and Kaiser\u2013Guttman (K1) benchmarks",
+        "Factor rotation comparisons (quartimin, promax, varimax) and factor congruence metrics (K, \u0394K)",
+        "Multidimensional IRT (MIRT) via Multidimensional Graded Response Model (MGRM) and related estimation (MH-Robust-Monte Carlo, MML-EM; in practice with R packages and flexMIRT)",
+        "Unidimensional IRT robustness analyses (GRM and 2PLM) under nonnormal latent distributions using Fleishman\u2019s method",
+        "Reliability and validity assessment (Cronbach\u2019s alpha, McDonald\u2019s omega; convergent/divergent validity)"
+    ],
+    "Data & Platforms": [
+        "Datasets: Reynolds & Keith (2017) WISC-V hierarchical model data; DMQ data from two university samples; simulated EFAHet data; DMQ sample sizes N=318 and N=424; combined N\u2248742 for Some analyses",
+        "Software/Languages/Platforms: R (psych, lavaan, mirt, etc.); dynamic R package (hier1HB, hier2); Shiny apps for tailored cutoffs; OSF repository and GitHub code (https://github.com/patrickmanapat/efaHet); flexMIRT for IRT estimation",
+        "Open science and data/code resources: OSF materials; GitHub repository with replication scripts and data examples",
+        "Other tools referenced for context: Mplus (contextual), simsem (Monte Carlo SEM), FCO and ROC-based methods for comparison"
+    ],
+    "Application Areas": [
+        "Psychometrics and measurement validation in psychology",
+        "Hierarchical and second-order factor model evaluation",
+        "Measurement invariance and model misspecification diagnostics",
+        "Replication science and methodology research in psychology",
+        "Misophonia assessment and broader psychometric validation of clinical scales",
+        "Educational assessment and cognitive testing measurement"
+    ],
+    "Key Research Thinking Patterns": [
+        "Model-specific evaluation: favoring model-tailored cutoffs (DFI) over universal HB cutoffs when evaluating hierarchical factor models",
+        "Separation of research practices vs. reporting practices to clarify sources of heterogeneity and replication challenges",
+        "Simulation-driven methodology to anticipate misspecification effects and improve measurement accuracy",
+        "Emphasis on reproducibility and open-science tooling (R packages, GitHub, OSF) to enable replication and extension",
+        "Adoption of hierarchical modeling to reflect complex data structures (e.g., second-order factors) and realistic misspecification scenarios",
+        "Integration of traditional CFA/SEM benchmarks with modern, simulation-based diagnostics for comprehensive fit assessment"
+    ],
+    "Summary Description": "Dr. Patrick D. Manapat is a quantitative methodologist and psychologist whose research bridges psychometrics, replication science, and methodological theory within psychology. His work advances both instrument development and the evaluation of methodological practices through rigorous simulation studies and model-based diagnostics. Notable contributions include: (1) hierarchical extensions of the Dynamic Fit Index (DFI) to provide model-specific cutoffs for hierarchical/second-order factor models, (2) a taxonomy clarifying research vs. reporting practices and the SBO/RDF/QRP framework to reduce avoidable heterogeneity, (3) large-scale EFA replication studies (evaluating how decisions like factor number, rotation, and analysis type influence factor recovery), (4) robust psychometric evaluation of clinical instruments such as the Duke Misophonia Questionnaire (DMQ) using EFA/CFA, IRT/MIRT, and validity analyses, and (5) robustness investigations of unidimensional IRT models under nonnormal latent distributions. Across these strands, Manapat leverages R-based simulations, open-source tools, and collaborations to improve measurement validity, replication practices, and methodological transparency in psychology.",
+    "Representative Works": [
+        {
+            "Title": "Dynamic Fit Index Cutoffs for Hierarchical and Second-Order Factor Models",
+            "Note": "Introduces hierarchical DFI with hier1HB (measurement misspecification) and hier2 (structural misspecification), including multi-level cutoffs and empirical demonstration with Reynolds & Keith (2017) data"
+        },
+        {
+            "Title": "A Psychometric Analysis of the Duke Misophonia Questionnaire",
+            "Note": "Comprehensive psychometric evaluation of DMQ using EFA, CFA, and Multidimensional IRT; supports a five-factor structure and validates convergent/divergent validity with related scales"
+        },
+        {
+            "Title": "A Revised and Expanded Taxonomy for Understanding Heterogeneity in Research and Reporting Practices",
+            "Note": "Proposes a two-arm taxonomy (research vs reporting practices) with SBO, RDF, and QRP distinctions; includes a simulated demonstration on assumption checking and Type I error"
+        },
+        {
+            "Title": "Evaluating Avoidable Heterogeneity in Exploratory Factor Analysis Results",
+            "Note": "Explores how garden-of-forking-path decisions in EFA (factor number, analysis path, rotation, scale version) affect replication-like outcomes; emphasizes reducing heterogeneity via robust decision rules"
+        },
+        {
+            "Title": "Examining the Robustness of the Graded Response and 2-Parameter Logistic Models to Violations of Construct Normality",
+            "Note": "Assesses GRM and 2PLM under nonnormal latent distributions using Fleishman transformations; provides practical sample-size guidelines and robustness patterns"
+        }
+    ]
+}

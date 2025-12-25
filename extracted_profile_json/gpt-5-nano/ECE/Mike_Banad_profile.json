@@ -1,0 +1,57 @@
+{
+    "Researcher Profile:": "Mike Banad",
+    "Affiliation:": "School of Electrical and Computer Engineering, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Materials informatics and crystallography",
+        "Uncertainty quantification and positive-unlabeled learning",
+        "Transformer-based representations for materials and inverse design",
+        "Photonic integrated circuits design and data-driven inverse design",
+        "Generative models and data augmentation (GANs, VAEs, WGAN-GP)",
+        "Smart grids, Digital Twins, and Federated/Privacy-preserving ML",
+        "IoT-enabled medical imaging and brain/neuroimaging analytics",
+        "Multimodal data fusion and transfer learning in engineering and healthcare"
+    ],
+    "Techniques Used": [
+        "SyntheFormer: a transformer-based PU learning framework for synthesizability prediction in inorganic crystals",
+        "Positive-unlabeled learning with calibrated uncertainty thresholds (adaptive and triple-threshold configurations)",
+        "Fourier-transformed crystal properties (FTCP) representation for integrated real- and reciprocal-space features",
+        "Hierarchical six-pathway feature extraction with pathway-specific sub-models and cross-attention, yielding a 2,048-feature space",
+        "Random Forest feature selection (Gini impurity) to reduce features from 2,048 to 100",
+        "Four-layer deep MLP for PU prediction with PU loss, AdamW optimization, and early stopping on validation AUC",
+        "Uncertainty calibration and decision rules to guide laboratory synthesis decisions",
+        "DFT hull proxy baselines for benchmarking against PU predictions",
+        "WGAN-GP and Attention-WGAN-GP variants for photonic data augmentation in PIC design",
+        "Lumerical FDTD-based data generation for microring resonators; spectral preprocessing and feature extraction",
+        "XGBoost-based surrogate/predictive engine for forward prediction and inverse design (hybrid data-augmentation workflow)",
+        "Spectral-feature engineering and domain-informed preprocessing to improve predictive performance",
+        "Cross-domain bibliometric and survey methods (ELMS, LDA, NMF, Top2Vec, BERTopic, VOSviewer) in papers synthesised"
+    ],
+    "Data & Platforms": [
+        "Materials Project inorganic crystal structures (2011\u20132025) and ICSD cross-referenced synthesis labels",
+        "129,473 crystal structures; positives 44,541; unlabeled 84,932; temporal train/validation/test splits",
+        "Open-source code and dataset processing at https://github.com/INQUIRELAB/SyntheFormer",
+        "GitHub-based codebase for SyntheFormer; self-supervised crystallographic representations; RF feature selection",
+        "Lumerical FDTD Solutions for microring resonator simulations",
+        "NVIDIA RTX 4090 GPU for GAN-based data generation; CPU-based FDTD data generation on multi-system setup",
+        "XGBoost and Python-based data processing pipelines",
+        "Public datasets and benchmarks in photonic design and materials science domains",
+        "Public neuroimaging datasets referenced in related work (e.g., ADNI, OASIS) for context in cross-domain methodology"
+    ],
+    "Application Areas": [
+        "Structure- and composition-aware materials discovery and synthesizability screening",
+        "Data-driven inverse design and forward prediction in photonics (PICs and microring resonators)",
+        "Uncertainty-aware decision support for experimental planning and synthesis workflows",
+        "Energy systems and smart grids with DT/FL-enabled intelligence and privacy considerations",
+        "IoT-enabled medical imaging, brain tumor classification, and cross-domain medical AI applications",
+        "Neuroimaging, multimodal data fusion, and disease progression modeling in Alzheimer\u2019s research"
+    ],
+    "Key Research Thinking Patterns": [
+        "Uncertainty-aware, decision-driven ML: integrate calibrated uncertainty with practical thresholds to guide real-world lab decisions",
+        "Domain-informed ML: fuse physics/chemistry/engineering knowledge with data-driven models (structure-aware representations, physics constraints)",
+        "Robustness to distribution shifts and temporal labeling changes: use self-supervised pathways and temporal splits to enhance generalization",
+        "Scalability and interpretability: emphasize feature selection, robust baselines, and interpretable pathways (e.g., chemical reasoning, periodic-table embeddings)",
+        "Data efficiency through augmentation and hybrid modeling: combine real and synthetic data with surrogate models to accelerate design",
+        "Open, reproducible science: leverage open datasets, public repositories, and documented experimental pipelines"
+    ],
+    "Summary Description": "Mike Banad is a cross-disciplinary ML researcher known for integrating advanced machine learning with domain-rich scientific and engineering problems. His work spans materials informatics, photonics design, energy systems, IoT-enabled healthcare, and neuroimaging. A central thread is the development of uncertainty-aware, data-efficient, and interpretable ML pipelines that couple physics-informed representations with modern generative and discriminative models. Notable contributions include the SyntheFormer framework for structure-aware synthesizability prediction under extreme class imbalance, uncertainty calibration for practical lab decision-making, and a Philippine-style blend of generative augmentation (WGAN-GP) with surrogate predictors (XGBoost) for inverse design in photonics. His research emphasizes robust deployment, reproducibility, and the bridging of theory with lab-ready, decision-support tools across materials science, photonics, smart grids, and healthcare."
+}

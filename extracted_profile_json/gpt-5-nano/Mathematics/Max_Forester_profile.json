@@ -1,0 +1,51 @@
+{
+    "Researcher Profile:": "Dr. Max Forester",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK 73019, USA",
+    "Research Domains": [
+        "Geometric Group Theory",
+        "Bass\u2013Serre Theory and group actions on trees",
+        "Deformation spaces of G\u2013trees and collapse/fold techniques",
+        "Accessibility and finiteness properties of group splittings (finite-index and edge/vertex stabilizers)",
+        "Generalized Baumslag\u2013Solitar (GBS) groups and lattices in automorphism groups of Bass\u2013Serre complexes",
+        "Commensurability invariants in group theory (depth pro\ufb01le and related constructs)",
+        "Hyperbolic 3-manifolds, minimal-complexity manifolds, Kojima decomposition, ideal triangulations",
+        "Computational 3-manifold invariants (SnapPy, Ushijima volume formula, arithmetic invariants)",
+        "Canonical systems, spectral theory (Dirac/Schr\u00f6dinger/Jacobi) and PSL(2,R) actions",
+        "Stable commutator length in surface groups and taut-surface encodings"
+    ],
+    "Techniques Used": [
+        "Collapse and folding moves in the BF91 framework to move between G\u2013trees while preserving elliptic subgroups",
+        "Deformation-space theory for G\u2013trees and maximality with respect to domination order",
+        "\u03b4(G) construction and Dunwoody\u2013Fenn results to bound vertex/edge orbits (accessibility bounds)",
+        "Collapse maps, folds, and elementary moves in graphs of groups (BF folding theory)",
+        "Median aggregation and \u0394-constructions to obtain bounded\u2013complexity models (Theorem 1.1 backbone)",
+        "Depth pro\ufb01le invariant for non-elementary GBS groups to distinguish commensurability classes",
+        "Explicit lattice constructions in Aut(Xm,n) and analysis of gcd conditions for discreteness",
+        "Ideal triangulations, Kojima decomposition, and spine/\u2113-chain constructions in hyperbolic 3-manifolds",
+        "Dehn filling analysis, volume computations, and arithmetic invariants (trace fields, quaternion algebras)",
+        "Taut surface encodings, turn-path combinatorics, and linear programming formulations for scl",
+        "Herglotz/Krein theory and PSL(2,R) actions to study spaces of reflectionless canonical systems"
+    ],
+    "Data & Platforms": [
+        "Datasets: None (the work is theoretical; no external datasets reported).",
+        "Software/Languages/Libraries: SnapPy, Mathematica, Python (used for computations in hyperbolic geometry and symbolic/algebraic calculations).",
+        "Platforms/Environments: Classical mathematical frameworks (no numerical benchmarks beyond standard software tools for geometry/topology)."
+    ],
+    "Application Areas": [
+        "Geometric Group Theory and Deformation Theory",
+        "3-Manifold Topology and Hyperbolic Geometry",
+        "Computational Topology and Geometric Invariants",
+        "Spectral Theory and Canonical Systems",
+        "Algebraic and Combinatorial Group Theory (GBS, Lattices, commensurability)",
+        "Low-Dimensional Topology and Teichm\u00fcller\u2013Kleinian theory"
+    ],
+    "Key Research Thinking Patterns": [
+        "Structural/Canonical Modeling: develop canonical representations (G\u2013trees, spine/\u2113-chain models, canonical system representatives) to reduce complex objects to tractable, finite descriptions.",
+        "Invariant-Driven Classification: introduce and employ invariants (depth pro\ufb01le, \u03b4(G), trace fields, quaternion algebras) to distinguish objects up to commensurability or isomorphism.",
+        "Interdisciplinary Synthesis: blend combinatorial, geometric, topological, and analytic methods (e.g., PSL(2,R) actions with geometric group theory and hyperbolic geometry).",
+        "Algorithmic and Constructive Techniques: translate structural questions into constructive procedures (folding sequences, LP formulations for scl, Dehn-filling computations).",
+        "Robustness and Extremality: identify extremal objects (minimal complexity manifolds, unique representatives) and prove maximality/minimality results under precise hypotheses.",
+        "Rigidity vs. Flexibility: explore when seemingly rigid invariants fail to distinguish (e.g., isomorphic Cayley graphs for incommensurable lattices) and seek deeper invariants."
+    ],
+    "Summary Description": "Max Forester is a prominent mathematician at the University of Oklahoma whose research bridges geometric group theory, low-dimensional topology, and spectral theory. His work extensively develops and applies Bass\u2013Serre theory and deformation-space techniques to understand group actions on trees, proving accessibility-type finiteness results for finite-index splittings via collapse/fold methods and \u03b4(G)\u2013based bounds. He has advanced the theory of Generalized Baumslag\u2013Solitar groups, constructing and analyzing lattices in Aut(Xm,n) and introducing depth pro\ufb01les as robust commensurability invariants, revealing intricate lattice behaviors and nontrivial phenomena such as incommensurability with isomorphic Cayley graphs. In hyperbolic 3-manifold topology, Forester collaborates on minimal-complexity manifolds, providing explicit combinatorial models (ideal triangulations, spines, \u2113-chains) and leveraging Kojima decomposition, Dehn fillings, and arithmetic invariants to classify and compute volumes and symmetry structures. He also co-authors influential work on the topology of reflectionless canonical systems, describing PSL(2,R)\u2013orbit decompositions across Dirac/Schr\u00f6dinger/Jacobi regimes via Krein theory and Herglotz representations, illustrating the breadth of his mathematical toolkit. In the realm of scl, Forester develops a linear-programming framework based on taut surfaces and turn-path encodings to prove rationality and computability results for stable commutator length in non-filling curves on surfaces. Across these domains, his research is characterized by a unifying emphasis on canonical models, computable invariants, and the interaction of combinatorial, geometric, and analytic methods to achieve precise classifications, bounds, and constructions."
+}

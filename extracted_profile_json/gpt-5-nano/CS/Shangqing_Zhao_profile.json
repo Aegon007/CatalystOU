@@ -1,0 +1,54 @@
+{
+    "Researcher Profile:": "Dr. Shangqing Zhao",
+    "Affiliation:": "School of Computer Science, University of Oklahoma, Tulsa, OK, USA",
+    "Research Domains": [
+        "Quantum Machine Learning",
+        "Machine Learning Security and Adversarial AI",
+        "Wireless Security and Privacy",
+        "IoT and RFID Security",
+        "Perception-Aware Adversarial Attacks in Audio",
+        "Geolocation Privacy and Location-Based Services",
+        "Edge Computing and Security",
+        "Interdisciplinary AI Security"
+    ],
+    "Techniques Used": [
+        "Quantum Machine Learning models: QSVM (Quantum Support Vector Machines), Variational Quantum Algorithms (VQA), Variational Quantum Neural Networks (VQNs), Quantum Convolutional Neural Networks (QCNN)",
+        "Quantum feature maps and kernel tricks for quantum kernels",
+        "Classical ML baselines and tooling: Scikit-learn, Python, IBM Qiskit for quantum implementations",
+        "Perception-driven attack modeling: perception proxy qDev, Siamese Neural Network (SNN), Dynamic Time Warping (DTW), MFCC-based timbre/pitch/rhythm features",
+        "Multi-feature adversarial attack framework: CEMF-PA (Computationally-Efficient, Multi-Feature Perception-Aware attack)",
+        "Differentiable perception modeling to guide perturbations via SNN",
+        "Dynamic clipping and segment-wise optimization for audio perturbations",
+        "Adversarial fingerprinting and ensemble defenses for audio (Timbre watermarking, AudioSeal, down-sampling/quantization/low-pass defenses, ensemble-based defenses)",
+        "RFID active attack modeling: IDO (Identification Overriding) attack theory, power-based decoding models, noncentral Chi-square distributions, Marcum Q-function",
+        "RFID defense mechanisms: STO (Symbol Timing Offset) fingerprinting, CSI phase analysis, three-stage detection framework",
+        "Geolocation privacy attacks: LLT (Location Lookup Table) inference attack, range-free and range-based API exploitation, reference-AP-based detection, CSI/STO-based defense"
+    ],
+    "Data & Platforms": [
+        "Biomedical: Alzheimer's disease dataset (2,149 patients, 32 features) for quantum ML security study",
+        "Quantum ML software: IBM Qiskit; classical ML: Scikit-learn; Python-based experiments",
+        "IoT/Radio: USRP X310 SDRs, ESP8266, 900 MHz RFID experiments, RFID tag sets, Android devices for spoofing/detection",
+        "Audio/Music: Music21 for instrument rendering; FFT-based audio fingerprinting; Diffusion-model defenses (DiffWave, DiffSpec, AudioPure); Perception studies with human subjects",
+        "Geolocation: Google Geolocation API, Mozilla MLS API, WiGLE dataset; Raspberry Pi boards for CSI collection; Android devices for field testing",
+        "General tooling: Interior-point and sequential quadratic programming for optimization; STO/CSI-based feature extraction",
+        "Platforms: Raspberry Pi B4/4B, Android devices, USRP-based experiments, Python/TensorFlow for ML components"
+    ],
+    "Application Areas": [
+        "Quantum ML performance and security implications in real-world biomedical classification",
+        "Privacy-preserving defenses against CSI-based wireless inferences (breathing/crowd inference)",
+        "Deception-based defenses and proactive countermeasures for wireless privacy (HoneyBreath, Ghost)",
+        "Active RFID threat modeling and reader-side defenses against data-overwriting attacks",
+        "Perception-aware adversarial audio generation for copyright-detection evasion and corresponding defenses",
+        "Geolocation privacy and LLT inference resistance in large-scale location services",
+        "Cross-domain security research spanning ML, wireless communications, RFID, audio, and location-based systems"
+    ],
+    "Key Research Thinking Patterns": [
+        "Adversarial and defense co-evolution: designing attacks and matching defenses across multiple domains to reveal practical weaknesses and robust mitigations",
+        "Cross-disciplinary integration: combining ML security with hardware-level signal processing (CSI/STO), RFID physics, and audio perceptual modeling",
+        "Empirical realism: evaluating ideas with real-world hardware prototypes, public datasets, and surrogate systems to demonstrate practicality and limitations",
+        "Perception-aligned security: moving beyond norm-based perturbations to models that capture human perceptual impact in audio and its protection",
+        "Defense-in-depth and ensemble strategies: deploying multi-layer defenses (reference APs, fingerprinting, ensemble detectors) to increase resilience",
+        "Transparency and reproducibility: leveraging open datasets, simulations, and surrogate models to enable verification and extension by others"
+    ],
+    "Summary Description": "Dr. Shangqing Zhao's research portfolio spans quantum machine learning security, wireless privacy, RFID physical-layer vulnerabilities, perception-aware adversarial attacks in audio, and geolocation privacy. His work in quantum ML analyzes performance and security implications of QSVM, VQA, and QCNN models on real-world biomedical data, while his security-focused research explores proactive deception-based defenses against CSI-based inferences and crowd counting (HoneyBreath, Ghost). He investigates active RFID attacks (IDO) and practical reader-side defenses using STO/CSI fingerprinting, and leads studies on LLT-based geolocation attacks with corresponding defenses and privacy considerations. Across these domains, Zhao emphasizes rigorous real-world evaluation, cross-disciplinary collaboration, and the design of practical, scalable defenses aligned with contemporary AI and security challenges."
+}

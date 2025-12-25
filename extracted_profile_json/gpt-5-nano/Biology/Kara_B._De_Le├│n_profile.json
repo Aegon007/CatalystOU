@@ -1,0 +1,55 @@
+{
+    "Researcher Profile:": "Dr. Kara B. De Le\u00f3n",
+    "Affiliation:": "School of Biological Sciences, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Wastewater-Based Epidemiology (WBE) and environmental surveillance",
+        "Environmental microbiology and water quality",
+        "Public health microbiology",
+        "Antibiotic resistance surveillance (AMR)",
+        "Molecular microbiology and sequencing",
+        "High-throughput functional genomics in bacteria"
+    ],
+    "Techniques Used": [
+        "Enterolert-based Enterococcus enumeration (MPN)",
+        "Sediment detachment and preparation for bacterial enumeration",
+        "Phenotypic identification via Biolog GEN III microplates",
+        "Gram staining, motility, catalase assays",
+        "16S rRNA gene sequencing (PCR; subset confirmation)",
+        "Genomic DNA extraction (Promega Wizard kit)",
+        "Kirby-Bauer disk diffusion antibiotic susceptibility testing",
+        "Sediment characterization via Loss on Ignition (ASTM 6913)",
+        "Statistical analyses in R and Excel (Descriptive stats, Fisher\u2019s exact test)",
+        "IDEXX Enterolert system; IDEXX panels",
+        "Allele-specific RT-qPCR for SARS-CoV-2 variant discrimination (SGTF for Omicron) and sequencing validation (Illumina NextSeq; xGen panel)",
+        "Bioinformatics pipelines (C-WAP for sequencing reads; Freyja for variant prevalence)",
+        "RB-TnSeq and BarSeq for genome-wide fitness mapping; FEBA toolkit; Fitness Browser",
+        "High-throughput sequencing (Illumina) and metagenomics (as per studies)"
+    ],
+    "Data & Platforms": [
+        "Field and laboratory Enterolert data for water and sediment samples",
+        "Biolog phenotypic data and 16S rRNA sequence data",
+        "Antibiotic resistance profiles (Kirby-Bauer) for environmental isolates",
+        "LOI sediment properties",
+        "Allele-specific RT-qPCR data for SARS-CoV-2 variants; sequencing validation datasets",
+        "RB-TnSeq mutant library fitness data (Desulfovibrio vulgaris) with Fitness Browser",
+        "Public datasets: NCBI SRA data (RB-TnSeq), figshare data, Fitness Browser",
+        "Software: R, Excel, STATA, FEBA, Bowtie2, C-WAP, Freyja"
+    ],
+    "Application Areas": [
+        "Environmental water quality assessment and freshwater microbiology",
+        "Waterborne pathogen detection and fecal indicator bacteria interpretation",
+        "Public health decision-support through wastewater surveillance",
+        "Antibiotic resistance surveillance in environmental reservoirs",
+        "SARS-CoV-2 variant monitoring in wastewater",
+        "Functional genomics of sulfate-reducing bacteria with implications for biotechnology"
+    ],
+    "Key Research Thinking Patterns": [
+        "Method validation under real-world environmental matrices to assess interference and false positives",
+        "Integrated, multi-method verification combining culture, phenotypic, and genomic data",
+        "Translational focus on public health relevance and policy implications",
+        "Open data principles and reproducibility across studies",
+        "Systems-level understanding of microbial metabolism, nutrient utilization, and stress responses",
+        "Cross-disciplinary collaboration spanning microbiology, environmental engineering, epidemiology, and bioinformatics"
+    ],
+    "Summary Description": "Kara B. De Le\u00f3n is a microbiologist specializing in wastewater-based epidemiology, environmental microbiology, and microbial genomics. Her research encompasses evaluating the specificity of Enterolert for Enterococcus in freshwater contexts, comprehensive wastewater surveillance for gastrointestinal pathogens and SARS-CoV-2 variants, and the synthesis of community-oriented analyses on bacterial WBE. She also contributes to large-scale functional genomics in Desulfovibrio vulgaris Hildenborough using RB-TnSeq to map essential genes and phenotypes across diverse conditions, highlighting the integration of experimental microbiology with data science and open resources to advance environmental health surveillance, AMR detection, and microbial physiology."
+}

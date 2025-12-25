@@ -1,0 +1,92 @@
+{
+    "Researcher Profile:": "Ricardo A. E. Mendes",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma, Norman, OK, USA",
+    "Co-authors & Collaborations": [
+        "Marco Radeschi \u2014 University of Torino / University of Notre Dame (collaborative work across multiple papers)",
+        "Renato G. Bettiol \u2014 CUNY Lehman College / CUNY Graduate Center",
+        "Mario Kummer \u2014 Technische Universit\u00e4t Dresden",
+        "Samuel Lin \u2014 Colby College (collaborator on spectral/invariant theory work with Mendes)",
+        "Marco Radeschi \u2014 University of Torino (collaborations reflected across papers)"
+    ],
+    "Research Domains": [
+        "Differential Geometry",
+        "Geometric Analysis",
+        "Submanifold Theory",
+        "Spectral Geometry",
+        "Foliations and Submersions",
+        "Singular Riemannian Foliations",
+        "Invariant Theory",
+        "Convex Algebraic Geometry",
+        "Real Algebraic Geometry",
+        "Representation Theory",
+        "Optimization under Symmetry",
+        "Polar Representations",
+        "Fat Sections",
+        "Isoparametric Foliations",
+        "Laplacian Algebras",
+        "Semidefinite Programming (theoretical foundations)"
+    ],
+    "Techniques Used": [
+        "Bow Lemma and geodesic comparison",
+        "Focal radius analysis and normal curvature relations",
+        "Veronese embeddings of projective spaces and their projection-models",
+        "Totally umbilical immersions and planar-geodesic rigidity",
+        "Projection matrices and Veronese embeddings via rank-one symmetric projections",
+        "Hadamard-type (heat-kernel) methods and Tauberian arguments for Weyl-type laws",
+        "Averaging operators on singular Riemannian foliations",
+        "Leaf-space volume computations and basic spectrum analysis",
+        "Laplacian algebras and Cohen\u2013Macaulay properties",
+        "Hilbert series and invariant theory in the infinitesimal/infinitesimal settings",
+        "Generalized polarizations and Kostant\u2019s convexity framework",
+        "Kostant\u2019s convexity theorem and its generalizations beyond polar representations",
+        "Spectrahedral descriptions and symmetry-reduction techniques for optimization",
+        "Fat-section and submetry frameworks in Alexandrov geometry",
+        "Constructions connecting geometric invariants to algebraic invariants (e.g., Hilbert series to leaf-space volume)"
+    ],
+    "Data & Platforms": [
+        "Data: N/A (theoretical/mathematical work)",
+        "Platforms/Tools: Alexandrov geometry, submetry theory, Riemannian geometry, invariant theory, commutative algebra, semidefinite programming concepts; no empirical datasets or numerical software reported"
+    ],
+    "Application Areas": [
+        "Pure Mathematics (Differential Geometry, Geometric Analysis, Invariant Theory)",
+        "Spectral Theory in Geometry",
+        "Symmetry in Optimization and SDP",
+        "Convex Algebraic Geometry",
+        "Representation Theory",
+        "Isoparametric and Fat-Section Geometry",
+        "Inverse Invariant Theory and Separating Sets"
+    ],
+    "Key Research Thinking Patterns": [
+        "Geometry\u2013Algebra Bridge: Establishes deep connections between geometric invariants (diameter, focal radius, leaf-space geometry) and algebraic structures (Veronese embeddings, Hilbert series, Cohen\u2013Macaulay modules).",
+        "Symmetry-Driven Reduction: Systematically exploit group actions, polar representations, and fat sections to reduce high-dimensional or complex structures to tractable invariant subspaces and sections.",
+        "Rigidity and Classification: Characterizes equality cases in geometric inequalities via rigidity arguments and complete classifications (e.g., equality in extrinsic diameter vs focal radius).",
+        "Constructive Invariant Theory: Develops Laplacian algebras and generalized polarizations as concrete tools for generating invariants and understanding inverse invariant theory.",
+        "Generalization and Abstraction: Extends classical results (Kostant convexity, Lax conjecture, etc.) to broader contexts such as submetries, infinitesimal foliations, and nonpolar actions.",
+        "Interdisciplinary Synthesis: Combines differential geometry, spectral theory, convex geometry, and algebraic invariant theory to yield unified frameworks and transfer results across domains."
+    ],
+    "Representative Works": [
+        "Diameter and Focal Radius of Submanifolds (arXiv:2504.13270, 2025) \u2013 differential geometry and rigidity of submanifolds in simply-connected space forms",
+        "A Weyl\u2019s law for singular Riemannian foliations with applications to invariant theory (Geometry & Topology, 2025) \u2013 spectral geometry of SRFs and link to invariant theory via leaf-space volumes and Hilbert series",
+        "Two Results on the Convex Algebraic Geometry of Sets with Continuous Symmetries (co-authored; invariant convex geometry, spectrahedra, Kostant\u2019s convexity) \u2013 spectrahedral descriptions under symmetry",
+        "Maximality of Laplacian Algebras, with Applications to Invariant Theory (invariant theory via Laplacian algebras; maximal subalgebras in polynomial rings)",
+        "A Geometric Take on Kostant\u2019s Convexity Theorem (geometric/metric framework for Kostant\u2019s convexity in broader submetries and fat sections)"
+    ],
+    "Summary Description": "Ricardo A. E. Mendes is a mathematical theorist whose research spans differential geometry, geometric analysis, spectral geometry, and invariant theory. His work develops deep connections between geometric phenomena (submanifolds, focal geometry, leaf spaces of foliations, and submetries) and algebraic structures (Veronese embeddings, Hilbert series, Laplacian algebras, generalized polarizations). Mendes has contributed foundational results that unify Kostant\u2019s convexity with modern metric geometry, establish Weyl-type laws for basic spectra in singular Riemannian foliations, and advance inverse invariant theory through the maximality of Laplacian algebras. His research routinely leverages symmetry to reduce complex problems, derives complete classifications of equality cases, and provides constructive frameworks for generating invariants and reducing optimization problems under symmetry (spectrahedra and their shadows). Across collaborations with researchers such as Marco Radeschi, Renato Bettiol, Mario Kummer, and Samuel Lin, Mendes\u2019 work exemplifies a coherent program that blends geometric insights with algebraic and computational perspectives to address foundational questions at the intersection of geometry, algebra, and optimization.",
+    "Open Questions & Future Directions": [
+        "Existence and scope of Weyl-type asymptotics for the basic spectrum without assuming basic mean curvature in singular Riemannian foliations (extensions beyond Theorem A).",
+        "Weyl-type results for foliations with nonclosed leaves and the corresponding leaf-space volume invariants.",
+        "Refinements of Hilbert-series expansions and higher-term coefficients in relation to pole structure and geometric data in the SRF context.",
+        "Relaxing k-NS (k-normal spaces condition) in generalized polarization frameworks and identifying minimal sufficient conditions for generation of invariant algebras via generalized polarizations (Theorem F, G in related work).",
+        "Exploration of broader fat-section/submetry settings to further generalize Kostant\u2019s convexity and determine when quotient-convexity corresponds to convex lifts in higher generality."
+    ],
+    "Contact Information": [
+        "Email: ricardo.mendes@ou.edu"
+    ],
+    "Representative Publications (Selected)": [
+        "Ricardo A. E. Mendes, Diameter and Focal Radius of Submanifolds, arXiv:2504.13270 (2025)",
+        "Lin, Mendes, Radeschi, A Weyl\u2019s law for singular Riemannian foliations with applications to invariant theory, Geometry & Topology (2025)",
+        "Bettiol, Kummer, Mendes, Two Results on the Convex Algebraic Geometry of Sets with Continuous Symmetries",
+        "Mendes, Radeschi, Maximality of Laplacian Algebras, with Applications to Invariant Theory",
+        "Mendes, A Geometric Take on Kostant\u2019s Convexity Theorem"
+    ]
+}

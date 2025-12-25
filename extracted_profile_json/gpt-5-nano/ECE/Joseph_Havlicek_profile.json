@@ -1,0 +1,53 @@
+{
+    "Researcher Profile:": "Dr. Joseph P Havlicek",
+    "Affiliation:": "School of Electrical and Computer Engineering, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Biomedical imaging and radiology analytics",
+        "PET/CT fusion and multimodal image analysis",
+        "Signal processing and time-frequency analysis",
+        "Transform theory and digital signal processing",
+        "Video coding and transform design",
+        "3D/4D image segmentation",
+        "Multimodal data integration",
+        "Applied mathematics and computational methods in imaging"
+    ],
+    "Techniques Used": [
+        "Ensemble of three U-Nets for vertebral-column segmentation (axial, sagittal, coronal views)",
+        "3-plane pseudo-3D segmentation approach; ground-truth labeling; class-weighted loss",
+        "CT-PET data fusion with CT resampling to PET resolution; ROI-based per-vertebra SUV extraction",
+        "1D boundary detection in fused PET volume using adaptive sliding-window peaks",
+        "Morphological processing, connected components, and thresholding for mask post-processing",
+        "Per-vertebra SUV extraction and Ki dynamic modeling from PET data",
+        "Autopsy-based validation using XY fluorescent in situ hybridization (FISH) and immunohistochemistry",
+        "Hirschman optimal transforms (HOT) and the real-valued, integer-valued 2D Hirschman transform (H2) for video coding",
+        "Mirror Periodic Method (MPM) for end-effect mitigation in Hilbert-transform-based backbone extraction",
+        "Hilbert Transform (HT) and Hilbert Vibration Decomposition (HVD) for signal analysis and filtering",
+        "2D DCT and H.264 8x8 integer transform as baselines for video coding comparisons",
+        "Dynamic PET kinetic modeling (Ki); SUV quantification; ROI-based longitudinal analysis",
+        "Statistical analyses in SAS; regression and non-parametric tests"
+    ],
+    "Data & Platforms": [
+        "OK-DBIR dataset: 43 sequences, 78,606 object instances across 242 objects; MWIR/LWIR dataset",
+        "CT-PET datasets: 14 CT volumes (low-dose CT), 13 test PET scans; 14-bit DBIR-like frames; 320x320 crops",
+        "Ground-truth vertebral masks; plan-structured training; 32 epochs; data augmentation",
+        "Imaging tools: Gemini TF Time of Flight PET/CT; Extended Brilliance Workspace; MIM software (v6.1) for analysis",
+        "Software: MATLAB for Hirschman transforms and MPM/HVD pipelines; Python for segmentation; SAS for statistics",
+        "Hardware: Two accelerometers in paper 5 (for SDOF experiments); lab instrumentation for imaging studies"
+    ],
+    "Application Areas": [
+        "Medical imaging analytics and radiomics",
+        "Hematopoietic stem cell transplantation monitoring and engraftment assessment",
+        "Nuclear medicine and tracer kinetics",
+        "Multimodal imaging in clinical workflows",
+        "Video compression and transform theory with hardware-efficient coding"
+    ],
+    "Key Research Thinking Patterns": [
+        "Interdisciplinary integration of ML/vision with medical imaging and clinical validation",
+        "Data fusion to overcome modality limitations and enhance detection",
+        "End-to-end pipelines from data acquisition to biomarker extraction with reproducibility",
+        "Development of novel transforms (H2) motivated by arithmetic efficiency and coding performance",
+        "Exploration of robust segmentation in low-resolution or sparse data",
+        "Clinical translation and validation using autopsy data and ROI-based metrics"
+    ],
+    "Summary Description": "Dr. Joseph P Havlicek is a scholar at the University of Oklahoma whose work spans biomedical imaging, signal processing, and transform theory. He develops data-driven and physics-informed pipelines for multimodal imaging (CT-PET fusion) to derive per-vertebra biomarkers like SUV and Ki, validated with autopsy findings, and explores novel transform-based approaches for efficient video coding, notably the real-valued Hirschman-based H2 transform and end-effect mitigation techniques. His research emphasizes reproducible computational workflows, cross-disciplinary collaboration, and translational impact in imaging and multimedia processing."
+}

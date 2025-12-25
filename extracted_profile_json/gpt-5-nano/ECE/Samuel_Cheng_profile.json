@@ -1,0 +1,52 @@
+{
+    "Researcher Profile:": "Dr. Samuel Cheng",
+    "Affiliation:": "Department of Electrical and Computer Engineering, University of Oklahoma, Tulsa, OK, USA",
+    "Research Domains": [
+        "Federated Learning and Distributed ML",
+        "Privacy-Preserving ML and Cryptography in ML",
+        " Generative AI, Deepfake Technology, and Media Security",
+        "Computer Vision and Deep Learning Architectures (Capsule Networks, Diffusion Models)",
+        "Medical Imaging and Anomaly Detection",
+        "Edge Computing and IoT",
+        "AI for Healthcare",
+        "6G Networking and Security"
+    ],
+    "Techniques Used": [
+        "Federated Unlearning (FUL) and Unlearning as a Service (UaaS-SFL)",
+        "Zero-Knowledge Proofs in ML (ProxyZKP): Kate polynomial commitments, Sigma protocol, bilinear pairings",
+        "Polynomial Proxy Models (PolyMLP, PolyCNN) for verifiable decentralized FL",
+        "Differential Privacy (Local DP) with Diffprivlib",
+        "Classifier-guided Denoising Diffusion Models for medical anomaly detection (DDPM, DDIM)",
+        "Diffusion-guided anomaly localization in CT imaging (OUHSC data)",
+        "Denoising Diffusion Probabilistic Models (DDPM) and Diffusion Implicit Models (DDIM)",
+        "Non-Iterative Cluster Routing in Capsule Networks: vote clusters, sigma-based agreement, channel-wise aggregation",
+        "Entropy-based routing (EADR) in Capsule Networks",
+        "Dynamic Routing by Agreement (Sabour et al.) and related baselines (VB routing, EntrLoss, REM)",
+        "Diffusion-based weakly supervised segmentation for medical imaging",
+        "Policy and governance considerations for AI reliability and security in distributed systems"
+    ],
+    "Data & Platforms": [
+        "Public Datasets: MNIST, Fashion-MNIST, CIFAR-10, SVHN, smallNORB, Pins Face Recognition, FF++ (FaceForensics++), CelebDF, DFDC, DeepfakeTIMIT, UADFV, ForgeryNet",
+        "Medical imaging datasets: MSD pancreas, OUHSC CT slices",
+        "Diffusion/medical imaging models: DDPM, DDIM, U\u2011Net denoiser, classifier guidance",
+        "Platforms/Tools: Python, PyTorch, TensorFlow, OpenMPI, Diffprivlib, SymPy, PyCryptodome, Galois, OU OSCER (OU Supercomputing Center for Education & Research)",
+        "Data extraction and literature-tracing tools: PRISMA 2020 framework, Docanalyzer.ai, Research Rabbit, Litmaps, Connected Papers"
+    ],
+    "Application Areas": [
+        "Deepfake generation and detection in media security",
+        "Privacy-preserving and verifiable decentralized federated learning",
+        "Healthcare imaging and anomaly detection using diffusion models",
+        "Efficient capsule-network routing for computer vision",
+        "Edge computing and IoT security in distributed AI systems",
+        "AI-enabled, secure communication in next-generation networks (6G)"
+    ],
+    "Key Research Thinking Patterns": [
+        "Adversarial Modeling and Countermeasures in ML systems (data poisoning, detector evasion, privacy risks)",
+        "Comparative Evaluation and Benchmarking across methods and datasets to identify trade-offs",
+        "Scalability and Pragmatic Deployment of complex ML systems (cryptographic proofs, DP, non-iterative routing)",
+        "Interdisciplinary Integration across ML, cryptography, networking, and healthcare imaging",
+        "Reproducibility and Open Science (code/data availability, transparent experimental design)",
+        "Ethics, Regulation, and Policy considerations for AI safety and governance"
+    ],
+    "Summary Description": "Dr. Samuel Cheng is a multi-disciplinary AI systems researcher whose work spans privacy-preserving and verifiable distributed learning, security-sensitive AI for media and health, and scalable neural network architectures. He co-authored systematic and technical contributions on deepfake detection and generative AI safety, advanced zero-knowledge proof methods and polynomial proxies for verifiable federated learning, diffusion-model-based weakly supervised medical anomaly detection, and non-iterative cluster routing and entropy-aware capsule networks. His research emphasizes practical, secure, and scalable AI solutions across distributed networks, healthcare imaging, and intelligent edge computing, with a strong emphasis on evaluative rigor, reproducibility, and cross-domain impact."
+}

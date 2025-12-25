@@ -1,0 +1,47 @@
+{
+    "Researcher Profile:": "Dr. Adrienne R. Carter-Sowell",
+    "Affiliation:": "University of Oklahoma; Texas A&M University (joint appointments); Department of Psychology",
+    "Research Domains": [
+        "Social Psychology",
+        "Ostracism and Social Exclusion",
+        "Political Psychology and polarization",
+        "Intergroup Relations and Social Identity",
+        "Cross-Cultural Psychology",
+        "Health Psychology and Pain (social modulation of pain)"
+    ],
+    "Techniques Used": [
+        "Cyberball ostracism paradigm",
+        "Ostracism Online platform",
+        "PROCESS Macro for mediation analyses (Hayes)",
+        "ANCOVA and moderation analyses",
+        "Johnson\u2013Neyman technique for probing interactions",
+        "Logistic regression and Poisson regression",
+        "Qualitative and mixed-methods integration (archival data, experiments, surveys)",
+        "Quantitative Sensory Testing (QST) and pain paradigms (as applicable in related work)",
+        "Open Science Framework (OSF) data sharing and preregistration practices",
+        "Power analyses (G*Power) for study design"
+    ],
+    "Data & Platforms": [
+        "OSF-hosted data and materials for several studies",
+        "SPSS for statistical analyses",
+        "PROCESS Macro for mediation/moderation analyses",
+        "G*Power for power analyses",
+        "Cyberball and Ostracism Online platforms for experimental manipulation",
+        "Quantitative Sensory Testing (QST) equipment (in related pain studies)"
+    ],
+    "Application Areas": [
+        "Social psychology of exclusion and affiliation",
+        "Political polarization and intergroup attitudes",
+        "Culture and cross-cultural differences in threat responses",
+        "Health psychology and social modulation of pain",
+        "Diversity, Equity, and Inclusion in academic and organizational contexts"
+    ],
+    "Key Research Thinking Patterns": [
+        "Mechanism-focused analyses using mediation and moderation to identify why exclusion influences attitudes and behaviors",
+        "Cross-cultural and intergroup perspectives to examine how culture, ideology, and group membership shape responses to social threat",
+        "Multi-method and multi-level designs combining experiments, surveys, and archival data for triangulation",
+        "Exploration of boundary conditions (e.g., lifetime ostracism, cultural context) to explain variability in outcomes",
+        "Integration of social cognition with health-related outcomes to understand biopsychosocial implications of ostracism"
+    ],
+    "Summary Description": "Adrienne R. Carter-Sowell is a social psychologist whose scholarship centers on the consequences of social exclusion and ostracism, with a strong emphasis on intergroup dynamics, polarization, and culture. Across co-authored work, she employs rigorous mediation and moderation analyses (notably via the PROCESS macro), experimental paradigms such as Cyberball, and culturally informed designs to illuminate how exclusion shapes affiliation, affect (e.g., anger), antisocial tendencies, and goal-directed behavior in political, social, and health domains. Her research bridges political psychology, social psychology, and health-related processes to understand mechanisms of belonging, threat response, and social decision-making across diverse populations and contexts."
+}

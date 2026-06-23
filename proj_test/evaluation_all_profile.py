@@ -1,3 +1,14 @@
+"""
+Profile Evaluation module.
+
+Provides a CLI and programmatic API for evaluating the extracted researcher profiles between reserchers.
+using LLM-powered analysis. This module should be run after running the profile extraction step in
+Experiment 1 to ensure extracted profiles are available for evaluation.
+
+Usage:
+    python evaluate_all_profile.py -i ./data/papers -o ./extracted_profiles -m gpt-4-turbo
+"""
+
 import os
 import sys
 import re

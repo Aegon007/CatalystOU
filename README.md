@@ -1,87 +1,249 @@
-# CatalystOU: A Pilot Study for an LLM-Powered Researcher Collaboration Discovery Engine
+# CatalystOU
 
+CatalystOU is an experiment framework for evaluating an LLM-powered researcher collaboration discovery pipeline. The system extracts structured researcher profiles from publication PDFs, predicts mechanistic collaboration opportunities between researchers, and evaluates those outputs against manually labeled ground truth for paper publication.
 
-## Overview
-This is the repo for our 2025 summer project: CatalystOU: A Pilot Study for an LLM-Powered Researcher Collaboration Discovery Engine
+The current research code lives mainly in `proj_test/` and `utils/`. The `live_demo/` directory contains a separate web demo and is not part of the publication experiment workflow.
 
-In this project, we are trying to build a system that can find potential collaboration opportunities by digesting the researcher's publications.
+## Project Layout
 
-This project does not develop a new LLM; instead, we are using an existing LLM as a service.
-
-## Project Goals and Methodology
-### Objectives
-The primary goals of this project are:
-- To develop a pipeline that utilizes the LLM to ingest researcher publications (in PDF format) and extracts key information.
-- To implement the LLM to identify research collaboration potential with prompt engineering and sampling that will provide objective and consistent grading between two researchers. 
-- Creating a simple user interface that allows users to input various researcher information and publication which will visualize the researcher collaborations. 
-
-### Methodology
-Our main methodology can broken down into the key steps:
-#### 1. Data Collection and Ground Truth
-The project began with the creation of a ground truth dataset for guiding the main development. We selected two researchers from five different disciplines at the University of Oklahoma. For each researcher, five recent and impactful publications were chosen for analysis. This manually curated datasets can be found in the [Manual Labeled Data](Manual%20Labeled%20Data) folder.
-
-#### 2. Profile Extraction (```profile_extraction.py```)
-We found that designing ```profile_extraction.py``` mainly centered around designing a system to create a researcher profile in JSON format. We decided that utilizing the method of Summarize and Synthesize each individual publication allowed for the best results in terms of time-efficiency without losing accuracy of the researcher's main interests.
-
-#### 3. Collaboration Matching (```profile_matcher.py```)
-For matching the two profiles, the primary focus was prompt engineering. The LLM was given a specific persona as an "expert researcher" and is provided a detailed rubric on its output which is also in JSON format. This rubric guides the model to score the collaboration potential based on their complementary skills, and overlapping research interests, with a main focus towards consistent and objective results. 
-
-#### 4. Prompting Strategy
-The LLM system was designed for few-shot learning in mind, where multiple examples could be provided to guide the model. In its current implementation, however, a one-shot learning approach is used for the extraction. Further testing with few-shot approach is a potential area for future work. 
-
-#### 5. Web Interface Design (```CatalystOU_GUI.py```)
-Designing the web interface mainly consisted of two pages.
-- Input Page: Mainly focused on uploading the researcher publications for analysis for each researcher, as well as their names to focus which researcher. It also has the option to use the JSON format. 
-- Output Page: Shows the researcher profiles for each researcher, as well as the collaboration synergy scores and detailed explanations of any potential overlap and interests.
-
-## Contents
-In this repo, we have source code and groundtruth of the project.
-
-In the source code: we have 3 major files:
-* **catalystOU\_UI.py**: The main Streamlit file that runs the web user interface.
-* **profile\_extraction.py**: Contains the  functions to run a profile extraction on a single researcher and outputs a JSON format profile.
-* **profile\_matcher.py**: Contains the functions to compare two researcher profiles and calculate collaboration synergies.
-
-## Web UI Interface
-![Web UI Interface](https://github.com/Aegon007/CatalystOU/blob/main/catalystOU_webUI.png)
-
-## Getting Started
-Following these steps will allow you to run this on your local machine.
-
-### 1. Cloning the Repository
-First, clone the repo to your local machine and navigate to the project root directory.
-```bash
-git clone <Repo URL>
-cd CatalystOU
+```text
+catalystOU/
+├── proj_test/
+│   ├── profile_extractor.py      # PDF -> structured researcher profile extraction
+│   ├── test1_profile_acc.py      # Experiment 1: profile extraction accuracy
+│   ├── test2_pred_acc.py         # Experiment 2: collaboration prediction accuracy
+│   ├── orchestrator.py           # Multi-pair collaboration evaluation
+│   ├── llm_reasoner.py           # Structured LLM collaboration reasoning
+│   └── run_experiments.py        # CLI entry point for experiments
+├── utils/
+│   ├── data/                     # Shared schemas and profile discovery/loading
+│   ├── llm/                      # LLM provider abstraction and OpenAI-compatible client
+│   ├── matching.py               # Exact + semantic matching utilities
+│   ├── metrics.py                # Aggregate metrics and bootstrap confidence intervals
+│   ├── profile_io.py             # JSON load/save helpers
+│   └── logger.py                 # Shared logging setup
+├── profile_labeled_data/         # Manually labeled researcher profiles
+├── extracted_profile_json/       # LLM-extracted researcher profiles
+├── live_demo/                    # Separate web demo
+└── requirements.txt
 ```
 
-### 2. Installing Dependencies
-This project uses many dependencies, which can be found in [requirements.txt](requirements.txt). They can easily be installed by using the respective file and doing the following.
+## Environment Setup
+
+Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Setting up Environmental Variables
-This project requires API credentials to connect to the Large Language Model (LLM)
-1. Within the root directory of the project, create a new file called ```.env```
-2. In ```.env```, add your API credentials to the file in the following format:
-```
-LLM_API_KEY="your_api_key"
-LLM_API_URL="your_api_url"
-```
-The application will automatically then load these variables when it runs.
+Configure LLM credentials in your shell or in a `.env` file:
 
-### 4. Launching the Application
-Launch the Streamlity web interface by running the command in your terminal:
 ```bash
-streamlit run catalystOU_GUI.py
-```
-or if on Windows:
-```ps
-python -m streamlit run catalystOU_GUI.py
+OPENAI_API_KEY="your_api_key"
+LLM_API_URL="https://api.openai.com/v1"
 ```
 
-## Authors
-Alexander Lee, Alexander.Lee-1@ou.edu
+`LLM_API_KEY` is also supported for OpenAI-compatible local or proxy endpoints.
 
-Chenggang Wang, chenggang.wang@ou.edu
+## Data Format
+
+Researcher profiles use the following canonical fields:
+
+```json
+{
+  "Researcher Profile:": "Dr. Example Researcher",
+  "Affiliation:": "Example University",
+  "Research Domains": [],
+  "Techniques Used": [],
+  "Data & Platforms": [],
+  "Application Areas": [],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": ""
+}
+```
+
+Collaboration predictions and ground truth use these categories:
+
+```json
+{
+  "Shared Domains": [],
+  "Method-Application Synergies": [],
+  "Complementary Technique Synergies": [],
+  "Data-Method Synergies": [],
+  "Cross-Domain Fusion Topics": [],
+  "Shared Application Areas": [],
+  "Joint Technique Development": [],
+  "Theory-Application Synergy": [],
+  "Thinking Pattern Synergies": [],
+  "Future Research Directions": [],
+  "Summary Collaboration Themes": ""
+}
+```
+
+## Experiment 1: Profile Extraction Accuracy
+
+Experiment 1 evaluates LLM-extracted researcher profiles against manually labeled ground-truth profiles.
+
+Expected layout:
+
+```text
+extracted_profile_json/
+└── gpt-5-nano/
+    └── CS/
+        └── Researcher_Name_profile.json
+
+profile_labeled_data/
+└── CS/
+    └── Researcher Name/
+        └── ResearcherName_Profile.json
+```
+
+Run:
+
+```bash
+python -m proj_test.run_experiments exp1 \
+  -e extracted_profile_json \
+  -g profile_labeled_data \
+  -l gpt-5-nano \
+  -m all-mpnet-base-v2 \
+  -o results/exp1
+```
+
+Outputs:
+
+```text
+results/exp1/
+├── experiment_1_results.json
+└── final_report_profile_acc_test.txt
+```
+
+Main metrics:
+
+- `PSAS`: Profile Semantic Alignment Score
+- Per-field micro/macro F1
+- Per-field semantic similarity
+- Summary cosine similarity
+- Bootstrap confidence interval for PSAS
+
+## Experiment 2: Collaboration Prediction Accuracy
+
+Experiment 2 evaluates LLM-predicted collaboration mechanisms against historical/manual collaboration ground truth.
+
+Create a cases file:
+
+```json
+[
+  {
+    "id": "case_001",
+    "a_path": "path/to/researcher_a_pre_profile.json",
+    "b_path": "path/to/researcher_b_pre_profile.json",
+    "gt_path": "path/to/collaboration_groundtruth.json",
+    "out_path": "results/exp2/case_001_prediction.json"
+  }
+]
+```
+
+You can also generate a cases file from the same compact list:
+
+```bash
+python -m proj_test.run_experiments build-cases \
+  -p pair_specs.json \
+  -o cases.json \
+  --predictions_dir results/exp2/predictions
+```
+
+Run:
+
+```bash
+python -m proj_test.run_experiments exp2 \
+  -c cases.json \
+  -m all-mpnet-base-v2 \
+  --llm_provider openai \
+  --llm_model gpt-4 \
+  --tau 0.65 \
+  -o results/exp2
+```
+
+Outputs:
+
+```text
+results/exp2/
+├── experiment_2_results.json
+└── case_001_prediction.json
+```
+
+Main metrics:
+
+- `MAS`: Mechanistic Alignment Score
+- Per-category micro/macro F1
+- Per-category semantic similarity
+- Summary collaboration cosine similarity
+
+## Profile Extraction From PDFs
+
+To generate extracted researcher profiles from publication PDFs:
+
+```bash
+python -m proj_test.profile_extractor \
+  -p path/to/pdf_directory \
+  -o extracted_profile_json \
+  -m gpt-5-nano
+```
+
+Expected PDF input layout:
+
+```text
+pdf_directory/
+└── Department/
+    └── Researcher Name/
+        ├── paper_1.pdf
+        └── paper_2.pdf
+```
+
+Generated profiles are saved under:
+
+```text
+extracted_profile_json/<model_name>/<department>/<Researcher_Name>_profile.json
+```
+
+## LLM Provider Layer
+
+LLM calls go through `utils/llm/`, which provides:
+
+- `BaseLLMProvider`: abstract provider interface
+- `OpenAIProvider`: OpenAI/OpenAI-compatible implementation
+- `create_llm_provider`: provider factory
+- `register_llm_provider`: extension point for new providers
+
+This keeps experiment code independent from the LLM backend.
+
+## GraphRAG Integration Path
+
+GraphRAG can be integrated without rewriting the experiment evaluators. The recommended path is:
+
+1. Add a GraphRAG-backed adapter behind the provider/reasoner boundary.
+2. Convert researcher profiles into graph entities and relations.
+3. Use graph retrieval to augment or replace the prompt context in `proj_test/llm_reasoner.py`.
+4. Keep Experiment 1 and Experiment 2 evaluation contracts unchanged.
+
+The likely hard work is graph construction, entity normalization, and query design; the current experiment plumbing is now modular enough to support this.
+
+## Development Checks
+
+Run syntax checks:
+
+```bash
+python -m compileall proj_test utils
+```
+
+Check patch cleanliness:
+
+```bash
+git diff --check -- proj_test utils
+```
+
+## Notes
+
+- `live_demo/` is a separate demo interface and should not be modified for paper experiment work.
+- Generated logs, result folders, temporary extracted profiles, and `__pycache__/` directories should not be committed.
+- The experiment code assumes dependencies from `requirements.txt` are installed before running full evaluations.

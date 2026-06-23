@@ -1,158 +1,52 @@
-import os
-import json
+"""Compatibility wrapper for collaboration profile matching.
+
+The publication experiments use ``proj_test.llm_reasoner`` because it returns
+the 10-category collaboration mechanism schema used by Experiment 2. This file
+keeps the older ``analyze_collaboration_synergy`` entry point available without
+duplicating provider/client code.
+"""
+
 import asyncio
-from openai import AsyncOpenAI, APITimeoutError # Use AsyncOpenAI
-from dotenv import load_dotenv
+import json
+from typing import Any, Dict, Optional
 
-load_dotenv()
-
-# --- Part 1: Client Setup ---
-# Use the async client to match the function calls
-try:
-    api_key = os.getenv('LLM_API_KEY')
-    if not api_key:
-        raise ValueError("API key not found. Please add it to your environment variables.")
-    api_url = os.getenv('LLM_API_URL')
-    if not api_url:
-        raise ValueError("API URL not found. Please add it to your environment variables.")
-
-    client = AsyncOpenAI(
-        api_key=api_key,
-        base_url=api_url
-    )
-except Exception as e:
-    print(f"Error setting up the client: {e}")
-    client = None
+from proj_test.llm_reasoner import call_llm_reasoner, get_default_llm_config
+from utils.profile_io import load_profile_json
 
 # --- Part 2: Function to Read JSON Profiles ---
 # This function can remain synchronous as it's a simple file operation.
-def read_json_profile(file_path: str) -> dict:
+def read_json_profile(file_path: str) -> Optional[Dict[str, Any]]:
     """
     Reads a JSON file from the given path and returns it as a Python dictionary.
     """
     try:
-        with open(file_path, 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print(f"Error: The file was not found at {file_path}")
-        return None
-    except json.JSONDecodeError:
-        print(f"Error: The file at {file_path} is not a valid JSON file.")
-        return None
-    except Exception as e:
-        print(f"An error occurred while reading {file_path}: {e}")
+        return load_profile_json(file_path)
+    except Exception as exc:
+        print(f"Error reading {file_path}: {exc}")
         return None
 
 # --- Part 3: Synergy Analysis Function (Now Asynchronous) ---
-async def analyze_collaboration_synergy(profile1: dict, profile2: dict) -> dict:
+async def analyze_collaboration_synergy(
+    profile1: Dict[str, Any],
+    profile2: Dict[str, Any],
+    llm_config: Optional[Dict[str, Any]] = None,
+) -> Optional[Dict[str, Any]]:
     """
-    Sends two researcher profiles to the LLM for a detailed synergy analysis.
-    This is now an async function.
+    Infer collaboration mechanisms between two researcher profiles.
     """
-    if not client:
-        return {"error": "OpenAI client is not initialized."}
-
-    profile1_str = json.dumps(profile1, indent=2)
-    profile2_str = json.dumps(profile2, indent=2)
-
-    prompt = f"""
-Act as an expert research analyst and scientific collaboration strategist.
-
-Your task is to conduct a comprehensive synergy analysis of the two research profiles provided below. Your goal is to identify specific, actionable collaboration opportunities by evaluating their research interests, methodologies, and available resources.
-
-Your output MUST be a single, valid JSON object. Do not include any text, markdown, or code fences before or after the JSON object. Base your analysis strictly on the information given in the profiles.
-
-Collaboration Synergy Score
-Calculate the score based on the following rubric, explaining your reasoning for each category in your internal thoughts:
-**Overlapping and Complementary Research Interests (Max 30 points):** Award points for shared long-term goals and how well their specialties fill gaps in each other's research.
-**Methodological & Technical Synergy (Max 40 points):** This is the most important factor. Award significant points if one researcher's techniques can directly solve a problem or unlock new possibilities for the other.
-**Data, Resources, and Model Sharing (Max 30 points):** Award points based on the value and uniqueness of the resources (e.g., large datasets, unique equipment) that can be shared.
-
-Executive Summary
-In a concise paragraph, summarize the core areas of potential synergy. Briefly state why a collaboration between these two researchers would be mutually beneficial and scientifically valuable.
-
-Detailed Analysis of Synergies
-A. Overlapping and Complementary Research Interests
-Identify the primary research questions or long-term goals shared by both researchers.
-Point out any complementary areas where one researcher's focus fills a gap in the other's.
-B. Methodological & Technical Synergy
-Can Researcher A's methods, techniques, or technologies be applied to advance Researcher B's projects? If so, how? (e.g., "A's machine learning model could analyze B's large-scale genomic data to identify new patterns.")
-Can Researcher B's methods, techniques, or technologies be applied to advance Researcher A's projects? If so, how? (e.g., "B's novel imaging technique could be used to validate the cellular-level changes predicted by A's computational simulations.")
-C. Data, Resources, and Model Sharing
-Does Researcher A possess datasets, patient cohorts, software, or unique equipment that could be valuable for Researcher B's research? Explain the potential use case.
-Does Researcher B possess datasets, patient cohorts, software, or unique equipment that could be valuable for Researcher A's research? Explain the potential use case.
-
-THIS IS THE JSON FORMAT:
-{{
-  "collaboration_synergy_score": {{
-    "score": <an integer score from 1 to 100>
-  }},
-  "executive_summary": "A collaboration between <Researcher A name> and <Researcher B name> offers significant mutual benefits. <Researcher A name>, with their advanced computational biology and machine learning skills, can provide the analytical power needed to process and derive insights from the extensive genomic and proteomic datasets generated by Researcher B's high-throughput experimental platforms. In return, Researcher B can offer valuable real-world biological data and an experimental framework to validate the computational predictions and models developed by Researcher A. This synergy would accelerate discoveries in disease mechanisms and the identification of novel therapeutic targets.",
-  "detailed_analysis_of_synergies": {{
-    "overlapping_and_complementary_research_interests": {{
-      "shared_goals": [
-        "Both researchers are focused on understanding the molecular mechanisms of neurodegenerative diseases.",
-        "Both aim to identify new biomarkers or therapeutic targets for these diseases."
-      ],
-      "complementary_areas": [
-        "Researcher A specializes in computational analysis and modeling, which complements the experimental data generation focus of Researcher B.",
-        "Researcher B's expertise in large-scale biological data collection fills the need for real-world data to train and validate Researcher A's computational models."
-      ]
-    }},
-    "methodological_and_technical_synergy": {{
-      "a_to_b": "Researcher A's machine learning models for gene network analysis could be applied to analyze Researcher B's large-scale genomic data from patient cohorts, identifying novel genetic pathways associated with disease progression.",
-      "b_to_a": "Researcher B's advanced cell culture models and CRISPR-based gene editing techniques could be used to experimentally validate the functional impact of the genes and pathways predicted as significant by Researcher A's computational simulations."
-    }},
-    "data_resources_and_model_sharing": {{
-      "a_to_b": "Researcher A possesses a curated database of disease-specific gene expression patterns and a custom-built software for network visualization, which could be used by Researcher B to interpret their proteomic data and hypothesize new protein-protein interactions.",
-      "b_to_a": "Researcher B possesses extensive, well-characterized genomic and proteomic datasets from a diverse patient cohort, as well as access to a high-throughput drug screening platform. This data is essential for Researcher A to train their predictive models and test for potential drug candidates."
-    }}
-  }}
-}}
-
-### Researcher Profile A:
-```json
-{profile1_str}
-```
-
-### Researcher Profile B:
-```json
-{profile2_str}
-```
-"""
-
     try:
-        print("Sending profiles to LLM for synergy analysis...")
-        # Use 'await' for the async client call
-        completion = await client.chat.completions.create(
-            model="gemma3",
-            messages=[
-                {"role": "system", "content": "You are a research analyst that only outputs a single, valid JSON object."},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=0.5,
-            timeout=300.0,
+        prediction = await call_llm_reasoner(
+            profile1,
+            profile2,
+            llm_config or get_default_llm_config(),
         )
-        response_text = completion.choices[0].message.content
-
-        start = response_text.find('{')
-        end = response_text.rfind('}')
-        if start != -1 and end != -1:
-            json_str = response_text[start:end+1]
-            analysis_results = json.loads(json_str)
-            # Combine results with original profiles for the frontend
-            final_report_data = {
-                "profile_a": profile1,
-                "profile_b": profile2,
-                **analysis_results
-            }
-            return final_report_data
-        else:
-            print("LLM did not return a valid JSON object.")
-            return None
-
-    except Exception as e:
-        print(f"An error occurred during synergy analysis: {e}")
+        return {
+            "profile_a": profile1,
+            "profile_b": profile2,
+            "collaboration_mechanisms": prediction,
+        }
+    except Exception as exc:
+        print(f"An error occurred during synergy analysis: {exc}")
         return None
 
 # --- Part 4: Main Execution for Standalone Testing ---
@@ -161,21 +55,18 @@ async def main():
     profile1_filepath = "GM3.json"  # Replace with your first test file
     profile2_filepath = "SC3.json"  # Replace with your second test file
 
-    if client:
-        researcher_a_profile = read_json_profile(profile1_filepath)
-        researcher_b_profile = read_json_profile(profile2_filepath)
+    researcher_a_profile = read_json_profile(profile1_filepath)
+    researcher_b_profile = read_json_profile(profile2_filepath)
 
-        if researcher_a_profile and researcher_b_profile:
-            synergy_report_data = await analyze_collaboration_synergy(researcher_a_profile, researcher_b_profile)
-            if synergy_report_data:
-                print("\n--- Collaboration Synergy Report Data ---")
-                print(json.dumps(synergy_report_data, indent=2))
-            else:
-                print("Analysis failed.")
+    if researcher_a_profile and researcher_b_profile:
+        synergy_report_data = await analyze_collaboration_synergy(researcher_a_profile, researcher_b_profile)
+        if synergy_report_data:
+            print("\n--- Collaboration Synergy Report Data ---")
+            print(json.dumps(synergy_report_data, indent=2))
         else:
-            print("\nCould not read one or both profile files.")
+            print("Analysis failed.")
     else:
-        print("Script did not run because the client could not be initialized.")
+        print("\nCould not read one or both profile files.")
 
 if __name__ == "__main__":
     # Use asyncio.run() to execute the async main function

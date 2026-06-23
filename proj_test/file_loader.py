@@ -1,72 +1,76 @@
-import os
-import glob
+"""Legacy profile-loading helpers used by older evaluation scripts.
+
+The main paper experiments now use ``test1_profile_acc.py`` and
+``run_experiments.py``. This module remains as a small compatibility wrapper
+around the shared loader and evaluator.
+"""
+
+import sys
+from pathlib import Path
+from typing import Dict, List, Optional
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from proj_test.evaluation_all_profile import ResearcherProfileEvaluator
+from utils.data import ProfileLoader
+from utils.profile_io import save_json
 
 
 def load_profiles_from_directory(directory_path: str) -> Dict[str, Dict]:
-    """Load all JSON profiles from a directory"""
-    profiles = {}
-    json_files = glob.glob(os.path.join(directory_path, "*.json"))
-    
-    for file_path in json_files:
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                profile_data = json.load(f)
-                researcher_id = os.path.splitext(os.path.basename(file_path))[0]
-                profiles[researcher_id] = profile_data
-        except Exception as e:
-            print(f"Error loading {file_path}: {e}")
-    
+    """Load all JSON profiles below a directory, keyed by normalized filename."""
+    profiles: Dict[str, Dict] = {}
+    discovered = ProfileLoader.discover_profiles(Path(directory_path), recursive=True)
+
+    for researcher_id, file_path in discovered.items():
+        profile_data = ProfileLoader.load_json_profile(file_path)
+        if profile_data is not None:
+            profiles[researcher_id] = profile_data
+
     return profiles
 
-def run_evaluation(gold_dir: str, pred_dir: str, output_dir: str, tau_values: List[float] = None):
-    """Main evaluation runner"""
+
+def run_evaluation(
+    gold_dir: str,
+    pred_dir: str,
+    output_dir: str,
+    tau_values: Optional[List[float]] = None,
+) -> Dict[str, Dict]:
+    """Run the legacy evaluator across several semantic thresholds."""
     if tau_values is None:
         tau_values = [0.50, 0.55, 0.60, 0.65, 0.70, 0.75]
-    
-    # Load profiles
+
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
     print("Loading gold profiles...")
     gold_profiles = load_profiles_from_directory(gold_dir)
     print(f"Loaded {len(gold_profiles)} gold profiles")
-    
+
     print("Loading predicted profiles...")
     pred_profiles = load_profiles_from_directory(pred_dir)
     print(f"Loaded {len(pred_profiles)} predicted profiles")
-    
-    # Initialize evaluator
+
     evaluator = ResearcherProfileEvaluator()
-    
-    # Run evaluation for different tau values
-    all_results = {}
-    
+    all_results: Dict[str, Dict] = {}
+
     for tau in tau_values:
         print(f"Evaluating with tau = {tau}...")
         results = evaluator.evaluate_all(pred_profiles, gold_profiles, tau=tau)
         all_results[f"tau_{tau}"] = results
-        
-        # Save individual tau results
-        output_file = os.path.join(output_dir, f"evaluation_results_tau_{tau}.json")
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f, indent=2, ensure_ascii=False)
-        
+
+        output_file = output_path / f"evaluation_results_tau_{tau}.json"
+        save_json(results, output_file)
         print(f"Results for tau={tau} saved to {output_file}")
-    
-    # Save comprehensive results
-    comprehensive_output = os.path.join(output_dir, "comprehensive_evaluation_results.json")
-    with open(comprehensive_output, 'w', encoding='utf-8') as f:
-        json.dump(all_results, f, indent=2, ensure_ascii=False)
-    
+
+    comprehensive_output = output_path / "comprehensive_evaluation_results.json"
+    save_json(all_results, comprehensive_output)
     print(f"Comprehensive results saved to {comprehensive_output}")
     return all_results
 
-# Usage example
-if __name__ == "__main__":
-    gold_directory = "path/to/gold_profiles"
-    pred_directory = "path/to/llm_profiles" 
-    output_directory = "path/to/evaluation_results"
-    
-    # Create output directory if it doesn't exist
-    os.makedirs(output_directory, exist_ok=True)
-    
-    # Run evaluation
-    results = run_evaluation(gold_directory, pred_directory, output_directory)
 
+if __name__ == "__main__":
+    run_evaluation(
+        "path/to/gold_profiles",
+        "path/to/llm_profiles",
+        "path/to/evaluation_results",
+    )

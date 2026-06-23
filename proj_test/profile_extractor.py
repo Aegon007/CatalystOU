@@ -1,3 +1,18 @@
+"""
+Refactored Batch Researcher Profile Extraction Module
+
+Processes PDF documents from multiple researchers and generates structured
+researcher profiles using LLM-powered summarization and synthesis.
+
+Features:
+- Async batch processing of PDFs
+- Configurable LLM providers (OpenAI, Anthropic, Local)
+- Concurrent request limiting
+- Comprehensive error handling and logging
+- Profile validation and quality checks
+- Modular design for easy extension
+"""
+
 import os
 import sys
 import argparse
@@ -5,20 +20,20 @@ import argparse
 import json
 import asyncio
 import PyPDF2
-import pdb
 import traceback
 
 from loguru import logger
 from pathlib import Path
-from openai import OpenAI, AsyncOpenAI, APITimeoutError
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
-from io import BytesIO # Import BytesIO to handle in-memory files
 
 
 # --- 配置区域 ---
 load_dotenv()
 CONCURRENT_LIMIT = 5  # 限制同时并发请求数
-LOG_FILE = "profile_extraction.log"
+cwd = os.getcwd()
+prev_dir = os.path.dirname(cwd)
+LOG_FILE = os.path.join(prev_dir, "logs","profile_extraction.log")
 
 
 # 配置日志：同时输出到屏幕和文件
@@ -54,15 +69,27 @@ MODEL_CAPS = {
         "temperature": False,
         "tools": False,
     },
-    "gpt-4.1": {
-        "supports_temperature": True,
+    "qwen": {
+        "temperature": True,
+    },
+    "phi": {
+        "temperature": True,
+    },
+    "gemma": {
+        "temperature": True,
     }
 }
 
 
+def model_supports_temperature(model_name: str) -> bool:
+    """Return whether the configured model should receive a temperature value."""
+    caps = MODEL_CAPS.get(model_name, {})
+    return bool(caps.get("temperature", caps.get("supports_temperature", True)))
+
+
 # --- 1. Client 初始化 ---
 def get_client():
-    api_key = os.getenv('OPENAI_API_KEY')
+    api_key = os.getenv('OPENAI_API_KEY') or os.getenv('LLM_API_KEY')
     api_url = os.getenv('LLM_API_URL')
     if not api_key:
         logger.critical("API key not found!")
@@ -132,10 +159,10 @@ async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str
                 ],
                 "max_output_tokens": 10240
             }
-            
-            if MODEL_CAPS[model_name]["temperature"]:
+
+            if model_supports_temperature(model_name):
                 params["temperature"] = 0.3
-            
+
             resp = await client.responses.create(**params)
             summary = extract_response_text(resp)
 
@@ -185,7 +212,7 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
 
     try:
         logger.info("Sending summaries to LLM for final profile synthesis...")
-        
+
         params = {
             "model": model_name,
             "input": [
@@ -201,9 +228,9 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
             "max_output_tokens": 10240
         }
 
-        if MODEL_CAPS[model_name]["temperature"]:
+        if model_supports_temperature(model_name):
             params["temperature"] = 0.3
-            
+
         resp = await client.responses.create(**params)
         response_content = extract_response_text(resp)
 
@@ -454,7 +481,7 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
     for i, fpath in enumerate(uploaded_files):
         logger.info(f"Extracting text from file {fpath}...")
         text_extraction_tasks.append(asyncio.to_thread(extract_text_from_pdf, fpath))
-    
+
     extracted_texts = await asyncio.gather(*text_extraction_tasks)
 
     # Step 2: Summarize papers in parallel
@@ -463,7 +490,7 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
     for i, one_text in enumerate(extracted_texts):
         file_name = uploaded_files[i]
         summarization_tasks.append(summarize_single_paper(one_text, file_name, model_name, semaphore))
-    
+
     detailed_summaries = await asyncio.gather(*summarization_tasks)
     valid_summaries = [s for s in detailed_summaries if s]
 
@@ -483,7 +510,7 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
                 json.dump(final_profile, f, indent=4)
             logger.info(f"Successfully saved profile for {author_name} at {save_path}.")
     else:
-        logger.error(label="Failed to summarize publications because there is no valid summaries", state="error")
+        logger.error("Failed to summarize publications because there are no valid summaries")
 
 
 async def main(opts) -> None:
@@ -495,7 +522,7 @@ async def main(opts) -> None:
     if not base_dir.exists() or not base_dir.is_dir():
         logger.error(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
         return
-    
+
     departments = [d for d in base_dir.iterdir() if d.is_dir()]
 
     author_dirs = []

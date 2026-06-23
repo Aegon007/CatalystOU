@@ -1,10 +1,11 @@
-# matching.py
+"""Semantic and exact matching helpers for profile-style list fields."""
+
 import re
-import pdb
 import numpy as np
 from typing import List, Tuple, Dict, Any, Optional
 from scipy.optimize import linear_sum_assignment
-# Note: sentence_transformers should be imported in the orchestrator 
+from utils.data import PROFILE_LIST_FIELDS, PROFILE_SUMMARY_FIELD
+# Note: sentence_transformers should be imported in the orchestrator
 # and the model object passed in to avoid reloading it frequently.
 
 
@@ -12,19 +13,30 @@ from scipy.optimize import linear_sum_assignment
 # Schema-aware normalization for researcher profile evaluation
 # ------------------------------------------------------------
 def get_matching_fields():
-    LIST_FIELDS = [
-        "Research Domains",
-        "Techniques Used",
-        "Data & Platforms",
-        "Application Areas",
-        "Key Research Thinking Patterns"
-    ]
-    SUMMARY_FIELD = "Summary Description"
-
-    return LIST_FIELDS, SUMMARY_FIELD
+    return list(PROFILE_LIST_FIELDS), PROFILE_SUMMARY_FIELD
 
 
 LIST_FIELDS, SUMMARY_FIELD = get_matching_fields()
+
+
+def _flatten_to_strings(value: Any) -> List[str]:
+    """Flatten mixed JSON values into non-empty strings for matching."""
+    if value is None:
+        return []
+    if isinstance(value, str):
+        stripped = value.strip()
+        return [stripped] if stripped else []
+    if isinstance(value, dict):
+        values = []
+        for item in value.values():
+            values.extend(_flatten_to_strings(item))
+        return values
+    if isinstance(value, list):
+        values = []
+        for item in value:
+            values.extend(_flatten_to_strings(item))
+        return values
+    return []
 
 
 def normalize_profile_field(field_name: str, field_value: Any) -> List[str]:
@@ -40,34 +52,7 @@ def normalize_profile_field(field_name: str, field_value: Any) -> List[str]:
 
     if field_name not in LIST_FIELDS:
         return []
-
-    if field_value is None:
-        return []
-
-    # Case 1: already List[str]
-    if isinstance(field_value, list) and all(isinstance(x, str) for x in field_value):
-        return field_value
-
-    normalized = []
-
-    # Case 2: List[dict]
-    if isinstance(field_value, list):
-        for item in field_value:
-            if isinstance(item, dict):
-                for v in item.values():
-                    if isinstance(v, str) and v.strip():
-                        normalized.append(v.strip())
-            elif isinstance(item, str):
-                normalized.append(item.strip())
-
-        return normalized
-
-    # Case 3: single string
-    if isinstance(field_value, str):
-        return [field_value.strip()]
-
-    # Everything else: drop
-    return []
+    return _flatten_to_strings(field_value)
 
 
 def normalize_phrase(s: str) -> str:
@@ -89,14 +74,18 @@ def _exact_match_helper(preds: List[str], golds: List[str]) -> Tuple[int, int, i
     Internal helper for normalized exact matching.
     Returns: tp, fp, fn, matches_list
     """
-    gold_norm_map = {normalize_phrase(g): g for g in golds}
+    gold_norm_map = {}
+    for g in golds:
+        g_norm = normalize_phrase(g)
+        if g_norm and g_norm not in gold_norm_map:
+            gold_norm_map[g_norm] = g
     matched_gold_norms = set()
     matches = []
     tp = 0
 
     for p in preds:
         p_norm = normalize_phrase(p)
-        if p_norm in gold_norm_map and p_norm not in matched_gold_norms:
+        if p_norm and p_norm in gold_norm_map and p_norm not in matched_gold_norms:
             matches.append((p, gold_norm_map[p_norm]))
             matched_gold_norms.add(p_norm)
             tp += 1
@@ -106,7 +95,7 @@ def _exact_match_helper(preds: List[str], golds: List[str]) -> Tuple[int, int, i
     # Calculate FP (unmatched preds) and FN (unmatched golds)
     fp = len([m for m in matches if m[1] is None])
     fn = len(golds) - tp
-    
+
     return tp, fp, fn, matches
 
 
@@ -133,14 +122,14 @@ def _semantic_match_helper(preds: List[str], golds: List[str], model, tau: float
         score = float(sim_matrix[r, c])
         if score >= tau:
             matches.append((preds[r], golds[c], score))
-            
+
     return matches
 
 
 def match_profile_list_field(pred_list: List[str], gold_list: List[str], embedding_model=None, tau: float = 0.65) -> Dict[str, Any]:
     """
     Main matching logic for list-based profile fields (e.g., "Research Domains").
-    
+
     1. Validates inputs are List[str].
     2. Performs normalized exact matching.
     3. Performs Hungarian semantic matching on residuals.
@@ -148,33 +137,34 @@ def match_profile_list_field(pred_list: List[str], gold_list: List[str], embeddi
     """
     # 0. Schema Validation
 
+    pred_list = _flatten_to_strings(pred_list)
+    gold_list = _flatten_to_strings(gold_list)
+
     if not isinstance(pred_list, list) or not isinstance(gold_list, list):
         raise ValueError("Inputs to match_profile_list_field must be lists.")
-    if pred_list and not isinstance(pred_list[0], str):
-        raise ValueError("Input lists must contain strings.")
-    
+
     # 1. Exact Matching
     tp_exact, _, _, exact_matches_raw = _exact_match_helper(pred_list, gold_list)
-    
+
     # Identify residuals
     matched_preds_indices = {i for i, m in enumerate(exact_matches_raw) if m[1] is not None}
     matched_gold_vals = {m[1] for m in exact_matches_raw if m[1] is not None}
-    
+
     unmatched_preds = [p for i, p in enumerate(pred_list) if i not in matched_preds_indices]
     unmatched_golds = [g for g in gold_list if g not in matched_gold_vals]
-    
+
     # 2. Semantic Matching (on residuals)
     sem_matches_raw = []
     if embedding_model and unmatched_preds and unmatched_golds:
         sem_matches_raw = _semantic_match_helper(unmatched_preds, unmatched_golds, embedding_model, tau)
-    
+
     tp_sem = len(sem_matches_raw)
-    
+
     # 3. Combine Results
     total_tp = tp_exact + tp_sem
     total_fp = len(pred_list) - total_tp
     total_fn = len(gold_list) - total_tp
-    
+
     # Construct unified match list [ {"pred":..., "gold":..., "sim":...} ]
     # Start with exact matches (sim=1.0)
     final_matches = []
@@ -192,7 +182,7 @@ def match_profile_list_field(pred_list: List[str], gold_list: List[str], embeddi
     # Calculate field-level stats
     sims = [m["sim"] for m in final_matches if m["gold"] is not None]
     avg_sim = float(np.mean(sims)) if sims else 0.0
-    
+
     return {
         "tp_total": total_tp,
         "tp_exact": tp_exact,
@@ -211,10 +201,10 @@ def compute_summary_similarity(pred_text: str, gold_text: str, model) -> Dict[st
     """
     if not pred_text or not gold_text:
         return {"cosine_sim": 0.0}
-    
+
     emb_pred = model.encode([pred_text], convert_to_numpy=True, normalize_embeddings=True)
     emb_gold = model.encode([gold_text], convert_to_numpy=True, normalize_embeddings=True)
-    
+
     cosine_sim = float(np.dot(emb_pred, emb_gold.T)[0,0])
-    
+
     return {"cosine_sim": cosine_sim}

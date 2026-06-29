@@ -1,12 +1,21 @@
 """
 Profile Evaluation module.
 
-Provides a CLI and programmatic API for evaluating the extracted researcher profiles between reserchers.
-using LLM-powered analysis. This module should be run after running the profile extraction step in
+Provides a CLI and programmatic API for evaluating the accuracy or performance between extracted researcher profiles and manually labeled resercher profile from the same researcher.
+The extracted profile is using LLM for the extraction. This module should be run after running the profile extraction step in
 Experiment 1 to ensure extracted profiles are available for evaluation.
 
 Usage:
     python evaluate_all_profile.py -i ./data/papers -o ./extracted_profiles -m gpt-4-turbo
+    
+input folder structure:
+diciplineA/
+    researchA_extracted/
+        researcherA_profile.json
+    
+diciplineA/
+    researchA_labeled/
+        researcherB_profile.json
 """
 
 import os
@@ -359,3 +368,22 @@ class ResearcherProfileEvaluator:
 
 
 
+def main(opts):
+    pass
+
+
+def parse_opts(argv):
+    parser = argparse.ArgumentParser(description="Evaluate extracted researcher profiles against labeled profiles.")    
+    parser.add_argument("-m", "--manual_labeled_dir", type=str, required=True, help="Input directory containing labeled profiles.")
+    parser.add_argument("-e", "--extracted_dir", type=str, required=True, help="Input directory containing extracted profiles.")
+    parser.add_argument("-o", "--output_dir", type=str, required=True, help="Output directory to save evaluation results.") 
+    parser.add_argument("-t", "--tau", type=float, default=0.65, help="Threshold for semantic matching (default: 0.65).")
+    parser.add_argument("-b", "--bootstrap_samples", type=int, default=1000, help="Number of bootstrap samples for confidence intervals (default: 1000).")  
+    parser.add_argument("-mn", "--model_name", type=str, default="all-mpnet-base-v2", help="SentenceTransformer model name for embeddings (default: all-mpnet-base-v2).") 
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output.")
+    opts = parser.parse_args()
+    return opts 
+
+if __name__ == "__main__":
+    opts = parse_opts(sys.argv[1:])
+    main(opts)

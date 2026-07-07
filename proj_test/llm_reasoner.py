@@ -6,13 +6,12 @@ Identifies synergies between researcher profiles using structured prompting.
 import json
 import sys
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from utils.llm import create_llm_provider
-from utils.data import COLLABORATION_CATEGORIES
+from utils.llm_utils import create_provider, ensure_collaboration_schema
 from utils.logger import setup_logger
 
 logger = setup_logger(__name__, log_file="llm_reasoner.log")
@@ -92,7 +91,7 @@ async def call_llm_reasoner(
 
     try:
         logger.info(f"Creating {provider_type} LLM provider")
-        provider = create_llm_provider(provider_type, llm_config)
+        provider = create_provider(provider_type, llm_config)
     except Exception as e:
         logger.error(f"Failed to initialize LLM provider: {e}")
         raise
@@ -107,18 +106,7 @@ async def call_llm_reasoner(
             max_tokens=llm_config.get("max_tokens", 4096)
         )
 
-        # Validate schema - ensure all categories present
-        for category in COLLABORATION_CATEGORIES:
-            if category not in output:
-                output[category] = []
-            # Ensure list type
-            if not isinstance(output[category], list):
-                output[category] = [str(output[category])]
-
-        # Ensure summary field exists
-        if "Summary Collaboration Themes" not in output:
-            output["Summary Collaboration Themes"] = ""
-
+        output = ensure_collaboration_schema(output)
         logger.info("Successfully generated collaboration analysis")
         return output
 
@@ -131,18 +119,7 @@ async def call_llm_reasoner(
 
 
 def get_default_llm_config() -> Dict[str, Any]:
-    """
-    Get default LLM configuration.
+    """Get default LLM configuration."""
+    from utils.llm_utils import get_default_llm_config as shared_default
 
-    Returns:
-        Default configuration dictionary
-    """
-    return {
-        "provider": "openai",
-        "model_name": "gpt-4",
-        "temperature": 0.3,
-        "max_tokens": 4096,
-        "temperature_support": True,
-        "max_retries": 3,
-        "timeout": 300.0
-    }
+    return shared_default(model_name="gpt-4", provider="openai")

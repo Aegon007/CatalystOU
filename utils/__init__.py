@@ -4,8 +4,8 @@ Keep this package initializer lightweight. Data loading and metric code should
 not require optional LLM dependencies such as the OpenAI SDK.
 """
 
-from utils.logger import setup_logger
-from utils.data import (
+from .logger import setup_logger
+from .data_utils import (
     ResearcherProfile,
     CollaborationProfile,
     ProfileLoader,
@@ -38,7 +38,7 @@ __all__ = [
 def __getattr__(name):
     """Lazily expose LLM provider classes only when explicitly requested."""
     if name in {"BaseLLMProvider", "OpenAIProvider", "create_llm_provider", "register_llm_provider"}:
-        from utils.llm import (
+        from .llm import (
             BaseLLMProvider,
             OpenAIProvider,
             create_llm_provider,

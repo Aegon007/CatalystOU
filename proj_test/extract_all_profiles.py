@@ -1,14 +1,8 @@
-"""
-Standalone batch profile extraction module, which will extract researcher profiles from a directory of PDFs using the same LLM model.
+"""Batch profile extraction entry point for the research workflow.
 
-it will call profile_extractor to perform the extraction, and will save the extracted profiles in a structured output directory.
-
-Provides a CLI and programmatic API for extracting researcher profiles from PDFs
-using LLM-powered analysis. This module should be run independently before running
-Experiment 1 to ensure extracted profiles are available for evaluation.
-
-Usage:
-    python extract_profiles.py -i ./data/papers -o ./extracted_profiles -m gpt-4-turbo
+This module is intentionally small: it wraps the lower-level extraction logic in
+profile_extractor.py and exposes a simple CLI for running profile extraction from
+a directory of PDF folders.
 """
 
 import os
@@ -21,47 +15,42 @@ from typing import Dict, Any
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.logger import setup_logger
-from proj_test.profile_extractor import BatchProfileExtractor
+import proj_test.profile_extractor as pf_extractor
 
 logger = setup_logger("profile_extraction", log_file="profile_extraction.log")
+CONCURRENT_LIMIT = 5  # Limit concurrent extractions to 5
 
 
-async def extract_one_dicipline_profiles(input_dir: str, output_dir: str, llm_model: str = "gpt-4-turbo", llm_provider: str = "openai") -> None:
+async def extract_one_discipline_profiles(one_discipline_input_dir: str, one_discipline_output_dir: str, model_name: str = "gpt-5") -> None:
     """
     Extract researcher profiles from a single discipline directory of PDFs.
 
     Args:
-        input_dir: Directory containing PDFs for a single discipline.
-        output_dir: Directory where extracted profiles will be saved.
-        llm_model: LLM model name to use for extraction (default: gpt-4-turbo)
-        llm_provider: LLM provider (default: openai)
+        one_dicipline_input_dir: Directory containing PDFs for a single discipline.
+        one_dicipline_output_dir: Directory where extracted profiles will be saved for the input dicipline.
+        model_name: LLM model name to use for extraction (default: gpt-4-turbo)
     """
-    base_dir = Path(one_dicipline_input_dir)
-    out_dir = Path(one_dicipline_output_dir)
+    base_dir = Path(one_discipline_input_dir)
+    out_dir = Path(one_discipline_output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if not base_dir.exists() or not base_dir.is_dir():
         logger.error(f"Input directory does not exist or is not a directory: {base_dir}")
         return {"total": 0, "successful": 0, "failed": 0, "profiles": {}}
     
-    Departments = [d for d in base_dir.iterdir() if d.is_dir()]
-
-    author_dirs = []
-    for department in Departments:
-        tmp_author_dirs = [d for d in base_dir.iterdir() if d.is_dir()]
-        author_dirs.extend(tmp_author_dirs)
+    author_dirs = [aaa for aaa in base_dir.iterdir() if aaa.is_dir()]
 
     logger.info(f"Found {len(author_dirs)} researcher directories in {base_dir}")
 
     semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)  # Limit concurrent extractions to 5
 
     for author in author_dirs:
-        await profile_extractor.generate_profile_for_one_author(author, out_dir, model_name, semaphore)
+        await pf_extractor.generate_profile_for_one_author(author, out_dir, model_name, semaphore)
     
     logger.info(f"Profile extraction completed for discipline: {base_dir.name}")
         
 
-def extract_all_profiles(input_dir: str, output_dir: str, llm_model: str = "gpt-4-turbo", llm_provider: str = "openai") -> None:
+def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-turbo") -> None:
     """
     Extract researcher profiles from a directory of disciplines.
     The data folder structure is expected to be:
@@ -75,13 +64,13 @@ def extract_all_profiles(input_dir: str, output_dir: str, llm_model: str = "gpt-
         discipline_2/
             researcher_3/
                 paper_1.pdf
-    Args:
-        input_dir: Directory containing discipline folders with researcher PDFs.
-        output_dir: Directory where extracted profiles will be saved.
-        llm_model: LLM model name to use for extraction (default: gpt-4-turbo)
-        llm_provider: LLM provider (default: openai)
-    Returns:
-        None. The extracted profiles will be saved in the output directory.
+    
+    output_dir/
+        discipline_1/
+            researcher_1_profile.json
+            researcher_2_profile.json
+        discipline_2/
+            researcher_3_profile.json
     """
     all_discipline_path = Path(input_dir)
     root_output_path = Path(output_dir)
@@ -90,18 +79,24 @@ def extract_all_profiles(input_dir: str, output_dir: str, llm_model: str = "gpt-
         raise ValueError(f"Input directory does not exist: {all_discipline_path}")
 
     logger.info(f"Starting profile extraction")
-    logger.info(f"  Input root: {input_path}")
-    logger.info(f"  Output root: {output_path}")
-    logger.info(f"  LLM Model: {llm_model}")
-
-    llm_config = {
-        "provider": llm_provider,
-        "model_name": llm_model,
-    }
+    logger.info(f"  Input root: {all_discipline_path}")
+    logger.info(f"  Output root: {root_output_path}")
+    logger.info(f"  LLM Model: {model_name}")
 
     diciplines = os.listdir(all_discipline_path)
     for dicipline in diciplines:
-        extract_one_discipline()
+        current_dicipline_dir = os.path.join(all_discipline_path, dicipline)
+        if not os.path.isdir(current_dicipline_dir):
+            logger.warning(f"Skipping non-directory entry in input directory: {current_dicipline_dir}")
+            continue
+        dicipline_output_dir = os.path.join(root_output_path, dicipline)
+        os.makedirs(dicipline_output_dir, exist_ok=True)
+        extract_one_discipline_profiles(
+            one_discipline_input_dir=os.path.join(current_dicipline_dir, dicipline),
+            one_discipline_output_dir=os.path.join(dicipline_output_dir, dicipline),
+            model_name=model_name
+        )
+
 
     logger.info("Profile extraction completed for all disciplines.")
 
@@ -112,49 +107,25 @@ def parse_args(argv) -> argparse.Namespace:
         description="Extract researcher profiles from PDF documents",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Examples:
-  python extract_profiles.py -i ./data/papers -o ./extracted_profiles -m gpt-4-turbo
-  python extract_profiles.py -i ./research_pdfs -o ./profiles -m gpt-4 -p openai
+            Examples:
+            python extract_profiles.py -i ./data/papers -o ./extracted_profiles -m gpt-4-turbo
+            python extract_profiles.py -i ./research_pdfs -o ./profiles -m gpt-4
         """
     )
-    parser.add_argument(
-        "-i", "--input",
-        type=str,
-        required=True,
-        help="Input directory containing researcher folders with PDFs"
-    )
-    parser.add_argument(
-        "-o", "--output",
-        type=str,
-        default="./extracted_profiles",
-        help="Output directory for extracted profiles (default: ./extracted_profiles)"
-    )
-    parser.add_argument(
-        "-m", "--model",
-        type=str,
-        default="gpt-4-turbo",
-        help="LLM model name (default: gpt-4-turbo)"
-    )
-    parser.add_argument(
-        "-p", "--provider",
-        type=str,
-        default="openai",
-        choices=["openai", "anthropic", "local"],
-        help="LLM provider (default: openai)"
-    )
+    parser.add_argument("-i", "--input", type=str, required=True, help="Input directory containing researcher folders with PDFs")
+    parser.add_argument("-o", "--output", type=str, default="./extracted_profiles", help="Output directory for extracted profiles (default: ./extracted_profiles)")
+    parser.add_argument("-m", "--model",type=str,default="gpt-4-turbo",help="LLM model name (default: gpt-4-turbo)")
 
     return parser.parse_args(argv)
 
 
-def main() -> int:
+def main(args) -> int:
     """CLI entrypoint."""
     try:
-        args = parse_args(sys.argv[1:])
-        results = extract_profiles(
+        extract_profiles(
             input_dir=args.input,
             output_dir=args.output,
-            llm_model=args.model,
-            llm_provider=args.provider,
+            model_name=args.model,
         )
         return 0
     except Exception as e:
@@ -162,5 +133,9 @@ def main() -> int:
         return 1
 
 
+extract_all_profiles = extract_profiles
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    opts = parse_args(sys.argv[1:])
+    main(opts)

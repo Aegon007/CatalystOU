@@ -1,10 +1,16 @@
 """Semantic and exact matching helpers for profile-style list fields."""
 
 import re
-import numpy as np
 from typing import List, Tuple, Dict, Any, Optional
-from scipy.optimize import linear_sum_assignment
-from utils.data import PROFILE_LIST_FIELDS, PROFILE_SUMMARY_FIELD
+
+try:
+    import numpy as np
+    from scipy.optimize import linear_sum_assignment
+except Exception:  # pragma: no cover - optional dependency fallback
+    np = None
+    linear_sum_assignment = None
+
+from .data_utils import PROFILE_LIST_FIELDS, PROFILE_SUMMARY_FIELD
 # Note: sentence_transformers should be imported in the orchestrator
 # and the model object passed in to avoid reloading it frequently.
 
@@ -107,6 +113,9 @@ def _semantic_match_helper(preds: List[str], golds: List[str], model, tau: float
     if not preds or not golds:
         return []
 
+    if np is None or linear_sum_assignment is None:
+        raise RuntimeError("numpy/scipy are required for semantic matching")
+
     # Encode - assumes model is a SentenceTransformer object
     pred_emb = model.encode(preds, convert_to_numpy=True, normalize_embeddings=True)
     gold_emb = model.encode(golds, convert_to_numpy=True, normalize_embeddings=True)
@@ -181,7 +190,7 @@ def match_profile_list_field(pred_list: List[str], gold_list: List[str], embeddi
 
     # Calculate field-level stats
     sims = [m["sim"] for m in final_matches if m["gold"] is not None]
-    avg_sim = float(np.mean(sims)) if sims else 0.0
+    avg_sim = float(np.mean(sims)) if sims and np is not None else 0.0
 
     return {
         "tp_total": total_tp,
@@ -201,6 +210,9 @@ def compute_summary_similarity(pred_text: str, gold_text: str, model) -> Dict[st
     """
     if not pred_text or not gold_text:
         return {"cosine_sim": 0.0}
+
+    if np is None:
+        raise RuntimeError("numpy is required for summary similarity")
 
     emb_pred = model.encode([pred_text], convert_to_numpy=True, normalize_embeddings=True)
     emb_gold = model.encode([gold_text], convert_to_numpy=True, normalize_embeddings=True)

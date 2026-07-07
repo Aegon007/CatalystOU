@@ -9,7 +9,7 @@ Provides a unified CLI for:
 Experiments are designed by calling functions from test1_profile_acc.py and test2_pred_acc.py.
 
 """
-
+import os
 import sys
 import argparse
 import json
@@ -21,45 +21,27 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.logger import setup_logger
 
-# Import experiment drivers directly for synchronous calling
-from proj_test.test1_profile_acc import (
-    build_data_map,
-    print_formatted_report,
-    run_experiment_1,
-)
-from proj_test.test2_pred_acc import (
-    run_experiment_2,
-    build_cases_cli,
-)
-from proj_test.extract_profiles import extract_profiles
+try:
+    from dotenv import load_dotenv
+except Exception:  # pragma: no cover - optional dependency fallback
+    def load_dotenv() -> bool:
+        return False
 
+# --- 配置区域 ---
+load_dotenv()
+CONCURRENT_LIMIT = 5  # 限制同时并发请求数
+cwd = os.getcwd()
+prev_dir = os.path.dirname(cwd)
+LOG_FILE = os.path.join(prev_dir, "logs","run_experiments.log")
+logger = setup_logger("exp_runner", log_file=LOG_FILE)
 
-logger = setup_logger("exp_runner", log_file="experiment_runner.log")
+from utils.llm_utils import get_default_llm_config
 
 
 def get_llm_config(model: str, provider: str = "openai") -> Dict[str, Any]:
-    """
-    Get LLM configuration for a given model.
-
-    Args:
-        model: Model identifier (e.g., 'gpt-4', 'gpt-4-turbo')
-        provider: LLM provider ('openai', 'anthropic', 'local')
-
-    Returns:
-        Configuration dictionary
-    """
-    temperature_support = model not in {"gpt-5-nano"}
-    api_mode = "responses" if model.startswith("gpt-5") else "chat"
-    return {
-        "provider": provider,
-        "model_name": model,
-        "temperature": 0.3,
-        "max_tokens": 4096,
-        "temperature_support": temperature_support,
-        "max_retries": 3,
-        "timeout": 600.0,
-        "api_mode": api_mode,
-    }
+    """Get LLM configuration for a given model."""
+    cfg = get_default_llm_config(model_name=model, provider=provider)
+    return cfg
 
 
 def build_collaboration_cases(
@@ -112,6 +94,8 @@ def build_collaboration_cases(
 
     from utils.profile_io import save_json
 
+    save_json(cases, output_path)
+    return cases
 
 
 def create_parser():
@@ -247,6 +231,8 @@ def main(parser):
     if args.experiment == "extract-profiles":
         # Extract researcher profiles from PDFs
         try:
+            from proj_test.extract_all_profiles import extract_profiles
+
             logger.info(f"Starting profile extraction")
             logger.info(f"  Input: {args.input}")
             logger.info(f"  Output: {args.output}")
@@ -271,6 +257,7 @@ def main(parser):
     elif args.experiment == "exp1":
         # Run Experiment 1: Profile extraction accuracy
         try:
+            from proj_test.test1_profile_acc import build_data_map, print_formatted_report, run_experiment_1
             from utils.profile_io import save_json
 
             extracted_dir = Path(args.extracted_profiles_dir)
@@ -307,10 +294,12 @@ def main(parser):
             logger.error(f"Experiment 1 failed: {e}", exc_info=True)
             success = False
     elif args.experiment == "build-cases":
+        from proj_test.test2_pred_acc import build_cases_cli
         success = build_cases_cli(args)
     elif args.experiment == "exp2":
         # Run Experiment 2: Collaboration prediction backtesting
         try:
+            from proj_test.test2_pred_acc import run_experiment_2
             from utils.profile_io import save_json
 
             output_dir = Path(args.output_dir)

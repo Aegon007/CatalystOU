@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from sentence_transformers import SentenceTransformer
 from utils.logger import setup_logger
 import utils.profile_io as profile_io
-from utils.data import COLLABORATION_CATEGORIES, COLLABORATION_SUMMARY_FIELD
+from utils.data_utils import COLLABORATION_CATEGORIES, COLLABORATION_SUMMARY_FIELD
 import utils.matching as matching
 import utils.metrics as metrics
 from proj_test.llm_reasoner import call_llm_reasoner

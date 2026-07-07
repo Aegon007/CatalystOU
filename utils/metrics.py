@@ -1,7 +1,11 @@
 """Aggregate metrics for profile extraction and collaboration experiments."""
 
-import numpy as np
 from typing import List, Dict, Any
+
+try:
+    import numpy as np
+except Exception:  # pragma: no cover - optional dependency fallback
+    np = None
 
 
 def compute_f1(tp: int, fp: int, fn: int) -> tuple[float, float, float]:
@@ -76,9 +80,9 @@ def compute_profile_aggregate_metrics(
         mic_p, mic_r, mic_f1 = compute_f1(tp, fp, fn)
 
         # Macro
-        mac_f1 = float(np.mean(macro_scores[k]["f1"])) if macro_scores[k]["f1"] else 0.0
-        avg_sim = float(np.mean(macro_scores[k]["sim"])) if macro_scores[k]["sim"] else 0.0
-        sim_std = float(np.std(macro_scores[k]["sim"])) if macro_scores[k]["sim"] else 0.0
+        mac_f1 = float(np.mean(macro_scores[k]["f1"])) if macro_scores[k]["f1"] and np is not None else 0.0
+        avg_sim = float(np.mean(macro_scores[k]["sim"])) if macro_scores[k]["sim"] and np is not None else 0.0
+        sim_std = float(np.std(macro_scores[k]["sim"])) if macro_scores[k]["sim"] and np is not None else 0.0
 
         report["per_key"][k] = {
             "micro_precision": mic_p,
@@ -95,13 +99,13 @@ def compute_profile_aggregate_metrics(
 
     # 2. Profile Level Metrics (PSAS)
     report["profile_level"] = {
-        "PSAS_mean": float(np.mean(psas_values)),
-        "PSAS_std": float(np.std(psas_values)),
-        "summary_cosine_mean": float(np.mean(summary_cosines))
+        "PSAS_mean": float(np.mean(psas_values)) if np is not None else 0.0,
+        "PSAS_std": float(np.std(psas_values)) if np is not None else 0.0,
+        "summary_cosine_mean": float(np.mean(summary_cosines)) if np is not None else 0.0
     }
     report["summary_level"] = {
-        "summary_cosine_mean": float(np.mean(summary_cosines)),
-        "summary_cosine_std": float(np.std(summary_cosines)),
+        "summary_cosine_mean": float(np.mean(summary_cosines)) if np is not None else 0.0,
+        "summary_cosine_std": float(np.std(summary_cosines)) if np is not None else 0.0,
     }
 
     # 3. Bootstrap CI (Optional, for PSAS only)
@@ -112,11 +116,14 @@ def compute_profile_aggregate_metrics(
         rng = np.random.default_rng(seed)
         for _ in range(bootstrap_samples):
             sample = rng.choice(data, size=n, replace=True)
-            sim_means.append(np.mean(sample))
+            sim_means.append(np.mean(sample)) if np is not None else sim_means.append(float(sample.mean()))
 
-        report["bootstrap"]["PSAS_95CI"] = (
-            float(np.percentile(sim_means, 2.5)),
-            float(np.percentile(sim_means, 97.5))
-        )
+        if np is not None:
+            report["bootstrap"]["PSAS_95CI"] = (
+                float(np.percentile(sim_means, 2.5)),
+                float(np.percentile(sim_means, 97.5))
+            )
+        else:
+            report["bootstrap"]["PSAS_95CI"] = (0.0, 0.0)
 
     return report

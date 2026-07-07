@@ -19,7 +19,7 @@ from typing import Any, Dict, List
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from utils.logger import setup_logger
+from utils.logger_utils import setup_logger
 
 try:
     from dotenv import load_dotenv
@@ -30,9 +30,7 @@ except Exception:  # pragma: no cover - optional dependency fallback
 # --- 配置区域 ---
 load_dotenv()
 CONCURRENT_LIMIT = 5  # 限制同时并发请求数
-cwd = os.getcwd()
-prev_dir = os.path.dirname(cwd)
-LOG_FILE = os.path.join(prev_dir, "logs","run_experiments.log")
+LOG_FILE = "run_experiments.log"
 logger = setup_logger("exp_runner", log_file=LOG_FILE)
 
 from utils.llm_utils import get_default_llm_config

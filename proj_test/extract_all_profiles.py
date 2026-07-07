@@ -1,20 +1,45 @@
-"""Batch profile extraction entry point for the research workflow.
+"""
+Batch profile extraction entry point for the research workflow.
 
 This module is intentionally small: it wraps the lower-level extraction logic in
 profile_extractor.py and exposes a simple CLI for running profile extraction from
 a directory of PDF folders.
+
+The expected input structure is:
+    input_dir/
+        discipline_1/
+            researcher_1/
+                paper_1.pdf
+                paper_2.pdf
+            researcher_2/
+                paper_1.pdf
+        discipline_2/
+            researcher_3/
+                paper_1.pdf
+
+The intended saving structure is:
+    output_dir/
+        model_name/
+            discipline_1/
+                researcher_1_profile.json
+                researcher_2_profile.json
+            discipline_2/
+                researcher_3_profile.json
+Where each discipline folder contains researcher profile JSON files extracted from
+the corresponding PDF documents in the input directory.
 """
 
 import os
 import sys
 import asyncio
 import argparse
+
 from pathlib import Path
 from typing import Dict, Any
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from utils.logger import setup_logger
+from utils.logger_utils import setup_logger
 import proj_test.profile_extractor as pf_extractor
 
 logger = setup_logger("profile_extraction", log_file="profile_extraction.log")
@@ -30,24 +55,24 @@ async def extract_one_discipline_profiles(one_discipline_input_dir: str, one_dis
         one_dicipline_output_dir: Directory where extracted profiles will be saved for the input dicipline.
         model_name: LLM model name to use for extraction (default: gpt-4-turbo)
     """
-    base_dir = Path(one_discipline_input_dir)
+    input_dir = Path(one_discipline_input_dir)
     out_dir = Path(one_discipline_output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    if not base_dir.exists() or not base_dir.is_dir():
-        logger.error(f"Input directory does not exist or is not a directory: {base_dir}")
-        return {"total": 0, "successful": 0, "failed": 0, "profiles": {}}
+    if not input_dir.exists() or not input_dir.is_dir():
+        logger.error(f"Input directory does not exist or is not a directory: {input_dir}")
+        raise ValueError(f"Input directory does not exist or is not a directory: {input_dir}")
     
-    author_dirs = [aaa for aaa in base_dir.iterdir() if aaa.is_dir()]
+    author_dirs = [aaa for aaa in input_dir.iterdir() if aaa.is_dir()]
 
-    logger.info(f"Found {len(author_dirs)} researcher directories in {base_dir}")
+    logger.info(f"Found {len(author_dirs)} researcher directories in {input_dir}")
 
     semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)  # Limit concurrent extractions to 5
 
     for author in author_dirs:
         await pf_extractor.generate_profile_for_one_author(author, out_dir, model_name, semaphore)
     
-    logger.info(f"Profile extraction completed for discipline: {base_dir.name}")
+    logger.info(f"Profile extraction completed for discipline: {input_dir.name}")
         
 
 def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-turbo") -> None:
@@ -66,21 +91,23 @@ def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-t
                 paper_1.pdf
     
     output_dir/
-        discipline_1/
-            researcher_1_profile.json
-            researcher_2_profile.json
-        discipline_2/
-            researcher_3_profile.json
+        model_name/
+            discipline_1/
+                researcher_1_profile.json
+                researcher_2_profile.json
+            discipline_2/
+                researcher_3_profile.json
     """
     all_discipline_path = Path(input_dir)
     root_output_path = Path(output_dir)
+    model_output_path = os.path.join(root_output_path, model_name)
 
     if not all_discipline_path.exists():
         raise ValueError(f"Input directory does not exist: {all_discipline_path}")
 
     logger.info(f"Starting profile extraction")
     logger.info(f"  Input root: {all_discipline_path}")
-    logger.info(f"  Output root: {root_output_path}")
+    logger.info(f"  Output root: {model_output_path}")
     logger.info(f"  LLM Model: {model_name}")
 
     diciplines = os.listdir(all_discipline_path)
@@ -88,15 +115,10 @@ def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-t
         current_dicipline_dir = os.path.join(all_discipline_path, dicipline)
         if not os.path.isdir(current_dicipline_dir):
             logger.warning(f"Skipping non-directory entry in input directory: {current_dicipline_dir}")
-            continue
-        dicipline_output_dir = os.path.join(root_output_path, dicipline)
+            raise ValueError(f"Expected a directory for discipline: {current_dicipline_dir}")
+        dicipline_output_dir = os.path.join(model_output_path, dicipline)
         os.makedirs(dicipline_output_dir, exist_ok=True)
-        extract_one_discipline_profiles(
-            one_discipline_input_dir=os.path.join(current_dicipline_dir, dicipline),
-            one_discipline_output_dir=os.path.join(dicipline_output_dir, dicipline),
-            model_name=model_name
-        )
-
+        extract_one_discipline_profiles(one_discipline_input_dir=current_dicipline_dir, one_discipline_output_dir=dicipline_output_dir, model_name=model_name)
 
     logger.info("Profile extraction completed for all disciplines.")
 
@@ -119,21 +141,18 @@ def parse_args(argv) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def main(args) -> int:
+def main(opts) -> int:
     """CLI entrypoint."""
     try:
         extract_profiles(
-            input_dir=args.input,
-            output_dir=args.output,
-            model_name=args.model,
+            input_dir=opts.input,
+            output_dir=opts.output,
+            model_name=opts.model,
         )
         return 0
     except Exception as e:
         logger.error(f"Profile extraction failed: {e}", exc_info=True)
         return 1
-
-
-extract_all_profiles = extract_profiles
 
 
 if __name__ == "__main__":

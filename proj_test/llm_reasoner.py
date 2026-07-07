@@ -12,7 +12,7 @@ from typing import Dict, Any
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from utils.llm_utils import create_provider, ensure_collaboration_schema
-from utils.logger import setup_logger
+from utils.logger_utils import setup_logger
 
 logger = setup_logger(__name__, log_file="llm_reasoner.log")
 

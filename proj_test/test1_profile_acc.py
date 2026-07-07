@@ -21,7 +21,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from sentence_transformers import SentenceTransformer
-from utils.logger import setup_logger
+from utils.logger_utils import setup_logger
 from utils.data_utils import ProfileLoader
 import utils.profile_io as profile_io
 import utils.matching as matching

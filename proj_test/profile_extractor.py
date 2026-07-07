@@ -1,10 +1,9 @@
 """
-Refactored Batch Researcher Profile Extraction Module
+Refactored Single Researcher Profile Extraction Module, it is called by extract_all_profiles.py to process multiple researchers in a discipline.
 
-Processes PDF documents from multiple researchers and generates structured
-researcher profiles using LLM-powered summarization and synthesis.
+In this module, we focus on extracting and synthesizing structured researcher profiles from a collection of PDF documents.
 
-Features:
+The module is designed to handle the following tasks:
 - Async batch processing of PDFs
 - Configurable LLM providers (OpenAI, Anthropic, Local)
 - Concurrent request limiting
@@ -22,24 +21,27 @@ import asyncio
 import PyPDF2
 import traceback
 
-from loguru import logger
 from pathlib import Path
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
+
+from utils.logger_utils import setup_logger
+from utils.llm_utils import (
+    build_completion_payload,
+    create_async_openai_client,
+    extract_response_text,
+    get_default_llm_config,
+)
 
 
 # --- 配置区域 ---
 load_dotenv()
 CONCURRENT_LIMIT = 5  # 限制同时并发请求数
-cwd = os.getcwd()
-prev_dir = os.path.dirname(cwd)
-LOG_FILE = os.path.join(prev_dir, "logs","profile_extraction.log")
+LOG_FILE = "profile_extraction.log"
 
 
-# 配置日志：同时输出到屏幕和文件
-logger.remove()
-logger.add(sys.stderr, level="INFO")
-logger.add(LOG_FILE, rotation="10 MB", level="DEBUG") # 文件记录更详细的 DEBUG 信息
+# 配置日志：统一使用 utils/logger_utils.py 提供的日志入口
+logger = setup_logger(__name__, log_file=LOG_FILE)
 
 
 # --- 0. Helper Function ---
@@ -56,47 +58,20 @@ def extract_response_text(response) -> str:
     return "\n".join(texts).strip()
 
 
-MODEL_CAPS = {
-    "gpt-5": {
-        "temperature": True,
-        "tools": True,
-    },
-    "gpt-5-mini": {
-        "temperature": True,
-        "tools": True,
-    },
-    "gpt-5-nano": {
-        "temperature": False,
-        "tools": False,
-    },
-    "qwen": {
-        "temperature": True,
-    },
-    "phi": {
-        "temperature": True,
-    },
-    "gemma": {
-        "temperature": True,
-    }
-}
-
-
-def model_supports_temperature(model_name: str) -> bool:
-    """Return whether the configured model should receive a temperature value."""
-    caps = MODEL_CAPS.get(model_name, {})
-    return bool(caps.get("temperature", caps.get("supports_temperature", True)))
-
-
 # --- 1. Client 初始化 ---
-def get_client():
-    api_key = os.getenv('OPENAI_API_KEY') or os.getenv('LLM_API_KEY')
-    api_url = os.getenv('LLM_API_URL')
-    if not api_key:
-        logger.critical("API key not found!")
-        sys.exit(1)
-    return AsyncOpenAI(api_key=api_key)
+def get_client_and_config(model_name: str):
+    provider = os.getenv("LLM_PROVIDER", "openai").strip().lower()
+    if provider in {"", "openai"}:
+        provider = "openai"
+    elif provider in {"local", "lmstudio", "openai-compatible", "openai_compatible"}:
+        provider = "lmstudio"
 
-client = get_client()
+    llm_config = get_default_llm_config(model_name=model_name, provider=provider)
+    if not llm_config.get("api_key"):
+        logger.critical("LLM API key not found for provider %s", provider)
+        sys.exit(1)
+    client = create_async_openai_client(llm_config)
+    return client, llm_config
 
 
 # --- 2. 核心功能函数 ---
@@ -145,26 +120,19 @@ async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str
 
             logger.info(f"Sending text from {pdf_path} to LLM for summarization...")
 
-            params = {
-                "model": model_name,
-                "input": [
-                    {
-                        "role": "system",
-                        "content": "You are a helpful research assistant that creates detailed summaries."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                "max_output_tokens": 10240
-            }
-
-            if model_supports_temperature(model_name):
-                params["temperature"] = 0.3
-
-            resp = await client.responses.create(**params)
-            summary = extract_response_text(resp)
+            client, llm_config = get_client_and_config(model_name)
+            params = build_completion_payload(
+                model_name=model_name,
+                system_prompt="You are a helpful research assistant that creates detailed summaries.",
+                user_prompt=prompt,
+                config=llm_config,
+                max_output_tokens=10240,
+            )
+            if llm_config["api_mode"] == "responses":
+                resp = await client.responses.create(**params)
+            else:
+                resp = await client.chat.completions.create(**params)
+            summary = extract_response_text(resp, api_mode=llm_config["api_mode"])
 
             logger.info(f"Successfully generated detailed summary for {pdf_path}.")
             return summary
@@ -213,26 +181,19 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
     try:
         logger.info("Sending summaries to LLM for final profile synthesis...")
 
-        params = {
-            "model": model_name,
-            "input": [
-                {
-                    "role": "system",
-                    "content": f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'."
-                },
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-            "max_output_tokens": 10240
-        }
-
-        if model_supports_temperature(model_name):
-            params["temperature"] = 0.3
-
-        resp = await client.responses.create(**params)
-        response_content = extract_response_text(resp)
+        client, llm_config = get_client_and_config(model_name)
+        params = build_completion_payload(
+            model_name=model_name,
+            system_prompt=f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'.",
+            user_prompt=prompt,
+            config=llm_config,
+            max_output_tokens=10240,
+        )
+        if llm_config["api_mode"] == "responses":
+            resp = await client.responses.create(**params)
+        else:
+            resp = await client.chat.completions.create(**params)
+        response_content = extract_response_text(resp, api_mode=llm_config["api_mode"])
 
         if response_content.startswith("```json"):
             response_content = response_content[7:-3].strip()

@@ -38,7 +38,7 @@ import re
 
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-from .logger import setup_logger
+from .logger_utils import setup_logger
 from dataclasses import asdict, dataclass, field
 
 try:
@@ -78,9 +78,7 @@ COLLABORATION_FIELDS = [*COLLABORATION_CATEGORIES, COLLABORATION_SUMMARY_FIELD]
 
 # --- 配置区域 ---
 load_dotenv()
-cwd = os.getcwd()
-prev_dir = os.path.dirname(cwd)
-LOG_FILE = os.path.join(prev_dir, "logs","data_utils.log")
+LOG_FILE = "data_utils.log"
 logger = setup_logger("exp_runner", log_file=LOG_FILE)
 
 

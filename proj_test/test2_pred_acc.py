@@ -22,7 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from sentence_transformers import SentenceTransformer
-from utils.logger import setup_logger
+from utils.logger_utils import setup_logger
 import utils.profile_io as profile_io
 from utils.data_utils import COLLABORATION_CATEGORIES, COLLABORATION_SUMMARY_FIELD
 import utils.matching as matching

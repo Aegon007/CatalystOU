@@ -4,7 +4,7 @@ Keep this package initializer lightweight. Data loading and metric code should
 not require optional LLM dependencies such as the OpenAI SDK.
 """
 
-from .logger import setup_logger
+from .logger_utils import setup_logger
 from .data_utils import (
     ResearcherProfile,
     CollaborationProfile,

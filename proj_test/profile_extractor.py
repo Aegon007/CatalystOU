@@ -22,16 +22,10 @@ import PyPDF2
 import traceback
 
 from pathlib import Path
-from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 from utils.logger_utils import setup_logger
-from utils.llm_utils import (
-    build_completion_payload,
-    create_async_openai_client,
-    extract_response_text,
-    get_default_llm_config,
-)
+from utils.llm_utils import call_llm, parse_json_text
 
 
 # --- 配置区域 ---
@@ -44,37 +38,7 @@ LOG_FILE = "profile_extraction.log"
 logger = setup_logger(__name__, log_file=LOG_FILE)
 
 
-# --- 0. Helper Function ---
-def extract_response_text(response) -> str:
-    """
-    Safely extract all assistant output text from an OpenAI Responses API object.
-    """
-    texts = []
-    for item in response.output:
-        if item.type == "message":
-            for block in item.content:
-                if block.type == "output_text":
-                    texts.append(block.text)
-    return "\n".join(texts).strip()
-
-
-# --- 1. Client 初始化 ---
-def get_client_and_config(model_name: str):
-    provider = os.getenv("LLM_PROVIDER", "openai").strip().lower()
-    if provider in {"", "openai"}:
-        provider = "openai"
-    elif provider in {"local", "lmstudio", "openai-compatible", "openai_compatible"}:
-        provider = "lmstudio"
-
-    llm_config = get_default_llm_config(model_name=model_name, provider=provider)
-    if not llm_config.get("api_key"):
-        logger.critical("LLM API key not found for provider %s", provider)
-        sys.exit(1)
-    client = create_async_openai_client(llm_config)
-    return client, llm_config
-
-
-# --- 2. 核心功能函数 ---
+# --- 核心功能函数 ---
 # --- Part 2: PDF and Summarization Functions (Async) ---
 def extract_text_from_pdf(pdf_path: Path) -> str:
     """
@@ -120,19 +84,12 @@ async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str
 
             logger.info(f"Sending text from {pdf_path} to LLM for summarization...")
 
-            client, llm_config = get_client_and_config(model_name)
-            params = build_completion_payload(
+            summary = await call_llm(
                 model_name=model_name,
                 system_prompt="You are a helpful research assistant that creates detailed summaries.",
                 user_prompt=prompt,
-                config=llm_config,
                 max_output_tokens=10240,
             )
-            if llm_config["api_mode"] == "responses":
-                resp = await client.responses.create(**params)
-            else:
-                resp = await client.chat.completions.create(**params)
-            summary = extract_response_text(resp, api_mode=llm_config["api_mode"])
 
             logger.info(f"Successfully generated detailed summary for {pdf_path}.")
             return summary
@@ -181,24 +138,13 @@ async def synthesize_profile(researcher_name: str, list_of_summaries: list[str],
     try:
         logger.info("Sending summaries to LLM for final profile synthesis...")
 
-        client, llm_config = get_client_and_config(model_name)
-        params = build_completion_payload(
+        response_content = await call_llm(
             model_name=model_name,
             system_prompt=f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'.",
             user_prompt=prompt,
-            config=llm_config,
             max_output_tokens=10240,
         )
-        if llm_config["api_mode"] == "responses":
-            resp = await client.responses.create(**params)
-        else:
-            resp = await client.chat.completions.create(**params)
-        response_content = extract_response_text(resp, api_mode=llm_config["api_mode"])
-
-        if response_content.startswith("```json"):
-            response_content = response_content[7:-3].strip()
-
-        profile_data = json.loads(response_content)
+        profile_data = parse_json_text(response_content)
         logger.info("Successfully created researcher profile.")
         return profile_data
     except Exception as e:

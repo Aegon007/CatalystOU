@@ -28,6 +28,7 @@ from utils.data_utils import COLLABORATION_CATEGORIES, COLLABORATION_SUMMARY_FIE
 import utils.matching as matching
 import utils.metrics as metrics
 from proj_test.llm_reasoner import call_llm_reasoner
+from utils.llm_utils import get_llm_config
 
 logger = setup_logger(__name__, log_file="test2_pred_acc.log")
 
@@ -325,15 +326,8 @@ def main(opts) -> int:
                     output_dir / f"{case.get('id', 'unknown')}_prediction.json"
                 )
 
-        # Prepare LLM configuration
-        llm_config = {
-            "provider": opts.llm_provider,
-            "model_name": opts.llm_model,
-            "temperature": 0.3,
-            "max_tokens": 4096,
-            "max_retries": 3,
-            "timeout": 300.0,
-        }
+        # Prepare LLM configuration from utils/llm_config.json
+        llm_config = get_llm_config(opts.llm_model)
 
         # Run experiment
         logger.info("Starting collaboration prediction backtesting")
@@ -388,12 +382,6 @@ def parseOpts(args) -> argparse.Namespace:
         type=str,
         default="gpt-4",
         help="LLM model name for collaboration prediction"
-    )
-    parser.add_argument(
-        "--llm_provider",
-        type=str,
-        default="openai",
-        help="LLM provider (openai, anthropic, local, etc.)"
     )
     parser.add_argument(
         "--tau",

@@ -1,66 +1,76 @@
 {
   "default": {
     "provider": "openai",
+    "api_key_env": ["LLM_API_KEY", "OPENAI_API_KEY"],
+    "base_url_env": ["LLM_BASE_URL", "OPENAI_BASE_URL"],
+    "base_url": null,
     "temperature": 0.3,
     "max_tokens": 4096,
     "max_retries": 3,
     "timeout": 600.0,
+    "api_mode": "chat"
+  },
+  "gpt-4": {
+    "provider": "openai",
+    "temperature": 0.3,
+    "max_tokens": 4096,
+    "api_mode": "chat"
+  },
+  "gpt-4-turbo": {
+    "provider": "openai",
+    "temperature": 0.3,
+    "max_tokens": 4096,
     "api_mode": "chat"
   },
   "gpt-5": {
     "provider": "openai",
     "temperature": 0.2,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "responses"
   },
   "gpt-5-mini": {
     "provider": "openai",
     "temperature": 0.2,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "responses"
   },
   "gpt-5-nano": {
     "provider": "openai",
     "temperature": 0.0,
     "max_tokens": 2048,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "responses"
   },
-  "qwen2.5": {
+  "qwen/qwen3.5-35b-a3b": {
     "provider": "lmstudio",
+    "api_key": "lm-studio",
+    "base_url": "http://10.134.12.227:1234/v1",
     "temperature": 0.3,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
-    "api_mode": "chat"
+    "api_mode": "chat",
+    "model_name": "qwen/qwen3.5-35b-a3b"
   },
-  "qwen3": {
+  "qwen3.6": {
     "provider": "lmstudio",
+    "api_key": "lm-studio",
+    "base_url": "http://localhost:1234/v1",
     "temperature": 0.3,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "chat"
   },
   "phi-4": {
     "provider": "lmstudio",
+    "api_key": "lm-studio",
+    "base_url": "http://localhost:1234/v1",
     "temperature": 0.3,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "chat"
   },
   "gemma3": {
     "provider": "lmstudio",
+    "api_key": "lm-studio",
+    "base_url": "http://localhost:1234/v1",
     "temperature": 0.3,
     "max_tokens": 4096,
-    "max_retries": 3,
-    "timeout": 600.0,
     "api_mode": "chat"
   }
 }

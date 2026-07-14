@@ -135,7 +135,6 @@ Then run:
 python run_experiments.py exp2 \
   -c cases.json \
   -m all-mpnet-base-v2 \
-  --llm_provider openai \
   --llm_model gpt-4 \
   --tau 0.65 \
   -o results/exp2

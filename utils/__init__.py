@@ -28,28 +28,4 @@ __all__ = [
     "COLLABORATION_CATEGORIES",
     "COLLABORATION_SUMMARY_FIELD",
     "COLLABORATION_FIELDS",
-    "BaseLLMProvider",
-    "OpenAIProvider",
-    "create_llm_provider",
-    "register_llm_provider",
 ]
-
-
-def __getattr__(name):
-    """Lazily expose LLM provider classes only when explicitly requested."""
-    if name in {"BaseLLMProvider", "OpenAIProvider", "create_llm_provider", "register_llm_provider"}:
-        from .llm import (
-            BaseLLMProvider,
-            OpenAIProvider,
-            create_llm_provider,
-            register_llm_provider,
-        )
-
-        values = {
-            "BaseLLMProvider": BaseLLMProvider,
-            "OpenAIProvider": OpenAIProvider,
-            "create_llm_provider": create_llm_provider,
-            "register_llm_provider": register_llm_provider,
-        }
-        return values[name]
-    raise AttributeError(f"module 'utils' has no attribute {name!r}")

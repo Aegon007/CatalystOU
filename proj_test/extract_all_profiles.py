@@ -75,7 +75,7 @@ async def extract_one_discipline_profiles(one_discipline_input_dir: str, one_dis
     logger.info(f"Profile extraction completed for discipline: {input_dir.name}")
         
 
-def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-turbo") -> None:
+def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-turbo") -> Dict[str, int]:
     """
     Extract researcher profiles from a directory of disciplines.
     The data folder structure is expected to be:
@@ -111,16 +111,32 @@ def extract_profiles(input_dir: str, output_dir: str, model_name: str = "gpt-4-t
     logger.info(f"  LLM Model: {model_name}")
 
     diciplines = os.listdir(all_discipline_path)
+    successful = 0
+    failed = 0
+
     for dicipline in diciplines:
         current_dicipline_dir = os.path.join(all_discipline_path, dicipline)
         if not os.path.isdir(current_dicipline_dir):
             logger.warning(f"Skipping non-directory entry in input directory: {current_dicipline_dir}")
-            raise ValueError(f"Expected a directory for discipline: {current_dicipline_dir}")
+            continue
+
         dicipline_output_dir = os.path.join(model_output_path, dicipline)
         os.makedirs(dicipline_output_dir, exist_ok=True)
-        extract_one_discipline_profiles(one_discipline_input_dir=current_dicipline_dir, one_discipline_output_dir=dicipline_output_dir, model_name=model_name)
+        try:
+            asyncio.run(
+                extract_one_discipline_profiles(
+                    one_discipline_input_dir=current_dicipline_dir,
+                    one_discipline_output_dir=dicipline_output_dir,
+                    model_name=model_name,
+                )
+            )
+            successful += 1
+        except Exception as exc:
+            failed += 1
+            logger.error(f"Profile extraction failed for discipline {dicipline}: {exc}", exc_info=True)
 
     logger.info("Profile extraction completed for all disciplines.")
+    return {"total": successful + failed, "successful": successful, "failed": failed}
 
 
 def parse_args(argv) -> argparse.Namespace:

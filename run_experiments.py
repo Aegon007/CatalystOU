@@ -33,13 +33,12 @@ CONCURRENT_LIMIT = 5  # 限制同时并发请求数
 LOG_FILE = "run_experiments.log"
 logger = setup_logger("exp_runner", log_file=LOG_FILE)
 
-from utils.llm_utils import get_default_llm_config
+from utils.llm_utils import get_llm_config as load_llm_config
 
 
-def get_llm_config(model: str, provider: str = "openai") -> Dict[str, Any]:
-    """Get LLM configuration for a given model."""
-    cfg = get_default_llm_config(model_name=model, provider=provider)
-    return cfg
+def get_llm_config(model: str) -> Dict[str, Any]:
+    """Get LLM configuration for a configured model name."""
+    return load_llm_config(model_name=model)
 
 
 def build_collaboration_cases(
@@ -152,13 +151,6 @@ def create_parser():
         default="gpt-4-turbo",
         help="LLM model name (default: gpt-4-turbo)"
     )
-    extract_parser.add_argument(
-        "-p", "--provider",
-        default="openai",
-        choices=["openai", "anthropic", "local"],
-        help="LLM provider (default: openai)"
-    )
-
     # Case builder parser
     build_cases_parser = subparsers.add_parser(
         "build-cases",
@@ -198,11 +190,6 @@ def create_parser():
         help="LLM model name"
     )
     exp2_parser.add_argument(
-        "--llm_provider",
-        default="openai",
-        help="LLM provider (openai, anthropic, local)"
-    )
-    exp2_parser.add_argument(
         "--tau",
         type=float,
         default=0.65,
@@ -235,13 +222,11 @@ def main(parser):
             logger.info(f"  Input: {args.input}")
             logger.info(f"  Output: {args.output}")
             logger.info(f"  Model: {args.model}")
-            logger.info(f"  Provider: {args.provider}")
 
             results = extract_profiles(
                 input_dir=args.input,
                 output_dir=args.output,
-                llm_model=args.model,
-                llm_provider=args.provider,
+                model_name=args.model,
             )
 
             logger.info(f"Profile extraction complete:")
@@ -321,7 +306,7 @@ def main(parser):
                     )
 
             # Prepare LLM configuration
-            llm_cfg = get_llm_config(args.llm_model, args.llm_provider)
+            llm_cfg = get_llm_config(args.llm_model)
 
             # Run evaluation
             logger.info("Running collaboration prediction evaluation")

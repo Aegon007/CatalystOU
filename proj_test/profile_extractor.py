@@ -25,17 +25,73 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from utils.logger_utils import setup_logger
-from utils.llm_utils import call_llm, parse_json_text
+from utils.llm_utils import call_llm, call_llm_json, get_llm_config
 
 
 # --- 配置区域 ---
 load_dotenv()
-CONCURRENT_LIMIT = 5  # 限制同时并发请求数
+CONCURRENT_LIMIT = 4  # 限制同时并发请求数
 LOG_FILE = "profile_extraction.log"
-
 
 # 配置日志：统一使用 utils/logger_utils.py 提供的日志入口
 logger = setup_logger(__name__, log_file=LOG_FILE)
+
+
+def get_extraction_limits(model_name: str) -> dict:
+    """Return prompt-size limits for profile extraction for the selected model."""
+    config = get_llm_config(model_name)
+    provider = str(config.get("provider", "openai")).lower()
+    is_local = provider in {"lmstudio", "local"}
+
+    return {
+        "config": config,
+        "summary_input_chars": int(config.get("summary_input_chars") or (6000 if is_local else 50000)),
+        "summary_overlap_chars": int(config.get("summary_overlap_chars") or (600 if is_local else 2000)),
+        "summary_output_tokens": int(config.get("summary_output_tokens") or (1000 if is_local else 4096)),
+        "max_summary_chunks": int(config.get("max_summary_chunks") or (6 if is_local else 8)),
+        "combine_summary_chars": int(config.get("combine_summary_chars") or (1200 if is_local else 2400)),
+        "synthesis_summary_chars": int(config.get("synthesis_summary_chars") or (700 if is_local else 2200)),
+        "synthesis_output_tokens": int(config.get("synthesis_output_tokens") or (1600 if is_local else 4096)),
+        "use_few_shot_examples": bool(config.get("use_few_shot_examples", not is_local)),
+    }
+
+
+def split_text_for_model(text: str, max_chars: int, max_chunks: int, overlap_chars: int = 0) -> list[str]:
+    """Split long PDF text into bounded chunks with optional adjacent overlap."""
+    cleaned = "\n".join(line.strip() for line in text.splitlines() if line.strip())
+    if not cleaned:
+        return []
+
+    overlap_chars = max(0, min(overlap_chars, max_chars // 3))
+    chunks = []
+    start = 0
+    while start < len(cleaned) and len(chunks) < max_chunks:
+        end = min(start + max_chars, len(cleaned))
+        if end < len(cleaned):
+            break_at = cleaned.rfind("\n", start, end)
+            if break_at <= start + int(max_chars * 0.5):
+                break_at = cleaned.rfind(" ", start, end)
+            if break_at > start:
+                end = break_at
+        chunks.append(cleaned[start:end].strip())
+        if end >= len(cleaned):
+            break
+        next_start = max(0, end - overlap_chars)
+        if next_start <= start:
+            next_start = end
+        start = next_start
+
+    return [chunk for chunk in chunks if chunk]
+
+
+def truncate_text(text: str, max_chars: int) -> str:
+    """Trim text for prompt assembly while preserving a readable boundary."""
+    if len(text) <= max_chars:
+        return text
+    cutoff = text.rfind(" ", 0, max_chars)
+    if cutoff < int(max_chars * 0.8):
+        cutoff = max_chars
+    return text[:cutoff].rstrip() + "\n[TRUNCATED]"
 
 
 # --- 核心功能函数 ---
@@ -57,99 +113,207 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
         return page_text
     except Exception as e:
         logger.warning(f"An error occurred while reading the PDF {pdf_path}: {e}")
-        return ""
+        raise IOError(f"Failed to read PDF {pdf_path}: {e}")
 
 
 async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str, semaphore: asyncio.Semaphore) -> str:
-    """ 总结单篇论文 (带并发限制) """
+    """Summarize one paper with model-aware prompt limits."""
     if not paper_text:
-        return ""
+        raise ValueError(f"No text extracted from {pdf_path} for summarization.")
 
     async with semaphore:
         try:
-            prompt = f"""
-            You are an expert research analyst. Your task is to read the entire uploaded document and create a summary list for an academic audience.
-            Your summary must explicitly identify and include the following verifiable information:
-            The primary research objective and core topic of the paper.
-            Specific Methodologies and Techniques: Go beyond broad categories. List the specific, named models, unique algorithms, formal theorems or lemmas, and proprietary frameworks that are central to the paper's argument. For example, instead of just "machine learning," specify the exact named model or algorithm used.
-            Data, Platforms, and Tools: List all specific datasets, software, programming languages, libraries, and key equipment used. If none are found, state "N/A".
-            The key quantitative and qualitative findings and conclusions as stated in the paper.
-            Authors and Affiliations: List all authors and their corresponding affiliations as stated in the text.
-
-            Paper Text (first 50000 characters):
-            ---
-            {paper_text[:200000]}
-            ---
-            """
-
-            logger.info(f"Sending text from {pdf_path} to LLM for summarization...")
-
-            summary = await call_llm(
-                model_name=model_name,
-                system_prompt="You are a helpful research assistant that creates detailed summaries.",
-                user_prompt=prompt,
-                max_output_tokens=10240,
+            limits = get_extraction_limits(model_name)
+            chunks = split_text_for_model(
+                paper_text,
+                limits["summary_input_chars"],
+                limits["max_summary_chunks"],
+                limits["summary_overlap_chars"],
             )
+            if not chunks:
+                raise ValueError(f"No valid text chunks could be created from {pdf_path} for summarization.")
+
+            logger.info(
+                f"Sending {len(chunks)} bounded text chunk(s) from {pdf_path} "
+                f"to LLM for summarization..."
+            )
+
+            chunk_summaries = []
+            for chunk_index, chunk in enumerate(chunks, start=1):
+                prompt = f"""
+You are an expert research analyst. Summarize this paper excerpt for academic profile extraction.
+
+Return concise bullet points covering:
+- Primary research objective and core topic.
+- Specific named methods, models, algorithms, theorems, tools, or frameworks.
+- Data, platforms, software, libraries, equipment, and experimental settings.
+- Key quantitative and qualitative findings.
+- Authors and affiliations if visible in this excerpt.
+
+Excerpt {chunk_index} of {len(chunks)} from {pdf_path}:
+---
+{chunk}
+---
+"""
+                chunk_summary = await call_llm(
+                    model_name=model_name,
+                    system_prompt="You create concise, evidence-grounded academic paper summaries of each chunk of a paper.",
+                    user_prompt=prompt,
+                    max_output_tokens=limits["summary_output_tokens"],
+                    config=limits["config"],
+                )
+                if chunk_summary:
+                    chunk_summaries.append(chunk_summary)
+
+            if not chunk_summaries:
+                raise ValueError(f"LLM returned no summaries for any chunks of {pdf_path}.")
+
+            if len(chunk_summaries) == 1:
+                summary = chunk_summaries[0]
+            else:
+                combined = "\n\n---\n\n".join(
+                    f"Excerpt Summary {idx + 1}:\n{truncate_text(summary, limits['combine_summary_chars'])}"
+                    for idx, summary in enumerate(chunk_summaries)
+                )
+                combine_prompt = f"""
+You are consolidating excerpt-level summaries into one paper-level summary.
+
+Create one concise academic summary with the same fields:
+- Primary research objective and core topic.
+- Specific named methods, models, algorithms, tools, and frameworks.
+- Data, platforms, software, equipment, and experimental settings.
+- Key findings and conclusions.
+- Authors and affiliations.
+
+Excerpt-level summaries:
+---
+{combined}
+---
+"""
+                summary = await call_llm(
+                    model_name=model_name,
+                    system_prompt="You merge paper excerpt summaries without adding unsupported claims.",
+                    user_prompt=combine_prompt,
+                    max_output_tokens=limits["summary_output_tokens"],
+                    config=limits["config"],
+                )
 
             logger.info(f"Successfully generated detailed summary for {pdf_path}.")
             return summary
         except Exception as e:
             logger.error(f"An error occurred during summarization for {pdf_path}: {e}")
-            return ""
+            raise ValueError(f"Failed to summarize paper due to an error: {e}.")
+
+
+async def synthesis_summarize(model_name: str, list_of_summaries: list[str], synthesis_summary_chars: int) -> str:
+    """Reduce many paper summaries into one bounded synthesis for profile creation."""
+    if not list_of_summaries:
+        return ""
+
+    limits = get_extraction_limits(model_name)
+    per_summary_chars = max(600, synthesis_summary_chars)
+    tmp_inp_summary = "\n\n---\n\n".join(
+        f"Paper Summary {idx + 1}:\n{truncate_text(summary, per_summary_chars)}"
+        for idx, summary in enumerate(list_of_summaries)
+        if summary
+    )
+    if not tmp_inp_summary:
+        return ""
+
+    synthesis_summary = await call_llm(
+        model_name=model_name,
+        system_prompt="You synthesize multiple paper summaries into concise, evidence-grounded academic profile notes.",
+        user_prompt=(
+            "You are synthesizing multiple paper summaries for academic profile extraction.\n"
+            "Keep the synthesis concise, but preserve named methods, datasets, tools, domains, and recurring research patterns.\n"
+            f"Keep the response under {synthesis_summary_chars} characters.\n\n"
+            f"Input Summaries:\n---\n{tmp_inp_summary}\n---"
+        ),
+        max_output_tokens=max(256, synthesis_summary_chars // 4),
+        config=limits["config"],
+    )
+
+    return synthesis_summary
 
 
 # --- Part 3: Researcher Profile Creation (The "Synthesize" Step) ---
-async def synthesize_profile(researcher_name: str, list_of_summaries: list[str], example_summaries: list[str], example_json_output: str, model_name: str) -> dict:
+async def synthesize_profile(researcher_name: str, list_of_summaries: list[str], example_summaries: str | list[str], example_json_output: str, model_name: str) -> dict:
     """
-    Uses the LLM to synthesize a structured profile from a list of detailed paper summaries,
-    guided by a provided example and a specific researcher name.
+    Synthesize a structured researcher profile from paper summaries.
+
+    Local small-context models use a compact prompt; larger-context
+    models can keep the few-shot examples.
     """
     if not list_of_summaries:
-        return {}
+        raise ValueError(f"No paper summaries provided for researcher '{researcher_name}'.")
 
-    example_summaries_text = "\n\n---\n\n".join(f"Summary of Paper {i+1}:\n{summary}" for i, summary in enumerate(example_summaries))
-    actual_summaries_text = "\n\n---\n\n".join(f"Summary of Paper {i+1}:\n{summary}" for i, summary in enumerate(list_of_summaries))
+    limits = get_extraction_limits(model_name)
+    llm_extracted_summaries = await synthesis_summarize(model_name, list_of_summaries, limits["synthesis_summary_chars"])
+
+    if not llm_extracted_summaries:
+        raise ValueError(f"Failed to synthesize paper summaries for researcher {researcher_name!r}.")
+
+    preset_example_json_output = example_json_output.strip()
+    if isinstance(example_summaries, list):
+        preset_example_summaries_text = "\n\n---\n\n".join(
+            f"Summary of Paper {idx + 1}:\n{summary}"
+            for idx, summary in enumerate(example_summaries)
+            if summary
+        )
+    else:
+        preset_example_summaries_text = example_summaries.strip()
+
+    example_block = ""
+    if preset_example_summaries_text and preset_example_json_output:
+        example_block = f"""
+### EXAMPLE INPUT SUMMARIES
+---
+{preset_example_summaries_text}
+---
+
+### EXAMPLE JSON OUTPUT
+{preset_example_json_output}
+"""
+    else:
+        raise ValueError("Both example summaries and example JSON output must be provided for few-shot prompting.")
 
     prompt = f"""
-    You are an expert academic analyst creating a profile for a formal, academic audience. Your task is to synthesize a comprehensive and highly detailed researcher profile for '{researcher_name}' from the provided summaries.
-    Your output must be a single, complete JSON object and nothing else.
+You are an expert academic analyst creating a profile for a formal, academic audience.
+Your output must be one complete JSON object and nothing else.
 
-    ### EXAMPLE ###
-    [START OF EXAMPLE INPUT SUMMARIES]
-    ---
-    {example_summaries_text}
-    ---
-    [END OF EXAMPLE INPUT SUMMARIES]
+Rules:
+- Use only evidence from the paper summaries.
+- Keep each list concise and specific.
+- Prefer named methods, datasets, software, platforms, and application areas.
+- Include a compact but informative Summary Description.
 
-    [START OF EXAMPLE JSON OUTPUT]
-    {example_json_output}
-    [END OF EXAMPLE JSON OUTPUT]
+{example_block}
+### ACTUAL TASK
+Create a profile for '{researcher_name}' using the following summaries.
 
-    ### ACTUAL TASK ###
-    Now, using the same format and level of analysis, create a profile for '{researcher_name}' based on the following summaries.
-    [START OF ACTUAL INPUT SUMMARIES]
-    ---
-    {actual_summaries_text}
-    ---
-    [END OF ACTUAL INPUT SUMMARIES]
-    [START OF ACTUAL JSON OUTPUT]
-    """
+### ACTUAL INPUT SUMMARIES
+---
+{llm_extracted_summaries}
+---
+
+### ACTUAL JSON OUTPUT
+"""
 
     try:
         logger.info("Sending summaries to LLM for final profile synthesis...")
 
-        response_content = await call_llm(
+        profile_data = await call_llm_json(
             model_name=model_name,
             system_prompt=f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'.",
             user_prompt=prompt,
-            max_output_tokens=10240,
+            max_output_tokens=limits["synthesis_output_tokens"],
+            config=limits["config"],
         )
-        profile_data = parse_json_text(response_content)
         logger.info("Successfully created researcher profile.")
         return profile_data
     except Exception as e:
         logger.error(f"An error occurred during profile creation: {researcher_name}: {e}")
-        return {}
+        raise ValueError(f"Failed to synthesize profile for '{researcher_name}' due to an error: {e}.")
 
 
 async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model_name: str, semaphore: asyncio.Semaphore) -> None:
@@ -380,8 +544,8 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
     # Step 0: Gather all PDF file paths for the author
     uploaded_files = list(author_dir.glob("*.pdf"))
     if not uploaded_files:
-        logger.warning(f"No PDF files found for author {author_name} in directory {author_dir}. Skipping...")
-        return
+        logger.error(f"No PDF files found for author {author_name} in directory {author_dir}. Skipping...")
+        raise ValueError(f"No PDF files found for author {author_name} in directory {author_dir}.")
 
     # Step 1: Extract text from all PDFs (in parallel), using asyncio.to_thread to prevent blocking
     text_extraction_tasks = []
@@ -389,7 +553,14 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
         logger.info(f"Extracting text from file {fpath}...")
         text_extraction_tasks.append(asyncio.to_thread(extract_text_from_pdf, fpath))
 
-    extracted_texts = await asyncio.gather(*text_extraction_tasks)
+    extracted_results = await asyncio.gather(*text_extraction_tasks, return_exceptions=True)
+    extracted_texts = []
+    for file_path, result in zip(uploaded_files, extracted_results):
+        if isinstance(result, Exception):
+            logger.error(f"Failed to extract text from {file_path}: {result}")
+            extracted_texts.append("")
+        else:
+            extracted_texts.append(result)
 
     # Step 2: Summarize papers in parallel
     logger.info("AI is summarizing publications...")
@@ -398,8 +569,13 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
         file_name = uploaded_files[i]
         summarization_tasks.append(summarize_single_paper(one_text, file_name, model_name, semaphore))
 
-    detailed_summaries = await asyncio.gather(*summarization_tasks)
-    valid_summaries = [s for s in detailed_summaries if s]
+    detailed_results = await asyncio.gather(*summarization_tasks, return_exceptions=True)
+    valid_summaries = []
+    for file_path, result in zip(uploaded_files, detailed_results):
+        if isinstance(result, Exception):
+            logger.error(f"Failed to summarize {file_path}: {result}")
+        elif result:
+            valid_summaries.append(result)
 
     # Step 3: Synthesize the final profile
     if valid_summaries:
@@ -417,7 +593,8 @@ async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model
                 json.dump(final_profile, f, indent=4)
             logger.info(f"Successfully saved profile for {author_name} at {save_path}.")
     else:
-        logger.error("Failed to summarize publications because there are no valid summaries")
+        logger.error(f"Failed to summarize publications for {author_name} because there are no valid summaries.")
+        return
 
 
 async def main(opts) -> None:
@@ -428,22 +605,23 @@ async def main(opts) -> None:
 
     if not base_dir.exists() or not base_dir.is_dir():
         logger.error(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
-        return
+        raise ValueError(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
 
-    departments = [d for d in base_dir.iterdir() if d.is_dir()]
+    tmp_author_dirs = [d for d in base_dir.iterdir() if d.is_dir()]
 
-    author_dirs = []
-    for department in departments:
-        tmp_author_dirs = [d for d in department.iterdir() if d.is_dir()]
-        author_dirs.extend(tmp_author_dirs)
-
-    logger.info(f"Found {len(author_dirs)} author directories to process.")
+    if 0 == len(tmp_author_dirs):
+        logger.error(f"No author directories found in the specified PDF directory: {base_dir}")
+        raise ValueError(f"No author directories found in the specified PDF directory: {base_dir}")
 
     semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)  # Limit concurrent LLM calls to 5
 
     # Here we process each author directory, and within each author, process their PDFs in parallel
-    for author in author_dirs:
-        await generate_profile_for_one_author(author, out_dir, opts.model_name, semaphore)
+    for author in tmp_author_dirs:
+        try:
+            await generate_profile_for_one_author(author, out_dir, opts.model_name, semaphore)
+        except Exception:
+            logger.error(f"Failed to generate profile for {author}:\n{traceback.format_exc()}")
+            raise ValueError(f"Failed to generate profile for {author} due to an error. See logs for details.")
 
 
 def parseOpts(argv):
@@ -457,7 +635,4 @@ def parseOpts(argv):
 
 if __name__ == "__main__":
     opts = parseOpts(sys.argv[1:])
-    try:
-        asyncio.run(main(opts))
-    except Exception as e:
-        logger.error(f"An error occurred during execution:\n{traceback.format_exc()}")
+    asyncio.run(main(opts))

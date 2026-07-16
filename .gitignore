@@ -1,3 +1,10 @@
 # .gitignore
 
 .env
+
+# Local labeled profile PDFs and annotation data
+profile_labeled_data/
+
+# Local runtime logs
+logs/
+log/

@@ -111,13 +111,20 @@ def build_completion_payload(*, model_name: str, system_prompt: str, user_prompt
         in a function definition, a bare * means all parameters after it must be passed by name.
     """
     config = config or get_llm_config(model_name)
-    token_limit = max_output_tokens or config.get("max_tokens", 4096)
+    token_limit = (
+        max_output_tokens
+        or config.get("max_output_tokens")
+        or config.get("max_completion_tokens")
+        or config.get("max_tokens", 4096)
+    )
+    api_mode = config.get("api_mode")
+    provider = str(config.get("provider", "openai")).strip().lower()
     payload: Dict[str, Any] = {"model": config.get("model_name", model_name)}
 
     if config.get("temperature") is not None:
         payload["temperature"] = config["temperature"]
 
-    if config.get("api_mode") == "responses":
+    if api_mode == "responses":
         payload["input"] = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
@@ -128,7 +135,10 @@ def build_completion_payload(*, model_name: str, system_prompt: str, user_prompt
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ]
-        payload["max_tokens"] = token_limit
+        token_param = config.get("token_param")
+        if not token_param:
+            token_param = "max_tokens" if provider == "lmstudio" else "max_completion_tokens"
+        payload[token_param] = token_limit
 
     return payload
 

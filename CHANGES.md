@@ -190,7 +190,9 @@ This document details all technical, methodological, and architectural modificat
    - In-depth comparative chronology tracking the prompt evolution from GPT-5 Nano baseline to Llama 3.1 and Qwen 27B.
 4. **`reports/EXPERIMENT_2_COLLABORATION_PREDICTION_REPORT.md`**:
    - Full evaluation report for Experiment 2 collaboration prediction and synergy engine backtesting across 5 historical co-authored faculty pairs (Summary Cosine: **0.4201**, Peak Cosine: **0.5830**, MAS at $\tau=0.40$: **0.3082**, complete $\tau$-sweep).
-5. **Dataset Profiles & Results Generated:**
+5. **`reports/EXECUTIVE_VISUAL_REPORT.md` & `figures/`**:
+   - High-level illustrated executive report with 5 publication-ready 300-DPI charts visualizing pipeline evolution, cross-disciplinary consistency, threshold sensitivity, contrastive discrimination, and category hits.
+6. **Dataset Profiles & Results Generated:**
    - `extracted_profile_json/meta-llama_meta-llama-3.1-8b-instruct/`: 50 profiles across 5 disciplines.
    - `extracted_profile_json/qwen_qwen3.8-27b/`: 50 profiles across 5 disciplines.
    - `collaboration_ground_truth/`: 5 ground truth collaboration profiles extracted from joint papers.
@@ -198,3 +200,4 @@ This document details all technical, methodological, and architectural modificat
    - `results/qwen_qwen3.8-27b/`: Full Experiment 1 evaluation outputs for Qwen 3.8 27B.
    - `results/exp2_qwen/`: Full Experiment 2 positive evaluation outputs, predictions, Recommendation 1 soft metrics (`recommendation1_soft_metrics.json`), and threshold sweep data (`tau_sweep_results.json`).
    - `results/exp2_negative/`: Negative control predictions and contrastive discriminator benchmark outputs (`contrastive_evaluation_results.json`).
+   - `figures/`: 5 publication figures (`fig1` through `fig5` in 300 DPI PNG format).

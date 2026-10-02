@@ -1,0 +1,67 @@
+{
+    "Researcher Profile:": "Yan Mary He",
+    "Affiliation:": "University of California, Berkeley, Department of Mathematics, University of Pisa, INdAM GNSAGA group",
+    "Research Domains": [
+        "Topology",
+        "Geometry",
+        "Differential Geometry",
+        "Mathematics",
+        "Complex Dynamics",
+        "Dynamical Systems",
+        "Mathematical Analysis",
+        "Complex Analysis",
+        "Hyperbolic Geometry",
+        "Holomorphic Endomorphisms"
+    ],
+    "Techniques Used": [
+        "Minimal Decomposition Theory",
+        "Birman-Hilden Theory",
+        "Anosov Elements",
+        "Shadowing Property",
+        "Thermodynamic Formalism",
+        "Transfer Operators",
+        "Spectral Gap Property",
+        "Hölder Continuity",
+        "Birkhoff Sums",
+        "Lasota-Yorke Estimate",
+        "Kato-Rellich Perturbation Theory",
+        "Quasiconformal Surgery",
+        "Holomorphic Index Formula",
+        "Measurable Riemann Mapping Theorem",
+        "Ruelle Zeta Function",
+        "Poincaré Series",
+        "Sullivan's Dictionary"
+    ],
+    "Data & Platforms": [
+        "Cantor Set",
+        "Cantor Set with 6 copies of ωα + 1",
+        "R2",
+        "S2",
+        "S0,7,1",
+        "Ratcm D",
+        "Polycm D",
+        "P1",
+        "Julia Set",
+        "Möbius Conjugacies",
+        "Affine Conjugacies",
+        "Riemann Sphere",
+        "PSLp2, Cq",
+        "AutCp∆q",
+        "Hyperbolic Plane",
+        "Poincaré Series"
+    ],
+    "Application Areas": [
+        "Geometric Topology",
+        "Hyperbolic Structures",
+        "Complex Dynamics",
+        "Dynamical Systems",
+        "Holomorphic Endomorphisms"
+    ],
+    "Key Research Thinking Patterns": [
+        "Minimal Decomposition Theory: Yan Mary He employs Markovic's minimal decomposition theory to establish the non-realizability of certain mapping class groups as subgroups of the homeomorphism group, particularly for surfaces with genus 3 subsurfaces and order 6 symmetries.",
+        "Birman-Hilden Theory: He utilizes the Birman-Hilden theory to investigate the properties of mapping class groups and their potential realizations as subgroups of the homeomorphism group.",
+        "Pressure Metric: He develops a positive semi-definite pressure form on stable components in parabolic subfamilies, providing a path metric that generalizes the pressure metric on cusped Hitchin components.",
+        "Simultaneous Uniformization: He establishes a simultaneous uniformization theorem for fixed-point-marked quasi-Blaschke products, generalizing Bers' theorem for quasi-Fuchsian groups and shedding light on complex dynamics and hyperbolic geometry."
+    ],
+    "Summary Description": "Yan Mary He is a mathematician specializing in topology, geometry, and complex dynamics. Her research focuses on the intersection of geometric topology, hyperbolic geometry, and complex dynamics, with a particular emphasis on the study of mapping class groups, pressure metrics, and uniformization theorems. She employs a range of techniques, including minimal decomposition theory, Birman-Hilden theory, and pressure metrics, to investigate the properties of complex dynamical systems and their connections to geometric topology and hyperbolic geometry. Her work has implications for our understanding of bifurcation phenomena, the study of Misiurewicz families, and the analysis of complex dynamical systems."
+}

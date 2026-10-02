@@ -1,0 +1,71 @@
+{
+    "Researcher Profile:": "Roi Docampo",
+    "Affiliation:": "University of Utah, Department of Mathematics",
+    "Research Domains": [
+        "Algebraic Geometry",
+        "Geometry",
+        "Mathematics",
+        "Commutative Algebra",
+        "Mathematical Physics",
+        "Non-Noetherian Rings",
+        "Combinatorics",
+        "Mathematical Analysis"
+    ],
+    "Techniques Used": [
+        "Nash blow-up",
+        "Jet schemes",
+        "Grassmann bundle",
+        "Functor of points",
+        "Hasse-Schmidt derivations",
+        "Formal Schemes",
+        "Universal Families",
+        "Completion of Power Series Rings",
+        "Formal Embeddings",
+        "Graded Rings",
+        "Initial Ideals",
+        "Formal Coefficient Fields",
+        "Continuous Zariski Cotangent Spaces",
+        "Determinants",
+        "Linear Recurrences",
+        "Grassmannian",
+        "Cluster Algebras",
+        "Matroids",
+        "Hasse-Schmidt Higher Derivatives",
+        "Cotangent Maps",
+        "Finiteness Results",
+        "Semicontinuity Properties"
+    ],
+    "Data & Platforms": [
+        "Jet schemes",
+        "Grassmann bundle",
+        "Functor of points",
+        "Hasse-Schmidt derivations",
+        "Arc space",
+        "Schemes",
+        "Formal Schemes",
+        "Universal Families",
+        "Power Series Rings",
+        "Polynomial Rings",
+        "Bourbaki Power Series",
+        "Completion of Polynomial Rings",
+        "Grassmannian",
+        "SL(k) matrices",
+        "Consecutively Unimodular Matrices",
+        "Twist of a Matrix",
+        "Higher Derivatives",
+        "Cotangent Maps"
+    ],
+    "Application Areas": [
+        "Singularity resolution",
+        "Birational Geometry",
+        "Moduli Spaces",
+        "Mathematical Combinatorics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Pattern 1: Nash Blow-up Characterization (The Nash blow-up of a variety can be characterized as the universal projective birational morphism Y → X such that, for every n, the pull-back of ΩJn(X) via Jn(Y) → Jn(X) has a locally free quotient of the same rank.)",
+        "Pattern 2: Direct Computation of Kähler Differentials (The sheaves of Kähler differentials of the arc space and jet schemes of an arbitrary scheme can be computed directly from the sheaf of differentials of the given scheme.)",
+        "Pattern 3: Generalization of SL(k)-Friezes (SL(k)-friezes can be generalized to conﬁgurations of numbers in which one of the boundary rows has been replaced by a ragged edge described by a juggling function.)",
+        "Pattern 4: Finiteness Results and Effective Bounds (Finiteness results can be established about the fibers of the induced map on arc spaces f∞: X∞→Y∞, with effective bounds on the cardinality of the fibers of f∞ when f is a finite morphism of varieties over an algebraically closed field.)"
+    ],
+    "Summary Description": "Roi Docampo is a mathematician specializing in algebraic geometry, with a focus on singularity resolution, birational geometry, and moduli spaces. His research involves the use of jet schemes, arc spaces, and Hasse-Schmidt derivations to study the local structure of singularities and the properties of moduli spaces. He has made significant contributions to the development of new methods for computing Kähler differentials and the generalization of SL(k)-friezes. His work has applications in mathematical combinatorics and has provided new insights into the fundamental properties of algebraic geometry."
+}

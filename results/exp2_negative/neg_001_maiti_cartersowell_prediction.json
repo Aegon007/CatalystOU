@@ -1,0 +1,92 @@
+{
+  "Shared Domains": [
+    "Research methodology and empirical data analysis across technical and social domains",
+    "Data governance and public policy for institutional research infrastructure",
+    "AI ethics and society intersecting with equity, diversity, and inclusion",
+    "Longitudinal data analysis and policy evaluation in complex systems",
+    "Cultural analytics and cross-cultural psychology for social-technical behavior"
+  ],
+  "Method-Application Synergies": [
+    "Deploy large-scale LLM code-generation stress tests to audit STEM course repositories",
+    "Use package hallucination analysis to evaluate AI-assisted coding platforms used in STEM courses",
+    "Apply longitudinal threat assessment to NSF AGEP program data for infrastructure risk",
+    "Use honeypots and network measurement to assess campus research cluster security and privacy",
+    "Benchmark RAG and fine-tuning for educational accessibility and disability accommodations",
+    "Use adversarial simulation to test inclusive design of LLM tutoring tools"
+  ],
+  "Complementary Technique Synergies": [
+    "Combine LLM decoding strategy analysis with PROCESS moderated mediation for social cognition",
+    "Use GLMM and linear mixed-effects modeling alongside moderation analysis of survey experimental data",
+    "Integrate Shannon Diversity and Gini coefficients with thematic taxonomy for DEI content analysis",
+    "Use cross-modal metric validation with subjective similarity ranking to evaluate educational AI interfaces",
+    "Combine honeypot deployment with cyberball ostracism paradigms to study exclusion in digital environments",
+    "Pair longitudinal data collection with difference-in-differences regression for policy intervention evaluation",
+    "Apply ICC and inter-rater reliability to thematic coding of qualitative archival case studies",
+    "Use BM25, Elasticsearch, and metadata annotation to analyze NSF award language for equity",
+    "Use image regeneration and CLIP scoring to create visual stimuli for group perception experiments"
+  ],
+  "Data-Method Synergies": [
+    "Analyze U.S. Presidential Twitter Archive with PROCESS moderation to study affective polarization",
+    "Use NSF AGEP Alliance Records and longitudinal data collection to evaluate broadening participation outcomes",
+    "Apply difference-in-differences regression to swipe-card access and Ethereum node reconnaissance datasets",
+    "Use MagnetDB piracy data and Gini coefficients to model digital resource inequality",
+    "Apply BM25 and Elasticsearch indexing to NSF award search data for policy gaps",
+    "Use CLIP scores and subjective similarity ranking to validate cultural image datasets",
+    "Integrate Framingham Study data with Quantitative Sensory Testing to examine social stress physiology",
+    "Use swipe card access data and network measurement to assess campus lab security"
+  ],
+  "Cross-Domain Fusion Topics": [
+    "Securing AI-generated educational content against hallucinated package dependencies in coding curricula",
+    "Measuring digital exclusion and ostracism in decentralized P2P and social media ecosystems",
+    "Data governance and epistemic value standards for DEI research datasets",
+    "Cultural analytics of honor cultures using BitTorrent piracy and political tweet data",
+    "LLM security implications for accessibility of STEM code generation platforms",
+    "Blockchain security and equitable access to research computing infrastructure",
+    "AI ethics and HCI for inclusive creative tools and cultural heritage",
+    "Threat intelligence for protecting sensitive research on stigma and political polarization"
+  ],
+  "Shared Application Areas": [
+    "Inclusive educational technology and secure software environments for STEM learning",
+    "Digital equity, data governance, and public policy for research infrastructure",
+    "Social, ethical, and technical measurement of AI-generated content in education",
+    "Campus safety, network security, and broadening participation in STEM",
+    "Research methodology standardization and epistemic value in educational policy evaluation"
+  ],
+  "Joint Technique Development": [
+    "Develop a Dataset Value Taxonomy variant for DEI research data stewardship",
+    "Create an ordinal labeling framework for severity of LLM security harms in education",
+    "Build a cross-disciplinary calibration protocol between network threat scores and social stress measures",
+    "Develop a GLMM-based longitudinal threat model for campus cybersecurity and student safety",
+    "Design a hybrid human-AI validation protocol for LLM-generated code and social media content",
+    "Create a weighted geometric mean scoring system for inclusive AI tool reliability",
+    "Develop honeypot and cyberball integration for studying digital ostracism in online platforms",
+    "Build metadata annotation standards for FAIR-compliant social science and cybersecurity datasets"
+  ],
+  "Theory-Application Synergy": [
+    "Apply social pain theory to design secure, trust-building AI interfaces for STEM learners",
+    "Use honor culture theory to explain resistance to AI monitoring in research networks",
+    "Translate moderated mediation findings into LLM safety guidelines for sensitive user groups",
+    "Apply group dynamics theory to improve peer-to-peer network trust and participation",
+    "Use political polarization insights to secure collaborative code repositories against targeted attacks",
+    "Apply institutional equity theory to evaluate data governance in open-source AI platforms"
+  ],
+  "Thinking Pattern Synergies": [
+    "Combine large-scale empirical stress-testing with triangulated causal inference for robust evidence",
+    "Pair adversarial simulation with cross-cultural comparative experimental design for human-AI threats",
+    "Use longitudinal network measurement and mixed-methods programmatic evaluation for policy impact",
+    "Integrate cross-modal metric validation with moderated mediation to align automated and human judgments",
+    "Apply taxonomy development and thematic taxonomy construction for complex social-technical systems",
+    "Combine longitudinal data collection with difference-in-differences regression to evaluate intervention effects"
+  ],
+  "Future Research Directions": [
+    "Measure how LLM package hallucinations affect trust and persistence in STEM students",
+    "Evaluate inclusive AI coding assistants using adversarial simulation and controlled psychological experiments",
+    "Assess cybersecurity impacts on women and minoritized researchers in open-source communities",
+    "Build longitudinal datasets linking campus security events to STEM retention outcomes",
+    "Test AI-generated content verification metrics for bias, stigma, and cultural representation",
+    "Develop policy frameworks combining FAIR data governance with DEI research protections",
+    "Study digital piracy economies as analogues for information inequity and educational access",
+    "Design secure, privacy-preserving blockchain platforms for transparent research data sharing"
+  ],
+  "Summary Collaboration Themes": "The collaboration would unite Maiti’s large-scale AI, network, and data-governance measurement with Carter-Sowell’s social-psychological and institutional equity methods, enabling secure, equitable, and methodologically rigorous research on AI-native STEM ecosystems."
+}

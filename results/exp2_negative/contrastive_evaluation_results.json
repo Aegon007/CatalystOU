@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "mean_positive_baseline_affinity": 0.3658559709787369,
+    "mean_negative_baseline_affinity": 0.0703961968421936,
+    "mean_true_positive_alignment": 0.420114141702652,
+    "mean_negative_alignment": 0.1329271812736988,
+    "mean_contrastive_margin": 0.2871869604289532,
+    "discrimination_accuracy_pct": 80.0
+  },
+  "cases": [
+    {
+      "gt_id": "case_001_ebert_xiao_cs_bio",
+      "true_positive_sim": 0.31728115677833557,
+      "mean_negative_sim": 0.2180006355047226,
+      "max_negative_sim": 0.33691126108169556,
+      "contrastive_margin": 0.09928052127361298,
+      "is_discriminated": false,
+      "negative_similarities": {
+        "neg_001_maiti_cartersowell_cs_psych": 0.33691126108169556,
+        "neg_002_yeary_dunn_ece_bio": 0.313406765460968,
+        "neg_003_forester_quadri_math_cs": 0.17708435654640198,
+        "neg_004_karr_cokely_bio_psych": 0.1574038714170456,
+        "neg_005_jiang_martin_ece_math": 0.10519692301750183
+      }
+    },
+    {
+      "gt_id": "case_002_zhao_cheng_cs_ece",
+      "true_positive_sim": 0.5829950571060181,
+      "mean_negative_sim": 0.1568191260099411,
+      "max_negative_sim": 0.2354368269443512,
+      "contrastive_margin": 0.426175931096077,
+      "is_discriminated": true,
+      "negative_similarities": {
+        "neg_001_maiti_cartersowell_cs_psych": 0.2354368269443512,
+        "neg_002_yeary_dunn_ece_bio": 0.09776745736598969,
+        "neg_003_forester_quadri_math_cs": 0.14322802424430847,
+        "neg_004_karr_cokely_bio_psych": 0.09769207239151001,
+        "neg_005_jiang_martin_ece_math": 0.20997124910354614
+      }
+    },
+    {
+      "gt_id": "case_003_cai_song_psych_psych",
+      "true_positive_sim": 0.4349728524684906,
+      "mean_negative_sim": 0.07901065312325954,
+      "max_negative_sim": 0.27535250782966614,
+      "contrastive_margin": 0.35596219934523105,
+      "is_discriminated": true,
+      "negative_similarities": {
+        "neg_001_maiti_cartersowell_cs_psych": 0.27535250782966614,
+        "neg_002_yeary_dunn_ece_bio": -0.0570274256169796,
+        "neg_003_forester_quadri_math_cs": 0.01570131443440914,
+        "neg_004_karr_cokely_bio_psych": 0.12618690729141235,
+        "neg_005_jiang_martin_ece_math": 0.03483996167778969
+      }
+    },
+    {
+      "gt_id": "case_004_yeary_havlicek_ece_ece",
+      "true_positive_sim": 0.43368303775787354,
+      "mean_negative_sim": 0.12752679772675038,
+      "max_negative_sim": 0.2715964615345001,
+      "contrastive_margin": 0.3061562400311232,
+      "is_discriminated": true,
+      "negative_similarities": {
+        "neg_001_maiti_cartersowell_cs_psych": 0.10198970884084702,
+        "neg_002_yeary_dunn_ece_bio": 0.2715964615345001,
+        "neg_003_forester_quadri_math_cs": 0.10797696560621262,
+        "neg_004_karr_cokely_bio_psych": -0.0033971723169088364,
+        "neg_005_jiang_martin_ece_math": 0.15946802496910095
+      }
+    },
+    {
+      "gt_id": "case_005_radhakrishnan_antonio_cs_cs",
+      "true_positive_sim": 0.3316386044025421,
+      "mean_negative_sim": 0.08327869400382042,
+      "max_negative_sim": 0.14768341183662415,
+      "contrastive_margin": 0.24835991039872168,
+      "is_discriminated": true,
+      "negative_similarities": {
+        "neg_001_maiti_cartersowell_cs_psych": 0.11010272055864334,
+        "neg_002_yeary_dunn_ece_bio": 0.01729821041226387,
+        "neg_003_forester_quadri_math_cs": 0.14768341183662415,
+        "neg_004_karr_cokely_bio_psych": 0.040870532393455505,
+        "neg_005_jiang_martin_ece_math": 0.10043859481811523
+      }
+    }
+  ]
+}

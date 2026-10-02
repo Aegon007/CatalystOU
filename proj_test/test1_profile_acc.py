@@ -13,6 +13,7 @@ Key metrics:
 import sys
 import argparse
 import json
+import re
 import numpy as np
 from typing import List, Dict
 from pathlib import Path
@@ -48,7 +49,8 @@ def evaluate_single_profile(
     llm_profile_path: str,
     gold_profile_path: str,
     model: SentenceTransformer,
-    tau: float = 0.65
+    tau: float = 0.65,
+    thinking_patterns_tau: float = 0.50
 ) -> Dict:
     """
     Evaluate a single LLM-extracted profile against ground truth.
@@ -60,7 +62,8 @@ def evaluate_single_profile(
         llm_profile_path: Path to LLM-extracted profile JSON
         gold_profile_path: Path to ground truth profile JSON
         model: SentenceTransformer model for semantic matching
-        tau: Similarity threshold for semantic matching (0.65 default)
+        tau: Similarity threshold for standard discrete entity fields (0.65 default)
+        thinking_patterns_tau: Similarity threshold for long-form Key Research Thinking Patterns (0.50 default)
 
     Returns:
         Dict with field_metrics, PSAS, and summary_cosine score
@@ -76,9 +79,12 @@ def evaluate_single_profile(
         llm_items = matching.normalize_profile_field(field, llm_profile.get(field))
         gold_items = matching.normalize_profile_field(field, gold_profile.get(field))
 
+        # Use 0.50 for Key Research Thinking Patterns to account for compound text; 0.65 for all other fields
+        field_tau = thinking_patterns_tau if field == "Key Research Thinking Patterns" else tau
+
         try:
             match_result = matching.match_profile_list_field(
-                llm_items, gold_items, model, tau
+                llm_items, gold_items, model, field_tau
             )
         except Exception as e:
             logger.warning(
@@ -108,7 +114,9 @@ def evaluate_single_profile(
 
 def run_experiment_1(
     data_map: List[Dict[str, str]],
-    model_name: str = "all-mpnet-base-v2"
+    model_name: str = "all-mpnet-base-v2",
+    tau: float = 0.65,
+    thinking_patterns_tau: float = 0.50
 ) -> Dict:
     """
     Run Experiment 1: Profile extraction accuracy evaluation.
@@ -119,6 +127,8 @@ def run_experiment_1(
     Args:
         data_map: List of dicts with "llm_path" and "gold_path" keys
         model_name: Sentence-BERT model name for semantic matching
+        tau: Default matching threshold for standard fields
+        thinking_patterns_tau: Matching threshold for Key Research Thinking Patterns
 
     Returns:
         Aggregated evaluation report with PSAS and per-field metrics
@@ -126,7 +136,7 @@ def run_experiment_1(
     logger.info(f"Loading SBERT model: {model_name}")
     model = SentenceTransformer(model_name)
 
-    logger.info(f"Evaluating {len(data_map)} profiles")
+    logger.info(f"Evaluating {len(data_map)} profiles (tau={tau}, thinking_patterns_tau={thinking_patterns_tau})")
     evaluation_results = []
 
     for entry in data_map:
@@ -134,7 +144,9 @@ def run_experiment_1(
             result = evaluate_single_profile(
                 entry["llm_path"],
                 entry["gold_path"],
-                model
+                model,
+                tau=tau,
+                thinking_patterns_tau=thinking_patterns_tau
             )
             evaluation_results.append(result)
         except Exception as e:
@@ -221,16 +233,64 @@ def build_data_map(
         List of dicts with "llm_path" and "gold_path" keys
     """
     extracted_root = Path(extracted_dir)
-    model_dir = extracted_root / model_name
+    model_clean = model_name.replace("/", "_")
+    model_dir = extracted_root / model_clean
+    if not model_dir.exists():
+        model_dir = extracted_root / model_name
 
     # Use model-specific directory if it exists, otherwise use root
     search_dir = model_dir if model_dir.exists() else extracted_root
 
     logger.info(f"Searching for profiles in {search_dir}")
-    data_map = ProfileLoader.discover_department_author_pairs(
-        search_dir,
-        Path(gold_dir)
+    
+    extracted_files = list(search_dir.rglob("*.json"))
+    gold_files = list(Path(gold_dir).rglob("*.json"))
+
+    suffixes = sorted(
+        [
+            "_biology_profile",
+            "_chemistry_profile",
+            "_computerscience_profile",
+            "_ece_profile",
+            "_mathematics_profile",
+            "_psychology_profile",
+            "_profile",
+            "_biology",
+            "_data",
+        ],
+        key=len,
+        reverse=True,
     )
+
+    def _normalize_name(text: str) -> str:
+        s = text.lower()
+        for suffix in suffixes:
+            s = s.replace(suffix, "")
+        return re.sub(r"[^a-z0-9]", "", s)
+
+    gold_map = {}
+    for g in gold_files:
+        gold_map[_normalize_name(g.stem)] = g
+        gold_map[_normalize_name(g.parent.name)] = g
+
+    data_map = []
+    for ext in extracted_files:
+        norm_ext = _normalize_name(ext.stem)
+        matched_gold = gold_map.get(norm_ext) or gold_map.get(_normalize_name(ext.parent.name))
+
+        if not matched_gold:
+            for g_norm, g_path in gold_map.items():
+                if (len(norm_ext) >= 4 and norm_ext in g_norm) or (len(g_norm) >= 4 and g_norm in norm_ext):
+                    matched_gold = g_path
+                    break
+
+        if matched_gold:
+            data_map.append({
+                "llm_path": str(ext),
+                "gold_path": str(matched_gold)
+            })
+        else:
+            logger.warning(f"No matching gold profile found for: {ext.name}")
 
     return data_map
 
@@ -257,7 +317,12 @@ def main(opts) -> int:
             return 1
 
         logger.info(f"Found {len(data_map)} profile pairs to evaluate")
-        final_report = run_experiment_1(data_map, opts.model_name)
+        final_report = run_experiment_1(
+            data_map, 
+            opts.model_name,
+            tau=opts.tau,
+            thinking_patterns_tau=opts.thinking_patterns_tau
+        )
 
         # Determine output location
         output_path = Path(opts.output_path)
@@ -316,6 +381,18 @@ def parseOpts(args) -> argparse.Namespace:
         type=str,
         default="gpt-5-nano",
         help="LLM model identifier (used to locate extracted profiles)"
+    )
+    parser.add_argument(
+        "-t", "--tau",
+        type=float,
+        default=0.65,
+        help="Default similarity threshold for standard list fields (default: 0.65)"
+    )
+    parser.add_argument(
+        "--thinking_patterns_tau",
+        type=float,
+        default=0.50,
+        help="Similarity threshold for Key Research Thinking Patterns (default: 0.50)"
     )
     parser.add_argument(
         "-o", "--output_path",

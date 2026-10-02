@@ -1,0 +1,2504 @@
+{
+  "model": "Qwen/Qwen3.8-27B",
+  "num_profiles": 50,
+  "overall": {
+    "count": 50,
+    "PSAS_mean": 0.6817214403184393,
+    "PSAS_std": 0.13245888019645916,
+    "PSAS_median": 0.6776247145196581,
+    "PSAS_min": 0.3653358593583107,
+    "PSAS_max": 0.8625794652435514,
+    "PSAS_95CI": [
+      0.6431005289041003,
+      0.7192985198906865
+    ],
+    "summary_cosine_mean": 0.8269731283187867,
+    "summary_cosine_std": 0.05448006535868828,
+    "summary_cosine_median": 0.830905020236969,
+    "summary_cosine_min": 0.6871911287307739,
+    "summary_cosine_max": 0.9158567190170288,
+    "summary_cosine_95CI": [
+      0.8101335473358631,
+      0.8423681944906711
+    ],
+    "per_key": {
+      "Application Areas": {
+        "micro_precision": 0.21367521367521367,
+        "micro_recall": 0.1976284584980237,
+        "micro_f1": 0.2053388090349076,
+        "macro_f1": 0.20227994227994228,
+        "avg_similarity_mean": 0.4089846620957057,
+        "avg_similarity_std": 0.37933255851372616,
+        "tp_total": 50,
+        "fp_total": 184,
+        "fn_total": 203
+      },
+      "Data & Platforms": {
+        "micro_precision": 0.2834507042253521,
+        "micro_recall": 0.47352941176470587,
+        "micro_f1": 0.35462555066079293,
+        "macro_f1": 0.28677663395065695,
+        "avg_similarity_mean": 0.6566342399458439,
+        "avg_similarity_std": 0.3945293909037131,
+        "tp_total": 322,
+        "fp_total": 814,
+        "fn_total": 358
+      },
+      "Key Research Thinking Patterns": {
+        "micro_precision": 0.4975124378109453,
+        "micro_recall": 0.5,
+        "micro_f1": 0.49875311720698257,
+        "macro_f1": 0.4988888888888889,
+        "avg_similarity_mean": 0.5448356908559799,
+        "avg_similarity_std": 0.20811031412892222,
+        "tp_total": 100,
+        "fp_total": 101,
+        "fn_total": 100
+      },
+      "Research Domains": {
+        "micro_precision": 0.5112219451371571,
+        "micro_recall": 0.6029411764705882,
+        "micro_f1": 0.553306342780027,
+        "macro_f1": 0.5435442147590221,
+        "avg_similarity_mean": 0.9258127992338467,
+        "avg_similarity_std": 0.03923233478048104,
+        "tp_total": 410,
+        "fp_total": 392,
+        "fn_total": 270
+      },
+      "Techniques Used": {
+        "micro_precision": 0.5091019417475728,
+        "micro_recall": 0.4710836608646828,
+        "micro_f1": 0.489355497229513,
+        "macro_f1": 0.4605919318222769,
+        "avg_similarity_mean": 0.8723398094608205,
+        "avg_similarity_std": 0.13031109359045312,
+        "tp_total": 839,
+        "fp_total": 809,
+        "fn_total": 942
+      }
+    }
+  },
+  "discipline_breakdown": {
+    "Biology": {
+      "count": 10,
+      "PSAS_mean": 0.6528746370628037,
+      "PSAS_std": 0.13189818183116503,
+      "PSAS_median": 0.6644760894820638,
+      "PSAS_min": 0.36685713470885245,
+      "PSAS_max": 0.8360371512243117,
+      "PSAS_95CI": [
+        0.5660541506255613,
+        0.7231472189278424
+      ],
+      "summary_cosine_mean": 0.8292357563972473,
+      "summary_cosine_std": 0.05046322649649648,
+      "summary_cosine_median": 0.8196262121200562,
+      "summary_cosine_min": 0.7441805601119995,
+      "summary_cosine_max": 0.8945117592811584,
+      "summary_cosine_95CI": [
+        0.7973825211822987,
+        0.860137350410223
+      ],
+      "per_key": {
+        "Application Areas": {
+          "micro_precision": 0.1276595744680851,
+          "micro_recall": 0.1276595744680851,
+          "micro_f1": 0.1276595744680851,
+          "macro_f1": 0.12000000000000002,
+          "avg_similarity_mean": 0.2995489458243052,
+          "avg_similarity_std": 0.3708781731442254,
+          "tp_total": 6,
+          "fp_total": 41,
+          "fn_total": 41
+        },
+        "Data & Platforms": {
+          "micro_precision": 0.30606060606060603,
+          "micro_recall": 0.43722943722943725,
+          "micro_f1": 0.3600713012477718,
+          "macro_f1": 0.2856997558850138,
+          "avg_similarity_mean": 0.6862874183197564,
+          "avg_similarity_std": 0.35155872993289006,
+          "tp_total": 101,
+          "fp_total": 229,
+          "fn_total": 130
+        },
+        "Key Research Thinking Patterns": {
+          "micro_precision": 0.425,
+          "micro_recall": 0.425,
+          "micro_f1": 0.425,
+          "macro_f1": 0.425,
+          "avg_similarity_mean": 0.4612120032310486,
+          "avg_similarity_std": 0.30429692486037313,
+          "tp_total": 17,
+          "fp_total": 23,
+          "fn_total": 23
+        },
+        "Research Domains": {
+          "micro_precision": 0.5672514619883041,
+          "micro_recall": 0.6783216783216783,
+          "micro_f1": 0.6178343949044586,
+          "macro_f1": 0.618281855061774,
+          "avg_similarity_mean": 0.9266088892250695,
+          "avg_similarity_std": 0.03026387332646127,
+          "tp_total": 97,
+          "fp_total": 74,
+          "fn_total": 46
+        },
+        "Techniques Used": {
+          "micro_precision": 0.5609065155807366,
+          "micro_recall": 0.4714285714285714,
+          "micro_f1": 0.5122897800776197,
+          "macro_f1": 0.49778407752773923,
+          "avg_similarity_mean": 0.890715928713839,
+          "avg_similarity_std": 0.026065236327268794,
+          "tp_total": 198,
+          "fp_total": 155,
+          "fn_total": 222
+        }
+      }
+    },
+    "CS": {
+      "count": 10,
+      "PSAS_mean": 0.7502014759252771,
+      "PSAS_std": 0.08417189433563378,
+      "PSAS_median": 0.7821780716627836,
+      "PSAS_min": 0.6083871484938121,
+      "PSAS_max": 0.8480034533668966,
+      "PSAS_95CI": [
+        0.6971603115289237,
+        0.8014552135349153
+      ],
+      "summary_cosine_mean": 0.8443814277648926,
+      "summary_cosine_std": 0.03733622545862706,
+      "summary_cosine_median": 0.8416739702224731,
+      "summary_cosine_min": 0.7943465709686279,
+      "summary_cosine_max": 0.8916205167770386,
+      "summary_cosine_95CI": [
+        0.8219940148293972,
+        0.8668561513721943
+      ],
+      "per_key": {
+        "Application Areas": {
+          "micro_precision": 0.28,
+          "micro_recall": 0.28,
+          "micro_f1": 0.28,
+          "macro_f1": 0.2767676767676768,
+          "avg_similarity_mean": 0.5254954208930334,
+          "avg_similarity_std": 0.345774725542107,
+          "tp_total": 14,
+          "fp_total": 36,
+          "fn_total": 36
+        },
+        "Data & Platforms": {
+          "micro_precision": 0.42436974789915966,
+          "micro_recall": 0.4855769230769231,
+          "micro_f1": 0.452914798206278,
+          "macro_f1": 0.4506319685594497,
+          "avg_similarity_mean": 0.8117499363259293,
+          "avg_similarity_std": 0.2734077863527662,
+          "tp_total": 101,
+          "fp_total": 137,
+          "fn_total": 107
+        },
+        "Key Research Thinking Patterns": {
+          "micro_precision": 0.525,
+          "micro_recall": 0.525,
+          "micro_f1": 0.525,
+          "macro_f1": 0.525,
+          "avg_similarity_mean": 0.5988369037707647,
+          "avg_similarity_std": 0.04293185082105338,
+          "tp_total": 21,
+          "fp_total": 19,
+          "fn_total": 19
+        },
+        "Research Domains": {
+          "micro_precision": 0.5028248587570622,
+          "micro_recall": 0.6223776223776224,
+          "micro_f1": 0.55625,
+          "macro_f1": 0.5502491616558112,
+          "avg_similarity_mean": 0.9258976381685997,
+          "avg_similarity_std": 0.030974142341093167,
+          "tp_total": 89,
+          "fp_total": 88,
+          "fn_total": 54
+        },
+        "Techniques Used": {
+          "micro_precision": 0.4958217270194986,
+          "micro_recall": 0.5460122699386503,
+          "micro_f1": 0.5197080291970801,
+          "macro_f1": 0.48298756811007404,
+          "avg_similarity_mean": 0.8890274804680585,
+          "avg_similarity_std": 0.057201239432396064,
+          "tp_total": 178,
+          "fp_total": 181,
+          "fn_total": 148
+        }
+      }
+    },
+    "ECE": {
+      "count": 10,
+      "PSAS_mean": 0.7724790218110682,
+      "PSAS_std": 0.12206677940806278,
+      "PSAS_median": 0.818240219521724,
+      "PSAS_min": 0.43985589981079104,
+      "PSAS_max": 0.8625794652435514,
+      "PSAS_95CI": [
+        0.6817005147117936,
+        0.832902523934214
+      ],
+      "summary_cosine_mean": 0.8380595922470093,
+      "summary_cosine_std": 0.04930457848088266,
+      "summary_cosine_median": 0.8462877571582794,
+      "summary_cosine_min": 0.717860221862793,
+      "summary_cosine_max": 0.8944041132926941,
+      "summary_cosine_95CI": [
+        0.8016227120161057,
+        0.8641357317566872
+      ],
+      "per_key": {
+        "Application Areas": {
+          "micro_precision": 0.3404255319148936,
+          "micro_recall": 0.35555555555555557,
+          "micro_f1": 0.3478260869565218,
+          "macro_f1": 0.33777777777777784,
+          "avg_similarity_mean": 0.6209441592295966,
+          "avg_similarity_std": 0.31262613860654526,
+          "tp_total": 16,
+          "fp_total": 31,
+          "fn_total": 29
+        },
+        "Data & Platforms": {
+          "micro_precision": 0.3333333333333333,
+          "micro_recall": 0.6475409836065574,
+          "micro_f1": 0.4401114206128134,
+          "macro_f1": 0.40150431294133293,
+          "avg_similarity_mean": 0.904851477601462,
+          "avg_similarity_std": 0.06642835046100981,
+          "tp_total": 79,
+          "fp_total": 158,
+          "fn_total": 43
+        },
+        "Key Research Thinking Patterns": {
+          "micro_precision": 0.575,
+          "micro_recall": 0.575,
+          "micro_f1": 0.575,
+          "macro_f1": 0.575,
+          "avg_similarity_mean": 0.6233447626233101,
+          "avg_similarity_std": 0.06861223008297686,
+          "tp_total": 23,
+          "fp_total": 17,
+          "fn_total": 17
+        },
+        "Research Domains": {
+          "micro_precision": 0.47398843930635837,
+          "micro_recall": 0.5578231292517006,
+          "micro_f1": 0.5124999999999998,
+          "macro_f1": 0.48939330596939296,
+          "avg_similarity_mean": 0.8927168061632361,
+          "avg_similarity_std": 0.03538463366373222,
+          "tp_total": 82,
+          "fp_total": 91,
+          "fn_total": 65
+        },
+        "Techniques Used": {
+          "micro_precision": 0.5702917771883289,
+          "micro_recall": 0.5348258706467661,
+          "micro_f1": 0.55198973042362,
+          "macro_f1": 0.5084462204008504,
+          "avg_similarity_mean": 0.820537903437736,
+          "avg_similarity_std": 0.2744491988593193,
+          "tp_total": 215,
+          "fp_total": 162,
+          "fn_total": 187
+        }
+      }
+    },
+    "Mathematics": {
+      "count": 10,
+      "PSAS_mean": 0.5719316109409623,
+      "PSAS_std": 0.10115109938862796,
+      "PSAS_median": 0.5316660357018312,
+      "PSAS_min": 0.4799839091300965,
+      "PSAS_max": 0.8072982419104804,
+      "PSAS_95CI": [
+        0.5195029588418406,
+        0.6394879535263505
+      ],
+      "summary_cosine_mean": 0.8312981426715851,
+      "summary_cosine_std": 0.05506920583202041,
+      "summary_cosine_median": 0.8597485721111298,
+      "summary_cosine_min": 0.7118793725967407,
+      "summary_cosine_max": 0.8870350122451782,
+      "summary_cosine_95CI": [
+        0.7935291373729706,
+        0.8657451452314854
+      ],
+      "per_key": {
+        "Application Areas": {
+          "micro_precision": 0.20930232558139536,
+          "micro_recall": 0.16363636363636364,
+          "micro_f1": 0.1836734693877551,
+          "macro_f1": 0.17685425685425687,
+          "avg_similarity_mean": 0.4571005870898565,
+          "avg_similarity_std": 0.37408788565035794,
+          "tp_total": 9,
+          "fp_total": 34,
+          "fn_total": 46
+        },
+        "Data & Platforms": {
+          "micro_precision": 0.015625,
+          "micro_recall": 0.08333333333333333,
+          "micro_f1": 0.02631578947368421,
+          "macro_f1": 0.026666666666666665,
+          "avg_similarity_mean": 0.09108323752880096,
+          "avg_similarity_std": 0.2732497125864029,
+          "tp_total": 2,
+          "fp_total": 126,
+          "fn_total": 22
+        },
+        "Key Research Thinking Patterns": {
+          "micro_precision": 0.375,
+          "micro_recall": 0.375,
+          "micro_f1": 0.375,
+          "macro_f1": 0.375,
+          "avg_similarity_mean": 0.4670762777328491,
+          "avg_similarity_std": 0.23639107985966615,
+          "tp_total": 15,
+          "fp_total": 25,
+          "fn_total": 25
+        },
+        "Research Domains": {
+          "micro_precision": 0.6521739130434783,
+          "micro_recall": 0.5172413793103449,
+          "micro_f1": 0.576923076923077,
+          "macro_f1": 0.5592732005845816,
+          "avg_similarity_mean": 0.963792407226468,
+          "avg_similarity_std": 0.02722466120854932,
+          "tp_total": 75,
+          "fp_total": 40,
+          "fn_total": 70
+        },
+        "Techniques Used": {
+          "micro_precision": 0.45054945054945056,
+          "micro_recall": 0.36936936936936937,
+          "micro_f1": 0.40594059405940597,
+          "macro_f1": 0.3899755613241677,
+          "avg_similarity_mean": 0.8806055451268371,
+          "avg_similarity_std": 0.040433463752911104,
+          "tp_total": 123,
+          "fp_total": 150,
+          "fn_total": 210
+        }
+      }
+    },
+    "Psychology": {
+      "count": 10,
+      "PSAS_mean": 0.6611204558520856,
+      "PSAS_std": 0.10897749252302477,
+      "PSAS_median": 0.6769151927600814,
+      "PSAS_min": 0.3653358593583107,
+      "PSAS_max": 0.8113493114709854,
+      "PSAS_95CI": [
+        0.5793803112004068,
+        0.7171139785301289
+      ],
+      "summary_cosine_mean": 0.7918907225131988,
+      "summary_cosine_std": 0.061284082380625444,
+      "summary_cosine_median": 0.7745899558067322,
+      "summary_cosine_min": 0.6871911287307739,
+      "summary_cosine_max": 0.9158567190170288,
+      "summary_cosine_95CI": [
+        0.7583510115742684,
+        0.8308049032092094
+      ],
+      "per_key": {
+        "Application Areas": {
+          "micro_precision": 0.10638297872340426,
+          "micro_recall": 0.08928571428571429,
+          "micro_f1": 0.0970873786407767,
+          "macro_f1": 0.09999999999999998,
+          "avg_similarity_mean": 0.14183419744173684,
+          "avg_similarity_std": 0.2837534960744029,
+          "tp_total": 5,
+          "fp_total": 42,
+          "fn_total": 51
+        },
+        "Data & Platforms": {
+          "micro_precision": 0.1921182266009852,
+          "micro_recall": 0.4105263157894737,
+          "micro_f1": 0.261744966442953,
+          "macro_f1": 0.2693804657008216,
+          "avg_similarity_mean": 0.7891991299532708,
+          "avg_similarity_std": 0.2772550059282292,
+          "tp_total": 39,
+          "fp_total": 164,
+          "fn_total": 56
+        },
+        "Key Research Thinking Patterns": {
+          "micro_precision": 0.5853658536585366,
+          "micro_recall": 0.6,
+          "micro_f1": 0.5925925925925926,
+          "macro_f1": 0.5944444444444444,
+          "avg_similarity_mean": 0.5737085069219271,
+          "avg_similarity_std": 0.19638859149847449,
+          "tp_total": 24,
+          "fp_total": 17,
+          "fn_total": 16
+        },
+        "Research Domains": {
+          "micro_precision": 0.4036144578313253,
+          "micro_recall": 0.6568627450980392,
+          "micro_f1": 0.5,
+          "macro_f1": 0.5005235505235506,
+          "avg_similarity_mean": 0.9200482553858607,
+          "avg_similarity_std": 0.035435295376475856,
+          "tp_total": 67,
+          "fp_total": 99,
+          "fn_total": 35
+        },
+        "Techniques Used": {
+          "micro_precision": 0.4370629370629371,
+          "micro_recall": 0.4166666666666667,
+          "micro_f1": 0.4266211604095563,
+          "macro_f1": 0.42376623174855343,
+          "avg_similarity_mean": 0.8808121895576317,
+          "avg_similarity_std": 0.02359233519691428,
+          "tp_total": 125,
+          "fp_total": 161,
+          "fn_total": 175
+        }
+      }
+    }
+  },
+  "top_5_psas": [
+    {
+      "researcher": "Liu_Hong",
+      "discipline": "ECE",
+      "PSAS": 0.8625794652435514,
+      "summary_cosine": 0.8767695426940918
+    },
+    {
+      "researcher": "Patrick_McCann",
+      "discipline": "ECE",
+      "PSAS": 0.8545898390471279,
+      "summary_cosine": 0.8714855909347534
+    },
+    {
+      "researcher": "Ronald_Barnes",
+      "discipline": "ECE",
+      "PSAS": 0.8490171413951451,
+      "summary_cosine": 0.882078230381012
+    },
+    {
+      "researcher": "Sanjana_Mudduluru",
+      "discipline": "CS",
+      "PSAS": 0.8480034533668966,
+      "summary_cosine": 0.8107176423072815
+    },
+    {
+      "researcher": "Jeffrey_Kelley",
+      "discipline": "Biology",
+      "PSAS": 0.8360371512243117,
+      "summary_cosine": 0.8945117592811584
+    }
+  ],
+  "bottom_5_psas": [
+    {
+      "researcher": "Ricardo_Mendes",
+      "discipline": "Mathematics",
+      "PSAS": 0.4840254136107185,
+      "summary_cosine": 0.7676066160202026
+    },
+    {
+      "researcher": "Yan_Mary_He",
+      "discipline": "Mathematics",
+      "PSAS": 0.4799839091300965,
+      "summary_cosine": 0.8657896518707275
+    },
+    {
+      "researcher": "Samuel_Cheng",
+      "discipline": "ECE",
+      "PSAS": 0.43985589981079104,
+      "summary_cosine": 0.8132377862930298
+    },
+    {
+      "researcher": "Ingo_Schlupp",
+      "discipline": "Biology",
+      "PSAS": 0.36685713470885245,
+      "summary_cosine": 0.8931992650032043
+    },
+    {
+      "researcher": "Shane_Connelly",
+      "discipline": "Psychology",
+      "PSAS": 0.3653358593583107,
+      "summary_cosine": 0.764954149723053
+    }
+  ],
+  "top_5_summary_cosine": [
+    {
+      "researcher": "JeongJin_Kim",
+      "discipline": "Psychology",
+      "PSAS": 0.7022568732500076,
+      "summary_cosine": 0.9158567190170288
+    },
+    {
+      "researcher": "Jeffrey_Kelley",
+      "discipline": "Biology",
+      "PSAS": 0.8360371512243117,
+      "summary_cosine": 0.8945117592811584
+    },
+    {
+      "researcher": "Mike_Banad",
+      "discipline": "ECE",
+      "PSAS": 0.675979469427291,
+      "summary_cosine": 0.8944041132926941
+    },
+    {
+      "researcher": "Ingo_Schlupp",
+      "discipline": "Biology",
+      "PSAS": 0.36685713470885245,
+      "summary_cosine": 0.8931992650032043
+    },
+    {
+      "researcher": "Sridhar_Radhakrishnan",
+      "discipline": "CS",
+      "PSAS": 0.8321924336751302,
+      "summary_cosine": 0.8916205167770386
+    }
+  ],
+  "bottom_5_summary_cosine": [
+    {
+      "researcher": "Michael_R_Sladek",
+      "discipline": "Psychology",
+      "PSAS": 0.6868769313607898,
+      "summary_cosine": 0.7468039989471436
+    },
+    {
+      "researcher": "Scott_D_Russell",
+      "discipline": "Biology",
+      "PSAS": 0.684475059039665,
+      "summary_cosine": 0.7441805601119995
+    },
+    {
+      "researcher": "Mark_Yeary",
+      "discipline": "ECE",
+      "PSAS": 0.7741326913237572,
+      "summary_cosine": 0.717860221862793
+    },
+    {
+      "researcher": "Peter_Patzt",
+      "discipline": "Mathematics",
+      "PSAS": 0.6451639565210494,
+      "summary_cosine": 0.7118793725967407
+    },
+    {
+      "researcher": "Huajian_Cai",
+      "discipline": "Psychology",
+      "PSAS": 0.6424217972490524,
+      "summary_cosine": 0.6871911287307739
+    }
+  ],
+  "all_researchers": [
+    {
+      "researcher": "Liu_Hong",
+      "discipline": "ECE",
+      "PSAS": 0.8625794652435514,
+      "summary_cosine": 0.8767695426940918,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9344300760163201,
+          "tp": 9,
+          "fp": 6,
+          "fn": 8
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9245539158582687,
+          "tp": 24,
+          "fp": 5,
+          "fn": 14
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9806126687261794,
+          "tp": 9,
+          "fp": 11,
+          "fn": 0
+        },
+        "Application Areas": {
+          "avg_similarity": 0.8229672312736511,
+          "tp": 2,
+          "fp": 2,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.650333434343338,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Patrick_McCann",
+      "discipline": "ECE",
+      "PSAS": 0.8545898390471279,
+      "summary_cosine": 0.8714855909347534,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9027083175522941,
+          "tp": 7,
+          "fp": 8,
+          "fn": 8
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9131334469868586,
+          "tp": 13,
+          "fp": 16,
+          "fn": 9
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9388101458549499,
+          "tp": 5,
+          "fp": 16,
+          "fn": 8
+        },
+        "Application Areas": {
+          "avg_similarity": 0.8227847814559937,
+          "tp": 1,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6955125033855438,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "Ronald_Barnes",
+      "discipline": "ECE",
+      "PSAS": 0.8490171413951451,
+      "summary_cosine": 0.882078230381012,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8861197471618653,
+          "tp": 10,
+          "fp": 8,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8775631454255846,
+          "tp": 9,
+          "fp": 22,
+          "fn": 15
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9241676330566406,
+          "tp": 14,
+          "fp": 12,
+          "fn": 6
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7973013818264008,
+          "tp": 2,
+          "fp": 2,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.7599337995052338,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Sanjana_Mudduluru",
+      "discipline": "CS",
+      "PSAS": 0.8480034533668966,
+      "summary_cosine": 0.8107176423072815,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9643514818615384,
+          "tp": 9,
+          "fp": 1,
+          "fn": 7
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8982079344637254,
+          "tp": 17,
+          "fp": 13,
+          "fn": 14
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9553012582990859,
+          "tp": 9,
+          "fp": 4,
+          "fn": 0
+        },
+        "Application Areas": {
+          "avg_similarity": 0.8247215747833252,
+          "tp": 1,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5974350174268087,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Jeffrey_Kelley",
+      "discipline": "Biology",
+      "PSAS": 0.8360371512243117,
+      "summary_cosine": 0.8945117592811584,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9552694062391917,
+          "tp": 12,
+          "fp": 3,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9286788503328959,
+          "tp": 18,
+          "fp": 18,
+          "fn": 14
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8878744552875387,
+          "tp": 29,
+          "fp": 10,
+          "fn": 8
+        },
+        "Application Areas": {
+          "avg_similarity": 0.6920117735862732,
+          "tp": 1,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.7163512706756592,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Sridhar_Radhakrishnan",
+      "discipline": "CS",
+      "PSAS": 0.8321924336751302,
+      "summary_cosine": 0.8916205167770386,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.954075555006663,
+          "tp": 6,
+          "fp": 12,
+          "fn": 10
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9343246459960938,
+          "tp": 10,
+          "fp": 14,
+          "fn": 13
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8432207703590393,
+          "tp": 7,
+          "fp": 5,
+          "fn": 6
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7525705993175507,
+          "tp": 2,
+          "fp": 3,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6767705976963043,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Chao_Lan",
+      "discipline": "CS",
+      "PSAS": 0.8315167399247487,
+      "summary_cosine": 0.8009592294692993,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9349530935287476,
+          "tp": 11,
+          "fp": 5,
+          "fn": 1
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9471794128417969,
+          "tp": 25,
+          "fp": 10,
+          "fn": 17
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9348619977633158,
+          "tp": 6,
+          "fp": 7,
+          "fn": 8
+        },
+        "Application Areas": {
+          "avg_similarity": 0.699881374835968,
+          "tp": 1,
+          "fp": 3,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6407078206539154,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Javier_Jo",
+      "discipline": "ECE",
+      "PSAS": 0.8291490767975361,
+      "summary_cosine": 0.8466905951499939,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9139597747060988,
+          "tp": 9,
+          "fp": 9,
+          "fn": 12
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9407285322313723,
+          "tp": 23,
+          "fp": 15,
+          "fn": 29
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9574549317359924,
+          "tp": 5,
+          "fp": 19,
+          "fn": 6
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7437993884086609,
+          "tp": 2,
+          "fp": 3,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5898027569055557,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "Xiangming_Xiao",
+      "discipline": "Biology",
+      "PSAS": 0.8210925718192119,
+      "summary_cosine": 0.794913649559021,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8974099424150255,
+          "tp": 9,
+          "fp": 4,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9316041581332684,
+          "tp": 16,
+          "fp": 14,
+          "fn": 8
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9008423309577139,
+          "tp": 19,
+          "fp": 14,
+          "fn": 15
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7632027069727579,
+          "tp": 3,
+          "fp": 2,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6124037206172943,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "John_Jiang",
+      "discipline": "ECE",
+      "PSAS": 0.8183070609579872,
+      "summary_cosine": 0.8458849191665649,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8839428680283683,
+          "tp": 7,
+          "fp": 9,
+          "fn": 10
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.899230260740627,
+          "tp": 22,
+          "fp": 8,
+          "fn": 8
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8930229743321737,
+          "tp": 3,
+          "fp": 10,
+          "fn": 5
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7713429927825928,
+          "tp": 2,
+          "fp": 3,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6439962089061737,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "Joseph_Havlicek",
+      "discipline": "ECE",
+      "PSAS": 0.8181733780854608,
+      "summary_cosine": 0.801662266254425,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9181708205829967,
+          "tp": 11,
+          "fp": 10,
+          "fn": 8
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9479484865742345,
+          "tp": 31,
+          "fp": 8,
+          "fn": 19
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9413609057664871,
+          "tp": 8,
+          "fp": 10,
+          "fn": 5
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7435367405414581,
+          "tp": 2,
+          "fp": 2,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5398499369621277,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Le_Gruenwald",
+      "discipline": "CS",
+      "PSAS": 0.8156856864412904,
+      "summary_cosine": 0.873351514339447,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9171199848254522,
+          "tp": 12,
+          "fp": 6,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8668632994998585,
+          "tp": 22,
+          "fp": 19,
+          "fn": 10
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9327469972463754,
+          "tp": 13,
+          "fp": 10,
+          "fn": 10
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7856488227844238,
+          "tp": 2,
+          "fp": 3,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5760493278503418,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Patrick_Manapat",
+      "discipline": "Psychology",
+      "PSAS": 0.8113493114709854,
+      "summary_cosine": 0.7842257618904114,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8998242259025574,
+          "tp": 5,
+          "fp": 11,
+          "fn": 6
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8831277698278427,
+          "tp": 20,
+          "fp": 10,
+          "fn": 49
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9602791865666708,
+          "tp": 6,
+          "fp": 13,
+          "fn": 4
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7247093717257181,
+          "tp": 3,
+          "fp": 1,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5888060033321381,
+          "tp": 2,
+          "fp": 3,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Kimball_Martin",
+      "discipline": "Mathematics",
+      "PSAS": 0.8072982419104804,
+      "summary_cosine": 0.8538461923599243,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9280033452170235,
+          "tp": 7,
+          "fp": 2,
+          "fn": 9
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.884794662396113,
+          "tp": 6,
+          "fp": 13,
+          "fn": 14
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9108323752880096,
+          "tp": 2,
+          "fp": 4,
+          "fn": 7
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7093333005905151,
+          "tp": 1,
+          "fp": 3,
+          "fn": 6
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6035275260607401,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Lei_Ding",
+      "discipline": "ECE",
+      "PSAS": 0.8030061960220337,
+      "summary_cosine": 0.8305226564407349,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8027103741963705,
+          "tp": 3,
+          "fp": 11,
+          "fn": 6
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9210742314656576,
+          "tp": 45,
+          "fp": 4,
+          "fn": 50
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8747554421424866,
+          "tp": 16,
+          "fp": 16,
+          "fn": 5
+        },
+        "Application Areas": {
+          "avg_similarity": 0.8062014778455099,
+          "tp": 3,
+          "fp": 2,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.610289454460144,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "David_Ebert",
+      "discipline": "CS",
+      "PSAS": 0.7966125510632992,
+      "summary_cosine": 0.8111766576766968,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8884907563527426,
+          "tp": 15,
+          "fp": 8,
+          "fn": 6
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9242538958787918,
+          "tp": 28,
+          "fp": 18,
+          "fn": 41
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9001563750207424,
+          "tp": 16,
+          "fp": 18,
+          "fn": 12
+        },
+        "Application Areas": {
+          "avg_similarity": 0.722839335600535,
+          "tp": 3,
+          "fp": 2,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5473223924636841,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Mark_Yeary",
+      "discipline": "ECE",
+      "PSAS": 0.7741326913237572,
+      "summary_cosine": 0.717860221862793,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8769764006137848,
+          "tp": 4,
+          "fp": 12,
+          "fn": 0
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8746553286910057,
+          "tp": 8,
+          "fp": 26,
+          "fn": 0
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.7728011310100555,
+          "tp": 2,
+          "fp": 17,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7015075981616974,
+          "tp": 2,
+          "fp": 3,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6447229981422424,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Shangqing_Zhao",
+      "discipline": "CS",
+      "PSAS": 0.7677435922622681,
+      "summary_cosine": 0.7943465709686279,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9384103059768677,
+          "tp": 5,
+          "fp": 17,
+          "fn": 0
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.738989531993866,
+          "tp": 2,
+          "fp": 38,
+          "fn": 1
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8431428670883179,
+          "tp": 1,
+          "fp": 17,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7624208331108093,
+          "tp": 2,
+          "fp": 4,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5557544231414795,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Edward_T_Cokely",
+      "discipline": "Psychology",
+      "PSAS": 0.7349353538619148,
+      "summary_cosine": 0.7640018463134766,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8990927934646606,
+          "tp": 3,
+          "fp": 18,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8595366411738925,
+          "tp": 9,
+          "fp": 21,
+          "fn": 7
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.6749290227890015,
+          "tp": 1,
+          "fp": 22,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.6936326026916504,
+          "tp": 2,
+          "fp": 3,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5474857091903687,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "JeongJin_Kim",
+      "discipline": "Psychology",
+      "PSAS": 0.7022568732500076,
+      "summary_cosine": 0.9158567190170288,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.998132328192393,
+          "tp": 6,
+          "fp": 5,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8633957058191299,
+          "tp": 12,
+          "fp": 14,
+          "fn": 14
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9677908619244894,
+          "tp": 6,
+          "fp": 14,
+          "fn": 2
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6819654703140259,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "Michael_R_Sladek",
+      "discipline": "Psychology",
+      "PSAS": 0.6868769313607898,
+      "summary_cosine": 0.7468039989471436,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8787597588130406,
+          "tp": 7,
+          "fp": 10,
+          "fn": 0
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9280750112874168,
+          "tp": 14,
+          "fp": 14,
+          "fn": 20
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9305309851964315,
+          "tp": 3,
+          "fp": 15,
+          "fn": 4
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6970189015070597,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Scott_D_Russell",
+      "discipline": "Biology",
+      "PSAS": 0.684475059039665,
+      "summary_cosine": 0.7441805601119995,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9092455343766646,
+          "tp": 11,
+          "fp": 7,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9092063307762146,
+          "tp": 28,
+          "fp": 9,
+          "fn": 19
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.974875420331955,
+          "tp": 6,
+          "fp": 17,
+          "fn": 16
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6290480097134908,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Ghulam_Quadri",
+      "discipline": "CS",
+      "PSAS": 0.6844349963139876,
+      "summary_cosine": 0.8874144554138184,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9596843038286481,
+          "tp": 7,
+          "fp": 6,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9254705450114082,
+          "tp": 34,
+          "fp": 15,
+          "fn": 17
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9249614634011921,
+          "tp": 19,
+          "fp": 17,
+          "fn": 17
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6120586693286896,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "J_Phil_Gibson",
+      "discipline": "Biology",
+      "PSAS": 0.683837183884212,
+      "summary_cosine": 0.7867516279220581,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.97426609482084,
+          "tp": 7,
+          "fp": 13,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8612920641899109,
+          "tp": 4,
+          "fp": 30,
+          "fn": 8
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.7011966109275818,
+          "tp": 1,
+          "fp": 25,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.882431149482727,
+          "tp": 1,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "researcher": "Hairong_Song",
+      "discipline": "Psychology",
+      "PSAS": 0.6792699596120251,
+      "summary_cosine": 0.8451086282730103,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9331633316146003,
+          "tp": 9,
+          "fp": 11,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8936300911009312,
+          "tp": 16,
+          "fp": 16,
+          "fn": 12
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8932391802469889,
+          "tp": 6,
+          "fp": 5,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6763171950976054,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Mike_Banad",
+      "discipline": "ECE",
+      "PSAS": 0.675979469427291,
+      "summary_cosine": 0.8944041132926941,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9247423761031207,
+          "tp": 17,
+          "fp": 5,
+          "fn": 9
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9064916864037513,
+          "tp": 40,
+          "fp": 15,
+          "fn": 42
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9643196128308773,
+          "tp": 16,
+          "fp": 19,
+          "fn": 7
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.584343671798706,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Lara_Mayeux",
+      "discipline": "Psychology",
+      "PSAS": 0.6745604259081376,
+      "summary_cosine": 0.8262766599655151,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9377899467945099,
+          "tp": 8,
+          "fp": 8,
+          "fn": 2
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8868675094384414,
+          "tp": 13,
+          "fp": 14,
+          "fn": 20
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9333706100781759,
+          "tp": 3,
+          "fp": 21,
+          "fn": 4
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6147740632295609,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0
+        }
+      }
+    },
+    {
+      "researcher": "Paul_A_Lawson",
+      "discipline": "Biology",
+      "PSAS": 0.6659903359791589,
+      "summary_cosine": 0.8162024617195129,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.948971324496799,
+          "tp": 9,
+          "fp": 9,
+          "fn": 6
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8656509944370815,
+          "tp": 28,
+          "fp": 10,
+          "fn": 45
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8577223022778829,
+          "tp": 18,
+          "fp": 26,
+          "fn": 34
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6576070586840311,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Elizabeth_Karr",
+      "discipline": "Biology",
+      "PSAS": 0.6629618429849689,
+      "summary_cosine": 0.8877809643745422,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8850862913661532,
+          "tp": 9,
+          "fp": 9,
+          "fn": 7
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8851120238718779,
+          "tp": 23,
+          "fp": 10,
+          "fn": 27
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9513073682785034,
+          "tp": 15,
+          "fp": 17,
+          "fn": 25
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5933035314083099,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "John_Antonio",
+      "discipline": "CS",
+      "PSAS": 0.6622315592115575,
+      "summary_cosine": 0.89087975025177,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8743970036506653,
+          "tp": 5,
+          "fp": 8,
+          "fn": 7
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8543724536895752,
+          "tp": 10,
+          "fp": 11,
+          "fn": 16
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9291740926829252,
+          "tp": 11,
+          "fp": 12,
+          "fn": 2
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6532142460346222,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Anne_K_Dunn",
+      "discipline": "Biology",
+      "PSAS": 0.661301830579073,
+      "summary_cosine": 0.7856490612030029,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9158036530017852,
+          "tp": 10,
+          "fp": 8,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9125898021918076,
+          "tp": 26,
+          "fp": 9,
+          "fn": 38
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.7755459149678549,
+          "tp": 3,
+          "fp": 19,
+          "fn": 15
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.7025697827339172,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Wei_Qin",
+      "discipline": "Biology",
+      "PSAS": 0.6605277295907339,
+      "summary_cosine": 0.8661182522773743,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9066551129023234,
+          "tp": 12,
+          "fp": 6,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8816370964050293,
+          "tp": 24,
+          "fp": 18,
+          "fn": 48
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8135097801685334,
+          "tp": 10,
+          "fp": 48,
+          "fn": 13
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.7008366584777832,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Adam_Feltz",
+      "discipline": "Psychology",
+      "PSAS": 0.6590279077726697,
+      "summary_cosine": 0.8347770571708679,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8687691858836583,
+          "tp": 7,
+          "fp": 12,
+          "fn": 2
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8584053648842705,
+          "tp": 9,
+          "fp": 17,
+          "fn": 8
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.9287358692714146,
+          "tp": 7,
+          "fp": 20,
+          "fn": 5
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 7
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6392291188240051,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Anindya_Maiti",
+      "discipline": "CS",
+      "PSAS": 0.6552065984997807,
+      "summary_cosine": 0.8520605564117432,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9412901784692492,
+          "tp": 14,
+          "fp": 8,
+          "fn": 13
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9096611453139264,
+          "tp": 23,
+          "fp": 17,
+          "fn": 18
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8539335413982994,
+          "tp": 19,
+          "fp": 18,
+          "fn": 46
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5711481273174286,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Adrienne_R_Carter-Sowell",
+      "discipline": "Psychology",
+      "PSAS": 0.6551701386769613,
+      "summary_cosine": 0.749711275100708,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9431573003530502,
+          "tp": 8,
+          "fp": 9,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8432817608118057,
+          "tp": 8,
+          "fp": 20,
+          "fn": 8
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8135296503702799,
+          "tp": 3,
+          "fp": 15,
+          "fn": 5
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 7
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6758819818496704,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Peter_Patzt",
+      "discipline": "Mathematics",
+      "PSAS": 0.6451639565210494,
+      "summary_cosine": 0.7118793725967407,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.967609617445204,
+          "tp": 9,
+          "fp": 2,
+          "fn": 12
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.870378417628152,
+          "tp": 14,
+          "fp": 13,
+          "fn": 28
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7744045853614807,
+          "tp": 1,
+          "fp": 3,
+          "fn": 2
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6134271621704102,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Huajian_Cai",
+      "discipline": "Psychology",
+      "PSAS": 0.6424217972490524,
+      "summary_cosine": 0.6871911287307739,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.909609403875139,
+          "tp": 9,
+          "fp": 3,
+          "fn": 7
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8973070234060287,
+          "tp": 16,
+          "fp": 14,
+          "fn": 28
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.7895859330892563,
+          "tp": 4,
+          "fp": 20,
+          "fn": 26
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6156066258748373,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Miroslav_Kramar",
+      "discipline": "Mathematics",
+      "PSAS": 0.6370836818218232,
+      "summary_cosine": 0.8837200403213501,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9849420785903931,
+          "tp": 6,
+          "fp": 8,
+          "fn": 2
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9260734736919403,
+          "tp": 10,
+          "fp": 21,
+          "fn": 5
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 16,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7383241653442383,
+          "tp": 1,
+          "fp": 3,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.536078691482544,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Greg_Muller",
+      "discipline": "Mathematics",
+      "PSAS": 0.6287811842560769,
+      "summary_cosine": 0.8030284643173218,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9794864431023598,
+          "tp": 8,
+          "fp": 5,
+          "fn": 2
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.7803019046783447,
+          "tp": 5,
+          "fp": 31,
+          "fn": 12
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 23,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7537025511264801,
+          "tp": 2,
+          "fp": 3,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6304150223731995,
+          "tp": 2,
+          "fp": 2,
+          "fn": 2
+        }
+      }
+    },
+    {
+      "researcher": "Mohammad_Atiquzzaman",
+      "discipline": "CS",
+      "PSAS": 0.6083871484938121,
+      "summary_cosine": 0.8312873840332031,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8862037181854248,
+          "tp": 5,
+          "fp": 17,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8909519399915423,
+          "tp": 7,
+          "fp": 26,
+          "fn": 1
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 29,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7068716684977213,
+          "tp": 3,
+          "fp": 2,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5579084157943726,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Roi_Docampo",
+      "discipline": "Mathematics",
+      "PSAS": 0.5408025026321411,
+      "summary_cosine": 0.8025229573249817,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 1.0,
+          "tp": 2,
+          "fp": 8,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8925485610961914,
+          "tp": 5,
+          "fp": 16,
+          "fn": 15
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.8114639520645142,
+          "tp": 1,
+          "fp": 4,
+          "fn": 3
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "researcher": "Micahel_Jablonski",
+      "discipline": "Mathematics",
+      "PSAS": 0.5225295687715212,
+      "summary_cosine": 0.8870350122451782,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.971072643995285,
+          "tp": 6,
+          "fp": 1,
+          "fn": 11
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.857797883450985,
+          "tp": 16,
+          "fp": 12,
+          "fn": 22
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 14,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.7837773164113363,
+          "tp": 3,
+          "fp": 1,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "researcher": "Elizabeth_Kelley",
+      "discipline": "Mathematics",
+      "PSAS": 0.48715733483433726,
+      "summary_cosine": 0.8656509518623352,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.929063206911087,
+          "tp": 10,
+          "fp": 1,
+          "fn": 11
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8800997771322727,
+          "tp": 16,
+          "fp": 7,
+          "fn": 43
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 6,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 7
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.6266236901283264,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Max_Forester",
+      "discipline": "Mathematics",
+      "PSAS": 0.48649031592137887,
+      "summary_cosine": 0.8719021677970886,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9726108420978893,
+          "tp": 11,
+          "fp": 4,
+          "fn": 9
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8764482167634097,
+          "tp": 22,
+          "fp": 13,
+          "fn": 18
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 3
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 6
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5833925207455953,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Kara_B_De_Le\u00f3n",
+      "discipline": "Biology",
+      "PSAS": 0.48566553081784924,
+      "summary_cosine": 0.8230499625205994,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9053066798618862,
+          "tp": 7,
+          "fp": 13,
+          "fn": 3
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8651771460260663,
+          "tp": 7,
+          "fp": 30,
+          "fn": 2
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 37,
+          "fn": 2
+        },
+        "Application Areas": {
+          "avg_similarity": 0.657843828201294,
+          "tp": 1,
+          "fp": 3,
+          "fn": 5
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "researcher": "Ricardo_Mendes",
+      "discipline": "Mathematics",
+      "PSAS": 0.4840254136107185,
+      "summary_cosine": 0.7676066160202026,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9170508276332509,
+          "tp": 11,
+          "fp": 2,
+          "fn": 4
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9346081465482712,
+          "tp": 16,
+          "fp": 9,
+          "fn": 29
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 10,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5684680938720703,
+          "tp": 3,
+          "fp": 1,
+          "fn": 1
+        }
+      }
+    },
+    {
+      "researcher": "Yan_Mary_He",
+      "discipline": "Mathematics",
+      "PSAS": 0.4799839091300965,
+      "summary_cosine": 0.8657896518707275,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9880850672721863,
+          "tp": 5,
+          "fp": 7,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.9030044078826904,
+          "tp": 13,
+          "fp": 15,
+          "fn": 24
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 14,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 4
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5088300704956055,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Samuel_Cheng",
+      "discipline": "ECE",
+      "PSAS": 0.43985589981079104,
+      "summary_cosine": 0.8132377862930298,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.8834073066711425,
+          "tp": 5,
+          "fp": 13,
+          "fn": 0
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 43,
+          "fn": 1
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.8012093305587769,
+          "tp": 1,
+          "fp": 28,
+          "fn": 0
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 1
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.5146628618240356,
+          "tp": 1,
+          "fp": 3,
+          "fn": 3
+        }
+      }
+    },
+    {
+      "researcher": "Ingo_Schlupp",
+      "discipline": "Biology",
+      "PSAS": 0.36685713470885245,
+      "summary_cosine": 0.8931992650032043,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.968074852770025,
+          "tp": 11,
+          "fp": 2,
+          "fn": 5
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8662108207742373,
+          "tp": 24,
+          "fp": 7,
+          "fn": 13
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 16,
+          "fn": 1
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 5,
+          "fn": 1
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    },
+    {
+      "researcher": "Shane_Connelly",
+      "discipline": "Psychology",
+      "PSAS": 0.3653358593583107,
+      "summary_cosine": 0.764954149723053,
+      "field_scores": {
+        "Research Domains": {
+          "avg_similarity": 0.9321842789649963,
+          "tp": 5,
+          "fp": 12,
+          "fn": 2
+        },
+        "Techniques Used": {
+          "avg_similarity": 0.8944950178265572,
+          "tp": 8,
+          "fp": 21,
+          "fn": 9
+        },
+        "Data & Platforms": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 19,
+          "fn": 2
+        },
+        "Application Areas": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 8
+        },
+        "Key Research Thinking Patterns": {
+          "avg_similarity": 0.0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 4
+        }
+      }
+    }
+  ]
+}

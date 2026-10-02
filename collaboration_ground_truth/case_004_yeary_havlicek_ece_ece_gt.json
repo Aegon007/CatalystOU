@@ -1,0 +1,58 @@
+{
+  "Shared Domains": [
+    "Nonlinear state estimation and target tracking in video, radar, and sensor networks",
+    "Particle filtering and Kalman-based algorithms for robust target tracking",
+    "Sensor fusion and sequential estimation for tracking applications",
+    "Infrared imaging and computer vision for automatic target recognition"
+  ],
+  "Method-Application Synergies": [
+    "State-partition parallel EKF proposal generation applied to video human tracking",
+    "Particle filter proposal design applied to acoustic sensor network vehicle tracking",
+    "Adaptive Kalman filtering and ALS covariance estimation applied to IR appearance learning"
+  ],
+  "Complementary Technique Synergies": [
+    "Particle filtering combined with parallel extended Kalman filter state partition estimates",
+    "Histogram appearance models combined with adaptive Kalman filtering and autocovariance least squares",
+    "Centralized particle fusion combined with direction-of-arrival and acoustic intensity sensor weighting"
+  ],
+  "Data-Method Synergies": [
+    "Cohu full-motion video camera human head sequences analyzed by PF-SP-PEKF tracking",
+    "Oklahoma City National Weather Radar Testbed data analyzed by EKF, bootstrap PF, SP-CPF",
+    "AMCOM LWIR closure sequences and SENSIAC ATR dataset analyzed by AKF histogram tracking",
+    "Wireless acoustic sensor network DOA and intensity data analyzed by centralized PF fusion"
+  ],
+  "Cross-Domain Fusion Topics": [
+    "Power-aware centralized particle filter tracking in wireless acoustic sensor networks",
+    "Infrared target appearance learning fused with nonlinear sequential state estimation",
+    "Video, radar, and sensor-network tracking unified by state-partition particle filtering"
+  ],
+  "Shared Application Areas": [
+    "Human subject tracking in cluttered video sequences",
+    "Ground vehicle and aircraft target tracking in sensor networks",
+    "Infrared automatic target recognition and tracking of maneuvering ground targets",
+    "Military, security surveillance, robotics, and intelligent transportation system tracking"
+  ],
+  "Joint Technique Development": [
+    "PF-SP-PEKF particle filter using state partition and parallel EKFs for proposal distribution",
+    "State-partition-based centralized particle filter for power-aware sensor fusion tracking",
+    "Adaptive Kalman filtering with autocovariance least-squares for histogram-based appearance learning",
+    "Dual foreground-background histogram appearance model with adaptive Kalman bin updates"
+  ],
+  "Theory-Application Synergy": [
+    "Bayesian posterior approximation via sequential importance sampling applied to real video tracking",
+    "State partition linearization theory applied to acoustic DOA bearings-only tracking",
+    "Autocovariance least-squares covariance estimation theory applied to piecewise stationary IR histogram tracking"
+  ],
+  "Thinking Pattern Synergies": [
+    "Focusing on robust track lock under strong clutter and target appearance change",
+    "Improving particle filter proposal distributions to reduce required particle counts",
+    "Balancing computational load across sensor nodes and fusion centers for power awareness",
+    "Estimating unknown noise variances online to prevent histogram drift and track loss"
+  ],
+  "Future Research Directions": [
+    "Combining state-partition particle filtering with Metropolis-Hastings Markov chain Monte Carlo resampling",
+    "Addressing particle filter sample impoverishment from heavily weighted low-diversity particles",
+    "Formalizing autocovariance least-squares convergence guarantees for piecewise stationary visual tracking"
+  ],
+  "Summary Collaboration Themes": "Yeary and Havlicek collaborated on robust nonlinear target tracking across video, radar, acoustic sensor networks, and infrared imagery. Their work combined particle filtering with state-partition extended Kalman filtering, centralized power-aware sensor fusion, and adaptive histogram appearance learning. Key contributions include improved proposal distributions, reduced particle requirements, online noise variance estimation, and robust track lock under clutter, ego-motion, and nonstationary target signatures. This integration advanced sequential estimation, automatic target recognition, and practical tracking for defense, surveillance, robotics, and sensor-network applications."
+}

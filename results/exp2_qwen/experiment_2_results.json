@@ -1,0 +1,2545 @@
+{
+  "per_key": {
+    "Complementary Technique Synergies": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 17
+    },
+    "Cross-Domain Fusion Topics": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 17
+    },
+    "Data-Method Synergies": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 17
+    },
+    "Future Research Directions": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 19
+    },
+    "Joint Technique Development": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 18
+    },
+    "Method-Application Synergies": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 16
+    },
+    "Shared Application Areas": {
+      "micro_precision": 0.04,
+      "micro_recall": 0.05555555555555555,
+      "micro_f1": 0.046511627906976744,
+      "macro_f1": 0.044444444444444446,
+      "avg_semantic_similarity": 0.13636255264282227,
+      "avg_similarity_mean": 0.13636255264282227,
+      "avg_similarity_std": 0.27272510528564453,
+      "tp_total": 1,
+      "fp_total": 24,
+      "fn_total": 17
+    },
+    "Shared Domains": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 24,
+      "fn_total": 19
+    },
+    "Theory-Application Synergy": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 17
+    },
+    "Thinking Pattern Synergies": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "macro_f1": 0.0,
+      "avg_semantic_similarity": 0.0,
+      "avg_similarity_mean": 0.0,
+      "avg_similarity_std": 0.0,
+      "tp_total": 0,
+      "fp_total": 25,
+      "fn_total": 18
+    }
+  },
+  "profile_level": {
+    "PSAS_mean": 0.013636255264282226,
+    "PSAS_std": 0.027272510528564452,
+    "summary_cosine_mean": 0.420114141702652
+  },
+  "bootstrap": {
+    "PSAS_95CI": [
+      0.0,
+      0.04090876579284668
+    ]
+  },
+  "summary_level": {
+    "summary_cosine_mean": 0.420114141702652,
+    "summary_cosine_std": 0.09522356044320814
+  },
+  "case_results": [
+    {
+      "prediction": {
+        "Shared Domains": [
+          "Machine learning, remote sensing, geospatial analysis, and environmental monitoring",
+          "Explainable AI, data visualization, and public health risk assessment",
+          "Computer vision, image processing, and spatial data analytics",
+          "Environmental modelling, epidemiology, and climate-related public health informatics",
+          "Data science, social media analytics, and computational social science"
+        ],
+        "Method-Application Synergies": [
+          "Use SHAP to explain LLM trust scoring for misinformation dashboards",
+          "Apply GWR to spatialize geolocated social media trustworthiness indicators",
+          "Integrate LST downscaling with visual analytics for heat-related stroke risk",
+          "Combine radiomic texture features with landscape metrics for urban thermal analysis",
+          "Use ensemble models to link green infrastructure with public health outcomes"
+        ],
+        "Complementary Technique Synergies": [
+          "Pair fine-tuned RoBERTa trust scoring with SHAP interpretability",
+          "Merge GLCM radiomic texture analysis with grayscale morphology extraction",
+          "Combine Otsu adaptive thresholding with ResNet-50 embeddings for classification",
+          "Add GWR spatial weighting to human-in-the-loop visual analytics",
+          "Use random forests for radiomic feature selection and LST regression"
+        ],
+        "Data-Method Synergies": [
+          "Use geo-tagged social media data with GWR for misinformation hotspots",
+          "Apply SHAP to satellite LST, stroke features, and NLP variables",
+          "Combine ECOSTRESS LST data with XGBoost for public health informatics",
+          "Use ResNet-50 on Sentinel-2 imagery for urban landscape extraction",
+          "Integrate ASPECTS stroke data with urban heat maps for risk prediction"
+        ],
+        "Cross-Domain Fusion Topics": [
+          "Explainable AI for coupling urban heat exposure with public health",
+          "Social media geolocation fusion with remote sensing for situational awareness",
+          "Multi-modal imaging for urban materials, stroke prognosis, and geoscience",
+          "NLP-driven misinformation detection integrated with climate-risk social sensing",
+          "Spatially aware XAI dashboards for heat, misinformation, and clinical risk"
+        ],
+        "Shared Application Areas": [
+          "Public health risk assessment for environmental and misinformation emergencies",
+          "Real-time surveillance for social, health, and urban environmental threats",
+          "Climate-resilient urban planning using explainable AI and geospatial analytics",
+          "Data-driven emergency management integrating social media and remote sensing",
+          "Sustainable urban planning supported by machine learning and visual analytics"
+        ],
+        "Joint Technique Development": [
+          "Develop SHAP-based XAI for NLP trust scoring and heat models",
+          "Create geographically weighted neural networks for geolocated misinformation detection",
+          "Build multi-modal computer vision pipeline for SEM, satellite, and urban images",
+          "Design human-in-the-loop dashboards combining LST maps, clinical risk, and media trust data",
+          "Train ensemble models on fused radiomic, landscape, and communication features"
+        ],
+        "Theory-Application Synergy": [
+          "Translate SHAP interpretability into policy dashboards for heat mitigation",
+          "Connect spatial heterogeneity theory with public health emergency response planning",
+          "Use XAI theory to explain heat effects on stroke prognosis",
+          "Apply landscape ecology theory to geospatial visual analytics for sustainability",
+          "Leverage trustworthiness theory to guide AI-assisted public media literacy tools"
+        ],
+        "Thinking Pattern Synergies": [
+          "Combine explainable regression scoring with SHAP spatial heterogeneity analysis",
+          "Integrate composite radiomic-clinical ML with multi-scale LST downscaling workflows",
+          "Fuse multi-modal image-driven prediction with unsupervised computer vision extraction",
+          "Merge human-in-the-loop visual analytics with global comparative spatial statistics",
+          "Extend explainable NLP scoring to geospatially weighted public health indicators"
+        ],
+        "Future Research Directions": [
+          "Predict heat-related stroke outcomes using fused LST, climate, and clinical data",
+          "Monitor misinformation spread and urban heat stress with shared dashboards",
+          "Build AI platforms for climate-resilient, misinformation-aware urban planning",
+          "Develop geospatial XAI tools for pandemic and heat emergency management",
+          "Explore LLMs for automated interpretation of satellite and social media data"
+        ],
+        "Summary Collaboration Themes": "They can co-develop explainable, geospatial, and multi-modal AI visual analytics for public health, environmental, and misinformation risk."
+      },
+      "field_metrics": {
+        "Shared Domains": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Machine learning, remote sensing, geospatial analysis, and environmental monitoring",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Explainable AI, data visualization, and public health risk assessment",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Computer vision, image processing, and spatial data analytics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Environmental modelling, epidemiology, and climate-related public health informatics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Data science, social media analytics, and computational social science",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Method-Application Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Use SHAP to explain LLM trust scoring for misinformation dashboards",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply GWR to spatialize geolocated social media trustworthiness indicators",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate LST downscaling with visual analytics for heat-related stroke risk",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine radiomic texture features with landscape metrics for urban thermal analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use ensemble models to link green infrastructure with public health outcomes",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Complementary Technique Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Pair fine-tuned RoBERTa trust scoring with SHAP interpretability",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Merge GLCM radiomic texture analysis with grayscale morphology extraction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine Otsu adaptive thresholding with ResNet-50 embeddings for classification",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Add GWR spatial weighting to human-in-the-loop visual analytics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use random forests for radiomic feature selection and LST regression",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Data-Method Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Use geo-tagged social media data with GWR for misinformation hotspots",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply SHAP to satellite LST, stroke features, and NLP variables",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine ECOSTRESS LST data with XGBoost for public health informatics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use ResNet-50 on Sentinel-2 imagery for urban landscape extraction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate ASPECTS stroke data with urban heat maps for risk prediction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Cross-Domain Fusion Topics": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Explainable AI for coupling urban heat exposure with public health",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Social media geolocation fusion with remote sensing for situational awareness",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Multi-modal imaging for urban materials, stroke prognosis, and geoscience",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "NLP-driven misinformation detection integrated with climate-risk social sensing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Spatially aware XAI dashboards for heat, misinformation, and clinical risk",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Shared Application Areas": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Public health risk assessment for environmental and misinformation emergencies",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Real-time surveillance for social, health, and urban environmental threats",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Climate-resilient urban planning using explainable AI and geospatial analytics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Data-driven emergency management integrating social media and remote sensing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Sustainable urban planning supported by machine learning and visual analytics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Joint Technique Development": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop SHAP-based XAI for NLP trust scoring and heat models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create geographically weighted neural networks for geolocated misinformation detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build multi-modal computer vision pipeline for SEM, satellite, and urban images",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Design human-in-the-loop dashboards combining LST maps, clinical risk, and media trust data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Train ensemble models on fused radiomic, landscape, and communication features",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Theory-Application Synergy": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Translate SHAP interpretability into policy dashboards for heat mitigation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Connect spatial heterogeneity theory with public health emergency response planning",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use XAI theory to explain heat effects on stroke prognosis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply landscape ecology theory to geospatial visual analytics for sustainability",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Leverage trustworthiness theory to guide AI-assisted public media literacy tools",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Thinking Pattern Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Combine explainable regression scoring with SHAP spatial heterogeneity analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate composite radiomic-clinical ML with multi-scale LST downscaling workflows",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Fuse multi-modal image-driven prediction with unsupervised computer vision extraction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Merge human-in-the-loop visual analytics with global comparative spatial statistics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Extend explainable NLP scoring to geospatially weighted public health indicators",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Future Research Directions": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Predict heat-related stroke outcomes using fused LST, climate, and clinical data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Monitor misinformation spread and urban heat stress with shared dashboards",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build AI platforms for climate-resilient, misinformation-aware urban planning",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Develop geospatial XAI tools for pandemic and heat emergency management",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Explore LLMs for automated interpretation of satellite and social media data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        }
+      },
+      "profile_scores": {
+        "MAS": 0.0,
+        "PSAS": 0.0,
+        "summary_cosine": 0.31728115677833557
+      }
+    },
+    {
+      "prediction": {
+        "Shared Domains": [
+          "Adversarial machine learning for security of audio, images, and wireless signals",
+          "Privacy-preserving machine learning for biomedical data and decentralized healthcare",
+          "Biomedical informatics and medical image analysis for secure diagnostics",
+          "Deep learning and computer vision for anomaly detection and forensics",
+          "Cryptography and information theory supporting secure neural network verification"
+        ],
+        "Method-Application Synergies": [
+          "Adversarial audio and visual media detection for copyright and deepfake forensics",
+          "Defensive deception to hide CSI, Wi-Fi, and RFID sensor traces in federated learning",
+          "Quantum-enhanced diffusion or capsule models for efficient medical image anomaly detection",
+          "Optimization-driven attacks to evaluate cryptographic zero-knowledge protection of neural inference",
+          "Privacy-preserving vital-sign and pancreatic cancer monitoring using weakly supervised generative models"
+        ],
+        "Complementary Technique Synergies": [
+          "Siamese neural networks with diffusion-generated audio/video anomalies for robust fingerprinting",
+          "Perception-aware adversarial examples against deepfake detectors using diffusion and GAN perturbations",
+          "Signal-level honeypots combined with zero-knowledge proofs for verifiable private federated training",
+          "Quantum feature maps verified by polynomial commitments for secure delegated quantum inference",
+          "Statistical energy-level anomaly detection for wireless and medical signal security defenses"
+        ],
+        "Data-Method Synergies": [
+          "Human perception audio dataset with generative media datasets for cross-modal adversarial benchmarking",
+          "Alzheimer's and pancreatic imaging datasets for privacy-preserving weakly supervised diagnostic models",
+          "Hardware-in-the-loop wireless datasets trained with CNN, VAE, and capsule network classifiers",
+          "Commercial API traces and deepfake datasets for cross-domain media authentication attacks",
+          "Wi-Fi CSI and channel state data protected by local differential privacy"
+        ],
+        "Cross-Domain Fusion Topics": [
+          "Secure, interpretable, privacy-preserving AI for medical imaging and wireless sensing",
+          "Adversarial robustness of quantum machine learning, federated learning, and diffusion models",
+          "Physical-layer deception and cryptographic verification for trusted IoT inference",
+          "Perception-aware synthetic media generation and detection across audio, video, and images",
+          "Privacy-preserving biometric, vital-sign, and geolocation authentication using zero-knowledge proofs"
+        ],
+        "Shared Application Areas": [
+          "Securing biomedical data and diagnostic AI against privacy and adversarial risks",
+          "Protecting IoT, Wi-Fi, RFID, and medical sensing from signal-level attacks",
+          "Forensic detection of synthetic media and audio content manipulation",
+          "Privacy-preserving decentralized learning for healthcare and wireless sensor networks",
+          "Trustworthy AI governance for medical, media, and communication systems"
+        ],
+        "Joint Technique Development": [
+          "Develop quantum Siamese networks for perception-aware audio and image adversarial detection",
+          "Build diffusion-based anomaly detectors for medical images and wireless CSI signals",
+          "Create ZKP-verified federated training with adversarial robustness evaluations",
+          "Design entropy-adjusted capsule models for interpretable medical and signal classification",
+          "Construct optimization-driven attacks and defenses using polynomial commitment benchmarks"
+        ],
+        "Theory-Application Synergy": [
+          "Map constrained optimization attacks to polynomial proofs for verifiable security evaluation",
+          "Use information-theoretic routing and differential privacy to protect sensitive sensor inference",
+          "Combine quantum variational algorithms with cryptographic verification for secure delegated inference",
+          "Apply Marcum Q-function and statistical energy modeling to detect forged media",
+          "Translate adversarial ML theory into clinical and communication security validation protocols"
+        ],
+        "Thinking Pattern Synergies": [
+          "Perception-aware adversarial synthesis plus systematic deepfake risk synthesis",
+          "Black-box reverse engineering combined with weakly supervised generative anomaly detection",
+          "Proactive defensive deception integrated with cryptographic integrity verification",
+          "Optimization-driven physical-layer attacks evaluated using cryptographic and statistical benchmarks",
+          "Perception, privacy, and interpretability co-designed for secure healthcare and media AI"
+        ],
+        "Future Research Directions": [
+          "Secure quantum federated learning for medical imaging and wireless sensor networks",
+          "Cross-modal adversarial robustness benchmarking across audio, images, video, and RF",
+          "Privacy-preserving vital-sign and geolocation authentication using zero-knowledge and SDR deception",
+          "Interpretable capsule and diffusion architectures for pancreatic cancer and signal forensics",
+          "Regulatory frameworks for AI security in healthcare, media, and IoT"
+        ],
+        "Summary Collaboration Themes": "Shared focus on adversarial robustness, privacy-preserving ML, biomedical security, and cryptographic verification across audio, image, and wireless systems."
+      },
+      "field_metrics": {
+        "Shared Domains": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Adversarial machine learning for security of audio, images, and wireless signals",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Privacy-preserving machine learning for biomedical data and decentralized healthcare",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Biomedical informatics and medical image analysis for secure diagnostics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Deep learning and computer vision for anomaly detection and forensics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Cryptography and information theory supporting secure neural network verification",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Method-Application Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Adversarial audio and visual media detection for copyright and deepfake forensics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Defensive deception to hide CSI, Wi-Fi, and RFID sensor traces in federated learning",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Quantum-enhanced diffusion or capsule models for efficient medical image anomaly detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Optimization-driven attacks to evaluate cryptographic zero-knowledge protection of neural inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Privacy-preserving vital-sign and pancreatic cancer monitoring using weakly supervised generative models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Complementary Technique Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Siamese neural networks with diffusion-generated audio/video anomalies for robust fingerprinting",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Perception-aware adversarial examples against deepfake detectors using diffusion and GAN perturbations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Signal-level honeypots combined with zero-knowledge proofs for verifiable private federated training",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Quantum feature maps verified by polynomial commitments for secure delegated quantum inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Statistical energy-level anomaly detection for wireless and medical signal security defenses",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Data-Method Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Human perception audio dataset with generative media datasets for cross-modal adversarial benchmarking",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Alzheimer's and pancreatic imaging datasets for privacy-preserving weakly supervised diagnostic models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Hardware-in-the-loop wireless datasets trained with CNN, VAE, and capsule network classifiers",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Commercial API traces and deepfake datasets for cross-domain media authentication attacks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Wi-Fi CSI and channel state data protected by local differential privacy",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Cross-Domain Fusion Topics": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Secure, interpretable, privacy-preserving AI for medical imaging and wireless sensing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Adversarial robustness of quantum machine learning, federated learning, and diffusion models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Physical-layer deception and cryptographic verification for trusted IoT inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Perception-aware synthetic media generation and detection across audio, video, and images",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Privacy-preserving biometric, vital-sign, and geolocation authentication using zero-knowledge proofs",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Shared Application Areas": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Securing biomedical data and diagnostic AI against privacy and adversarial risks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Protecting IoT, Wi-Fi, RFID, and medical sensing from signal-level attacks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Forensic detection of synthetic media and audio content manipulation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Privacy-preserving decentralized learning for healthcare and wireless sensor networks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Trustworthy AI governance for medical, media, and communication systems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Joint Technique Development": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop quantum Siamese networks for perception-aware audio and image adversarial detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build diffusion-based anomaly detectors for medical images and wireless CSI signals",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create ZKP-verified federated training with adversarial robustness evaluations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Design entropy-adjusted capsule models for interpretable medical and signal classification",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Construct optimization-driven attacks and defenses using polynomial commitment benchmarks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Theory-Application Synergy": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Map constrained optimization attacks to polynomial proofs for verifiable security evaluation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use information-theoretic routing and differential privacy to protect sensitive sensor inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine quantum variational algorithms with cryptographic verification for secure delegated inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply Marcum Q-function and statistical energy modeling to detect forged media",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Translate adversarial ML theory into clinical and communication security validation protocols",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Thinking Pattern Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Perception-aware adversarial synthesis plus systematic deepfake risk synthesis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Black-box reverse engineering combined with weakly supervised generative anomaly detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Proactive defensive deception integrated with cryptographic integrity verification",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Optimization-driven physical-layer attacks evaluated using cryptographic and statistical benchmarks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Perception, privacy, and interpretability co-designed for secure healthcare and media AI",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Future Research Directions": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 5,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Secure quantum federated learning for medical imaging and wireless sensor networks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Cross-modal adversarial robustness benchmarking across audio, images, video, and RF",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Privacy-preserving vital-sign and geolocation authentication using zero-knowledge and SDR deception",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Interpretable capsule and diffusion architectures for pancreatic cancer and signal forensics",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Regulatory frameworks for AI security in healthcare, media, and IoT",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        }
+      },
+      "profile_scores": {
+        "MAS": 0.0,
+        "PSAS": 0.0,
+        "summary_cosine": 0.5829950571060181
+      }
+    },
+    {
+      "prediction": {
+        "Shared Domains": [
+          "Behavioral science for understanding culturally driven health behaviors",
+          "Social psychology for gender norms and identity related health outcomes",
+          "Cultural psychology and cross cultural psychology for shared constructs",
+          "Psychological methods for longitudinal and computational behavioral research"
+        ],
+        "Method-Application Synergies": [
+          "Use Song longitudinal health cohorts with Cai nature exposure causal mediation",
+          "Apply RSA and UMAP to map health behavior representation spaces",
+          "Use TSO models for emotional states in chronic disease trajectories",
+          "Combine dictionary text analysis with smoking cessation message targeting",
+          "Use GMM clustering with UMAP to segment health behavior profiles"
+        ],
+        "Complementary Technique Synergies": [
+          "Pair RSA and UMAP with Gaussian mixture model clustering",
+          "Integrate Granger causality and VAR models for temporal health processes",
+          "Combine sequential mediation with causal chain mediation for health pathways",
+          "Use random rPQL variable selection with PCA and ICA",
+          "Apply factorial invariance testing to nature connectedness and authenticity scales"
+        ],
+        "Data-Method Synergies": [
+          "Analyze Add Health diary text with Cai dictionary based NLP",
+          "Apply Cai longitudinal multilevel analysis to Add Health smoking trajectories",
+          "Use Chinese census and People Daily corpora with VAR time series methods",
+          "Validate nature connectedness and authenticity scales in Add Health with CFA",
+          "Combine MTurk microdata with How Nuts are the Dutch dataset"
+        ],
+        "Cross-Domain Fusion Topics": [
+          "Nature exposure interventions for smoking cessation and chronic disease management",
+          "Cultural individualism and naming trends as predictors of health behavior change",
+          "Gender honor ideologies moderating nature exposure effects on mental health",
+          "Emotional stability development and tobacco use trajectories in emerging adulthood",
+          "Universal relationship structures and social support for preventive healthcare uptake"
+        ],
+        "Shared Application Areas": [
+          "Cross cultural validation of psychological constructs for health interventions",
+          "Longitudinal modeling of psychological development and health behavior trajectories",
+          "Nature based interventions for mental health and chronic disease prevention",
+          "Behavioral science methods for culturally tailored preventive health communication",
+          "Use of large scale datasets for identifying behavioral health risk patterns"
+        ],
+        "Joint Technique Development": [
+          "Develop TSO GMM models for emotional states in intensive health data",
+          "Build representational similarity analysis extensions for health behavior clusters",
+          "Create causal chain mediation with Granger and VAR for trajectories",
+          "Adapt random rPQL for high dimensional nature exposure and emotion data",
+          "Develop factorial invariance aware RSA for cross cultural health constructs"
+        ],
+        "Theory-Application Synergy": [
+          "Biophilia and self determination theory to guide nature based smoking support",
+          "Authenticity and self esteem pathways for reducing depression in disease",
+          "Honor ideology stigma mediators for culturally tailored HPV vaccination campaigns",
+          "SDT needs satisfaction to explain health behavior adherence and well being",
+          "Nostalgia and emotional stability theories for mental health intervention timing"
+        ],
+        "Thinking Pattern Synergies": [
+          "Combine causal chain mediation with longitudinal causal inference for outcomes",
+          "Use TSO modeling and intensive longitudinal analysis for emotional processes",
+          "Merge computational sociolinguistic trend analysis with health message corpora methods",
+          "Apply representational similarity analysis to cross cultural health behavior structures",
+          "Integrate model based clustering and dimensionality reduction for behavioral phenotyping"
+        ],
+        "Future Research Directions": [
+          "Test nature exposure interventions on smoking cessation using Add Health cohorts",
+          "Model emotional stability trajectories as moderators of chronic disease risk",
+          "Analyze historical Chinese name uniqueness trends with health behavior indicators",
+          "Develop cross cultural invariance of nature connectedness scales in health samples",
+          "Create open data pipelines for longitudinal nature and health behavior data"
+        ],
+        "Summary Collaboration Themes": "They can bridge cultural, environmental, and health behavioral science by combining longitudinal causal mediation, cross cultural psychometrics, computational text and representation methods, and high dimensional statistical innovation."
+      },
+      "field_metrics": {
+        "Shared Domains": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 4,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Behavioral science for understanding culturally driven health behaviors",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Social psychology for gender norms and identity related health outcomes",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Cultural psychology and cross cultural psychology for shared constructs",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Psychological methods for longitudinal and computational behavioral research",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Method-Application Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Use Song longitudinal health cohorts with Cai nature exposure causal mediation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply RSA and UMAP to map health behavior representation spaces",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use TSO models for emotional states in chronic disease trajectories",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine dictionary text analysis with smoking cessation message targeting",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use GMM clustering with UMAP to segment health behavior profiles",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Complementary Technique Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Pair RSA and UMAP with Gaussian mixture model clustering",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate Granger causality and VAR models for temporal health processes",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine sequential mediation with causal chain mediation for health pathways",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use random rPQL variable selection with PCA and ICA",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply factorial invariance testing to nature connectedness and authenticity scales",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Data-Method Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Analyze Add Health diary text with Cai dictionary based NLP",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply Cai longitudinal multilevel analysis to Add Health smoking trajectories",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use Chinese census and People Daily corpora with VAR time series methods",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Validate nature connectedness and authenticity scales in Add Health with CFA",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine MTurk microdata with How Nuts are the Dutch dataset",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Cross-Domain Fusion Topics": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Nature exposure interventions for smoking cessation and chronic disease management",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Cultural individualism and naming trends as predictors of health behavior change",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Gender honor ideologies moderating nature exposure effects on mental health",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Emotional stability development and tobacco use trajectories in emerging adulthood",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Universal relationship structures and social support for preventive healthcare uptake",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Shared Application Areas": {
+          "tp_total": 1,
+          "tp_exact": 0,
+          "tp_semantic": 1,
+          "fp": 4,
+          "fn": 3,
+          "avg_similarity": 0.6818127632141113,
+          "matches": [
+            {
+              "pred": "Cross cultural validation of psychological constructs for health interventions",
+              "gold": "Cross-cultural psychology and international self-report measurement",
+              "sim": 0.6818127632141113,
+              "type": "semantic"
+            },
+            {
+              "pred": "Longitudinal modeling of psychological development and health behavior trajectories",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Nature based interventions for mental health and chronic disease prevention",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Behavioral science methods for culturally tailored preventive health communication",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use of large scale datasets for identifying behavioral health risk patterns",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Joint Technique Development": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop TSO GMM models for emotional states in intensive health data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build representational similarity analysis extensions for health behavior clusters",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create causal chain mediation with Granger and VAR for trajectories",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Adapt random rPQL for high dimensional nature exposure and emotion data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Develop factorial invariance aware RSA for cross cultural health constructs",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Theory-Application Synergy": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Biophilia and self determination theory to guide nature based smoking support",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Authenticity and self esteem pathways for reducing depression in disease",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Honor ideology stigma mediators for culturally tailored HPV vaccination campaigns",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "SDT needs satisfaction to explain health behavior adherence and well being",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Nostalgia and emotional stability theories for mental health intervention timing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Thinking Pattern Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Combine causal chain mediation with longitudinal causal inference for outcomes",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use TSO modeling and intensive longitudinal analysis for emotional processes",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Merge computational sociolinguistic trend analysis with health message corpora methods",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply representational similarity analysis to cross cultural health behavior structures",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate model based clustering and dimensionality reduction for behavioral phenotyping",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Future Research Directions": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Test nature exposure interventions on smoking cessation using Add Health cohorts",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Model emotional stability trajectories as moderators of chronic disease risk",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Analyze historical Chinese name uniqueness trends with health behavior indicators",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Develop cross cultural invariance of nature connectedness scales in health samples",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create open data pipelines for longitudinal nature and health behavior data",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        }
+      },
+      "profile_scores": {
+        "MAS": 0.06818127632141113,
+        "PSAS": 0.06818127632141113,
+        "summary_cosine": 0.4349728524684906
+      }
+    },
+    {
+      "prediction": {
+        "Shared Domains": [
+          "Signal processing, digital signal processing, and non-linear signal processing",
+          "Radar, infrared, and optical remote sensing modalities",
+          "Electromagnetic, structural, and vibration signal analysis",
+          "Object detection, tracking, and surveillance system integration",
+          "Compressed sensing, transform coding, and data compression"
+        ],
+        "Method-Application Synergies": [
+          "Deep learning segmentation of radar volumetric data for hydrometeor classification",
+          "YOLOv4-based small object detection in phased array radar aircraft surveillance",
+          "Hilbert vibration decomposition for radar target motion or turbulence analysis",
+          "Compressed sensing and transform coding for reduced radar data rates",
+          "Sensor fusion of radar and infrared for joint weather-surveillance operations"
+        ],
+        "Complementary Technique Synergies": [
+          "Bézier pattern synthesis with CNN-based beam evaluation under clutter",
+          "STAP and digital beamforming fused with dual-band infrared object detection",
+          "U-Net segmentation for polarimetric radar calibration anomaly detection",
+          "Genetic algorithm optimization with Hilbert analytic-signal features for adaptive arrays",
+          "Compressive sensing and H.264-style integer transforms for radar image compression"
+        ],
+        "Data-Method Synergies": [
+          "Apply U-Net ensembles to Horus radar polarimetric datasets",
+          "Use MATLAB pipelines for radar and infrared joint object detection",
+          "Leverage ANSYS HFSS simulations to train radar electromagnetic surrogate models",
+          "Combine accelerometer structural health data with radar data for target motion analysis",
+          "Fuse OK-DBIR infrared datasets with radar clutter maps for enhanced detection"
+        ],
+        "Cross-Domain Fusion Topics": [
+          "Phased array radar plus dual-band infrared for small airborne targets",
+          "Weather radar signal processing with biomedical image segmentation architectures",
+          "Digital beamforming calibration using deep learning surrogate models",
+          "Reduced-aperture radar systems enhanced by compressive transform coding",
+          "Radar meteorology and structural vibration monitoring using common non-linear signal decomposition"
+        ],
+        "Shared Application Areas": [
+          "Air surveillance and autonomous small-target detection in cluttered environments",
+          "High-temporal-resolution weather monitoring combined with environmental surveillance systems",
+          "Non-invasive sensing and remote monitoring of dynamic targets",
+          "Reduction of data rates for distributed radar and sensor networks",
+          "Small platform deployment using reduced aperture and sensor fusion"
+        ],
+        "Joint Technique Development": [
+          "Develop a radar-specific YOLOv4 detector for phased array point clouds",
+          "Create a U-Net pipeline for mutual coupling calibration error mapping",
+          "Design integer-valued transforms for polarimetric radar parameter compression",
+          "Build analytic-signal backbones for Doppler radar velocity ambiguity resolution",
+          "Integrate pattern synthesis optimization with CNN-based clutter performance prediction"
+        ],
+        "Theory-Application Synergy": [
+          "Apply Hirschman uncertainty principle to radar range-Doppler resolution limits",
+          "Use information theory bounds for radar data compression under loss",
+          "Extend non-linear transform coding to polarimetric radar parameter streams",
+          "Relate Hilbert transform end-effects to phased array calibration transients",
+          "Use entropy-based localization for radar target tracking under clutter"
+        ],
+        "Thinking Pattern Synergies": [
+          "Self-calibration thinking combined with segmentation-based anomaly detection for array health",
+          "Analytic signal decomposition and non-linear radar processing for complex returns",
+          "Optimization frameworks and deep learning fusion for adaptive beamforming design",
+          "Multimodal imaging fusion adapted to radar-infrared joint surveillance",
+          "Reduced-aperture capability preservation through compressive and learning-based inference"
+        ],
+        "Future Research Directions": [
+          "Develop fully digital radar-infrared sensing for next-generation weather and surveillance",
+          "Create autonomous phased array calibration using learned electromagnetic surrogate models",
+          "Study small target tracking with dual-band radar and infrared fusion",
+          "Investigate low-rate polarimetric radar compression for distributed sensing networks",
+          "Explore non-linear transform coding for real-time weather radar visualization"
+        ],
+        "Summary Collaboration Themes": "Joint development of learning-enhanced radar systems combining digital beamforming, non-linear processing, and infrared/deep-learning detection for weather and surveillance."
+      },
+      "field_metrics": {
+        "Shared Domains": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Signal processing, digital signal processing, and non-linear signal processing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Radar, infrared, and optical remote sensing modalities",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Electromagnetic, structural, and vibration signal analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Object detection, tracking, and surveillance system integration",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Compressed sensing, transform coding, and data compression",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Method-Application Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Deep learning segmentation of radar volumetric data for hydrometeor classification",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "YOLOv4-based small object detection in phased array radar aircraft surveillance",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Hilbert vibration decomposition for radar target motion or turbulence analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Compressed sensing and transform coding for reduced radar data rates",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Sensor fusion of radar and infrared for joint weather-surveillance operations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Complementary Technique Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Bézier pattern synthesis with CNN-based beam evaluation under clutter",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "STAP and digital beamforming fused with dual-band infrared object detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "U-Net segmentation for polarimetric radar calibration anomaly detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Genetic algorithm optimization with Hilbert analytic-signal features for adaptive arrays",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Compressive sensing and H.264-style integer transforms for radar image compression",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Data-Method Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Apply U-Net ensembles to Horus radar polarimetric datasets",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use MATLAB pipelines for radar and infrared joint object detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Leverage ANSYS HFSS simulations to train radar electromagnetic surrogate models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine accelerometer structural health data with radar data for target motion analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Fuse OK-DBIR infrared datasets with radar clutter maps for enhanced detection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Cross-Domain Fusion Topics": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Phased array radar plus dual-band infrared for small airborne targets",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Weather radar signal processing with biomedical image segmentation architectures",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Digital beamforming calibration using deep learning surrogate models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Reduced-aperture radar systems enhanced by compressive transform coding",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Radar meteorology and structural vibration monitoring using common non-linear signal decomposition",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Shared Application Areas": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Air surveillance and autonomous small-target detection in cluttered environments",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "High-temporal-resolution weather monitoring combined with environmental surveillance systems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Non-invasive sensing and remote monitoring of dynamic targets",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Reduction of data rates for distributed radar and sensor networks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Small platform deployment using reduced aperture and sensor fusion",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Joint Technique Development": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop a radar-specific YOLOv4 detector for phased array point clouds",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create a U-Net pipeline for mutual coupling calibration error mapping",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Design integer-valued transforms for polarimetric radar parameter compression",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build analytic-signal backbones for Doppler radar velocity ambiguity resolution",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate pattern synthesis optimization with CNN-based clutter performance prediction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Theory-Application Synergy": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Apply Hirschman uncertainty principle to radar range-Doppler resolution limits",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use information theory bounds for radar data compression under loss",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Extend non-linear transform coding to polarimetric radar parameter streams",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Relate Hilbert transform end-effects to phased array calibration transients",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use entropy-based localization for radar target tracking under clutter",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Thinking Pattern Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Self-calibration thinking combined with segmentation-based anomaly detection for array health",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Analytic signal decomposition and non-linear radar processing for complex returns",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Optimization frameworks and deep learning fusion for adaptive beamforming design",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Multimodal imaging fusion adapted to radar-infrared joint surveillance",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Reduced-aperture capability preservation through compressive and learning-based inference",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Future Research Directions": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop fully digital radar-infrared sensing for next-generation weather and surveillance",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create autonomous phased array calibration using learned electromagnetic surrogate models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Study small target tracking with dual-band radar and infrared fusion",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Investigate low-rate polarimetric radar compression for distributed sensing networks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Explore non-linear transform coding for real-time weather radar visualization",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        }
+      },
+      "profile_scores": {
+        "MAS": 0.0,
+        "PSAS": 0.0,
+        "summary_cosine": 0.43368303775787354
+      }
+    },
+    {
+      "prediction": {
+        "Shared Domains": [
+          "Scheduling and resource allocation under uncertainty",
+          "Algorithm robustness and performance modeling",
+          "Networked and distributed system optimization",
+          "Workflow and DAG-based process management",
+          "Stochastic scheduling and system reliability"
+        ],
+        "Method-Application Synergies": [
+          "Apply dynamic scheduling biasing to stochastic drone reconnaissance under infrastructure uncertainty",
+          "Use ILP resource allocation with CPU/memory prediction for cyber-physical mission scheduling",
+          "Combine influence diffusion models with workflow scheduling for resilient information systems",
+          "Integrate performance bounds into network interdiction for disinformation and infrastructure protection",
+          "Benchmark stochastic job scheduling algorithms on real transit and power network datasets"
+        ],
+        "Complementary Technique Synergies": [
+          "NP-hardness reductions validated by analytical bounds and empirical HPC benchmarking",
+          "Greedy approximation algorithms with resource requirement biasing for robust scheduling",
+          "Interdependent network interdiction combined with GPU occupancy-aware performance modeling",
+          "Monte Carlo sampling of network failures using synthetic thread load distributions",
+          "Causal flow interdiction paired with dynamic CPU/memory availability prediction models"
+        ],
+        "Data-Method Synergies": [
+          "Power2000 and transit datasets evaluated through HPC benchmarking and scheduling simulations",
+          "Social media diffusion data processed with DAG-based workflow management frameworks",
+          "Swedish rail and PATH data modeled using analytical resource availability bounds",
+          "Disinformation detection ML workloads tested on CUDA and Linux benchmark platforms",
+          "Drone scheduling ILP instances benchmarked with synthetic thread generation methods"
+        ],
+        "Cross-Domain Fusion Topics": [
+          "Cyber-physical drone fleet scheduling with HPC resource availability prediction",
+          "Disinformation interdiction workflows executed on GPU-accelerated social network simulations",
+          "Resilient power grid optimization using distributed workflow management algorithms",
+          "Social amplification of risk modeled with distributed HPC task scheduling",
+          "Critical infrastructure security planning under stochastic computing resource uncertainty"
+        ],
+        "Shared Application Areas": [
+          "Autonomous drone fleet scheduling for disaster response and resource allocation",
+          "Task scheduling and load balancing for cyber-physical infrastructure operations",
+          "Robust workflow management for emergency response and critical infrastructure analysis",
+          "Disinformation interdiction operations supported by high-performance computational modeling",
+          "Performance modeling of urban transit and power network resilience systems"
+        ],
+        "Joint Technique Development": [
+          "Develop biasing-enhanced stochastic MILP solvers for uncertain infrastructure scheduling",
+          "Create GPU occupancy-aware influence maximization algorithms for social network security",
+          "Design feedback-driven ILP methods for cascading failure interdiction problems",
+          "Build composite performance bounds for stochastic network reliability optimization",
+          "Integrate partial task completion feedback into interdependent network protection models"
+        ],
+        "Theory-Application Synergy": [
+          "Prove complexity of drone scheduling, then apply bounds to disaster response",
+          "Derive resource availability bounds for scheduling under power grid failures",
+          "Use NP-hardness reductions to justify approximation in disinformation interdiction systems",
+          "Translate occupancy prediction models into practical cyber-physical system scheduling tools",
+          "Connect causal failure propagation theory to HPC workflow resilience engineering"
+        ],
+        "Thinking Pattern Synergies": [
+          "Combine stochastic optimization with analytical resource availability bound derivation",
+          "Pair interdependent network modeling with parameter-space performance degradation analysis",
+          "Merge causal failure propagation modeling with biasing-based scheduling robustness strategies",
+          "Apply statistical validation of load regimes to network resilience simulations",
+          "Integrate computational complexity analysis with empirical benchmarking of resilience algorithms"
+        ],
+        "Future Research Directions": [
+          "Resilient cyber-physical scheduling under disinformation-induced physical infrastructure stress",
+          "GPU-accelerated optimization for interdependent power, transit, and social networks",
+          "Feedback-based drone fleet management with stochastic resource prediction and biasing",
+          "Workflow-managed simulation of information diffusion and cascading infrastructure failures",
+          "Robust HPC support for critical infrastructure security optimization at scale"
+        ],
+        "Summary Collaboration Themes": "The collaboration can unite stochastic network optimization, scheduling under uncertainty, and performance modeling to build robust cyber-physical, drone, and disinformation resilience tools."
+      },
+      "field_metrics": {
+        "Shared Domains": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 4,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Scheduling and resource allocation under uncertainty",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Algorithm robustness and performance modeling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Networked and distributed system optimization",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Workflow and DAG-based process management",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Stochastic scheduling and system reliability",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Method-Application Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Apply dynamic scheduling biasing to stochastic drone reconnaissance under infrastructure uncertainty",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use ILP resource allocation with CPU/memory prediction for cyber-physical mission scheduling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Combine influence diffusion models with workflow scheduling for resilient information systems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate performance bounds into network interdiction for disinformation and infrastructure protection",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Benchmark stochastic job scheduling algorithms on real transit and power network datasets",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Complementary Technique Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "NP-hardness reductions validated by analytical bounds and empirical HPC benchmarking",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Greedy approximation algorithms with resource requirement biasing for robust scheduling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Interdependent network interdiction combined with GPU occupancy-aware performance modeling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Monte Carlo sampling of network failures using synthetic thread load distributions",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Causal flow interdiction paired with dynamic CPU/memory availability prediction models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Data-Method Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Power2000 and transit datasets evaluated through HPC benchmarking and scheduling simulations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Social media diffusion data processed with DAG-based workflow management frameworks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Swedish rail and PATH data modeled using analytical resource availability bounds",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Disinformation detection ML workloads tested on CUDA and Linux benchmark platforms",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Drone scheduling ILP instances benchmarked with synthetic thread generation methods",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Cross-Domain Fusion Topics": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Cyber-physical drone fleet scheduling with HPC resource availability prediction",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Disinformation interdiction workflows executed on GPU-accelerated social network simulations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Resilient power grid optimization using distributed workflow management algorithms",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Social amplification of risk modeled with distributed HPC task scheduling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Critical infrastructure security planning under stochastic computing resource uncertainty",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Shared Application Areas": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Autonomous drone fleet scheduling for disaster response and resource allocation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Task scheduling and load balancing for cyber-physical infrastructure operations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Robust workflow management for emergency response and critical infrastructure analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Disinformation interdiction operations supported by high-performance computational modeling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Performance modeling of urban transit and power network resilience systems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Joint Technique Development": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Develop biasing-enhanced stochastic MILP solvers for uncertain infrastructure scheduling",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Create GPU occupancy-aware influence maximization algorithms for social network security",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Design feedback-driven ILP methods for cascading failure interdiction problems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Build composite performance bounds for stochastic network reliability optimization",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate partial task completion feedback into interdependent network protection models",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Theory-Application Synergy": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Prove complexity of drone scheduling, then apply bounds to disaster response",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Derive resource availability bounds for scheduling under power grid failures",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Use NP-hardness reductions to justify approximation in disinformation interdiction systems",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Translate occupancy prediction models into practical cyber-physical system scheduling tools",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Connect causal failure propagation theory to HPC workflow resilience engineering",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Thinking Pattern Synergies": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Combine stochastic optimization with analytical resource availability bound derivation",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Pair interdependent network modeling with parameter-space performance degradation analysis",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Merge causal failure propagation modeling with biasing-based scheduling robustness strategies",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Apply statistical validation of load regimes to network resilience simulations",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Integrate computational complexity analysis with empirical benchmarking of resilience algorithms",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        },
+        "Future Research Directions": {
+          "tp_total": 0,
+          "tp_exact": 0,
+          "tp_semantic": 0,
+          "fp": 5,
+          "fn": 3,
+          "avg_similarity": 0.0,
+          "matches": [
+            {
+              "pred": "Resilient cyber-physical scheduling under disinformation-induced physical infrastructure stress",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "GPU-accelerated optimization for interdependent power, transit, and social networks",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Feedback-based drone fleet management with stochastic resource prediction and biasing",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Workflow-managed simulation of information diffusion and cascading infrastructure failures",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            },
+            {
+              "pred": "Robust HPC support for critical infrastructure security optimization at scale",
+              "gold": null,
+              "sim": 0.0,
+              "type": "none"
+            }
+          ]
+        }
+      },
+      "profile_scores": {
+        "MAS": 0.0,
+        "PSAS": 0.0,
+        "summary_cosine": 0.3316386044025421
+      }
+    }
+  ],
+  "num_cases_evaluated": 5
+}

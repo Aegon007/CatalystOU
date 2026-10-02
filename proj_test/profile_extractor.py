@@ -1,638 +1,470 @@
 """
-Refactored Single Researcher Profile Extraction Module, it is called by extract_all_profiles.py to process multiple researchers in a discipline.
+Profile Extractor for CatalystOU.
 
-In this module, we focus on extracting and synthesizing structured researcher profiles from a collection of PDF documents.
-
-The module is designed to handle the following tasks:
-- Async batch processing of PDFs
-- Configurable LLM providers (OpenAI, Anthropic, Local)
-- Concurrent request limiting
-- Comprehensive error handling and logging
-- Profile validation and quality checks
-- Modular design for easy extension
+Map-Reduce Architecture:
+1. Map: Extracts structured micro-JSONs (Domains, Techniques, Platforms, Applications, Findings) 
+   from each paper individually to maximize exhaustive recall.
+2. Reduce: Programmatically merges and deduplicates entity lists across papers.
+3. Synthesize: Invokes the LLM to generate mechanistic 'Key Research Thinking Patterns' 
+   and the final cohesive 'Summary Description' while preserving high-recall lists.
 """
 
-import os
-import sys
+from __future__ import annotations
+
 import argparse
-
-import json
 import asyncio
-import PyPDF2
-import traceback
-
+import json
+import os
+import re
+import sys
 from pathlib import Path
-from dotenv import load_dotenv
+from typing import Any, Dict, List, Optional
+
+# Ensure project root is in sys.path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from utils.logger_utils import setup_logger
-from utils.llm_utils import call_llm, call_llm_json, get_llm_config
+from utils.llm_utils import call_llm_json
+
+logger = setup_logger(__name__, log_file="profile_extractor.log")
+
+CONCURRENT_LIMIT = 10
+DEFAULT_MODEL = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
 
 
-# --- 配置区域 ---
-load_dotenv()
-CONCURRENT_LIMIT = 4  # 限制同时并发请求数
-LOG_FILE = "profile_extraction.log"
+# ----------------------------------------------------------------------
+# Robust Multi-Engine PDF Extraction
+# ----------------------------------------------------------------------
 
-# 配置日志：统一使用 utils/logger_utils.py 提供的日志入口
-logger = setup_logger(__name__, log_file=LOG_FILE)
+def extract_text_from_pdf(pdf_path: Path) -> str:
+    """Extract text using whichever PDF reader is installed in the active environment."""
+    text = ""
+
+    # 1. PyMuPDF (fitz)
+    try:
+        import fitz
+        doc = fitz.open(pdf_path)
+        for page in doc:
+            text += page.get_text() + "\n"
+        doc.close()
+        if text.strip():
+            return clean_extracted_text(text)
+    except Exception:
+        pass
+
+    # 2. pypdf
+    try:
+        import pypdf
+        reader = pypdf.PdfReader(str(pdf_path))
+        for page in reader.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text + "\n"
+        if text.strip():
+            return clean_extracted_text(text)
+    except Exception:
+        pass
+
+    # 3. PyPDF2
+    try:
+        import PyPDF2
+        reader = PyPDF2.PdfReader(str(pdf_path))
+        for page in reader.pages:
+            page_text = page.extract_text()
+            if page_text:
+                text += page_text + "\n"
+        if text.strip():
+            return clean_extracted_text(text)
+    except Exception:
+        pass
+
+    # 4. pdfplumber
+    try:
+        import pdfplumber
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                page_text = page.extract_text()
+                if page_text:
+                    text += page_text + "\n"
+        if text.strip():
+            return clean_extracted_text(text)
+    except Exception:
+        pass
+
+    # 5. pdfminer.six
+    try:
+        from pdfminer.high_level import extract_text as pdfminer_extract
+        text = pdfminer_extract(str(pdf_path))
+        if text.strip():
+            return clean_extracted_text(text)
+    except Exception:
+        pass
+
+    logger.warning(f"Could not extract readable text from '{pdf_path.name}'.")
+    return ""
 
 
-def get_extraction_limits(model_name: str) -> dict:
-    """Return prompt-size limits for profile extraction for the selected model."""
-    config = get_llm_config(model_name)
-    provider = str(config.get("provider", "openai")).lower()
-    is_local = provider in {"lmstudio", "local"}
+def clean_extracted_text(text: str) -> str:
+    """Normalize whitespace and remove reference sections to optimize context window."""
+    if not text:
+        return ""
 
-    return {
-        "config": config,
-        "summary_input_chars": int(config.get("summary_input_chars") or (6000 if is_local else 50000)),
-        "summary_overlap_chars": int(config.get("summary_overlap_chars") or (600 if is_local else 2000)),
-        "summary_output_tokens": int(config.get("summary_output_tokens") or (1000 if is_local else 4096)),
-        "max_summary_chunks": int(config.get("max_summary_chunks") or (6 if is_local else 8)),
-        "combine_summary_chars": int(config.get("combine_summary_chars") or (1200 if is_local else 2400)),
-        "synthesis_summary_chars": int(config.get("synthesis_summary_chars") or (700 if is_local else 2200)),
-        "synthesis_output_tokens": int(config.get("synthesis_output_tokens") or (1600 if is_local else 4096)),
-        "use_few_shot_examples": bool(config.get("use_few_shot_examples", not is_local)),
+    text = re.sub(r"\n\s*\n+", "\n\n", text)
+
+    cutoff_patterns = [
+        r"\n(?:References|REFERENCES|Literature Cited|LITERATURE CITED|Bibliography)\s*\n",
+    ]
+    halfway_point = len(text) // 2
+    for pattern in cutoff_patterns:
+        match = re.search(pattern, text[halfway_point:])
+        if match:
+            text = text[: halfway_point + match.start()]
+            break
+
+    return text.strip()
+
+
+def deduplicate_list(items: List[Any]) -> List[str]:
+    """Deduplicate strings case-insensitively while preserving original casing."""
+    seen = set()
+    result = []
+    for item in items:
+        if not item or not isinstance(item, str):
+            continue
+        cleaned = item.strip().strip("-*• \t\r\n")
+        if not cleaned or cleaned.lower() in ("not available", "none", "n/a", "null"):
+            continue
+        norm = re.sub(r"\s+", " ", cleaned).lower()
+        if norm not in seen:
+            seen.add(norm)
+            result.append(cleaned)
+    return result
+
+
+def semantic_deduplicate_list(
+    items: List[Any], 
+    similarity_threshold: float = 0.80,
+    embedder: Optional[Any] = None
+) -> List[str]:
+    """Deduplicate exact matches first, then cluster near-synonyms using embeddings."""
+    base_items = deduplicate_list(items)
+    if len(base_items) <= 1:
+        return base_items
+
+    try:
+        from sentence_transformers import SentenceTransformer
+        if embedder is None:
+            embedder = SentenceTransformer("all-mpnet-base-v2")
+
+        embeddings = embedder.encode(base_items, normalize_embeddings=True, show_progress_bar=False)
+        sim_matrix = embeddings @ embeddings.T
+
+        merged = []
+        dropped = set()
+        for i in range(len(base_items)):
+            if i in dropped:
+                continue
+            merged.append(base_items[i])
+            for j in range(i + 1, len(base_items)):
+                if j not in dropped and sim_matrix[i, j] >= similarity_threshold:
+                    dropped.add(j)
+        return merged
+    except Exception as e:
+        logger.warning(f"Semantic deduplication fallback: {e}")
+        return base_items
+
+
+# ----------------------------------------------------------------------
+# Prompts
+# ----------------------------------------------------------------------
+
+PAPER_EXTRACTION_SYSTEM_PROMPT = """You are an expert scientific ontology extractor. 
+Your task is to extract structured, high-signal research entities from the provided academic research paper across any discipline.
+
+You MUST respond strictly with a valid JSON object matching this schema:
+{
+    "Affiliation": "Author Affiliation/Department",
+    "Research Domains": ["Domain 1", "Domain 2"],
+    "Techniques Used": ["Technique 1", "Technique 2"],
+    "Data & Platforms": ["Platform/Tool 1", "Dataset 2"],
+    "Application Areas": ["Application 1", "Application 2"],
+    "Primary Objective & Findings": "1-3 sentence summary of the core objective, experimental approach, and key findings."
+}
+
+Extraction Guidelines:
+1. Research Domains: Primary academic disciplines, specialized subfields, and core research areas directly relevant to this paper.
+2. Techniques Used: Specific, named methodologies, experimental assays, algorithms, computational models, mathematical frameworks, or analytical pipelines central to the paper's scientific investigation. Focus on distinctive methodologies rather than generic, incidental tasks.
+3. Data & Platforms: Named physical instruments, software packages, programming libraries, databases, repositories, benchmarks, and curated datasets used in the study. Output as a flat list.
+4. Application Areas: Specific problem domains, translational goals, technological, industrial, environmental, or clinical applications targeted by the work.
+"""
+
+SYNTHESIS_SYSTEM_PROMPT = """You are a principal investigator synthesizing a comprehensive researcher profile from their publications across any scientific discipline.
+You will receive aggregated lists of domains, techniques, platforms, and paper summaries for a single researcher.
+
+You MUST respond strictly with a valid JSON object matching this schema:
+{
+    "Affiliation:": "Canonical University Department / School Affiliation",
+    "Application Areas": [
+        "Macro Problem Domain / Translational Goal 1",
+        "Macro Problem Domain / Translational Goal 2"
+    ],
+    "Key Research Thinking Patterns": [
+        "Methodological Strategy Name: Conceptual definition of how the researcher approaches problem-solving and hypothesis validation (e.g., Concrete implementation citing specific methods, datasets, models, or findings from the papers)."
+    ],
+    "Summary Description": "A cohesive summary under 150 words describing the researcher's specialization, primary model systems/frameworks, key technical methodologies, and scientific impact."
+}
+
+Guidelines for Key Research Thinking Patterns:
+- Provide 3 to 4 prominent, hypothesis-driven scientific reasoning patterns or methodological paradigms.
+- The Pattern Name and Definition should capture the researcher's general problem-solving methodology or experimental design strategy.
+- Format EXACTLY as: 'Pattern Name: Definition (e.g., Specific example citing concrete methods, assays, or findings)'.
+- Do NOT cite paper numbers or generic labels (such as 'Paper 1'). Cite the concrete experimental mechanism, model system, or assay directly in the parenthesis.
+
+Guidelines for Application Areas:
+- Consolidate the paper-level sub-goals into 4 to 6 macro-level translational goals or application domains targeted by the research.
+"""
+
+
+# ----------------------------------------------------------------------
+# Extraction Functions
+# ----------------------------------------------------------------------
+
+async def extract_single_paper_json(
+    paper_text: str,
+    paper_name: str,
+    model_name: str,
+    max_chars: int = 45000,
+) -> Optional[Dict[str, Any]]:
+    """Extract structured micro-JSON from an individual paper."""
+    if not paper_text.strip():
+        return None
+
+    truncated_text = paper_text[:max_chars]
+    user_prompt = f"Extract all structured entities from this research paper ({paper_name}):\n\n{truncated_text}"
+
+    try:
+        data = await call_llm_json(
+            model_name=model_name,
+            system_prompt=PAPER_EXTRACTION_SYSTEM_PROMPT,
+            user_prompt=user_prompt,
+        )
+        return data
+    except Exception as e:
+        logger.error(f"Failed to extract JSON from {paper_name}: {e}")
+        return None
+
+
+async def synthesize_global_profile(
+    researcher_name: str,
+    merged_domains: List[str],
+    merged_techniques: List[str],
+    merged_platforms: List[str],
+    merged_applications: List[str],
+    paper_findings: List[str],
+    candidate_affiliations: List[str],
+    model_name: str,
+) -> Dict[str, Any]:
+    """Synthesize Thinking Patterns and Summary while preserving high-recall entity lists."""
+    user_prompt = f"""Researcher: {researcher_name}
+
+Candidate Affiliations: {', '.join(candidate_affiliations) if candidate_affiliations else 'University of Oklahoma'}
+Aggregated Research Domains: {', '.join(merged_domains)}
+Aggregated Key Techniques: {', '.join(merged_techniques[:45])}
+Platforms & Tools: {', '.join(merged_platforms[:30])}
+Application Areas: {', '.join(merged_applications)}
+
+Key Methodological Findings & Evidence Across Publications:
+"""
+    for finding in paper_findings:
+        user_prompt += f"- Finding & Evidence: {finding}\n"
+
+    try:
+        synthesis = await call_llm_json(
+            model_name=model_name,
+            system_prompt=SYNTHESIS_SYSTEM_PROMPT,
+            user_prompt=user_prompt,
+        )
+    except Exception as e:
+        logger.error(f"Failed to generate profile synthesis for {researcher_name}: {e}")
+        synthesis = {}
+
+    # Consolidate Application Areas from synthesis if valid, otherwise fallback to top deduplicated
+    synth_apps = synthesis.get("Application Areas")
+    if isinstance(synth_apps, list) and len(synth_apps) >= 2:
+        final_applications = deduplicate_list(synth_apps)
+    else:
+        final_applications = merged_applications[:6]
+
+    final_profile = {
+        "Researcher Profile:": researcher_name,
+        "Affiliation:": synthesis.get("Affiliation:") or (candidate_affiliations[0] if candidate_affiliations else "University of Oklahoma"),
+        "Research Domains": merged_domains,
+        "Techniques Used": merged_techniques,
+        "Data & Platforms": merged_platforms,
+        "Application Areas": final_applications,
+        "Key Research Thinking Patterns": synthesis.get("Key Research Thinking Patterns", []),
+        "Summary Description": synthesis.get("Summary Description", ""),
     }
 
-
-def split_text_for_model(text: str, max_chars: int, max_chunks: int, overlap_chars: int = 0) -> list[str]:
-    """Split long PDF text into bounded chunks with optional adjacent overlap."""
-    cleaned = "\n".join(line.strip() for line in text.splitlines() if line.strip())
-    if not cleaned:
-        return []
-
-    overlap_chars = max(0, min(overlap_chars, max_chars // 3))
-    chunks = []
-    start = 0
-    while start < len(cleaned) and len(chunks) < max_chunks:
-        end = min(start + max_chars, len(cleaned))
-        if end < len(cleaned):
-            break_at = cleaned.rfind("\n", start, end)
-            if break_at <= start + int(max_chars * 0.5):
-                break_at = cleaned.rfind(" ", start, end)
-            if break_at > start:
-                end = break_at
-        chunks.append(cleaned[start:end].strip())
-        if end >= len(cleaned):
-            break
-        next_start = max(0, end - overlap_chars)
-        if next_start <= start:
-            next_start = end
-        start = next_start
-
-    return [chunk for chunk in chunks if chunk]
+    return final_profile
 
 
-def truncate_text(text: str, max_chars: int) -> str:
-    """Trim text for prompt assembly while preserving a readable boundary."""
-    if len(text) <= max_chars:
-        return text
-    cutoff = text.rfind(" ", 0, max_chars)
-    if cutoff < int(max_chars * 0.8):
-        cutoff = max_chars
-    return text[:cutoff].rstrip() + "\n[TRUNCATED]"
+# ----------------------------------------------------------------------
+# Pipeline Orchestration
+# ----------------------------------------------------------------------
 
+async def process_researcher(
+    researcher_dir: Path,
+    output_dir: Path,
+    model_name: str,
+    semaphore: asyncio.Semaphore,
+) -> None:
+    """Process all PDFs for a single researcher folder and write the final profile JSON."""
+    researcher_name = researcher_dir.name
+    dept_name = researcher_dir.parent.name
+    
+    model_clean = model_name.replace("/", "_")
+    target_dir = output_dir / model_clean / dept_name
+    target_dir.mkdir(parents=True, exist_ok=True)
+    
+    sanitized_name = re.sub(r"[^\w\s-]", "", researcher_name).strip().replace(" ", "_")
+    output_file = target_dir / f"{sanitized_name}_profile.json"
 
-# --- 核心功能函数 ---
-# --- Part 2: PDF and Summarization Functions (Async) ---
-def extract_text_from_pdf(pdf_path: Path) -> str:
-    """
-    Extracts all text from an in-memory PDF file object.
-    """
-    try:
-        print(f"Reading text from {pdf_path}...")
-        page_text = ""
-        with open(pdf_path, "rb") as f:
-            reader = PyPDF2.PdfReader(f)
-            for page in reader.pages:
-                extracted = page.extract_text()
-                if extracted:
-                    page_text += extracted + "\n"
-        print(f"Successfully extracted text from {pdf_path}.")
-        return page_text
-    except Exception as e:
-        logger.warning(f"An error occurred while reading the PDF {pdf_path}: {e}")
-        raise IOError(f"Failed to read PDF {pdf_path}: {e}")
+    if output_file.exists():
+        logger.info(f"Profile already exists for {researcher_name} at {output_file}. Skipping.")
+        return
 
+    pdf_files = sorted(list(researcher_dir.glob("*.pdf")))
+    if not pdf_files:
+        logger.warning(f"No PDFs found in {researcher_dir}. Skipping.")
+        return
 
-async def summarize_single_paper(paper_text: str, pdf_path: str, model_name: str, semaphore: asyncio.Semaphore) -> str:
-    """Summarize one paper with model-aware prompt limits."""
-    if not paper_text:
-        raise ValueError(f"No text extracted from {pdf_path} for summarization.")
+    logger.info(f"Processing {len(pdf_files)} PDF(s) for {researcher_name}...")
 
+    async def process_pdf(pdf_path: Path):
+        async with semaphore:
+            text = extract_text_from_pdf(pdf_path)
+            if not text:
+                logger.warning(f"Skipping {pdf_path.name} (no text extracted).")
+                return None
+            logger.info(f"Extracting entities from {pdf_path.name}...")
+            return await extract_single_paper_json(text, pdf_path.name, model_name)
+
+    tasks = [process_pdf(pdf) for pdf in pdf_files]
+    paper_results = await asyncio.gather(*tasks)
+
+    valid_results = [res for res in paper_results if res is not None]
+    if not valid_results:
+        logger.error(f"Failed to extract structured data from any PDFs for {researcher_name}.")
+        return
+
+    all_domains = []
+    all_techniques = []
+    all_platforms = []
+    all_applications = []
+    paper_findings = []
+    affiliations = []
+
+    for res in valid_results:
+        all_domains.extend(res.get("Research Domains", []))
+        all_techniques.extend(res.get("Techniques Used", []))
+        all_platforms.extend(res.get("Data & Platforms", []))
+        all_applications.extend(res.get("Application Areas", []))
+        
+        finding = res.get("Primary Objective & Findings")
+        if finding:
+            paper_findings.append(finding)
+            
+        aff = res.get("Affiliation")
+        if aff and aff.strip() and aff.lower() not in ("not available", "none"):
+            affiliations.append(aff.strip())
+
+    merged_domains = semantic_deduplicate_list(all_domains, similarity_threshold=0.85)
+    merged_techniques = semantic_deduplicate_list(all_techniques, similarity_threshold=0.80)
+    merged_platforms = semantic_deduplicate_list(all_platforms, similarity_threshold=0.85)
+    merged_applications = semantic_deduplicate_list(all_applications, similarity_threshold=0.85)
+    candidate_affiliations = deduplicate_list(affiliations)
+
+    logger.info(f"Synthesizing profile for {researcher_name} ({len(merged_techniques)} unique techniques found)...")
     async with semaphore:
-        try:
-            limits = get_extraction_limits(model_name)
-            chunks = split_text_for_model(
-                paper_text,
-                limits["summary_input_chars"],
-                limits["max_summary_chunks"],
-                limits["summary_overlap_chars"],
-            )
-            if not chunks:
-                raise ValueError(f"No valid text chunks could be created from {pdf_path} for summarization.")
-
-            logger.info(
-                f"Sending {len(chunks)} bounded text chunk(s) from {pdf_path} "
-                f"to LLM for summarization..."
-            )
-
-            chunk_summaries = []
-            for chunk_index, chunk in enumerate(chunks, start=1):
-                prompt = f"""
-You are an expert research analyst. Summarize this paper excerpt for academic profile extraction.
-
-Return concise bullet points covering:
-- Primary research objective and core topic.
-- Specific named methods, models, algorithms, theorems, tools, or frameworks.
-- Data, platforms, software, libraries, equipment, and experimental settings.
-- Key quantitative and qualitative findings.
-- Authors and affiliations if visible in this excerpt.
-
-Excerpt {chunk_index} of {len(chunks)} from {pdf_path}:
----
-{chunk}
----
-"""
-                chunk_summary = await call_llm(
-                    model_name=model_name,
-                    system_prompt="You create concise, evidence-grounded academic paper summaries of each chunk of a paper.",
-                    user_prompt=prompt,
-                    max_output_tokens=limits["summary_output_tokens"],
-                    config=limits["config"],
-                )
-                if chunk_summary:
-                    chunk_summaries.append(chunk_summary)
-
-            if not chunk_summaries:
-                raise ValueError(f"LLM returned no summaries for any chunks of {pdf_path}.")
-
-            if len(chunk_summaries) == 1:
-                summary = chunk_summaries[0]
-            else:
-                combined = "\n\n---\n\n".join(
-                    f"Excerpt Summary {idx + 1}:\n{truncate_text(summary, limits['combine_summary_chars'])}"
-                    for idx, summary in enumerate(chunk_summaries)
-                )
-                combine_prompt = f"""
-You are consolidating excerpt-level summaries into one paper-level summary.
-
-Create one concise academic summary with the same fields:
-- Primary research objective and core topic.
-- Specific named methods, models, algorithms, tools, and frameworks.
-- Data, platforms, software, equipment, and experimental settings.
-- Key findings and conclusions.
-- Authors and affiliations.
-
-Excerpt-level summaries:
----
-{combined}
----
-"""
-                summary = await call_llm(
-                    model_name=model_name,
-                    system_prompt="You merge paper excerpt summaries without adding unsupported claims.",
-                    user_prompt=combine_prompt,
-                    max_output_tokens=limits["summary_output_tokens"],
-                    config=limits["config"],
-                )
-
-            logger.info(f"Successfully generated detailed summary for {pdf_path}.")
-            return summary
-        except Exception as e:
-            logger.error(f"An error occurred during summarization for {pdf_path}: {e}")
-            raise ValueError(f"Failed to summarize paper due to an error: {e}.")
-
-
-async def synthesis_summarize(model_name: str, list_of_summaries: list[str], synthesis_summary_chars: int) -> str:
-    """Reduce many paper summaries into one bounded synthesis for profile creation."""
-    if not list_of_summaries:
-        return ""
-
-    limits = get_extraction_limits(model_name)
-    per_summary_chars = max(600, synthesis_summary_chars)
-    tmp_inp_summary = "\n\n---\n\n".join(
-        f"Paper Summary {idx + 1}:\n{truncate_text(summary, per_summary_chars)}"
-        for idx, summary in enumerate(list_of_summaries)
-        if summary
-    )
-    if not tmp_inp_summary:
-        return ""
-
-    synthesis_summary = await call_llm(
-        model_name=model_name,
-        system_prompt="You synthesize multiple paper summaries into concise, evidence-grounded academic profile notes.",
-        user_prompt=(
-            "You are synthesizing multiple paper summaries for academic profile extraction.\n"
-            "Keep the synthesis concise, but preserve named methods, datasets, tools, domains, and recurring research patterns.\n"
-            f"Keep the response under {synthesis_summary_chars} characters.\n\n"
-            f"Input Summaries:\n---\n{tmp_inp_summary}\n---"
-        ),
-        max_output_tokens=max(256, synthesis_summary_chars // 4),
-        config=limits["config"],
-    )
-
-    return synthesis_summary
-
-
-# --- Part 3: Researcher Profile Creation (The "Synthesize" Step) ---
-async def synthesize_profile(researcher_name: str, list_of_summaries: list[str], example_summaries: str | list[str], example_json_output: str, model_name: str) -> dict:
-    """
-    Synthesize a structured researcher profile from paper summaries.
-
-    Local small-context models use a compact prompt; larger-context
-    models can keep the few-shot examples.
-    """
-    if not list_of_summaries:
-        raise ValueError(f"No paper summaries provided for researcher '{researcher_name}'.")
-
-    limits = get_extraction_limits(model_name)
-    llm_extracted_summaries = await synthesis_summarize(model_name, list_of_summaries, limits["synthesis_summary_chars"])
-
-    if not llm_extracted_summaries:
-        raise ValueError(f"Failed to synthesize paper summaries for researcher {researcher_name!r}.")
-
-    preset_example_json_output = example_json_output.strip()
-    if isinstance(example_summaries, list):
-        preset_example_summaries_text = "\n\n---\n\n".join(
-            f"Summary of Paper {idx + 1}:\n{summary}"
-            for idx, summary in enumerate(example_summaries)
-            if summary
-        )
-    else:
-        preset_example_summaries_text = example_summaries.strip()
-
-    example_block = ""
-    if preset_example_summaries_text and preset_example_json_output:
-        example_block = f"""
-### EXAMPLE INPUT SUMMARIES
----
-{preset_example_summaries_text}
----
-
-### EXAMPLE JSON OUTPUT
-{preset_example_json_output}
-"""
-    else:
-        raise ValueError("Both example summaries and example JSON output must be provided for few-shot prompting.")
-
-    prompt = f"""
-You are an expert academic analyst creating a profile for a formal, academic audience.
-Your output must be one complete JSON object and nothing else.
-
-Rules:
-- Use only evidence from the paper summaries.
-- Keep each list concise and specific.
-- Prefer named methods, datasets, software, platforms, and application areas.
-- Include a compact but informative Summary Description.
-
-{example_block}
-### ACTUAL TASK
-Create a profile for '{researcher_name}' using the following summaries.
-
-### ACTUAL INPUT SUMMARIES
----
-{llm_extracted_summaries}
----
-
-### ACTUAL JSON OUTPUT
-"""
-
-    try:
-        logger.info("Sending summaries to LLM for final profile synthesis...")
-
-        profile_data = await call_llm_json(
+        final_profile = await synthesize_global_profile(
+            researcher_name=researcher_name,
+            merged_domains=merged_domains,
+            merged_techniques=merged_techniques,
+            merged_platforms=merged_platforms,
+            merged_applications=merged_applications,
+            paper_findings=paper_findings,
+            candidate_affiliations=candidate_affiliations,
             model_name=model_name,
-            system_prompt=f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'.",
-            user_prompt=prompt,
-            max_output_tokens=limits["synthesis_output_tokens"],
-            config=limits["config"],
-        )
-        logger.info("Successfully created researcher profile.")
-        return profile_data
-    except Exception as e:
-        logger.error(f"An error occurred during profile creation: {researcher_name}: {e}")
-        raise ValueError(f"Failed to synthesize profile for '{researcher_name}' due to an error: {e}.")
-
-
-async def generate_profile_for_one_author(author_dir: Path, out_dir: Path, model_name: str, semaphore: asyncio.Semaphore) -> None:
-    """
-    An async wrapper in the frontend to orchestrate the profile extraction process
-    by calling the imported backend functions.
-    """
-    # --- This is the example data your backend needs for its prompt ---
-    example_summaries_for_prompt = [
-        # Summary 1
-        """• Primary Research Objective and Core Topic: The primary research objective is to introduce a pioneering approach that integrates digital twin (DT) technology with a federated learning management system (FLMS) to enhance the security and resilience of vehicular networks in the 6G era against adversarial attacks. The core topic focuses on developing novel federated unlearning (FUL) techniques to mitigate the influence of malicious or poisonous clients within already compromised networks, ensuring dependable and secure communication.
-• Specific Methodologies and Techniques:
-    ◦ Framework: DT-FU (Digital Twin-Driven Federated Unlearning for Resilient Vehicular Networks in the 6G Era).
-    ◦ Machine Learning Approach: Federated Learning (FL).
-    ◦ Unlearning Technique: Federated Unlearning (FUL), specifically client-level unlearning, to dynamically remove a client's influence from a global model.
-    ◦ Unlearning Algorithms: Uses gradient ascent to maximize the loss associated with a client's data for effective unlearning and incorporates gradient descent techniques.
-    ◦ Detection Mechanism: Leverages Digital Twins (DTs) to monitor client behaviors and identifies malicious clients using anomaly detection techniques that analyze unusual patterns in model performance, learning rates, and updates.
-    ◦ Model Aggregation: Federated Averaging (FedAvg) is used to aggregate local updates into a global model.
-    ◦ Neural Network Models (for experiments): LeNet-5 model for MNIST and Fashion-MNIST datasets, and VGG-11 model for CIFAR-10.
-    ◦ Comparison Methods: Retrain (training from scratch excluding malicious clients), Federated Averaging (FedAvg), FedEraser, and FedRecovery.
-• Data, Platforms, and Tools:
-    ◦ Datasets: MNIST, Fashion-MNIST, and CIFAR10.
-    ◦ Programming Languages/Libraries: Python and PyTorch.
-    ◦ Toolkit for Adversarial Threats Simulation: Adversarial Robustness Toolbox.
-    ◦ Network Technology: 6G.
-    ◦ Application Domain: Vehicular networks.
-• Key Quantitative and Qualitative Findings and Conclusions:
-    ◦ Effectiveness against Backdoor Attacks: DT-FU reduces backdoor accuracy to baseline levels, comparable to retraining, effectively neutralizing adversarial influences. Conversely, without unlearning (FedAvg), vulnerability to malicious patterns increases.
-    ◦ Efficiency in Restoring Clean Accuracy: DT-FU is more efficient than conventional retraining in restoring clean accuracy, achieving high accuracy within fewer aggregation rounds by precisely adjusting the existing global model.
-    ◦ Comparative Performance: DT-FU maintains clean accuracy near the Retrain baseline and outperforms both FedEraser and FedRecovery in minimizing backdoor risks.
-    ◦ Overall Strengths: Demonstrates dual strengths in excising adversarial influences and resource efficiency, ensuring model integrity and optimizing computational expenditure.
-    ◦ Impact of 6G: 6G technology significantly reduces communication costs, enables quicker malicious activity detection, and accelerates FUL processes, enhancing bandwidth, lowering latency, and improving reliability for FL systems.
-    ◦ Qualitative Conclusion: DT-FU is a novel, robust, and scalable framework that secures vehicular networks in the 6G era by leveraging digital twins and federated unlearning to combat data poisoning attacks, seamlessly integrating with existing FLMS.
-• Authors and Affiliations:
-    ◦ Wathsara Daluwatta: RMIT University, Australia.
-    ◦ Shehan Edirimannage: RMIT University, Australia.
-    ◦ Charitha Elvitigala: RMIT University, Australia.
-    ◦ Ibrahim Khalil: RMIT University, Australia.
-    ◦ Mohammed Atiquzzaman: The University of Oklahoma, USA.""",
-
-    # Summary 2
-    """Primary Research Objective and Core Topic: The primary research objective is to propose a novel approach that combines Adversarial Machine Learning (AML) with Federated Learning (FL) to address significant data privacy concerns in smart city surveillance, particularly regarding facial data captured by cameras. The core topic is achieving privacy-preserving face recognition in distributed settings by perturbing surveillance data at the source.
-• Specific Methodologies and Techniques:
-    ◦ Core Approach: Integration of Adversarial Machine Learning (AML) and Federated Learning (FL).
-    ◦ Privacy Preservation Method: Utilizes a noise generator to perturb surveillance data directly at the source (cameras) before sharing, employing a local differential privacy (LDP) approach.
-    ◦ Perturbation Algorithm: Iteratively transforms input images by introducing noise until misclassification occurs, saving the image from the last correct classification with maximum perturbation. The perturbation is updated based on the gradient of the loss function. The concept is inspired by the DeepFool adversarial attack.
-    ◦ FL Algorithm: Typically uses Federated Averaging for model aggregation.
-    ◦ Privacy Guarantee: Introduces a novel guarantee called γ-AdvNoise privacy.
-    ◦ Neural Network Models (for experiments):
-        ▪ AlexNet model used during the perturbation process.
-        ▪ VGG16 model used as a baseline for centralized machine learning setup.
-        ▪ ResNet18, GoogLeNet, DenseNet, MobileNet, and ResNeXt used for privacy evaluation in the FL setup.
-• Data, Platforms, and Tools:
-    ◦ Datasets: Pins dataset (facial images), MNIST (handwritten digits), and CIFAR-10 (color images).
-    ◦ Platforms: AWS cloud computing service, specifically Super Large SageMaker Notebook instance and G4DN series N11 GPU Notebook - XXLarge instance.
-    ◦ Programming Languages/Libraries: Python and PyTorch.
-• Key Quantitative and Qualitative Findings and Conclusions:
-    ◦ Accuracy: Achieved a testing accuracy of 99.95% in standard machine learning (centralized) settings and 96.24% in federated learning (distributed) settings.
-    ◦ Privacy-Utility Trade-off: The system allows users to adjust the epsilon value in the noise generator to tailor the privacy-utility trade-off, where smaller values yield reasonable privacy with higher utility, and larger values enhance privacy at the expense of utility.
-    ◦ Robustness of Perturbation: The noise introduced varies randomly per image, contributing to the robustness of machine learning models by enabling them to comprehend diverse scenarios rather than memorizing.
-    ◦ Model Performance (Centralized): The VGG16 model demonstrated high robustness with a 99.95% test accuracy on surveillance images with adversarial perturbations.
-    ◦ Model Performance (FL): For the perturbed dataset, models achieved varying test accuracies: ResNet18 (80.01%), GoogLeNet (83.23%), DenseNet (82.01%), MobileNet (72.33%), and ResNeXt (66.67%).
-    ◦ Efficiency: The data perturbation runtime is efficient, with average times ranging from 0.0023s (MNIST) to 0.0079s (Pins) per image. The perturbation process exhibits linear time complexity based on iterations and pixel count.
-    ◦ Qualitative Conclusion: The proposed framework effectively balances privacy and effectiveness in federated learning for smart city surveillance by transforming raw data into privacy-preserving data through intelligent noise generation.
-• Authors and Affiliations:
-    ◦ Farah Wahida: School of Computing Technologies, RMIT University, Melbourne, Australia.
-    ◦ M.A.P. Chamikara: CSIRO’s Data61, Melbourne, Australia.
-    ◦ Ibrahim Khalil: School of Computing Technologies, RMIT University, Melbourne, Australia.
-    ◦ Mohammed Atiquzzaman: School of Computer Science, University of Oklahoma, Norman, USA.""",
-
-    # Summary 3
-    """Primary Research Objective and Core Topic: The primary research objective is to introduce "Unlearning as a Service for Safeguarding Federated Learning" (UaaS-SFL), a novel service designed to integrate seamlessly with existing FL management systems. Its core topic is to effectively remove the impact of poisoning clients and restore the integrity of the global model in Federated Learning (FL) systems within IoT networks, addressing the limitations of traditional pre-detection methods in already compromised environments.
-• Specific Methodologies and Techniques:
-    ◦ Service Framework: UaaS-SFL (Unlearning as a Service for Safeguarding Federated Learning).
-    ◦ Core Concept: Federated Unlearning (FUL), specifically client-level federated unlearning, which enables selective erasure of specific clients' data influence from the global model.
-    ◦ Unlearning Algorithms:
-        ▪ Initial Model Construction via Median Aggregation: Establishes a robust baseline model by aggregating parameters from client models using median values, mitigating outlier influence.
-        ▪ Client-level Unlearning via Gradient Ascent: Maximizes the loss for data targeted for unlearning locally at the client, with L1 regularization to promote sparsity and prevent overfitting.
-        ▪ Early Stopping Criterion Based on Expected Calibration Error (ECE): Prevents over-unlearning by monitoring the discrepancy between predicted probabilities and actual correctness on a validation dataset against a predefined threshold.
-    ◦ FL Algorithm: Federated Averaging (FedAvg), enhanced by UaaS-SFL.
-    ◦ Detection Mechanism: Model Detector component within the FLMS uses anomaly detection techniques to identify malicious contributions by analyzing client updates, acting as middleware to invoke UaaS-SFL.
-    ◦ Attack Simulated: Data Poisoning Attacks (e.g., backdoor triggers using pixel patterns).
-    ◦ Neural Network Models (for experiments): LeNet-5 model for MNIST and Fashion-MNIST, and VGG-11 model for CIFAR-10.
-    ◦ Comparison Methods: FedAvg, Retrain, FedEraser, and FedRecovery.
-• Data, Platforms, and Tools:
-    ◦ Datasets: MNIST, Fashion-MNIST, and CIFAR-10.
-    ◦ Toolkit for Adversarial Threats Simulation: Adversarial Robustness Toolbox.
-    ◦ Environment: Simulated IoT environment.
-    ◦ Computing Resources: RACE (RMIT AWS Cloud Supercomputing Hub).
-• Key Quantitative and Qualitative Findings and Conclusions:
-    ◦ Effectiveness in Mitigating Poisoning Attacks: UaaS-SFL successfully detects and removes malicious client contributions, reducing backdoor accuracy to baseline levels comparable to retraining across all tested datasets. This effectiveness holds regardless of the stage of invocation in the FL lifecycle (early, midway, or largely trained model).
-    ◦ Independence from Client Count: The service's effectiveness is independent of the number of clients or the number of malicious clients in the FL ecosystem.
-    ◦ Model Accuracy Maintenance: Despite an initial temporary drop of ~5% in accuracy post-unlearning, the overall accuracy quickly recovers to baseline levels in subsequent rounds due to collaborative learning.
-    ◦ Comparative Performance: UaaS-SFL consistently demonstrates superior performance over FedRecovery and FedEraser, closely matching the Retrain baseline, offering a more practical solution due to lower computational costs.
-    ◦ Qualitative Conclusion: UaaS-SFL is a novel, robust, and scalable service that safeguards FL management systems in IoT networks against data poisoning attacks, ensuring model integrity and reliability post-compromise, thus providing a critical foundation for secure IoT applications.
-• Authors and Affiliations:
-    ◦ Wathsara Daluwatta: School of Computing Technologies, RMIT University, Melbourne, VIC, Australia.
-    ◦ Ibrahim Khalil: School of Computing Technologies, RMIT University, Melbourne, Australia.
-    ◦ Shehan Edirimannage: School of Computing Technologies, RMIT University, Melbourne, VIC, Australia.
-    ◦ Mohammed Atiquzzaman: School of Computer Science, The University of Oklahoma, Norman, OK, USA.""",
-
-    # Summary 4
-    """Primary Research Objective and Core Topic: The primary research objective is to introduce a novel framework integrating a solar-powered High-Altitude Platform (HAP) with multiple Unmanned Aerial Vehicles (UAVs) equipped with Reconfigurable Intelligent Surfaces (RISs) to significantly enhance disaster response capabilities in 6G networks. The core topic is achieving low-latency and energy-efficient communication under compromised infrastructure by optimizing UAV energy management, RIS control, and ground device (GD) data offloading using a hybrid approach.
-• Specific Methodologies and Techniques:
-    ◦ Framework: An integrated system comprising a solar-powered HAP (Airship𝑏), UAVs mounted with RISs, and Ground Devices (GDs), for efficient edge computing in disaster scenarios. The multi-agent reinforcement learning part of the framework is implicitly named DIRECT.
-    ◦ Overall Optimization Approach: A hybrid approach combining game theory and Multi-Agent Reinforcement Learning (MARL).
-    ◦ Task Offloading Optimization: Utilizes a potential game framework to determine optimal task offloading decisions for GDs, minimizing energy consumption and latency. The Algorithm to Find Nash Equilibrium (Algorithm 1) is employed.
-    ◦ UAV Movement and RIS Control Optimization: Employs a Multi-Agent Reinforcement Learning (MARL) strategy based on a Deep Reinforcement Learning (DRL) method, specifically Multi-Agent Deep Deterministic Policy Gradient (DDPG). The DIRECT Algorithm (Algorithm 2) describes this.
-    ◦ Energy Management Innovation: A novel RIS ON/OFF mechanism allows UAVs to conserve energy by switching OFF RISs when not needed, enabling recharging and extending operational lifetimes.
-    ◦ Energy Transfer: Wireless Energy Transfer (WET) from the HAP to UAVs and GDs.
-    ◦ Communication Protocol: Non-Orthogonal Multiple Access (NOMA) is used for task offloading from GDs to HAP, with Successive Interference Cancellation (SIC) adopted at the HAP receiver.
-    ◦ Channel Models: Simplified Rician fading models are used for communication between HAPs, UAVs, and GDs.
-    ◦ Comparison Methods (DRL Variants): Single-agent Double DQN (S-DDQN) and Multi-agent DQN (MADQN).
-    ◦ Comparison Methods (Baselines): Random and Greedy approaches.
-• Data, Platforms, and Tools:
-    ◦ Platforms: Simulations conducted using Python 3.8.10 and TensorFlow 2.8.0.
-    ◦ Simulated Environment: A square disaster area of 10 km width (100 km²).
-    ◦ Devices/Agents: 100 Ground Devices (GDs), 16 UAVs, and 1 High-Altitude Platform (HAP) (Airship𝑏) positioned at 10 km altitude.
-    ◦ Neural Network Architecture: Actor and Critic networks with four fully connected hidden layers, using ReLU and Tanh activation functions.
-• Key Quantitative and Qualitative Findings and Conclusions:
-    ◦ Energy Efficiency: The RIS ON/OFF mechanism significantly enhances the energy efficiency and operational longevity of the UAV network. DIRECT consistently maintains higher residual energy levels for UAVs, leading to longer operational periods compared to MADQN and S-DDQN.
-    ◦ Data Processing Performance & Offloading Rates: DIRECT achieves consistently higher offloading rates, indicating superior efficiency in managing and processing computational tasks from GDs.
-    ◦ Network Reliability & Coverage: DIRECT maintains a consistently high density of active UAVs, ensuring robust coverage and support for GDs throughout the mission.
-    ◦ Latency Minimization: The game theory-based approach for task offloading (GT-NE) results in the lowest average system cost and achieves a slower initial cost increase with varying CPU cycles and data sizes, effectively balancing local and remote processing. Overall, the integrated system reduces both energy consumption and latency, ensuring faster disaster recovery.
-    ◦ Overall Superiority: Extensive simulations validate DIRECT's superior performance in energy efficiency, data processing, and overall network reliability compared to traditional methods and other DRL variants. DIRECT shows faster convergence and higher stability in reward accumulation.
-    ◦ Qualitative Conclusion: The proposed framework offers a robust solution for energy-efficient, low-latency, and reliable communication in 6G disaster response scenarios, leveraging a novel integration of HAPs, RIS-equipped UAVs, game theory, and MARL.
-• Authors and Affiliations:
-    ◦ Jamal Alotaibi: Department of computer engineering, College of Computer, Qassim University, Buraydah, Saudi Arabia.
-    ◦ Omar Sami Oubbati: LIGM, University Gustave Eiffel, Marne-la-Vallée, France.
-    ◦ Mohammed Atiquzzaman: University of Oklahoma, Norman, OK, USA.
-    ◦ Fares Alromithy: Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia.
-    ◦ Mohammad Rashed Altimania: Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia.""",
-
-    # Summary 5
-    """Primary Research Objective and Core Topic: The primary research objective is to propose a novel cooperative framework integrating UAVs equipped with Reconfigurable Intelligent Surfaces (RIS) and Unmanned Ground Vehicles (UGVs) for real-time urban monitoring in 6G networks. The core topic is addressing the limitations of traditional urban monitoring methods, such as limited coverage, intermittent connectivity, and inefficient energy management, by leveraging AI-driven coordination, RIS-assisted communication, and real-time energy optimization.
-• Specific Methodologies and Techniques:
-    ◦ Framework: A novel UAV-UGV cooperative system integrated with RISs, referred to as ADVISE (implicitly, as it's the core RL framework).
-    ◦ UAV Path Optimization and Recharging Schedules: Utilizes Deep Reinforcement Learning (DRL), specifically Proximal Policy Optimization (PPO) (also referred to as MAPPO for multi-agent PPO), to optimize UAV trajectory planning and recharging schedules. The ADVISE Algorithm (Algorithm 4) outlines this process.
-    ◦ UGV Patrol Route Optimization: Employs a Genetic Algorithm (GA) to refine UGV patrol routes, ensuring adaptive and continuous surveillance. The Genetic Algorithm for UGV Movement Optimization (Algorithm 3) is provided.
-    ◦ RIS Configuration Optimization: Incorporates Differential Evolution (DE) for RIS phase shift optimization, enhancing data transmission and mitigating urban signal degradation. The DE-based Optimization for RIS Phase-Shift Configuration (Algorithm 1) is used.
-    ◦ Energy Management: Proposes a wireless UAV-based recharging system for UGVs via energy beamforming, reducing dependency on fixed charging stations. Includes AI-driven adaptive energy allocation.
-    ◦ Communication Protocol: Non-Orthogonal Multiple Access (NOMA) for UGV data transmission to the central controller, with Successive Interference Cancellation (SIC) for interference mitigation.
-    ◦ Risk Priority Evaluation: Implements a dynamic risk scoring method (Algorithm 2: Risk Priority Evaluation Algorithm) that continuously assesses zone priority based on real-time UV detection data and historical data.
-    ◦ Channel Models: Uses Rician fading models for channel gain calculations.
-    ◦ Comparison Methods (DRL Variants): Multi-Agent Deep Q-Network (MADQN) and Deep Deterministic Policy Gradient (DDPG).
-    ◦ Comparison Methods (Baselines): Random and Greedy strategies.
-• Data, Platforms, and Tools:
-    ◦ Platforms: Simulations implemented in Python 3.8.10 with TensorFlow 2.8.0.
-    ◦ Simulated Environment: A smart city with a 15 km width (225 km²).
-    ◦ Devices/Agents: 20 UAVs and 50 UGVs.
-    ◦ UAV Model Reference: EHang 184 (repurposed for urban monitoring).
-    ◦ Equipment: Optical and Infrared Cameras for UV detection and data analysis.
-    ◦ Neural Network Architecture: Actor and Critic networks with four fully connected layers, using ReLU and Tanh activation functions.
-• Key Quantitative and Qualitative Findings and Conclusions:
-    ◦ Communication Reliability: The framework significantly improves communication reliability by leveraging intelligent RIS beamforming to reduce signal degradation in dense urban environments. ADVISE consistently achieves superior data rates compared to other DRL methods.
-    ◦ Monitoring Coverage: Achieves adaptive and continuous surveillance. The GA-based system, especially when integrated with UAVs, achieves the highest coverage of high-risk zones. ADVISE demonstrates superior high-risk zone coverage through real-time UAV trajectory optimization and dynamic RIS-assisted coordination.
-    ◦ Energy Efficiency: Maximizes energy efficiency through its wireless UAV-based recharging system for UGVs and AI-driven path optimization. ADVISE maintains markedly higher residual energy for both UAVs and UGVs, supporting longer operational spans. The GA-based system with UAVs sustains higher UGV residual energy due to optimized task allocation and energy management.
-    ◦ Latency Reduction: Ensures seamless data transmission and reduces latency.
-    ◦ Overall Superiority: ADVISE consistently outperforms MADQN, DDPG, greedy, and random strategies across key metrics including accumulated rewards, data rates, and energy efficiency. It maintains a greater density of active UAVs and UGVs, ensuring continuous monitoring and efficient task execution.
-    ◦ Qualitative Conclusion: ADVISE presents a scalable and robust solution for urban monitoring in 6G networks by effectively balancing energy, communication, and adaptability through intelligent coordination and specialized hardware integrations.
-• Authors and Affiliations:
-    ◦ Omar Sami Oubbati: LIGM, University Gustave Eiffel, Marne-la-Vallée, France.
-    ◦ Jamal Alotaibi: Department of computer engineering, College of Computer, Qassim University, Buraydah, Saudi Arabia.
-    ◦ Fares Alromithy: Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia.
-    ◦ Mohammed Atiquzzaman: University of Oklahoma, Norman, OK, USA.
-    ◦ Mohammad Rashed Altimania: Electrical engineering department, University of Tabuk, Tabuk, Saudi Arabia.""",
-]
-
-    example_json_for_prompt = """
-{
-  "Researcher Profile:": "Dr. Mohammad Atiquzzaman",
-  "Affiliation:": "School of Computer Science, University of Oklahoma",
-  "Research Domains": [
-    "Federated Learning",
-    "Machine Learning",
-    "Network Security",
-    "Digital Twin (DT) Technology",
-    "Edge Computing",
-    "Unmanned Aerial Vehicle (UAV) and Unmanned Ground Vehicle (UGV)",
-    "Artificial Intelligence (AI)",
-    "Data Privacy"
-  ],
-  "Techniques Used": [
-    "Federated Unlearning which is the safe and secure removal of data from models without entire retraining",
-    "Adversarial Machine Learning (AML) for noise generation",
-    "Deep Neural Networks (DNN) (VGG16, Resnet18, GooLeNet, DenseNet, MobileNet, ResNeXt)",
-    "Game Theory",
-    "Multi-agent reinforcement learning (MARL)",
-    "Deep reinforcement learning (DRL)",
-    "Genetic Algorithm (GA) an algorithm for optimization inspired by natural selection",
-    "Differential Evolution (DA) a population-based optimization algorithm"
-  ],
-  "Data & Platforms": [
-    "Public Datasets: MNIST, Fashion-MNIST, CIFAR-10, Pins Face Recognition (https://www.kaggle.com/datasets/hereisburak/pins-face-recognition)",
-    "Models: AlexNet Model",
-    "Platforms: Python, PyTorch, AWS Cloud Computing, TensorFlow, Multi-Agent Proximal Policy Optimization (MAPPO) Framework"
-  ],
-  "Application Areas": [
-    "Machine Learning Security",
-    "Security in 6G Networks, Vehicular Security",
-    "Smart City Surveillance",
-    "IoT Network",
-    "Healthcare",
-    "Disaster Response"
-  ],
-  "Key Research Thinking Patterns": [
-    "Adversarial Modeling: Actively considers and develops methods to anticipate counter intelligent, malicious actions or data manipulations within systems (e.g., Data poisoning attacks in Federated Learning systems, Data privacy issues in facial recognition AI).",
-    "Comparative Evaluation: Assesses and contrasts various methods and systems to identify performance differences and trade-offs in metrics (e.g., Comparing Digital Twin Federated Learning Systems to already established methods, Comparing Machine Learning Facial Recognition through different Machine Learning algorithms, Benchmarked model accuracy after data poisoning).",
-    "Scalability Focus: Prioritizes creating solutions that are practical and efficient, being able to be implemented within larger demands or scopes (e.g., UAV and UGV architecture efficiency expanding to smart city, Unlearning as a Service being tested for larger scales).",
-    "AI/ML Utilization: Incorporates and develops artificial intelligence and machine learning systems within larger structures and scopes (e.g., developing Federated Learning for management systems, enabling AI-driven coordination for UAVs and UGVs)."
-  ],
-  "Summary Description": "Dr. Mohammad Atiquzzaman specializes in next-generation networking and intelligent systems. His work spans Federated Learning, network security in fields like 6G and vehicular aspects, and other applications of AI in autonomous systems like UAVs and UGVs. Notably, he introduces techniques like Unlearning as a Service for secure data removal from AI models, as well as providing more efficient solutions to UAVs and UGVs in the aspect of a smart city. Their overall contributions reflect a strong sense of comparative evaluation between current methods and their proposed solutions while also designing for larger scalability."
-}
-"""
-
-    author_name = author_dir.name
-    department_name = author_dir.parent.name
-    save_dir = os.path.join(out_dir, model_name, department_name)
-    os.makedirs(save_dir, exist_ok=True)
-
-    save_path = os.path.join(save_dir, f"{author_name.replace(' ', '_')}_profile.json")
-
-    # if existing profile exists, skip processing
-    if os.path.exists(save_path):
-        logger.warning(f"Profile for {author_name} already exists at {save_path}. Skipping...")
-        return
-
-    # Step 0: Gather all PDF file paths for the author
-    uploaded_files = list(author_dir.glob("*.pdf"))
-    if not uploaded_files:
-        logger.error(f"No PDF files found for author {author_name} in directory {author_dir}. Skipping...")
-        raise ValueError(f"No PDF files found for author {author_name} in directory {author_dir}.")
-
-    # Step 1: Extract text from all PDFs (in parallel), using asyncio.to_thread to prevent blocking
-    text_extraction_tasks = []
-    for i, fpath in enumerate(uploaded_files):
-        logger.info(f"Extracting text from file {fpath}...")
-        text_extraction_tasks.append(asyncio.to_thread(extract_text_from_pdf, fpath))
-
-    extracted_results = await asyncio.gather(*text_extraction_tasks, return_exceptions=True)
-    extracted_texts = []
-    for file_path, result in zip(uploaded_files, extracted_results):
-        if isinstance(result, Exception):
-            logger.error(f"Failed to extract text from {file_path}: {result}")
-            extracted_texts.append("")
-        else:
-            extracted_texts.append(result)
-
-    # Step 2: Summarize papers in parallel
-    logger.info("AI is summarizing publications...")
-    summarization_tasks = []
-    for i, one_text in enumerate(extracted_texts):
-        file_name = uploaded_files[i]
-        summarization_tasks.append(summarize_single_paper(one_text, file_name, model_name, semaphore))
-
-    detailed_results = await asyncio.gather(*summarization_tasks, return_exceptions=True)
-    valid_summaries = []
-    for file_path, result in zip(uploaded_files, detailed_results):
-        if isinstance(result, Exception):
-            logger.error(f"Failed to summarize {file_path}: {result}")
-        elif result:
-            valid_summaries.append(result)
-
-    # Step 3: Synthesize the final profile
-    if valid_summaries:
-        logger.info("AI is synthesizing the final profile...")
-        final_profile = await synthesize_profile(
-            author_name,
-            valid_summaries,
-            example_summaries_for_prompt,
-            example_json_for_prompt,
-            model_name=model_name
         )
 
-        if final_profile:
-            with open(save_path, 'w') as f:
-                json.dump(final_profile, f, indent=4)
-            logger.info(f"Successfully saved profile for {author_name} at {save_path}.")
-    else:
-        logger.error(f"Failed to summarize publications for {author_name} because there are no valid summaries.")
+    with output_file.open("w", encoding="utf-8") as f:
+        json.dump(final_profile, f, indent=4, ensure_ascii=False)
+
+    logger.info(f"Successfully saved profile for {researcher_name} -> {output_file}")
+
+
+async def main_async(args: argparse.Namespace) -> None:
+    pdf_root = Path(args.pdf_dir).resolve()
+    output_root = Path(args.output_dir).resolve()
+
+    if not pdf_root.exists():
+        raise FileNotFoundError(f"PDF directory not found: {pdf_root}")
+
+    # Discover all researcher directories containing PDFs (excluding hidden and collaborative benchmark folders)
+    pdf_files = [p for p in pdf_root.rglob("*.pdf") if not any(part.startswith((".", "~")) for part in p.parts)]
+    if not pdf_files:
+        logger.warning(f"No PDF files found under {pdf_root}.")
         return
 
+    researcher_dirs = sorted(list({p.parent for p in pdf_files}))
 
-async def main(opts) -> None:
-    """ Main function to process the researcher profile extraction. """
-    base_dir = Path(opts.pdf_directory)
-    out_dir = Path(opts.output)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    logger.info(f"Found {len(researcher_dirs)} researcher directory(ies) to process.")
+    semaphore = asyncio.Semaphore(args.concurrency)
 
-    if not base_dir.exists() or not base_dir.is_dir():
-        logger.error(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
-        raise ValueError(f"The specified PDF directory does not exist or is not a directory: {base_dir}")
+    tasks = [
+        process_researcher(
+            researcher_dir=r_dir,
+            output_dir=output_root,
+            model_name=args.model_name,
+            semaphore=semaphore,
+        )
+        for r_dir in researcher_dirs
+    ]
 
-    tmp_author_dirs = [d for d in base_dir.iterdir() if d.is_dir()]
-
-    if 0 == len(tmp_author_dirs):
-        logger.error(f"No author directories found in the specified PDF directory: {base_dir}")
-        raise ValueError(f"No author directories found in the specified PDF directory: {base_dir}")
-
-    semaphore = asyncio.Semaphore(CONCURRENT_LIMIT)  # Limit concurrent LLM calls to 5
-
-    # Here we process each author directory, and within each author, process their PDFs in parallel
-    for author in tmp_author_dirs:
-        try:
-            await generate_profile_for_one_author(author, out_dir, opts.model_name, semaphore)
-        except Exception:
-            logger.error(f"Failed to generate profile for {author}:\n{traceback.format_exc()}")
-            raise ValueError(f"Failed to generate profile for {author} due to an error. See logs for details.")
+    await asyncio.gather(*tasks)
 
 
-def parseOpts(argv):
-    parser = argparse.ArgumentParser(description="Researcher Profile Extractor")
-    parser.add_argument('-p', '--pdf_directory', type=str, required=True, help='Directory containing researcher PDF files')
-    parser.add_argument('-o', '--output', type=str, default='.', help='Output directory for the researcher profile JSON')
-    parser.add_argument('-m', '--model_name', type=str, default='gpt-5-nano', help='Available model: qwen3/gpt-oss/gemma3/gpt-5/gpt-5-mini/gpt-5-nano')
-    opts = parser.parse_args(argv)
-    return opts
+def main():
+    parser = argparse.ArgumentParser(description="Extract researcher profiles from PDFs using Map-Reduce LLM pipeline.")
+    parser.add_argument(
+        "-p", "--pdf-dir",
+        type=str,
+        required=True,
+        help="Root folder containing department/author subdirectories with PDFs (e.g. CatalystOU-pdf/Biology).",
+    )
+    parser.add_argument(
+        "-o", "--output-dir",
+        type=str,
+        default="extracted_profile_json",
+        help="Root directory where output JSON profiles will be saved.",
+    )
+    parser.add_argument(
+        "-m", "--model-name",
+        type=str,
+        default=DEFAULT_MODEL,
+        help=f"Model identifier to use (default: {DEFAULT_MODEL}).",
+    )
+    parser.add_argument(
+        "-c", "--concurrency",
+        type=int,
+        default=CONCURRENT_LIMIT,
+        help=f"Max concurrent LLM requests (default: {CONCURRENT_LIMIT}).",
+    )
+
+    args = parser.parse_args()
+    asyncio.run(main_async(args))
 
 
 if __name__ == "__main__":
-    opts = parseOpts(sys.argv[1:])
-    asyncio.run(main(opts))
+    main()

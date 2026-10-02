@@ -1,0 +1,80 @@
+{
+  "per_key": {
+    "Application Areas": {
+      "micro_precision": 0.175,
+      "micro_recall": 0.2490118577075099,
+      "micro_f1": 0.20554649265905384,
+      "macro_f1": 0.19558419358419357,
+      "avg_semantic_similarity": 0.533730811615785,
+      "avg_similarity_mean": 0.533730811615785,
+      "avg_similarity_std": 0.3897589374872483,
+      "tp_total": 63,
+      "fp_total": 297,
+      "fn_total": 190
+    },
+    "Data & Platforms": {
+      "micro_precision": 0.19490254872563717,
+      "micro_recall": 0.38235294117647056,
+      "micro_f1": 0.25819265143992054,
+      "macro_f1": 0.22683117337058203,
+      "avg_semantic_similarity": 0.652935892046272,
+      "avg_similarity_mean": 0.652935892046272,
+      "avg_similarity_std": 0.3925392156102113,
+      "tp_total": 260,
+      "fp_total": 1074,
+      "fn_total": 420
+    },
+    "Key Research Thinking Patterns": {
+      "micro_precision": 0.507537688442211,
+      "micro_recall": 0.505,
+      "micro_f1": 0.5062656641604011,
+      "macro_f1": 0.5057142857142857,
+      "avg_semantic_similarity": 0.5630571767687798,
+      "avg_similarity_mean": 0.5630571767687798,
+      "avg_similarity_std": 0.15288835157780137,
+      "tp_total": 101,
+      "fp_total": 98,
+      "fn_total": 99
+    },
+    "Research Domains": {
+      "micro_precision": 0.4909090909090909,
+      "micro_recall": 0.4764705882352941,
+      "micro_f1": 0.4835820895522388,
+      "macro_f1": 0.4858966072686848,
+      "avg_semantic_similarity": 0.9240631309045791,
+      "avg_similarity_mean": 0.9240631309045791,
+      "avg_similarity_std": 0.05139734206750761,
+      "tp_total": 324,
+      "fp_total": 336,
+      "fn_total": 356
+    },
+    "Techniques Used": {
+      "micro_precision": 0.445916114790287,
+      "micro_recall": 0.34025828186412127,
+      "micro_f1": 0.38598726114649684,
+      "macro_f1": 0.3627985711537175,
+      "avg_semantic_similarity": 0.8720943460965428,
+      "avg_similarity_mean": 0.8720943460965428,
+      "avg_similarity_std": 0.13238429616106273,
+      "tp_total": 606,
+      "fp_total": 753,
+      "fn_total": 1175
+    }
+  },
+  "profile_level": {
+    "PSAS_mean": 0.7091762714863917,
+    "PSAS_std": 0.12067064103868004,
+    "summary_cosine_mean": 0.7913227331638336
+  },
+  "bootstrap": {
+    "PSAS_95CI": [
+      0.6736765062378861,
+      0.7413711862332443
+    ]
+  },
+  "summary_level": {
+    "summary_cosine_mean": 0.7913227331638336,
+    "summary_cosine_std": 0.05547478316600775
+  },
+  "num_profiles_evaluated": 50
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "neg_001_maiti_cartersowell_cs_psych",
+    "collab_type": "Negative-Control",
+    "pair_desc": "CS (IoT Security) + Psychology (Social Ostracism)",
+    "researcher_a": "Anindya Maiti",
+    "researcher_b": "Adrienne R. Carter-Sowell",
+    "a_path": "extracted_profile_json/qwen_qwen3.8-27b/CS/Anindya_Maiti_profile.json",
+    "b_path": "extracted_profile_json/qwen_qwen3.8-27b/Psychology/Adrienne_R_Carter-Sowell_profile.json",
+    "out_path": "results/exp2_negative/neg_001_maiti_cartersowell_prediction.json"
+  },
+  {
+    "id": "neg_002_yeary_dunn_ece_bio",
+    "collab_type": "Negative-Control",
+    "pair_desc": "ECE (Radar Hardware) + Biology (Bacterial Genetics)",
+    "researcher_a": "Mark Yeary",
+    "researcher_b": "Anne K. Dunn",
+    "a_path": "extracted_profile_json/qwen_qwen3.8-27b/ECE/Mark_Yeary_profile.json",
+    "b_path": "extracted_profile_json/qwen_qwen3.8-27b/Biology/Anne_K_Dunn_profile.json",
+    "out_path": "results/exp2_negative/neg_002_yeary_dunn_prediction.json"
+  },
+  {
+    "id": "neg_003_forester_quadri_math_cs",
+    "collab_type": "Negative-Control",
+    "pair_desc": "Mathematics (Geometric Group Theory) + CS (Human Data Visualization)",
+    "researcher_a": "Max Forester",
+    "researcher_b": "Ghulam Quadri",
+    "a_path": "extracted_profile_json/qwen_qwen3.8-27b/Mathematics/Max_Forester_profile.json",
+    "b_path": "extracted_profile_json/qwen_qwen3.8-27b/CS/Ghulam_Quadri_profile.json",
+    "out_path": "results/exp2_negative/neg_003_forester_quadri_prediction.json"
+  },
+  {
+    "id": "neg_004_karr_cokely_bio_psych",
+    "collab_type": "Negative-Control",
+    "pair_desc": "Biology (Archaeal DNA Transcription) + Psychology (Cognitive Risk Literacy)",
+    "researcher_a": "Elizabeth Karr",
+    "researcher_b": "Edward T. Cokely",
+    "a_path": "extracted_profile_json/qwen_qwen3.8-27b/Biology/Elizabeth_Karr_profile.json",
+    "b_path": "extracted_profile_json/qwen_qwen3.8-27b/Psychology/Edward_T_Cokely_profile.json",
+    "out_path": "results/exp2_negative/neg_004_karr_cokely_prediction.json"
+  },
+  {
+    "id": "neg_005_jiang_martin_ece_math",
+    "collab_type": "Negative-Control",
+    "pair_desc": "ECE (Power Grid Dynamics) + Mathematics (Modular Forms/Number Theory)",
+    "researcher_a": "John Jiang",
+    "researcher_b": "Kimball Martin",
+    "a_path": "extracted_profile_json/qwen_qwen3.8-27b/ECE/John_Jiang_profile.json",
+    "b_path": "extracted_profile_json/qwen_qwen3.8-27b/Mathematics/Kimball_Martin_profile.json",
+    "out_path": "results/exp2_negative/neg_005_jiang_martin_prediction.json"
+  }
+]

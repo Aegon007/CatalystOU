@@ -1,10 +1,18 @@
-# .gitignore
-
+# Environment & Dependencies
 .env
+.venv/
+__pycache__/
+*.pyc
 
-# Local labeled profile PDFs and annotation data
+# Raw PDF Datasets (Large binary files managed externally)
 profile_labeled_data/
+CatalystOU-pdf/
 
-# Local runtime logs
+# Development Scratch & Intermediate Debug Runs
+scratch/
+
+# Runtime Logs
 logs/
 log/
+*.log
+

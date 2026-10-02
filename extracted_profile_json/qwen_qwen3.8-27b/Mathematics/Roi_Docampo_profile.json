@@ -1,0 +1,60 @@
+{
+    "Researcher Profile:": "Roi Docampo",
+    "Affiliation:": "Department of Mathematics, University of Utah",
+    "Research Domains": [
+        "Algebraic Geometry",
+        "Singularities",
+        "Jet Schemes",
+        "Nash Blow-ups",
+        "Commutative Algebra",
+        "Singularity Theory",
+        "Motivic Integration",
+        "Arc Spaces",
+        "Valuation Theory",
+        "Deformation Theory"
+    ],
+    "Techniques Used": [
+        "Functor of points",
+        "Nash transformation",
+        "Grassmann bundle",
+        "Hasse-Schmidt derivations",
+        "Relative compactification",
+        "Ideal sheaf generation via minors",
+        "Kähler differentials",
+        "Formal schemes",
+        "Jet schemes",
+        "Arc spaces",
+        "Fitting ideals",
+        "Jacobian ideals",
+        "Birational transformation rule",
+        "Embedding dimension analysis",
+        "Mather discrepancy",
+        "Ramification theory",
+        "Cotangent map analysis",
+        "Deformation theory",
+        "Hasse-Schmidt higher differentials",
+        "Semicontinuity arguments",
+        "Curve selection lemma"
+    ],
+    "Data & Platforms": [
+        "Hasse-Schmidt differential algebra",
+        "Grassmannian",
+        "arXiv",
+        "Mathematics Subject Classification (MSC)",
+        "Stacks Project"
+    ],
+    "Application Areas": [
+        "Resolution of singularities and desingularization of algebraic varieties",
+        "Motivic integration and change-of-variable formulas",
+        "Structural analysis of arc spaces and jet schemes",
+        "Birational geometry and valuation theory",
+        "Characterization of stable points and local ring properties in non-Noetherian settings"
+    ],
+    "Key Research Thinking Patterns": [
+        "Differential-Geometric Characterization of Arc Spaces: Utilizing Hasse-Schmidt derivations and Kähler differentials to explicitly describe the local structure of arc spaces, specifically relating the embedding dimension of local rings to jet codimension and characterizing stable points via finite generation of maximal ideals.",
+        "Relative Compactification via Nash Transformations: Constructing explicit relative compactifications for maps induced on jet schemes by projective birational morphisms, demonstrating that these compactifications are precisely the Nash blow-ups of the main components, thereby linking the singularity structure of the base variety to its jet schemes.",
+        "Extension of Semicontinuity and Finiteness to Non-Noetherian Contexts: Proving finiteness properties for fibers of induced morphisms on arc spaces and extending classical results like Lech's semicontinuity theorem to the non-Noetherian setting, establishing topological finiteness and effective bounds for finite morphisms.",
+        "Functorial Analysis of Birational Invariants: Applying the functor of points and Grassmann bundles to analyze birational transformation rules and Mather discrepancies, using ideal sheaf generation via minors to study the local structure of singularities and their deformations."
+    ],
+    "Summary Description": "Roi Docampo is a mathematician specializing in algebraic geometry, singularity theory, and motivic integration. His research focuses on the structural analysis of arc spaces and jet schemes, employing advanced tools such as Hasse-Schmidt derivations, Kähler differentials, and Nash transformations. Key contributions include explicit descriptions of Kähler differentials for arc spaces, characterizations of stable points via embedding dimension, and the construction of relative compactifications for jet schemes induced by birational morphisms. Docampo’s work bridges classical singularity theory with modern motivic methods, providing rigorous finiteness results and extending semicontinuity theorems to non-Noetherian settings. His research impacts the understanding of resolution of singularities, birational geometry, and the local structure of arc spaces, offering new insights into the interplay between algebraic varieties and their infinite-dimensional arc spaces."
+}

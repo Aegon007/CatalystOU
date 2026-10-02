@@ -1,0 +1,52 @@
+[
+  {
+    "id": "case_001_ebert_xiao_cs_bio",
+    "collab_type": "Cross-Discipline",
+    "researcher_a": "David S. Ebert",
+    "researcher_b": "Xiangming Xiao",
+    "a_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\CS\\David_Ebert_profile.json",
+    "b_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\Biology\\Xiangming_Xiao_profile.json",
+    "gt_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\collaboration_ground_truth\\case_001_ebert_xiao_cs_bio_gt.json",
+    "out_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\results\\exp2_llama\\case_001_ebert_xiao_cs_bio_prediction.json"
+  },
+  {
+    "id": "case_002_zhao_cheng_cs_ece",
+    "collab_type": "Cross-Discipline",
+    "researcher_a": "Shangqing Zhao",
+    "researcher_b": "Samuel Cheng",
+    "a_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\CS\\Shangqing_Zhao_profile.json",
+    "b_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\ECE\\Samuel_Cheng_profile.json",
+    "gt_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\collaboration_ground_truth\\case_002_zhao_cheng_cs_ece_gt.json",
+    "out_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\results\\exp2_llama\\case_002_zhao_cheng_cs_ece_prediction.json"
+  },
+  {
+    "id": "case_003_cai_song_psych_psych",
+    "collab_type": "Same-Discipline",
+    "researcher_a": "Huajian Cai",
+    "researcher_b": "Hairong Song",
+    "a_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\Psychology\\Huajian_Cai_profile.json",
+    "b_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\Psychology\\Hairong_Song_profile.json",
+    "gt_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\collaboration_ground_truth\\case_003_cai_song_psych_psych_gt.json",
+    "out_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\results\\exp2_llama\\case_003_cai_song_psych_psych_prediction.json"
+  },
+  {
+    "id": "case_004_yeary_havlicek_ece_ece",
+    "collab_type": "Same-Discipline",
+    "researcher_a": "Mark Yeary",
+    "researcher_b": "Joseph Havlicek",
+    "a_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\ECE\\Mark_Yeary_profile.json",
+    "b_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\ECE\\Joseph_Havlicek_profile.json",
+    "gt_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\collaboration_ground_truth\\case_004_yeary_havlicek_ece_ece_gt.json",
+    "out_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\results\\exp2_llama\\case_004_yeary_havlicek_ece_ece_prediction.json"
+  },
+  {
+    "id": "case_005_radhakrishnan_antonio_cs_cs",
+    "collab_type": "Same-Discipline",
+    "researcher_a": "Sridhar Radhakrishnan",
+    "researcher_b": "John Antonio",
+    "a_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\CS\\Sridhar_Radhakrishnan_profile.json",
+    "b_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\extracted_profile_json\\meta-llama_meta-llama-3.1-8b-instruct\\CS\\John_Antonio_profile.json",
+    "gt_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\collaboration_ground_truth\\case_005_radhakrishnan_antonio_cs_cs_gt.json",
+    "out_path": "C:\\Users\\al3xa\\Desktop\\CatalystOU\\CatalystOU\\results\\exp2_llama\\case_005_radhakrishnan_antonio_cs_cs_prediction.json"
+  }
+]

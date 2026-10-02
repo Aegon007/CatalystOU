@@ -1,0 +1,66 @@
+{
+    "Researcher Profile:": "JeongJin Kim",
+    "Affiliation:": "George Mason University, Department of Psychological and Brain Sciences",
+    "Research Domains": [
+        "Psychology",
+        "Career Development",
+        "Industrial and Organizational Psychology",
+        "Organizational Behavior",
+        "Artificial Intelligence",
+        "Affective Science",
+        "Cognitive Psychology",
+        "Emotion Regulation",
+        "Workplace Psychology",
+        "Educational Psychology",
+        "Developmental Psychology",
+        "Clinical Psychology"
+    ],
+    "Techniques Used": [
+        "Latent Variable Measurement Model",
+        "Confirmatory Factor Analysis",
+        "Bootstrapping Analyses",
+        "Hierarchical Multiple Regression Analyses",
+        "PROCESS Macro for SPSS",
+        "Exploratory Factor Analysis (EFA)",
+        "Principal Axis Extraction",
+        "Promax Rotation",
+        "Latent Change Score Modeling",
+        "Experience Sampling Method",
+        "Cronbach's Alpha Coefficient",
+        "Ecological Momentary Intervention",
+        "Randomized Controlled Trial",
+        "Cognitive Reappraisal",
+        "Reappraising the Situation",
+        "Reappraising the Emotion",
+        "Multilevel Modeling",
+        "Daily Diary Study",
+        "Longitudinal Research",
+        "Cross-Sectional Studies"
+    ],
+    "Data & Platforms": [
+        "Online Survey",
+        "IBM SPSS Statistics Version 22",
+        "Mplus 6.0",
+        "Amazon Mechanical Turk",
+        "PsycInfo",
+        "Craigslist",
+        "Open Science Framework repository",
+        "Daily Surveys",
+        "Experience Sampling Method",
+        "Wiley Online Library",
+        "Daily Diary Study"
+    ],
+    "Application Areas": [
+        "Workplace Behavior",
+        "Employee Attitudes",
+        "Career Development",
+        "Employee Well-being"
+    ],
+    "Key Research Thinking Patterns": [
+        "Mediation Analysis: The researcher employs mediation analysis to examine the underlying mechanisms and relationships between variables, as seen in the study on perceived overqualification, job boredom, and extra-role behaviors, where job boredom fully mediated the effects of perceived overqualification on counterproductive work behavior and organizational citizenship behavior.",
+        "Scale Development: The researcher develops and validates scales to measure constructs such as workers' attitudes towards artificial intelligence (AI) application at work, demonstrating a focus on creating reliable and predictive measures for organizational outcomes.",
+        "Latent Change Score Modeling: The researcher uses latent change score modeling to examine within-person dynamics, as seen in the study on job boredom and counterproductive work behavior, where a reciprocal relationship was found between job boredom and CWB.",
+        "Ecological Momentary Intervention: The researcher designs and evaluates ecological momentary interventions, such as the cognitive reappraisal intervention, to mitigate negative affect and enhance positive affect, leading to improved job performance and reduced counterproductive work behavior."
+    ],
+    "Summary Description": "JeongJin Kim is a researcher specializing in workplace psychology, with a focus on employee attitudes, career development, and employee well-being. Her work involves developing and validating scales to measure organizational constructs, examining the relationships between variables using mediation analysis and latent change score modeling, and designing ecological momentary interventions to improve job performance and reduce counterproductive work behavior. Her research primarily utilizes experience sampling methods, daily diary studies, and randomized controlled trials to investigate workplace phenomena."
+}

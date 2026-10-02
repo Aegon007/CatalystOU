@@ -1,0 +1,13 @@
+=== Profile Semantic Alignment Evaluation ===
+
+Mean PSAS: 0.4276
+PSAS Std Dev: 0.1691
+Mean Summary Cosine: 0.7160
+PSAS 95% CI: [0.3222, 0.5409]
+
+--- Per-Field Semantic Alignment ---
+Application Areas: mean=0.3091, std=0.3840
+Data & Platforms: mean=0.2976, std=0.3649
+Key Research Thinking Patterns: mean=0.3862, std=0.2548
+Research Domains: mean=0.6410, std=0.3285
+Techniques Used: mean=0.5039, std=0.3309

@@ -1,0 +1,63 @@
+{
+    "Researcher Profile:": "Kimball Martin",
+    "Affiliation:": "Department of Mathematics, University of California, Berkeley",
+    "Research Domains": [
+        "Number Theory",
+        "Modular Forms",
+        "Automorphic Representations",
+        "Algebraic Geometry",
+        "Computational Mathematics",
+        "Mathematical Analysis"
+    ],
+    "Techniques Used": [
+        "Class Number Relations",
+        "Hurwitz Class Number",
+        "Dirichlet Convolution",
+        "Möbius Function",
+        "Euler Phi Function",
+        "Local Representation Theory",
+        "Minimisation of conic bundles",
+        "Tate's algorithm",
+        "Arithmetic blow-ups",
+        "Smith normal form",
+        "Magma implementation",
+        "Hilbert Modular Surfaces",
+        "Igusa-Clebsch Invariants",
+        "Quadratic Forms",
+        "Birational Models",
+        "Riemann Forms",
+        "Atkin-Lehner Operators",
+        "Hecke Operators",
+        "Chebyshev Polynomials",
+        "Gr\"{o}ssencharacters",
+        "Modular Forms",
+        "Class Field Theory",
+        "Riemann Hypothesis"
+    ],
+    "Data & Platforms": [
+        "Sage",
+        "LMFDB (L-Functions and Modular Forms Database)",
+        "Magma",
+        "GitHub repository [CFM24]",
+        "Elkies-Kumar coordinates",
+        "Hilbert modular surfaces",
+        "Humbert surfaces",
+        "Quadratic Forms",
+        "SageMath",
+        "Mathematica",
+        "Python"
+    ],
+    "Application Areas": [
+        "Modular Forms",
+        "Automorphic Representations",
+        "Number Theory",
+        "Algebraic Geometry"
+    ],
+    "Key Research Thinking Patterns": [
+        "Modular Forms Framework: Development of a comprehensive framework for understanding and analyzing modular forms, incorporating techniques such as Hilbert modular surfaces, Igusa-Clebsch invariants, and quadratic forms to parametrize and study genus 2 curves with real multiplication.",
+        "Automorphic Representations Paradigm: Investigation of the distribution of local root numbers of newforms and the correlation of Fourier coefficients with local signs, leading to the discovery of murmurations and the asymptotic behavior of the trace of the Atkin-Lehner operator.",
+        "Class Field Theory Approach: Formulation of a conjecture on the finitude of rationality fields of newforms of bounded degree and proof of it for CM forms assuming a generalized Riemann hypothesis, with explicit determination of quadratic and cubic rationality fields for weight 2 CM forms.",
+        "Computational Mathematics Strategy: Utilization of computational tools such as Sage, Magma, and Mathematica to develop and implement algorithms for estimating counts of genus 2 curves with real multiplication, reconstructing genus 2 curves from Igusa or Igusa-Clebsch invariants, and studying class field theory."
+    ],
+    "Summary Description": "Kimball Martin is a mathematician specializing in number theory, algebraic geometry, and modular forms. His research focuses on the development of computational methods and frameworks for studying genus 2 curves with real multiplication, automorphic representations, and class field theory. He employs a range of techniques, including Hilbert modular surfaces, Igusa-Clebsch invariants, and quadratic forms, to parametrize and analyze these curves and forms. Martin's work has significant implications for our understanding of number theory, algebraic geometry, and modular forms, and has led to the discovery of new phenomena, such as murmurations, and the development of new computational tools and algorithms."
+}

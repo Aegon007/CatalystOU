@@ -1,0 +1,199 @@
+{
+  "global_aggregates": {
+    "mean_summary_cosine": 0.420114141702652,
+    "mean_max_sim": 0.4464834225177764,
+    "mean_hits_50_pct": 28.0,
+    "mean_hits_45_pct": 44.0,
+    "mean_soft_recall_50_pct": 11.166666666666666,
+    "mean_soft_recall_45_pct": 18.066666666666666
+  },
+  "cases": [
+    {
+      "id": "case_001_ebert_xiao_cs_bio",
+      "collab_type": "Cross-Discipline",
+      "summary_cosine": 0.31728115677833557,
+      "mean_max_sim": 0.399758380651474,
+      "peak_sim": 0.6437546014785767,
+      "hits_50_pct": 10.0,
+      "hits_45_pct": 10.0,
+      "soft_recall_50_pct": 3.3333333333333335,
+      "soft_recall_45_pct": 6.666666666666667,
+      "category_max_sims": {
+        "Shared Domains": 0.6437546014785767,
+        "Method-Application Synergies": 0.4231381118297577,
+        "Complementary Technique Synergies": 0.38881751894950867,
+        "Data-Method Synergies": 0.37910935282707214,
+        "Cross-Domain Fusion Topics": 0.3561069369316101,
+        "Shared Application Areas": 0.35700497031211853,
+        "Joint Technique Development": 0.41893014311790466,
+        "Theory-Application Synergy": 0.21539005637168884,
+        "Thinking Pattern Synergies": 0.3815372586250305,
+        "Future Research Directions": 0.43379485607147217
+      }
+    },
+    {
+      "id": "case_002_zhao_cheng_cs_ece",
+      "collab_type": "Cross-Discipline",
+      "summary_cosine": 0.5829950571060181,
+      "mean_max_sim": 0.5144111663103104,
+      "peak_sim": 0.6220269203186035,
+      "hits_50_pct": 60.0,
+      "hits_45_pct": 80.0,
+      "soft_recall_50_pct": 23.333333333333332,
+      "soft_recall_45_pct": 33.666666666666664,
+      "category_max_sims": {
+        "Shared Domains": 0.5988508462905884,
+        "Method-Application Synergies": 0.5014232397079468,
+        "Complementary Technique Synergies": 0.4965914487838745,
+        "Data-Method Synergies": 0.5131685733795166,
+        "Cross-Domain Fusion Topics": 0.582772970199585,
+        "Shared Application Areas": 0.6220269203186035,
+        "Joint Technique Development": 0.4179113507270813,
+        "Theory-Application Synergy": 0.5330127477645874,
+        "Thinking Pattern Synergies": 0.4281051754951477,
+        "Future Research Directions": 0.4502483904361725
+      }
+    },
+    {
+      "id": "case_003_cai_song_psych_psych",
+      "collab_type": "Same-Discipline",
+      "summary_cosine": 0.4349728524684906,
+      "mean_max_sim": 0.47619291841983796,
+      "peak_sim": 0.6818127632141113,
+      "hits_50_pct": 20.0,
+      "hits_45_pct": 70.0,
+      "soft_recall_50_pct": 7.5,
+      "soft_recall_45_pct": 22.5,
+      "category_max_sims": {
+        "Shared Domains": 0.643072247505188,
+        "Method-Application Synergies": 0.432612806558609,
+        "Complementary Technique Synergies": 0.45105496048927307,
+        "Data-Method Synergies": 0.36214977502822876,
+        "Cross-Domain Fusion Topics": 0.46839064359664917,
+        "Shared Application Areas": 0.6818127632141113,
+        "Joint Technique Development": 0.3067356050014496,
+        "Theory-Application Synergy": 0.4735732674598694,
+        "Thinking Pattern Synergies": 0.46166232228279114,
+        "Future Research Directions": 0.4808647930622101
+      }
+    },
+    {
+      "id": "case_004_yeary_havlicek_ece_ece",
+      "collab_type": "Same-Discipline",
+      "summary_cosine": 0.43368303775787354,
+      "mean_max_sim": 0.39474747478961947,
+      "peak_sim": 0.5927987098693848,
+      "hits_50_pct": 20.0,
+      "hits_45_pct": 20.0,
+      "soft_recall_50_pct": 12.5,
+      "soft_recall_45_pct": 15.0,
+      "category_max_sims": {
+        "Shared Domains": 0.5212510228157043,
+        "Method-Application Synergies": 0.3606945276260376,
+        "Complementary Technique Synergies": 0.35638073086738586,
+        "Data-Method Synergies": 0.4184468388557434,
+        "Cross-Domain Fusion Topics": 0.39949899911880493,
+        "Shared Application Areas": 0.5927987098693848,
+        "Joint Technique Development": 0.26857513189315796,
+        "Theory-Application Synergy": 0.40476149320602417,
+        "Thinking Pattern Synergies": 0.3515051007270813,
+        "Future Research Directions": 0.2735621929168701
+      }
+    },
+    {
+      "id": "case_005_radhakrishnan_antonio_cs_cs",
+      "collab_type": "Same-Discipline",
+      "summary_cosine": 0.3316386044025421,
+      "mean_max_sim": 0.4473071724176407,
+      "peak_sim": 0.5651117563247681,
+      "hits_50_pct": 30.0,
+      "hits_45_pct": 40.0,
+      "soft_recall_50_pct": 9.166666666666664,
+      "soft_recall_45_pct": 12.499999999999996,
+      "category_max_sims": {
+        "Shared Domains": 0.5651117563247681,
+        "Method-Application Synergies": 0.5311466455459595,
+        "Complementary Technique Synergies": 0.4794224500656128,
+        "Data-Method Synergies": 0.36140042543411255,
+        "Cross-Domain Fusion Topics": 0.4177219867706299,
+        "Shared Application Areas": 0.5270899534225464,
+        "Joint Technique Development": 0.4318544566631317,
+        "Theory-Application Synergy": 0.3592473268508911,
+        "Thinking Pattern Synergies": 0.4203565716743469,
+        "Future Research Directions": 0.37972015142440796
+      }
+    }
+  ],
+  "category_aggregates": {
+    "Shared Domains": {
+      "mean_max_sim": 0.5944080948829651,
+      "hits_50_pct": 100.0,
+      "hits_45_pct": 100.0,
+      "soft_recall_50_pct": 46.666666666666664,
+      "soft_recall_45_pct": 58.33333333333333
+    },
+    "Method-Application Synergies": {
+      "mean_max_sim": 0.4498030662536621,
+      "hits_50_pct": 40.0,
+      "hits_45_pct": 40.0,
+      "soft_recall_50_pct": 13.333333333333334,
+      "soft_recall_45_pct": 20.0
+    },
+    "Complementary Technique Synergies": {
+      "mean_max_sim": 0.434453421831131,
+      "hits_50_pct": 0.0,
+      "hits_45_pct": 60.0,
+      "soft_recall_50_pct": 0.0,
+      "soft_recall_45_pct": 16.666666666666664
+    },
+    "Data-Method Synergies": {
+      "mean_max_sim": 0.40685499310493467,
+      "hits_50_pct": 20.0,
+      "hits_45_pct": 20.0,
+      "soft_recall_50_pct": 5.0,
+      "soft_recall_45_pct": 5.0
+    },
+    "Cross-Domain Fusion Topics": {
+      "mean_max_sim": 0.4448983073234558,
+      "hits_50_pct": 20.0,
+      "hits_45_pct": 40.0,
+      "soft_recall_50_pct": 5.0,
+      "soft_recall_45_pct": 15.0
+    },
+    "Shared Application Areas": {
+      "mean_max_sim": 0.5561466634273529,
+      "hits_50_pct": 80.0,
+      "hits_45_pct": 80.0,
+      "soft_recall_50_pct": 36.666666666666664,
+      "soft_recall_45_pct": 36.666666666666664
+    },
+    "Joint Technique Development": {
+      "mean_max_sim": 0.36880133748054506,
+      "hits_50_pct": 0.0,
+      "hits_45_pct": 0.0,
+      "soft_recall_50_pct": 0.0,
+      "soft_recall_45_pct": 0.0
+    },
+    "Theory-Application Synergy": {
+      "mean_max_sim": 0.3971969783306122,
+      "hits_50_pct": 20.0,
+      "hits_45_pct": 40.0,
+      "soft_recall_50_pct": 5.0,
+      "soft_recall_45_pct": 15.0
+    },
+    "Thinking Pattern Synergies": {
+      "mean_max_sim": 0.40863328576087954,
+      "hits_50_pct": 0.0,
+      "hits_45_pct": 20.0,
+      "soft_recall_50_pct": 0.0,
+      "soft_recall_45_pct": 5.0
+    },
+    "Future Research Directions": {
+      "mean_max_sim": 0.4036380767822266,
+      "hits_50_pct": 0.0,
+      "hits_45_pct": 40.0,
+      "soft_recall_50_pct": 0.0,
+      "soft_recall_45_pct": 9.0
+    }
+  }
+}

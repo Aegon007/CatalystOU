@@ -1,0 +1,140 @@
+{
+  "0.4": {
+    "mean_mas": 0.3082129080096881,
+    "std_mas": 0.12937473088557958,
+    "per_category_f1": {
+      "Shared Domains": 0.4666666666666667,
+      "Method-Application Synergies": 0.24444444444444446,
+      "Complementary Technique Synergies": 0.1388888888888889,
+      "Data-Method Synergies": 0.17777777777777776,
+      "Cross-Domain Fusion Topics": 0.2777777777777778,
+      "Shared Application Areas": 0.27222222222222225,
+      "Joint Technique Development": 0.18888888888888888,
+      "Theory-Application Synergy": 0.13333333333333336,
+      "Thinking Pattern Synergies": 0.18333333333333335,
+      "Future Research Directions": 0.16888888888888892
+    },
+    "per_case_mas": [
+      0.18088265210390092,
+      0.4879867022236189,
+      0.3920559823513031,
+      0.14301082491874695,
+      0.3371283784508705
+    ]
+  },
+  "0.45": {
+    "mean_mas": 0.23158609877030054,
+    "std_mas": 0.13798555965110323,
+    "per_category_f1": {
+      "Shared Domains": 0.32222222222222224,
+      "Method-Application Synergies": 0.15,
+      "Complementary Technique Synergies": 0.1388888888888889,
+      "Data-Method Synergies": 0.044444444444444446,
+      "Cross-Domain Fusion Topics": 0.13333333333333336,
+      "Shared Application Areas": 0.27222222222222225,
+      "Joint Technique Development": 0.0,
+      "Theory-Application Synergy": 0.08888888888888889,
+      "Thinking Pattern Synergies": 0.044444444444444446,
+      "Future Research Directions": 0.08444444444444446
+    },
+    "per_case_mas": [
+      0.06437546014785767,
+      0.4123160456617674,
+      0.36604309976100924,
+      0.10491880774497986,
+      0.21027708053588867
+    ]
+  },
+  "0.5": {
+    "mean_mas": 0.14801343421141305,
+    "std_mas": 0.07164668531272994,
+    "per_category_f1": {
+      "Shared Domains": 0.32222222222222224,
+      "Method-Application Synergies": 0.05,
+      "Complementary Technique Synergies": 0.0,
+      "Data-Method Synergies": 0.044444444444444446,
+      "Cross-Domain Fusion Topics": 0.044444444444444446,
+      "Shared Application Areas": 0.27222222222222225,
+      "Joint Technique Development": 0.0,
+      "Theory-Application Synergy": 0.044444444444444446,
+      "Thinking Pattern Synergies": 0.0,
+      "Future Research Directions": 0.0
+    },
+    "per_case_mas": [
+      0.06437546014785767,
+      0.2759495665629705,
+      0.13248850107192994,
+      0.10491880774497986,
+      0.1623348355293274
+    ]
+  },
+  "0.55": {
+    "mean_mas": 0.09837495684623718,
+    "std_mas": 0.049267811882861536,
+    "per_category_f1": {
+      "Shared Domains": 0.23333333333333334,
+      "Method-Application Synergies": 0.0,
+      "Complementary Technique Synergies": 0.0,
+      "Data-Method Synergies": 0.0,
+      "Cross-Domain Fusion Topics": 0.044444444444444446,
+      "Shared Application Areas": 0.13333333333333336,
+      "Joint Technique Development": 0.0,
+      "Theory-Application Synergy": 0.0,
+      "Thinking Pattern Synergies": 0.0,
+      "Future Research Directions": 0.0
+    },
+    "per_case_mas": [
+      0.06437546014785767,
+      0.17921977639198303,
+      0.13248850107192994,
+      0.059279870986938474,
+      0.056511175632476804
+    ]
+  },
+  "0.6": {
+    "mean_mas": 0.05181333065032959,
+    "std_mas": 0.049281784700117626,
+    "per_category_f1": {
+      "Shared Domains": 0.1,
+      "Method-Application Synergies": 0.0,
+      "Complementary Technique Synergies": 0.0,
+      "Data-Method Synergies": 0.0,
+      "Cross-Domain Fusion Topics": 0.0,
+      "Shared Application Areas": 0.08888888888888889,
+      "Joint Technique Development": 0.0,
+      "Theory-Application Synergy": 0.0,
+      "Thinking Pattern Synergies": 0.0,
+      "Future Research Directions": 0.0
+    },
+    "per_case_mas": [
+      0.06437546014785767,
+      0.06220269203186035,
+      0.13248850107192994,
+      0.0,
+      0.0
+    ]
+  },
+  "0.65": {
+    "mean_mas": 0.013636255264282226,
+    "std_mas": 0.027272510528564452,
+    "per_category_f1": {
+      "Shared Domains": 0.0,
+      "Method-Application Synergies": 0.0,
+      "Complementary Technique Synergies": 0.0,
+      "Data-Method Synergies": 0.0,
+      "Cross-Domain Fusion Topics": 0.0,
+      "Shared Application Areas": 0.044444444444444446,
+      "Joint Technique Development": 0.0,
+      "Theory-Application Synergy": 0.0,
+      "Thinking Pattern Synergies": 0.0,
+      "Future Research Directions": 0.0
+    },
+    "per_case_mas": [
+      0.0,
+      0.0,
+      0.06818127632141113,
+      0.0,
+      0.0
+    ]
+  }
+}

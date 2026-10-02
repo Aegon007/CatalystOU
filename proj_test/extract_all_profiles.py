@@ -46,15 +46,18 @@ logger = setup_logger("profile_extraction", log_file="profile_extraction.log")
 CONCURRENT_LIMIT = 5  # Limit concurrent extractions to 5
 
 
-async def extract_one_discipline_profiles(one_discipline_input_dir: str, one_discipline_output_dir: str, model_name: str = "gpt-5") -> None:
+async def extract_one_discipline_profiles(one_discipline_input_dir: str, one_discipline_output_dir: str, model_name: str | None = None) -> None:
     """
     Extract researcher profiles from a single discipline directory of PDFs.
 
     Args:
-        one_dicipline_input_dir: Directory containing PDFs for a single discipline.
-        one_dicipline_output_dir: Directory where extracted profiles will be saved for the input dicipline.
-        model_name: LLM model name to use for extraction (default: gpt-4-turbo)
+        one_discipline_input_dir: Directory containing PDFs for a single discipline.
+        one_discipline_output_dir: Directory where extracted profiles will be saved for the input discipline.
+        model_name: LLM model name to use for extraction (default: env LLM_MODEL or qwen/qwen3.8-27b)
     """
+    if not model_name:
+        model_name = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+
     input_dir = Path(one_discipline_input_dir)
     out_dir = Path(one_discipline_output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -152,7 +155,7 @@ def parse_args(argv) -> argparse.Namespace:
     )
     parser.add_argument("-i", "--input", type=str, required=True, help="Input directory containing researcher folders with PDFs")
     parser.add_argument("-o", "--output", type=str, default="./extracted_profiles", help="Output directory for extracted profiles (default: ./extracted_profiles)")
-    parser.add_argument("-m", "--model",type=str,default="gpt-4-turbo",help="LLM model name (default: gpt-4-turbo)")
+    parser.add_argument("-m", "--model", type=str, default=os.getenv("LLM_MODEL", "qwen/qwen3.8-27b"), help="LLM model name (default: env LLM_MODEL or qwen/qwen3.8-27b)")
 
     return parser.parse_args(argv)
 

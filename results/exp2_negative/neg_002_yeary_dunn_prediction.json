@@ -1,0 +1,73 @@
+{
+  "Shared Domains": [
+    "Environmental monitoring using field instrumentation and remote-sensing approaches",
+    "Data-intensive measurement systems for dynamic natural environments",
+    "University of Oklahoma interdisciplinary research infrastructure and collaboration",
+    "Instrument calibration and quantitative field measurement practices",
+    "Biological and physical environmental systems observation"
+  ],
+  "Method-Application Synergies": [
+    "UAS radar sampling can provide meteorological context for marine microbial stress studies",
+    "High-temporal-resolution radar volume scans can support monitoring marine boundary-layer processes",
+    "Radar-derived precipitation and wind fields can contextualize Vibrio fischeri stress-response assays",
+    "Compressive sensing can reduce measurement burden in distributed environmental and microbiology sampling",
+    "Digital beamforming can improve spatial resolution for small-platform environmental observation campaigns"
+  ],
+  "Complementary Technique Synergies": [
+    "Particle filtering can track dynamic microbial population states from time-series CFU assays",
+    "Compressive sensing can reduce dimensionality in transcriptomic and proteomic microbiology datasets",
+    "Digital coherent beamforming calibration can inform multiplexed fluorescence assay signal deconvolution",
+    "Phase-only optimization can design efficient layouts for distributed environmental sensor arrays",
+    "Iterative non-linear signal processing can refine quantitative precipitation and biological assay estimates"
+  ],
+  "Data-Method Synergies": [
+    "Horus radar meteorological data can add temporal environmental covariates to marine metagenomic datasets",
+    "Sargasso Sea metagenomic data can be paired with coastal radar observation records",
+    "FPGA-based signal processing can enable real-time field classification of microbial fluorescence assays",
+    "ARRC anechoic chamber methods can support calibration of portable environmental microbiology sensors",
+    "Vibrio fischeri strain data can be linked with radar-derived atmospheric transport estimates"
+  ],
+  "Cross-Domain Fusion Topics": [
+    "Atmospheric transport of marine bioaerosols and radar-based detection of precipitation events",
+    "Storm-driven marine upwelling, microbial stress responses, and high-resolution radar monitoring",
+    "UAS sampling of atmospheric bioaerosols coupled with Vibrio physiology and T6SS competition",
+    "Digital phased-array radar systems for real-time marine boundary-layer environmental monitoring",
+    "Radar meteorology, oxidative stress physiology, and microbial community competition dynamics"
+  ],
+  "Shared Application Areas": [
+    "Environmental monitoring and Earth observation systems",
+    "Field-based instrumentation for weather and marine microbial studies",
+    "High-temporal-resolution monitoring of atmospheric and marine environmental variables",
+    "Small-platform deployment for distributed environmental sensing",
+    "University of Oklahoma interdisciplinary research infrastructure"
+  ],
+  "Joint Technique Development": [
+    "Joint development of UAS-borne sensors combining radar meteorology and microbial fluorescence assays",
+    "Co-design of compact phased-array sensors for small-platform environmental microbiology missions",
+    "Develop calibrated multiplexed fluorescence readout using radar-inspired deconvolution and signal-processing algorithms",
+    "Build autonomous UAS systems for paired meteorological and marine microbial sampling campaigns",
+    "Create compact phased-array radars that support coastal environmental and microbial sampling"
+  ],
+  "Theory-Application Synergy": [
+    "Radar electromagnetic propagation theory applied to marine boundary-layer environmental remote sensing",
+    "Alternative oxidase stress physiology linked to radar-derived meteorological stressors in marine settings",
+    "Beamforming optimization theory informing optimal sampling patterns for distributed marine microbial assays",
+    "Phased-array calibration theory supporting accurate quantitative precipitation and meteorological covariates for microbiology",
+    "Non-linear signal processing theory improving dynamic environmental and microbial state estimation"
+  ],
+  "Thinking Pattern Synergies": [
+    "Integrating non-linear radar signal processing with physiological stress-response profiling for field studies",
+    "Combining reduced-aperture radar capability with in vivo and in vitro symbiosis modeling",
+    "Applying pattern synthesis and optimization frameworks to design efficient microbial sampling arrays",
+    "Using self-calibration and autonomous startup methods for field-deployed environmental and microbiology instrumentation",
+    "Pairing transcriptomics-based functional genomics with radar-derived meteorological drivers for environmental microbiology"
+  ],
+  "Future Research Directions": [
+    "Develop radar-aided models linking high-resolution weather observations to Vibrio fischeri stress responses",
+    "Create UAS networks pairing digital phased-array radar with coastal microbial sampling",
+    "Investigate radar-detectable marine boundary-layer processes influencing bioaerosol production and T6SS competition",
+    "Use particle filtering to integrate omics data with meteorological remote-sensing observations",
+    "Study marine microbial ecological dynamics using radar-derived precipitation, wind, and boundary-layer data"
+  ],
+  "Summary Collaboration Themes": "Collaboration would link Yeary’s digital phased-array radar, UAS, and signal-processing expertise with Dunn’s marine microbial physiology, symbiosis, and functional genomics. The joint effort could use radar-derived meteorological data and UAS platforms to contextualize and monitor marine microbial stress, colonization, competition, and environmental dispersal, while adapting radar signal-processing methods to omics, fluorescence, and distributed environmental measurements."
+}

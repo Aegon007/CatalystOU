@@ -10,15 +10,24 @@ load_dotenv()
 
 # --- Part 1: Client Setup (Async) ---
 try:
-    api_key = os.getenv('LLM_API_KEY')
+    api_key = os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('OPENAI_API_KEY')
     if not api_key:
         raise ValueError("API key not found. Please add it to your environment variables.")
-    api_url = os.getenv('LLM_API_URL')
-    if not api_url:
-        raise ValueError("API URL not found. Please add it to your environment variables.")
+    api_url = os.getenv('LLM_API_URL') or "https://openrouter.ai/api/v1"
+    if "openrouter.ai" in api_url and not api_url.rstrip("/").endswith("/api/v1"):
+        api_url = "https://openrouter.ai/api/v1"
+
+    default_headers = None
+    if "openrouter.ai" in api_url:
+        default_headers = {
+            "HTTP-Referer": "https://catalystou.local",
+            "X-Title": "CatalystOU",
+        }
+
     client = AsyncOpenAI(
         api_key=api_key,
-        base_url=api_url
+        base_url=api_url,
+        default_headers=default_headers
     )
 except Exception as e:
     print(f"Error setting up the async client: {e}")
@@ -72,16 +81,21 @@ async def summarize_single_paper(paper_text: str, pdf_path: str) -> str:
     """
 
     try:
+        model = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+        temperature = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+        seed = int(os.getenv("LLM_SEED", "42"))
         completion = await client.chat.completions.create(
-            model="gemma3",
+            model=model,
             messages=[
                 {"role": "system", "content": "You are a helpful research assistant that creates detailed summaries."},
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.2,
+            temperature=temperature,
+            seed=seed,
             timeout=300.0, # 5-minute timeout
         )
-        summary = completion.choices[0].message.content
+        choice_msg = completion.choices[0].message
+        summary = choice_msg.content or getattr(choice_msg, "reasoning", "") or ""
         print(f"Successfully generated detailed summary for {pdf_path}.")
         return summary
     except APITimeoutError:
@@ -131,15 +145,21 @@ async def create_researcher_profile(researcher_name: str, list_of_summaries: lis
 
     try:
         print("\nSending summaries to LLM for final profile synthesis...")
+        model = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+        temperature = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+        seed = int(os.getenv("LLM_SEED", "42"))
         completion = await client.chat.completions.create(
-            model="gemma3",
+            model=model,
             messages=[
                 {"role": "system", "content": f"You are an expert research analyst that only outputs a single, complete JSON object for the researcher '{researcher_name}'."},
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.3,
+            temperature=temperature,
+            seed=seed,
         )
-        response_content = completion.choices[0].message.content.replace("[END OF ACTUAL JSON OUTPUT]", "").strip()
+        choice_msg = completion.choices[0].message
+        raw_text = choice_msg.content or getattr(choice_msg, "reasoning", "") or ""
+        response_content = raw_text.replace("[END OF ACTUAL JSON OUTPUT]", "").strip()
 
         if response_content.strip().startswith("```json"):
             response_content = response_content.strip()[7:-3].strip()

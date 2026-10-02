@@ -1,0 +1,72 @@
+{
+    "Researcher Profile:": "Elizabeth Kelley",
+    "Affiliation:": "Department of Mathematics, University of Illinois Urbana Champaign, Department of Mathematics, University of Minnesota, Department of Mathematics, University of California, Berkeley",
+    "Research Domains": [
+        "Mathematics",
+        "Algebraic Geometry",
+        "Cluster Algebras",
+        "Combinatorics",
+        "Algebra",
+        "Representation Theory",
+        "Discrete Integrable Systems",
+        "Poisson Geometry",
+        "Teichmüller Theory"
+    ],
+    "Techniques Used": [
+        "Mutation",
+        "Cluster Scattering Diagrams",
+        "Theta Functions",
+        "Fock-Goncharov Tropicalization",
+        "Cluster Algebras",
+        "Graph LP Algebras",
+        "Snake Graphs",
+        "Hyper T-paths",
+        "Admissible Matchings",
+        "Braid Varieties",
+        "Affine Hecke Algebra",
+        "Cayley's Formula",
+        "Catalan Numbers",
+        "Laurent Polynomial Algebras",
+        "Loop Graphs",
+        "Fence Posets",
+        "Cluster Expansion Formula",
+        "Distributive Lattices"
+    ],
+    "Data & Platforms": [
+        "k[P]",
+        "d_k[P]",
+        "Graph LP Algebras",
+        "Cluster Algebras",
+        "Hyper T-paths",
+        "Snake Graphs",
+        "Mathematica",
+        "SageMath",
+        "Python",
+        "Laurent Polynomial Ring",
+        "Cluster Variables",
+        "Exchange Polynomials",
+        "Graph LP Algebra",
+        "T-paths",
+        "Surface Model",
+        "Triangulations",
+        "Loop Graphs",
+        "Fence Posets"
+    ],
+    "Application Areas": [
+        "Cluster Algebras",
+        "Teichmüller Spaces of Riemann Surfaces",
+        "Representation Theory of Quantum Affine Algebras",
+        "Representation Theory of Quantum Loop Algebras",
+        "Combinatorial Algebra",
+        "Cluster Combinatorics",
+        "Graph Theory",
+        "Enumerative Combinatorics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Pattern 1: Generalized Cluster Scattering Diagrams (Constructing generalized cluster scattering diagrams and theta functions for reciprocal generalized cluster algebras, establishing mutation invariance, and showing that theta functions form a basis for the cluster algebra).",
+        "Pattern 2: Combinatorial Proof of Positivity (Providing a combinatorial proof of positivity for certain cluster variables in graph LP algebras using a hypergraph generalization of snake graphs and classifying cluster variables with a determinantal formula for admissible matchings).",
+        "Pattern 3: Rooted Clusters and Hyper T-paths (Introducing rooted clusters for graph LP algebras, proving positivity for these clusters with explicit formulas, and providing a combinatorial interpretation using hyper T-paths).",
+        "Pattern 4: Algebraic Geometry and Combinatorial Methods (Applying algebraic geometry and combinatorial methods to study cluster algebras, representation theory, and enumerative combinatorics)"
+    ],
+    "Summary Description": "Elizabeth Kelley is a mathematician specializing in algebraic geometry, combinatorics, and representation theory. Her research focuses on cluster algebras, graph LP algebras, and their connections to Teichmüller spaces, representation theory, and combinatorial algebra. Kelley employs a range of techniques, including generalized cluster scattering diagrams, hypergraph generalizations of snake graphs, and hyper T-paths, to study the positivity of cluster variables and the structure of cluster algebras. Her work has significant implications for algebraic geometry, combinatorial optimization, and theoretical computer science."
+}

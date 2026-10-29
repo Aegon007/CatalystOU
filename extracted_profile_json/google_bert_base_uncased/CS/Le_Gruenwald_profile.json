@@ -1,0 +1,39 @@
+{
+  "Researcher Profile:": "Le Gruenwald",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "heuristics",
+    "schemas",
+    "clustering-based",
+    "Outliers",
+    "model-agnostic",
+    "buffers",
+    "leverages",
+    "correlations",
+    "datasets",
+    "eigendecomposition",
+    "well-defined",
+    "XPACS",
+    "one-dimensional",
+    "datak",
+    "time-based",
+    "Cross-correlation",
+    "malware",
+    "technologies",
+    "algorithms",
+    "real-time"
+  ],
+  "Data & Platforms": [
+    "clustersData"
+  ],
+  "Application Areas": [
+    "bDepartment",
+    "real-world",
+    "egawati",
+    "neighborhood-based",
+    "time-sensitive"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "Contents lists available at ScienceDirect Data & Knowledge Engineering journal homepage: www.elsevier.com/locate/datak Discovering outlying attributes of outliers in data streams Egawati Panjeia,b,∗, Le Gruenwalda aSchool of Computer Science, The University of Oklahoma, Devon Energy Hall 110 W. Boyd St., Norman, OK, 73069, United States bDepartment of Computer Science, Lyle College of Engineering, Southern Methodist University, 3145 Dyer Street, Suite 445, Dallas, TX, 75206, United States A R T I C L E I N F O Keywords: Outlying attributes Anomaly explanation Data streamsA B S T R A C T Data streams, continuous sequences of timestamped data points, necessitate real-time monitor- ing due to their time-sensitive nature. In various data stream applications, such as network security and credit card transaction monitoring, real-time detection of outliers is crucial, as these outliers often signify potential threats."
+}

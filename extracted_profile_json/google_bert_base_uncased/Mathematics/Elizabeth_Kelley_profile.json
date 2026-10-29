@@ -1,0 +1,39 @@
+{
+  "Researcher Profile:": "Elizabeth Kelley",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [
+    "in-dept",
+    "subsection",
+    "subcla",
+    "subclass"
+  ],
+  "Techniques Used": [
+    "clusteralgebras",
+    "scatteringdiagramsare",
+    "analysed",
+    "generalizedcluster",
+    "invariance",
+    "proofs",
+    "Corollary",
+    "Aclustervarietiesin",
+    "generalization",
+    "structions",
+    "sign-coherence",
+    "enumerative",
+    "datasets",
+    "nite-dimensional",
+    "Section4introduces",
+    "preprint",
+    "thatAscatisisomorphicto",
+    "arbitrarily",
+    "dynamical",
+    "Kavli"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "involutive",
+    "ofreciprocal"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "arXiv:2110.08157v3 [math.CO] 28 Nov 2022Cluster scattering diagrams and theta functions for recipr ocal generalized cluster algebras Man-Wai Cheung∗, Elizabeth Kelley†, Gregg Musiker‡ November 29, 2022 Abstract We give a construction of generalized cluster varieties and generalized cluster scattering diagrams for reciprocal generalized cluster algebras, the latter of whi ch were deﬁned by Chekhov and Shapiro. These constructions are analogous to the structures given for ord inary cluster algebras in the work of Gross, Hacking, Keel, and Kontsevich. As a consequence of these con structions, we are also able to construct theta functions for generalized cluster algebras, again in the reciprocal case, and demonstrate a number of their structural properties."
+}

@@ -1,0 +1,88 @@
+{
+    "Researcher Profile:": "Michael R. Sladek",
+    "Affiliation:": "The University of Oklahoma, Department of Psychology",
+    "Research Domains": [
+        "Developmental Psychology",
+        "Cultural-Ecological Systems Theory",
+        "Ethnic-Racial Identity Development",
+        "Developmental Cascade Modeling",
+        "Cross-Cultural Identity Research",
+        "Latin American Adolescent Psychology",
+        "Teacher Ethnic-Racial Identity Development",
+        "Culturally Sustaining Pedagogy",
+        "Adult Identity Development",
+        "Professional Development in Education",
+        "Prevention Science",
+        "Intervention Effectiveness and Dissemination",
+        "School-Based Implementation Science",
+        "Daily Process Research",
+        "Ecological Momentary Assessment (EMA)",
+        "Experience-Sampling Method (ESM)",
+        "Intergroup Contact Theory",
+        "Phenomenological Variant of Ecological Systems Theory (PVEST)",
+        "Biopsychosocial Model of Racism",
+        "Within-Person Variability Analysis"
+    ],
+    "Techniques Used": [
+        "Consensual Qualitative Research (CQR)",
+        "Semi-structured Focus Group Interviews",
+        "Qualitative Thematic Analysis",
+        "Survey-Based Protocol Referencing",
+        "Chain Sequential Mediation Analyses",
+        "Bias-Corrected Bootstrapping",
+        "Reflexive Thematic Analysis",
+        "Individual Semi-Structured Interviews",
+        "Pre-Post Test Design without Control Group",
+        "Implementation Fidelity Assessment",
+        "Systematic Review Methodology",
+        "Time-Lagged Approaches",
+        "Intensive Longitudinal Data Analysis",
+        "Idiographic Research Methods"
+    ],
+    "Data & Platforms": [
+        "Adolescent Survey Data",
+        "Focus Group Transcripts",
+        "Ethnic-Racial Identity Development Measures",
+        "Colombian Adolescent Survey Data (Medellín)",
+        "Global Identity Cohesion Measures",
+        "Academic Engagement Metrics",
+        "Other Group Orientation Scales",
+        "Identity Project Curriculum",
+        "Teacher Professional Development Training Modules",
+        "U.S. High School Educator Interview Data",
+        "U.S. High School Student Survey Data (N=180)",
+        "Identity Project Teacher Implementation Logs",
+        "Daily Diary Data",
+        "Moment-to-Moment Survey Measures",
+        "Physiological Reactivity Metrics (Cardiovascular)",
+        "Cognitive Depletion Indicators"
+    ],
+    "Application Areas": [
+        "Youth Psychosocial Well-being and Academic Adjustment",
+        "Culturally Sustaining Pedagogy and Teacher Professional Development",
+        "Translational Implementation of Identity-Based Interventions"
+    ],
+    "Key Research Thinking Patterns": [
+        "Intensive Longitudinal Process Modeling: Capturing real-time within-person dynamics of identity and discrimination through Ecological Momentary Assessment (EMA) and daily diary data to understand moment-to-moment psychological consequences.",
+        "Developmental Cascade Systems Analysis: Utilizing chain sequential mediation analyses and bias-corrected bootstrapping to map how ethnic-racial identity development cascades into broader psychosocial adjustment and academic outcomes over time.",
+        "Translational Implementation Science: Evaluating the fidelity and effectiveness of scaling up evidence-based curricula like the Identity Project by training teachers as delivery agents, thereby bridging the gap between theoretical intervention design and practical school-based dissemination.",
+        "Mixed-Methods Ecological Inquiry: Integrating Consensual Qualitative Research (CQR) and semi-structured focus groups with quantitative survey data to contextualize ethnic-racial identity development within specific cultural-ecological systems, such as Colombian and U.S. adolescent populations."
+    ],
+    "Summary Description": "Michael R. Sladek is a developmental psychologist specializing in ethnic-racial identity (ERI) development, prevention science, and implementation science. His research bridges theoretical models of identity formation with practical, teacher-led dissemination strategies in K-12 settings. Utilizing intensive longitudinal methods like EMA and developmental cascade modeling, he investigates how ERI shapes youth psychosocial adjustment and academic engagement in real-time. A key focus is the translational efficacy of the Identity Project, assessing how teacher delivery impacts culturally sustaining pedagogy and addresses ethnic-racial mismatch. By combining qualitative ecological inquiry with rigorous quantitative mediation analyses, Sladek enhances the external validity of identity research, providing actionable insights for promoting mental health and equity in marginalized contexts.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 20,
+            "techniques": 14,
+            "platforms": 16,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

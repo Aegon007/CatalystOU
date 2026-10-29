@@ -1,0 +1,93 @@
+{
+    "Researcher Profile:": "Micahel Jablonski",
+    "Affiliation:": "Department of Mathematics",
+    "Research Domains": [
+        "Differential Geometry",
+        "Riemannian Geometry",
+        "Lie Theory",
+        "Unimodular Solvmanifolds",
+        "Ricci Soliton Theory",
+        "Lie Algebra Reconstruction",
+        "Satake Diagram Theory",
+        "Real Form Classification of Semi-Simple Lie Algebras",
+        "Infinitesimal Maximal Symmetry",
+        "Submanifold Geometry of Symmetric Spaces",
+        "Isometric Embedding Theory",
+        "Ado’s Theorem Applications in Riemannian Geometry"
+    ],
+    "Techniques Used": [
+        "Ricci Flow Analysis",
+        "Geometric Invariant Theory",
+        "Lie Algebra Representation Theory",
+        "Isometry Group Classification",
+        "Solvmanifold Structure Theory",
+        "Standard Modification Process",
+        "Normal Modification Analysis",
+        "Algebraic Levi Decomposition of Radical Automorphisms",
+        "Maximal Compact Subgroup Conjugacy in Automorphism Groups",
+        "Derivation Algebra Analysis (Der(s))",
+        "Maximal Compact Subalgebra Recovery in Derivations",
+        "Satake Diagram Construction from Subalgebra Data",
+        "Killing Form Restriction to Borel Subalgebras",
+        "Complexification and Root System Projection",
+        "Anti-involution Fixed Set Analysis for Real Forms",
+        "Infinitesimal Symmetry Comparison",
+        "Pre-Einstein Derivation Extension",
+        "Isometry Group vs. Algebra Distinction Analysis",
+        "Isomorphic Isometric Embedding Construction",
+        "Adjoint Representation Modification via Conjugation",
+        "Direct Sum of Representations for Metric Scaling",
+        "Eigenspace Orthogonalization in Matrix Groups",
+        "Frobenius Inner Product Analysis on Lie Algebras",
+        "Symmetric Inner Product Construction on Triangular Matrix Groups"
+    ],
+    "Data & Platforms": [
+        "Solvable Lie Groups",
+        "Nilpotent Lie Groups",
+        "Nilsoliton Metrics",
+        "Iwasawa Subgroups",
+        "Semisimple Lie Groups",
+        "Orthogonal Automorphisms (Aut(s) ∩ O(g))",
+        "Isometry Group Decomposition (S ⋊ C)",
+        "Iwasawa Subalgebras (s = a + n)",
+        "Satake Diagrams",
+        "Restricted Root Spaces (g_lambda)",
+        "Maximal Compact Subalgebras of Derivations (h subset Der(s))",
+        "Borel Subalgebras (b)",
+        "Cartan Subalgebras (h)",
+        "Expanding Ricci Solitons",
+        "Solvsoliton Structures",
+        "Lower Triangular Matrix Groups T(n, R)",
+        "Symmetric Space GL(n, R)/O(n, R)",
+        "Frobenius Inner Product Space",
+        "Symmetric Inner Product Space on t(n, R)"
+    ],
+    "Application Areas": [
+        "Geometric Analysis and Ricci Flow Dynamics",
+        "Lie Theory and Homogeneous Space Classification",
+        "Submanifold Geometry and Isometric Embeddings"
+    ],
+    "Key Research Thinking Patterns": [
+        "Symmetry Maximization for Uniqueness: Establishing that distinguished geometric structures, such as Einstein metrics and Ricci solitons, are uniquely determined by their maximal symmetry properties, verified through the classification of infinitesimal maximal symmetric metrics.",
+        "Algebraic Reconstruction from Subalgebra Data: Reconstructing the global structure of semi-simple Lie algebras and their real forms by analyzing the properties of their Iwasawa subalgebras and applying Satake diagram theory to recover compact factors.",
+        "Metric-Preserving Matrix Embeddings: Realizing abstract homogeneous spaces as concrete submanifolds of symmetric spaces by constructing faithful representations into lower triangular matrix groups that preserve the Riemannian metric via Frobenius inner products.",
+        "Structural Decomposition of Automorphism Groups: Analyzing the isometry groups of solvmanifolds by decomposing them into solvable and compact components, utilizing Lie algebra derivations and maximal compact subalgebras to determine geometric rigidity."
+    ],
+    "Summary Description": "Michael R. Jablonski is a differential geometer specializing in the classification and geometric realization of homogeneous Einstein manifolds and Ricci solitons. His research bridges Lie theory and Riemannian geometry, establishing 'maximal symmetry' as a key criterion for metric uniqueness. Jablonski is renowned for proving that Einstein and Ricci soliton solvmanifolds can be isometrically embedded as submanifolds of symmetric spaces, specifically GL(n,R)/O(n,R), using modified adjoint representations. By leveraging algebraic tools like Satake diagrams and Frobenius inner products, he reconstructs semi-simple Lie algebras from subalgebra data and resolves long-standing questions regarding the geometric realization of these spaces, significantly advancing the understanding of homogeneous geometric structures.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 12,
+            "techniques": 24,
+            "platforms": 19,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

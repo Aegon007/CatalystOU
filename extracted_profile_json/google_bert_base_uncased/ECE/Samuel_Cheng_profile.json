@@ -1,0 +1,36 @@
+{
+  "Researcher Profile:": "Samuel Cheng",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "log-likelihoods",
+    "methodologies",
+    "hyperparameter",
+    "autoencoder",
+    "patch-based",
+    "autoencoders",
+    "robustness",
+    "refinements",
+    "metrics",
+    "generalization",
+    "simplifying",
+    "datasets",
+    "deterministic",
+    "image-to-image",
+    "iterative",
+    "DDPMs",
+    "segmenting",
+    "interpolation",
+    "probabilistic",
+    "Segmentation"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "bDepartment",
+    "Adversarial",
+    "distri-",
+    "MedSegDiff"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "Pancreatic Tumor Segmentation as Anomaly Detection in CT Images Using De- noising Diffusion Models Reza Babaeia, Samuel Chenga,*, Theresa Thaib, and Shangqing Zhaoc aSchool of Electrical and Computer Engineering, University of Oklahoma, Norman, OK, United States bDepartment of Radiology, University of Oklahoma Health Sciences Center, Oklahoma City, OK , United Sates cSchool of Computer Science, University of Oklahoma, Norman, OK, United States *Correspondence: Samuel Cheng , Email: samuel.cheng@ou.edu Keywords: Pancreatic cancer, Denoising diffusion model, Deep learning, Anomaly detection Abstract Despite the advances in medicine, cancer has remained a formidable challenge. Particularly in the case of pancreatic tumors, characterized by their diversity and late diagnosis, early detection poses a significant challenge crucial for effective treatment. The intricate nature of abdominal anatomy further complicates identification, especially with small tumors, making it more challenging to discern diseased segments from healthy tissues."
+}

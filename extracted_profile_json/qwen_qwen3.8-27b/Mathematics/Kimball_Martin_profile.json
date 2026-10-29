@@ -1,0 +1,57 @@
+{
+    "Researcher Profile:": "Kimball Martin",
+    "Affiliation:": "University of Oklahoma",
+    "Research Domains": [
+        "Arithmetic Geometry",
+        "Number Theory",
+        "Algebraic Geometry",
+        "Moduli Spaces",
+        "Real Multiplication",
+        "Algebraic Curves",
+        "Abelian Varieties",
+        "Modular Forms",
+        "Analytic Number Theory"
+    ],
+    "Techniques Used": [
+        "Minimisation of conic bundles",
+        "Blow-up algorithms for singularities",
+        "Hilbert modular surfaces",
+        "Mestre's method for genus 2 curves",
+        "Igusa-Clebsch invariants",
+        "Rosati involution analysis",
+        "Galois module decomposition",
+        "Weierstrass equation parametrization",
+        "Reduction of quadratic forms over polynomial rings",
+        "Mestre conic analysis",
+        "Galois group containment criteria",
+        "Lattice polarization of K3 surfaces",
+        "Trace Formulas",
+        "Atkin-Lehner Operators",
+        "Hecke Operators",
+        "Class Number Theory",
+        "Asymptotic Analysis",
+        "Numerical Verification",
+        "δ-smoothing"
+    ],
+    "Data & Platforms": [
+        "Magma",
+        "GitHub repository [CFM24]",
+        "Elkies-Kumar rational parametrizations",
+        "OSCAR Supercomputer",
+        "Sage",
+        "OSCER (OU Supercomputing Center for Education & Research)"
+    ],
+    "Application Areas": [
+        "Parametrization and classification of genus 2 curves with real multiplication",
+        "Counting and distribution analysis of modular forms and elliptic curves",
+        "Reconstruction of algebraic curves from moduli invariants and Igusa-Clebsch data",
+        "Analysis of local root number distributions and Fourier coefficient correlations"
+    ],
+    "Key Research Thinking Patterns": [
+        "Algorithmic Minimization of Conic Bundles: Developing computational algorithms to minimize conic bundles fibred over projective spaces to simplify the Mestre conic associated with Hilbert modular surfaces, thereby enabling the derivation of explicit Weierstrass equations for genus 2 curves with real multiplication (e.g., proving the vanishing of the Mestre obstruction for discriminants D ≡ 1 mod 8).",
+        "Quadratic Form Reduction over Polynomial Rings: Employing algebraic techniques to reduce quadratic forms over polynomial rings to establish norm conditions for rational parametrizations, specifically applied to describe the moduli space of rational genus 2 curves with real multiplication by Q(√5) (e.g., parametrizing curves by rational points (m, n) satisfying specific norm constraints).",
+        "Trace Formula and Operator Analysis: Utilizing trace formulas for Atkin-Lehner and Hecke operators to characterize the distribution of local root numbers and identify oscillatory patterns in averaged Fourier coefficients, providing explicit formulas for when local root numbers are equidistributed or biased (e.g., analyzing 'murmurations' in weight 2 newform spaces).",
+        "Moduli Space Reconstruction via Invariants: Leveraging Igusa-Clebsch invariants and Rosati involution analysis to reconstruct genus 2 curves from their moduli data, facilitating the classification of abelian surfaces with real multiplication and the study of Galois module decompositions."
+    ],
+    "Summary Description": "Kimball Martin is a number theorist specializing in arithmetic geometry, with a focus on the parametrization and classification of genus 2 curves with real multiplication. His research integrates algebraic geometry and analytic number theory, employing advanced computational tools like Magma and Sage to develop algorithms for minimizing conic bundles and reducing quadratic forms. Key contributions include explicit Weierstrass equations for families of genus 2 curves over Q, the analysis of local root number distributions using trace formulas for Atkin-Lehner operators, and the study of Fourier coefficient correlations. His work bridges the gap between theoretical moduli space descriptions and concrete computational parametrizations, significantly advancing the understanding of abelian surfaces and modular forms."
+}

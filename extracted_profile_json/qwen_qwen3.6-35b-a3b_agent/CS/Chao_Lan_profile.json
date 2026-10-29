@@ -1,0 +1,93 @@
+{
+    "Researcher Profile:": "Chao Lan",
+    "Affiliation:": "School of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Computer Science",
+        "Social Network Analysis",
+        "Machine Learning",
+        "Algorithmic Fairness",
+        "Active Learning",
+        "Dimensionality Reduction",
+        "Computational Efficiency Optimization",
+        "Random Matrix Theory",
+        "Kernel Method Optimization",
+        "Spectral Norm Estimation",
+        "Random Feature Approximation",
+        "Multimodal Learning",
+        "Fake News Detection",
+        "Prototype Learning",
+        "Cross-Modal Fusion"
+    ],
+    "Techniques Used": [
+        "Kernel Means Matching (KMM)",
+        "Bi-level Optimization",
+        "Stochastic Gradient Descent",
+        "Sampling Bias Correction",
+        "FastText Embedding",
+        "Decoupled Model Learning",
+        "Disagreement-based Active Learning",
+        "Fairness-Aware Active Learning (D-FA2L)",
+        "Disparate Impact Metric",
+        "Rademacher Complexity Analysis",
+        "Data-Dependent Random Projection (D2RP)",
+        "Kernel Ridge Regression (KRR)",
+        "Ensemble Least Square Regression",
+        "Principal Component Analysis (PCA)",
+        "Johnson–Lindenstrauss Lemma",
+        "Singular Value Decomposition (SVD)",
+        "Empirical Excess Risk Analysis",
+        "Frobenius Norm Bounds",
+        "Random Feature-Based Power Iteration (RFPI)",
+        "Matrix Bernstein’s Inequality",
+        "Weyl’s Inequality",
+        "Gaussian Kernel Approximation",
+        "Random Feature Matrix Construction",
+        "Prototype-Based Fully Balanced Learning (PFBL)",
+        "Prototype-Based Modality-Balanced Learning (PMB)",
+        "Constrained Gradient Optimization (CGO)",
+        "Prototype-Oriented Discriminative Enhancement (PODE) Loss",
+        "Cross-Transformer Block",
+        "Attention Mechanism",
+        "Joint Prototype Updating Strategy"
+    ],
+    "Data & Platforms": [
+        "Twitter Dataset",
+        "Self-Labeled Twitter User Gender Data Set",
+        "Self-Labeled Twitter User Race Data Set",
+        "FastText Model",
+        "MNIST Dataset",
+        "High Dimensional Datascape Dataset",
+        "Communities and Crime Dataset",
+        "White Wine Quality Dataset",
+        "Fakeddit Dataset",
+        "Weibo Dataset"
+    ],
+    "Application Areas": [
+        "Algorithmic Fairness and Demographic Bias Mitigation",
+        "Multimodal Social Media Credibility and Misinformation Detection",
+        "High-Dimensional Data Processing and Computational Efficiency"
+    ],
+    "Key Research Thinking Patterns": [
+        "Bias-Corrected Statistical Learning: Addresses sampling bias and demographic imbalance in predictive modeling by integrating Kernel Means Matching (KMM) with bi-level optimization frameworks to ensure equitable representation in user demographic prediction tasks.",
+        "Spectral Acceleration via Randomized Linear Algebra: Enhances the computational scalability of kernel methods and spectral estimation by employing Data-Dependent Random Projection (D2RP) and Random Feature-Based Power Iteration (RFPI), leveraging theoretical bounds from Random Matrix Theory.",
+        "Prototype-Driven Multi-Objective Optimization: Resolves dual imbalances (modality and class) in multimodal learning by implementing Prototype-Based Fully Balanced Learning (PFBL) and Prototype-Oriented Discriminative Enhancement (PODE) loss, utilizing constrained gradient optimization to stabilize cross-transformer fusion.",
+        "Disagreement-Based Active Learning: Optimizes data labeling efficiency and model fairness by deploying Disagreement-based Active Learning and Fairness-Aware Active Learning (D-FA2L) strategies, which iteratively select samples to minimize disparate impact while maximizing predictive accuracy."
+    ],
+    "Summary Description": "Chao Lan specializes in algorithmic fairness, computational efficiency, and multimodal learning, focusing on robust, scalable solutions for social media analysis. Lan’s work addresses critical challenges in demographic bias mitigation and misinformation detection through advanced statistical and optimization techniques. Key contributions include Kernel Means Matching for bias correction, Data-Dependent Random Projection for high-dimensional acceleration, and Prototype-Based Fully Balanced Learning for multimodal fake news detection. By leveraging datasets like Twitter and Fakeddit, Lan develops methods that balance ethical considerations with computational performance, utilizing constrained gradient optimization and cross-transformer fusion to enhance model reliability across diverse data modalities.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 15,
+            "techniques": 30,
+            "platforms": 10,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

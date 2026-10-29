@@ -1,0 +1,71 @@
+{
+    "Researcher Profile:": "Ricardo Mendes",
+    "Affiliation:": "University of Oklahoma",
+    "Research Domains": [
+        "Invariant Theory",
+        "Algebraic Geometry",
+        "Differential Geometry",
+        "Representation Theory",
+        "Singular Riemannian Foliations",
+        "Lie Group Theory",
+        "Convex Geometry",
+        "Alexandrov Geometry",
+        "Riemannian Geometry",
+        "Submanifold Theory",
+        "Global Differential Geometry",
+        "Spectral Geometry",
+        "Commutative Algebra"
+    ],
+    "Techniques Used": [
+        "Stone-Weierstrass Theorem",
+        "Theory of Spherical Harmonics",
+        "Laplacian Algebra Analysis",
+        "Generalized Polarizations",
+        "Orbit Equivalence Analysis",
+        "L2 Inner Product Orthogonality",
+        "Submetry analysis",
+        "Alexandrov geometry (tangent cones, semi-concave functions, gradients)",
+        "Support functions and polar duality",
+        "Bipolar Theorem",
+        "Orthogonal projection",
+        "Homothetic Transformation Lemma",
+        "Metric convexity criteria",
+        "Bow Lemma (Schur's Bow Lemma)",
+        "Classification of submanifolds with planar geodesics (Sakamoto's Theorem)",
+        "Analysis of normal exponential maps",
+        "Shape operator eigenvalue analysis",
+        "Veronese embeddings",
+        "Comparison geometry",
+        "Weyl's Law",
+        "Hörmander's estimate for spectral functions",
+        "Averaging operator",
+        "Foliated slice theorem",
+        "Heat kernel asymptotics",
+        "Hilbert series analysis"
+    ],
+    "Data & Platforms": [
+        "arXiv",
+        "NSF Grant DMS-2005373",
+        "Euclidean space (R^n)",
+        "Unit sphere (S^n)",
+        "Hyperbolic space (H^n)",
+        "Minkowski space",
+        "Fubini-Study metric",
+        "Laplacian algebra of basic polynomials",
+        "Hilbert series",
+        "Leaf space metric structure"
+    ],
+    "Application Areas": [
+        "Classical and Inverse Invariant Theory for Compact and Finite Groups",
+        "Geometric Characterization of Singular Riemannian Foliations and Submetries",
+        "Spectral Geometry and Asymptotic Analysis of Leaf Spaces",
+        "Classification of Submanifolds in Space Forms via Extrinsic Geometric Invariants"
+    ],
+    "Key Research Thinking Patterns": [
+        "Algebraic-Geometric Synthesis: Bridging differential geometric structures with commutative algebra to resolve invariant theory problems (e.g., Proving Laplacian algebras are maximal to solve the Inverse Invariant Theory problem for finite groups and introducing generalized polarizations for diagonal representations).",
+        "Metric Generalization of Convexity: Extending classical convexity theorems from polar representations to arbitrary submetries using purely metric criteria (e.g., Introducing the concept of a 'fat section' to partially generalize Kostant's Convexity Theorem and establishing metric criteria for the convexity of pre-images in submetry bases).",
+        "Spectral-Volume Correspondence: Linking spectral asymptotics to the geometric volume of singular quotient spaces (e.g., Proving a version of Weyl's law for the basic spectrum of closed singular Riemannian foliations and deriving explicit formulas for leaf space volume using Hilbert series of basic polynomials).",
+        "Rigorous Classification via Geometric Inequalities: Utilizing comparison geometry and specific classification theorems to characterize submanifolds based on extremal geometric ratios (e.g., Characterizing submanifolds where the extrinsic diameter to focal radius ratio is 2 by applying Sakamoto's Theorem and Schur's Bow Lemma to identify round spheres and Veronese embeddings)."
+    ],
+    "Summary Description": "Ricardo Mendes is a mathematician specializing in the intersection of global differential geometry, invariant theory, and singular Riemannian foliations. His research focuses on the geometric and algebraic structures of orbit spaces and leaf spaces arising from group actions. Key methodologies include the application of commutative algebra tools, such as Hilbert series and Laplacian algebras, to solve problems in classical and inverse invariant theory. Mendes employs metric geometry techniques, including Alexandrov geometry and comparison principles, to generalize convexity theorems and classify submanifolds in space forms. His work provides rigorous spectral asymptotic results for singular foliations, establishing connections between the basic spectrum and the volume of leaf spaces. By integrating tools from representation theory, convex geometry, and submanifold theory, his research advances the understanding of quotient spaces, isoparametric foliations, and the geometric invariants of compact rank-one symmetric spaces."
+}

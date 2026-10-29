@@ -9,16 +9,24 @@ load_dotenv()
 # --- Part 1: Client Setup ---
 # Use the async client to match the function calls
 try:
-    api_key = os.getenv('LLM_API_KEY')
+    api_key = os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('OPENAI_API_KEY')
     if not api_key:
         raise ValueError("API key not found. Please add it to your environment variables.")
-    api_url = os.getenv('LLM_API_URL')
-    if not api_url:
-        raise ValueError("API URL not found. Please add it to your environment variables.")
+    api_url = os.getenv('LLM_API_URL') or "https://openrouter.ai/api/v1"
+    if "openrouter.ai" in api_url and not api_url.rstrip("/").endswith("/api/v1"):
+        api_url = "https://openrouter.ai/api/v1"
+
+    default_headers = None
+    if "openrouter.ai" in api_url:
+        default_headers = {
+            "HTTP-Referer": "https://catalystou.local",
+            "X-Title": "CatalystOU",
+        }
 
     client = AsyncOpenAI(
         api_key=api_key,
-        base_url=api_url
+        base_url=api_url,
+        default_headers=default_headers
     )
 except Exception as e:
     print(f"Error setting up the client: {e}")
@@ -123,17 +131,21 @@ THIS IS THE JSON FORMAT:
 
     try:
         print("Sending profiles to LLM for synergy analysis...")
-        # Use 'await' for the async client call
+        model = os.getenv("LLM_MODEL", "qwen/qwen3.8-27b")
+        temperature = float(os.getenv("LLM_TEMPERATURE", "0.0"))
+        seed = int(os.getenv("LLM_SEED", "42"))
         completion = await client.chat.completions.create(
-            model="gemma3",
+            model=model,
             messages=[
                 {"role": "system", "content": "You are a research analyst that only outputs a single, valid JSON object."},
                 {"role": "user", "content": prompt},
             ],
-            temperature=0.5,
+            temperature=temperature,
+            seed=seed,
             timeout=300.0,
         )
-        response_text = completion.choices[0].message.content
+        choice_msg = completion.choices[0].message
+        response_text = choice_msg.content or getattr(choice_msg, "reasoning", "") or ""
 
         start = response_text.find('{')
         end = response_text.rfind('}')

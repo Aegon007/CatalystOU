@@ -1,0 +1,36 @@
+{
+  "Researcher Profile:": "Micahel Jablonski",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [
+    "study-",
+    "subclass"
+  ],
+  "Techniques Used": [
+    "hypotheses",
+    "manifoldMhasmaximal",
+    "Corollary",
+    "metrics",
+    "motivations",
+    "sym-",
+    "counterexample",
+    "higher-dimensional",
+    "unimodular",
+    "aG-invariant",
+    "embeds",
+    "SOLVMANIFOLDS",
+    "eomorphism",
+    "aK-invariant",
+    "automorphism",
+    "automorphisms",
+    "isometries",
+    "isometri-",
+    "algebras",
+    "left-invariant"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "self-adjoint"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "differential geometry 111(2019) 1- 38 EINSTEIN SOLVMANIFOLDS HAVE MAXIMAL SYMMETRY Carolyn S. Jablonski2 Abstract All known examples of homogeneous Einstein metrics of nega- tive Ricci curvature can be realized as left-invariant Riemannian metrics on solvable Lie groups. After de ning a notion of maxi- mal symmetry among left-invariant Riemannian metrics on a Lie group, we prove that any left-invariant Einstein metric of negative Ricci curvature on a solvable Lie group is maximally symmetric."
+}

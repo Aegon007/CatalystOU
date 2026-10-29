@@ -1,0 +1,34 @@
+{
+  "Researcher Profile:": "Greg Muller",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "combinatorial",
+    "combinatorics",
+    "cell-decomposition",
+    "proofs",
+    "Corollary",
+    "hyperplane",
+    "simplicial",
+    "counterexample",
+    "summand",
+    "Rdinduced",
+    "strong-F-regularity",
+    "MRis",
+    "morphism",
+    "characterizing",
+    "multiplier",
+    "Arational",
+    "arecrepant",
+    "HomZ",
+    "F-regularity",
+    "methods"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "bDepartment",
+    "C1413A3516E1016S32"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "Advances in Mathematics 351 (2019) 236–274 Contents lists available at ScienceDirect Advances in Mathematics www.elsevier.com/locate/aim Non-commutative resolutions of toric varieties✩ Eleonore Fabera, Greg Mullerb,∗, Karen E. Smithc aSchool of Mathematics, University of Leeds, Leeds, LS2 9JT, UK bDepartment of Mathematics, University of Oklahoma, Norman, OK 73019, USA cDepartment of Mathematics, University of Michigan, Ann Arbor, MI 48109, USA a r t i c l e i n f o a b s t r a c t Article history: Received 3 July 2018 Received in revised form 4 January 2019 Accepted 2 April 2019 Available online 16 May 2019 Communicated by Michel Van den Bergh MSC:13C1413A3516E1016S32 Keywords: Toric variety Non-commutative resolution Finite global dimension Non-commutative crepant resolution Rings of diﬀerential operators Strong F-regularityLet Rbe the coordinate ring of an aﬃne toric variety. We prove, using direct elementary methods, that the endo- morphism ring End R(A), where Ais the (ﬁnite) direct sum of all (isomorphism classes of) conic R-modules, has ﬁnite global dimension equal to the dimension of R."
+}

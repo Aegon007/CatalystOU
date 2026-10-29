@@ -1,0 +1,90 @@
+{
+    "Researcher Profile:": "John Jiang",
+    "Affiliation:": "School of Electrical and Computer Engineering, the University of Oklahoma Norman, OK, USA",
+    "Research Domains": [
+        "Power Systems Engineering",
+        "Nonlinear Dynamics",
+        "Renewable Energy Integration",
+        "Nonlinear Energy Flow Detection",
+        "Multi-scale Dynamics Analysis",
+        "Koopman Operator Theory",
+        "Chaotic Dynamics Analysis",
+        "Time-Delay Embedding",
+        "Power Quality Engineering",
+        "Harmonic Analysis",
+        "Grid Topology Optimization",
+        "Risk Analysis",
+        "Critical Infrastructure Resilience",
+        "Disinformation Studies",
+        "Cyber-Physical Systems Security",
+        "Behavioral Network Science",
+        "Supply Chain Resilience"
+    ],
+    "Techniques Used": [
+        "Sparse Identification of Nonlinear Dynamics (SINDy)",
+        "Sparse Regression with L1 Regularization",
+        "Volterra-based Nonlinearity Index (VNI)",
+        "Compressed Sensing",
+        "Measure-based System Identification",
+        "Higher-order Polynomial Function Libraries",
+        "Three-section Data Analysis Structure",
+        "Hankel Alternative View of Koopman (HAVOK) method",
+        "Time-delay embedding",
+        "Singular Value Decomposition (SVD)",
+        "Burst sampling",
+        "Eigen-time-delay coordinates extraction",
+        "Harmonic Cancellation via Phase Shifting",
+        "Bessel Function-based Harmonic Modeling",
+        "Admittance Matrix Analysis",
+        "Equivalent Inductance Calculation",
+        "SPWM Harmonic Decomposition",
+        "Susceptible-Infected-Recovered (SIR) Epidemiological Modeling",
+        "Mixed-Integer Programming (MIP) for Network Optimization",
+        "Linear Threshold Influence Models",
+        "Cascading Influence Models",
+        "Personality Trait Integration in Social Networks",
+        "Multi-Commodity Flow Network Optimization"
+    ],
+    "Data & Platforms": [
+        "IEEE 15-bus Power System Model",
+        "Inverter-based Resources (IBR) Data",
+        "Synchronous Generator (SG) Data",
+        "Time-series State Variable Matrices (X, X_dot)",
+        "Voltage Waveform Time-Series Data",
+        "H-Bridge Inverter Model",
+        "SPWM Switching Waveforms",
+        "Bus Admittance Matrix (Y)",
+        "Port Authority Trans-Hudson (PATH) System Data",
+        "Swedish Rail Network Data",
+        "Social Media Interaction Data",
+        "User Behavior Adoption Probability Estimates",
+        "Big Five Personality Trait Datasets"
+    ],
+    "Application Areas": [
+        "Critical Infrastructure Resilience and Smart Grid Stability",
+        "Cyber-Physical System Security and Disinformation Defense"
+    ],
+    "Key Research Thinking Patterns": [
+        "Sparse Nonlinear System Identification: Utilizing data-driven sparse regression techniques to extract interpretable dynamic models from high-dimensional time-series data, specifically applying SINDy and HAVOK methods to characterize chaotic dynamics and nonlinear energy flows in inverter-based power grids.",
+        "Interdependent Layer Resilience Modeling: Integrating epidemiological (SIR) and social influence models with physical network optimization (MIP) to simulate and mitigate cascading failures where weaponized disinformation disrupts demand-response mechanisms in transportation and power systems.",
+        "Multi-Scale Harmonic and Dynamic Analysis: Employing Volterra-based indices, compressed sensing, and harmonic cancellation via phase shifting to detect, decompose, and mitigate complex nonlinear distortions and multi-scale dynamics in high-penetration renewable energy integration scenarios.",
+        "Topology-Aware Network Optimization: Leveraging admittance matrix analysis and mixed-integer programming to design robust grid topologies and supply chain configurations that self-compensate for coupled inverter interactions and external informational shocks."
+    ],
+    "Summary Description": "John Jiang bridges electrical engineering and behavioral network science to enhance critical infrastructure resilience. His work leverages sparse identification (SINDy, HAVOK) and harmonic analysis to stabilize inverter-based power grids under high renewable penetration. Recently, he extends this framework to cyber-physical security, modeling how weaponized disinformation spreads via social networks to disrupt physical layers like the PATH transit system and power demand-response. By integrating epidemiological SIR models with mixed-integer programming, Jiang develops strategies to defend against cascading failures in interdependent information-physical systems, ensuring robustness in both energy and transportation sectors.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 17,
+            "techniques": 23,
+            "platforms": 13,
+            "applications": 2,
+            "thinking_patterns": 4
+        }
+    }
+}

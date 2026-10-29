@@ -1,0 +1,46 @@
+{
+  "Researcher Profile:": "Anindya Maiti",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [
+    "program-"
+  ],
+  "Techniques Used": [
+    "workflows",
+    "code-generating",
+    "adversary-created",
+    "LLM-generated",
+    "summarization",
+    "pervasiveness",
+    "codebase",
+    "decoding",
+    "CodeL-",
+    "datasets",
+    "JavaScript",
+    "nonsensical",
+    "prompts",
+    "Characterizing",
+    "fine-tuning",
+    "malware",
+    "AI-generated",
+    "documentation",
+    "Murtuza",
+    "erroneous"
+  ],
+  "Data & Platforms": [
+    "codebases",
+    "usenixsecurity25",
+    "Repositories"
+  ],
+  "Application Areas": [
+    "modalities",
+    "mitigation",
+    "adversaries",
+    "black-box",
+    "reposito-",
+    "public-facing",
+    "halluci-nated",
+    "shortcoming"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "This paper is included in the Proceedings of the 34th USENIX Security Symposium. August 13–15, 2025 • Seattle, WA, USA 978-1-939133-52-6 Open access to the Proceedings of the 34th USENIX Security Symposium is sponsored by USENIX.We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs Joseph Spracklen, Raveen Wijewickrama, and A H M Nazmus Sakib, University of Texas at San Antonio; Anindya Maiti, University of Oklahoma; Bimal Viswanath, Virginia Tech; Murtuza Jadliwala, University of Texas at San Antonio https://www.usenix.org/conference/usenixsecurity25/presentation/spracklen We Have a Package for You!"
+}

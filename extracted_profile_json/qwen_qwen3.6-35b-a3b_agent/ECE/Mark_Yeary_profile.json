@@ -1,0 +1,99 @@
+{
+    "Researcher Profile:": "Mark Yeary",
+    "Affiliation:": "Advanced Radar Research Center / School of Electrical and Computer Engineering, The University of Oklahoma",
+    "Research Domains": [
+        "Radar Systems Engineering",
+        "Meteorological Remote Sensing",
+        "Digital Signal Processing",
+        "Non-linear Radar Signal Processing",
+        "Aircraft Tracking and Surveillance",
+        "Compressive Sensing and Iterative Estimation",
+        "Antenna Pattern Synthesis",
+        "Phased Array Antenna Theory",
+        "Phased Array Self-Calibration",
+        "Mutual Coupling Analysis",
+        "Phase-Only Beamforming Optimization",
+        "Multi-Peak Antenna Pattern Synthesis"
+    ],
+    "Techniques Used": [
+        "Fully Digital Phased Array Beamforming",
+        "Dual-Polarimetric Radar Observation",
+        "Minimum Variance Distortionless Response (MVDR) Adaptive Beamforming",
+        "Recursive Far-Field Calibration",
+        "Mutual Coupling Calibration",
+        "Space-Time Adaptive Processing (STAP)",
+        "Software-Defined Radar Architecture",
+        "Phase-only Optimization Framework for Beamforming",
+        "2D Broadened Beam on Transmit with Digital Subarrays",
+        "Staggered Pulse-Repetition Time (PRF) Sequences",
+        "Reduced Aperture Configuration Analysis",
+        "Non-linear State Estimation (Particle Filtering)",
+        "Supervised/Unsupervised Learning for Clutter Modeling",
+        "Bézier-surface parametrization for beamforming weights",
+        "Constrained-loss magnitude/phase pattern synthesis",
+        "Genetic algorithm optimization for array factor",
+        "Cross-polar Canceller (XPC) mitigation",
+        "Holographic back-projection for polarimetric calibration",
+        "Spherical far-field scan for embedded element characterization",
+        "Ludwig-II coordinate system pattern analysis",
+        "FFT-Based Complex Phasor Estimation",
+        "Annulus Masking for Coupling Measurement Optimization",
+        "Moore-Penrose Pseudoinverse for Error Vector Estimation",
+        "Optical Delay Line (ODL) Ground-Truth Validation",
+        "UAS-Based Far-Field Radiation Pattern Measurement",
+        "Bézier Surface Parametrization for Phase-Only Weight Optimization",
+        "Hybrid Optimization Method Combining Measured Element Patterns with Pattern Synthesis",
+        "2-D Beam-Pointing Offset Synthesis (Azimuth and Elevation)",
+        "Phase-Only Beamforming to Avoid Amplitude Tapering Losses"
+    ],
+    "Data & Platforms": [
+        "Horus Phased Array Weather Radar",
+        "Advanced Radar Research Center (ARRC)",
+        "Anechoic Chamber",
+        "WSR-88D (NEXRAD) Network",
+        "NOAA National Severe Storms Laboratory (NSSL)",
+        "DARPA Beyond Linear Processing (BLiP) Program",
+        "Phoenix Air Learjet 36A (Instrumented Airborne Target)",
+        "ADI9371 RF Transceiver",
+        "MIT-Lincoln Laboratory (Collaborator)",
+        "Georgia Tech Research Institute (GTRI) (Collaborator)",
+        "Johns Hopkins University Applied Physics Laboratory (JHU-APL) (Collaborator)",
+        "ANSYS HFSS (Simulation Software)",
+        "MATLAB (Genetic Algorithm Solver)",
+        "Precision Anechoic Chamber (ARRC)",
+        "Spherical Positioner (Measurement Setup)",
+        "Horus-NOAA (13-panel, 1664-element array)",
+        "RF-Sonde UAS",
+        "Optical Delay Line (ODL) Repeater",
+        "Calibration Horn",
+        "KCRI WSR-88D Radar (Validation Reference)",
+        "Ludwig-II Coordinate System (Pattern Analysis Framework)"
+    ],
+    "Application Areas": [
+        "Next-Generation Meteorological Remote Sensing and Severe Weather Warning",
+        "Airborne Surveillance and Aircraft Tracking in Complex Clutter"
+    ],
+    "Key Research Thinking Patterns": [
+        "Adaptive Interference Mitigation: Utilizing non-linear state estimation and adaptive beamforming to isolate targets from dynamic clutter environments (e.g., Particle Filtering for maneuvering target tracking, MVDR adaptive beamforming for clutter suppression).",
+        "Self-Calibrating Digital Array Architecture: Implementing reference-based, recursive calibration techniques to maintain array integrity and phase coherence in large-scale operational systems without external infrastructure (e.g., FFT-based complex phasor estimation, UAS-based far-field validation).",
+        "Multi-Objective Antenna Pattern Synthesis: Employing constrained optimization frameworks to engineer complex radiation patterns that balance sensitivity, sidelobe isolation, and beam shape for specific operational needs (e.g., Bézier-surface parametrization for phase-only weight optimization, genetic algorithms for multi-peak simultaneous transmit beams).",
+        "Hybrid Validation and Simulation Framework: Integrating high-fidelity electromagnetic simulation with precise physical measurement setups to validate theoretical models against ground-truth data (e.g., ANSYS HFSS simulation combined with Optical Delay Line repeater and anechoic chamber measurements)."
+    ],
+    "Summary Description": "Mark Yeary is a radar systems engineer specializing in fully digital polarimetric phased array technologies for meteorological and defense applications. Based at the University of Oklahoma's Advanced Radar Research Center, he leads the development of the Horus radar and contributes to DARPA initiatives. His research bridges atmospheric science and defense by employing advanced digital signal processing, such as MVDR adaptive beamforming and particle filtering, to enhance temporal resolution and mitigate interference. Yeary pioneers self-calibrating array architectures using FFT-based phasor estimation and UAS validation to ensure precise alignment in large-scale systems. Additionally, he utilizes Bézier-surface parametrization and genetic algorithms for complex antenna pattern synthesis, enabling multi-peak beams and improved sidelobe isolation. His work significantly advances severe weather warning capabilities and airborne surveillance infrastructure through robust, scalable, and high-resolution radar solutions.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 12,
+            "techniques": 29,
+            "platforms": 21,
+            "applications": 2,
+            "thinking_patterns": 4
+        }
+    }
+}

@@ -4,7 +4,8 @@
     "api_key_env": ["LLM_API_KEY", "OPENAI_API_KEY"],
     "base_url_env": ["LLM_BASE_URL", "OPENAI_BASE_URL"],
     "base_url": null,
-    "temperature": 0.3,
+    "temperature": 0.0,
+    "seed": 42,
     "max_tokens": 120000,
     "max_retries": 3,
     "timeout": 600.0,
@@ -54,5 +55,21 @@
     "temperature": 0.3,
     "max_tokens": 120000,
     "api_mode": "responses"
+  },
+  "qwen3.8-27b": {
+    "provider": "openrouter",
+    "model_name": "qwen/qwen3.8-27b",
+    "temperature": 0.0,
+    "seed": 42,
+    "max_tokens": 120000,
+    "api_mode": "chat"
+  },
+  "qwen/qwen3.8-27b": {
+    "provider": "openrouter",
+    "model_name": "qwen/qwen3.8-27b",
+    "temperature": 0.0,
+    "seed": 42,
+    "max_tokens": 120000,
+    "api_mode": "chat"
   }
 }

@@ -1,0 +1,100 @@
+{
+    "Researcher Profile:": "Peter Patzt",
+    "Affiliation:": "University of Münster / University of Copenhagen",
+    "Research Domains": [
+        "Algebraic Topology",
+        "Geometric Group Theory",
+        "Homological Algebra",
+        "Homological Stability",
+        "Algebraic Representations of Arithmetic Groups",
+        "Number Theory (L-functions)",
+        "Koszul Algebras",
+        "Monoid Homology",
+        "Bar Complexes",
+        "Integral Homological Algebra",
+        "Reductive Group Theory",
+        "Modular Symbol Theory",
+        "Algebraic K-Theory",
+        "Simplicial Complexes in K-Theory",
+        "Koszul Duality for Equivariant Rings"
+    ],
+    "Techniques Used": [
+        "Construction of explicit partial resolutions",
+        "Cohomology calculations of arithmetic groups",
+        "Connectivity analysis of simplicial complexes",
+        "Poset map techniques",
+        "Computer-assisted homology verification",
+        "Propagation of homological stability via axiomatic frameworks",
+        "Analysis of destabilisation complexes",
+        "Connectivity arguments for groupoids",
+        "Study of Littlewood complexes",
+        "Twisted homological stability with irreducible algebraic coefficients",
+        "Lexicographic Filtration of Chain Complexes",
+        "Homotopy Operator Construction (Contracting Homotopy)",
+        "PBW-basis Analysis for Steinberg Modules",
+        "Vanishing Homology via Filtration Quotients",
+        "Spectral Sequence Analysis for Steinberg Resolutions",
+        "Three-step Partial Resolution Construction",
+        "Double Complex of Resolutions",
+        "Three-step Bar Resolution",
+        "Connectivity Proof for Double Tits Building",
+        "Analysis of Reducible Levi Subgroups over Integers",
+        "Combinatorial Morse Theory",
+        "Analysis of Iterated Bar Constructions",
+        "Study of Equivariant Monoids built from Tits Buildings",
+        "Identification of Koszul Duals of Steinberg Module Assemblies"
+    ],
+    "Data & Platforms": [
+        "Steinberg module St_n(Q)",
+        "Tits building",
+        "SL_n(Z) congruence subgroups",
+        "Borel-Serre duality framework",
+        "Church-Farb-Putman conjecture",
+        "Mapping class groups",
+        "Automorphism groups of free groups",
+        "Braid groups",
+        "Even and odd symplectic groups",
+        "General linear groups",
+        "Burau representation",
+        "Torelli groups",
+        "Steinberg Monoid",
+        "Reduced Bar Complex of Steinberg Module (B*_n(St))",
+        "PBW-basis (Poincaré-Birkhoff-Witt basis) for St(W)",
+        "Integral Steinberg Representation",
+        "Modular Symbols",
+        "Split Reductive Groups",
+        "Levi Subgroups (General Types B, C, BC, D)",
+        "Common Basis Complex (CB_n(R))",
+        "Higher Tits Buildings (T^k,0_n(R))",
+        "Rognes' Connectivity Conjecture Framework",
+        "Equivariant Ring Assembled from Steinberg Modules"
+    ],
+    "Application Areas": [
+        "Arithmetic Group Cohomology and Algebraic K-Theory",
+        "Geometric Group Theory and Homological Stability",
+        "Number Theory and L-function Statistics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Explicit Resolution Construction: Building concrete algebraic structures to compute cohomology, exemplified by the three-step partial resolution and double complex of resolutions for Steinberg modules.",
+        "Connectivity via Combinatorial Topology: Proving homological vanishing and stability by analyzing the topological connectivity of simplicial complexes, such as the double Tits building and common basis complexes.",
+        "Axiomatic Homological Stability: Extending stability results to twisted coefficients by establishing general axiomatic frameworks that propagate stability across group families like mapping class and symplectic groups.",
+        "Monoid Homology and Koszul Duality: Investigating the algebraic structure of equivariant rings by proving the Koszulity of the Steinberg monoid through lexicographic filtrations and contracting homotopies on reduced bar complexes."
+    ],
+    "Summary Description": "Peter Patzt specializes in algebraic topology and geometric group theory, focusing on the cohomology of arithmetic groups and algebraic K-theory. His research bridges abstract homological algebra with number theory, utilizing explicit resolution constructions and connectivity analyses of Tits buildings to verify major conjectures, including Rognes' connectivity conjecture and the Church-Farb-Putman conjecture. Patzt employs axiomatic frameworks to establish homological stability for twisted coefficients across diverse group families. Recently, he has expanded into monoid homology, proving the Koszulity of the Steinberg monoid via bar complex filtrations. His work provides foundational tools for understanding stable real cohomology, integral vanishing phenomena, and statistical properties of L-functions over function fields.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 15,
+            "techniques": 24,
+            "platforms": 23,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

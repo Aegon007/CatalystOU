@@ -1,0 +1,98 @@
+{
+    "Researcher Profile:": "Kimball Martin",
+    "Affiliation:": "Independent Researcher (Supported by Simons Foundation, JSPS, and Osaka Central Advanced Mathematical Institute)",
+    "Research Domains": [
+        "Number Theory",
+        "Automorphic Forms",
+        "Analytic Number Theory",
+        "Arithmetic Geometry",
+        "Genus 2 Curves",
+        "Real Multiplication (RM) Moduli Spaces",
+        "Hilbert Modular Surfaces (Specifically Discriminant 5)",
+        "Quadratic Forms over Polynomial Rings",
+        "Local Root Number Distributions",
+        "Murmurations of Fourier Coefficients",
+        "Atkin-Lehner Operator Trace Analysis",
+        "Scale-Invariant Oscillatory Patterns in Modular Forms",
+        "Complex Multiplication (CM) Theory",
+        "Grössencharacters (Hecke Characters)",
+        "Rationality Fields of Modular Forms",
+        "Abelian Varieties of GL(2) Type",
+        "Coleman’s Conjecture on Endomorphism Algebras"
+    ],
+    "Techniques Used": [
+        "Trace Formulas (Yamauchi, Skoruppa–Zagier)",
+        "Class Number Relations",
+        "Möbius Inversion",
+        "Atkin–Lehner Involution Analysis",
+        "Dimension Formula Derivation",
+        "Conic Bundle Minimisation Algorithm",
+        "Blow-up Singularity Resolution",
+        "Mestre Conic Obstruction Analysis",
+        "Igusa–Clebsch Invariant Simplification",
+        "Rational Parametrisation of Hilbert Modular Surfaces",
+        "Reduction of Quadratic Forms over Polynomial Rings",
+        "Norm Condition Verification for Mestre Obstruction Vanishing",
+        "Mestre Conic Degree Reduction via Variable Switching",
+        "Local Trace Formula Derivation for Atkin-Lehner Operators",
+        "Kronecker Delta Decomposition in Trace Expressions",
+        "Multiplicative Function Analysis (e.g., κ functions)",
+        "Asymptotic Bias Analysis for Even Exponents (r=2)",
+        "Weighted Fourier Coefficient Averaging",
+        "δ-Smoothing of Oscillatory Averages",
+        "Arithmetic Compatibility Condition Verification for Sequences",
+        "Hecke Operator Trace Correlation with Local Signs",
+        "Grössencharacter Value Field Analysis",
+        "Ray Class Group Structure Analysis",
+        "Ideal Capitulation/Principalization in Value Fields",
+        "Extended Riemann Hypothesis (ERH) Conditional Proofs",
+        "Siegel Zero Non-Existence Hypotheses",
+        "Modulus Character Decomposition",
+        "Discriminant Classification of Number Fields",
+        "Hilbert Class Field Subfield Analysis"
+    ],
+    "Data & Platforms": [
+        "SageMath",
+        "LMFDB (L-functions and Modular Forms Database)",
+        "Cremona’s Database of Elliptic Curves",
+        "Magma",
+        "ICERM OSCAR Supercomputer",
+        "Elkies–Kumar Hilbert Modular Surface Models",
+        "GitHub Repository (CFM24)",
+        "Elkies–Kumar Double Cover Model of Y(5)",
+        "Wilson’s Igusa–Clebsch Invariant Descriptions for Y(5) Remainders",
+        "Sutherland’s Murmuration Data Repository",
+        "Zubrilina’s Localized Murmuration Density Functions",
+        "Bergdall–Pollack q-adic Galois Representation Data",
+        "LMFDB (Extended usage for CM form verification and level 50000+ data comparison)",
+        "Tables of Imaginary Quadratic Fields by Class Group Exponent (referencing EKN20, HB08, Wei73)"
+    ],
+    "Application Areas": [
+        "Arithmetic Geometry and Moduli Space Rationality",
+        "Analytic Number Theory and Automorphic Representations",
+        "Computational Algebraic Number Theory"
+    ],
+    "Key Research Thinking Patterns": [
+        "Spectral Trace Analysis: Utilizing local and global trace formulas for Atkin-Lehner operators to derive asymptotic biases and equidistribution properties of root numbers in modular forms.",
+        "Geometric Parametrization: Constructing explicit Weierstrass models and rational parametrizations for genus 2 curves with real multiplication by applying conic bundle minimization and blow-up singularity resolution.",
+        "Arithmetic Field Classification: Classifying rationality fields of CM forms by analyzing Grössencharacter value fields, ray class group structures, and ideal capitulation to prove finiteness conjectures under the Extended Riemann Hypothesis.",
+        "Computational Verification: Leveraging high-performance computing (ICERM OSCAR) and databases (LMFDB, SageMath) to validate theoretical predictions on murmurations of Fourier coefficients and conductor bounds."
+    ],
+    "Summary Description": "Kimball Martin bridges analytic number theory and arithmetic geometry, specializing in modular forms, genus 2 curves, and complex multiplication. He employs trace formulas to analyze root number distributions and characterizes 'murmurations' in Fourier coefficients. His work extends to CM forms, proving finiteness conjectures for rationality fields of bounded degree under the Extended Riemann Hypothesis. By analyzing Grössencharacter value fields and ray class groups, he explicitly classifies quadratic and cubic rationality fields for weight 2 CM forms. This research connects modular forms to abelian varieties of GL(2) type, providing constructive insights into endomorphism algebras and minimal fields of definition, significantly expanding the toolkit for studying arithmetic properties of automorphic representations and their associated geometric moduli.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 17,
+            "techniques": 29,
+            "platforms": 14,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

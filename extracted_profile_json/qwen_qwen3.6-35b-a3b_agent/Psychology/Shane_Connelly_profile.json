@@ -1,0 +1,97 @@
+{
+    "Researcher Profile:": "Shane Connelly",
+    "Affiliation:": "University of Oklahoma",
+    "Research Domains": [
+        "Organizational Psychology",
+        "Leadership Studies",
+        "Group Dynamics",
+        "Health Communication",
+        "Infodemiology",
+        "Public Health Psychology",
+        "Misinformation Studies",
+        "Personality Psychology",
+        "Mixed Methods Research",
+        "Open Science",
+        "Replication Science",
+        "Registered Reports",
+        "Research Methodology Reform",
+        "Labor Economics",
+        "Information Technology Adaptation",
+        "Remote Work Studies",
+        "Economic Vulnerability and Resilience",
+        "Psychosomatic Health in the Workplace"
+    ],
+    "Techniques Used": [
+        "Leaderless Group Discussion (LGD)",
+        "Interaction Process Analysis",
+        "Temporal Control of Predictor Variables",
+        "Statistical Control for Endogeneity",
+        "Speech Duration Measurement",
+        "Structural Equation Modeling (SEM)",
+        "Logistic Regression Analysis",
+        "Open-ended Response Coding",
+        "Mediation Analysis",
+        "Big Five Personality Assessment",
+        "Trait Affect Measurement",
+        "Qualitative Thematic Analysis",
+        "Cross-sectional Survey Design",
+        "Registered Reports Protocol",
+        "In-Principle Acceptance Review",
+        "Direct Replication",
+        "Conceptual Replication",
+        "Constructive Replication",
+        "Results-Blind Replication",
+        "Probit Model Estimation",
+        "Panel Data Analysis",
+        "Lagged Variable Regression",
+        "Oster’s Selection on Unobservables Test",
+        "Diegert et al. Endogeneity Control Method",
+        "State Fixed Effects Modeling",
+        "Three-Wave Longitudinal Survey Design"
+    ],
+    "Data & Platforms": [
+        "Binghamton University",
+        "University of Oklahoma",
+        "U.S. Army Research Institute for the Behavioral and Social Sciences",
+        "NASA Moon Survival Test",
+        "U.S. College Student Sample",
+        "U.S. Full-time Working Professionals Sample",
+        "Amazon Mechanical Turk (MTurk)",
+        "Custom COVID-19 Vaccine Questionnaire",
+        "The Leadership Quarterly Special Issue Archive",
+        "Curated Replications Database",
+        "Qualtrics Survey Platform",
+        "Griep et al. (2016) Well-being Scale",
+        "Bala & Venkatesh (2016) Opportunity Perception Scale",
+        "Multi-State US Sample (10 States)",
+        "NSF Award #2027332 Dataset"
+    ],
+    "Application Areas": [
+        "Organizational Leadership and Group Dynamics",
+        "Public Health Communication and Infodemiology",
+        "Labor Market Resilience and Remote Work Economics"
+    ],
+    "Key Research Thinking Patterns": [
+        "Ecological Validity in Leadership Assessment: Utilizing leaderless group discussions and interaction process analysis to predict leader emergence and group problem-solving capabilities in naturalistic settings.",
+        "Multimodal Triangulation of Health Behaviors: Integrating personality assessments, open-ended response coding, and longitudinal survey data to model vaccine hesitancy and misinformation resistance.",
+        "Rigorous Causal Inference in Labor Economics: Applying three-wave longitudinal designs, Probit models, and endogeneity controls (e.g., Oster’s test) to isolate the impact of psychosomatic well-being and IT adaptation on job retention.",
+        "Open Science and Methodological Transparency: Implementing Registered Reports, direct/conceptual replications, and results-blind reviews to mitigate publication bias and enhance research credibility."
+    ],
+    "Summary Description": "Shane Connelly is an organizational psychologist and methodologist at the University of Oklahoma, specializing in leadership dynamics, public health communication, and labor economics. His research bridges individual traits and macro-level societal challenges, from predicting leader emergence in small groups to analyzing pandemic-era labor market resilience. Connelly employs rigorous mixed-methods approaches, including leaderless group discussions, longitudinal surveys, and advanced econometric controls, to address complex issues like vaccine hesitancy and remote work feasibility. A staunch advocate for open science, he integrates replication studies and Registered Reports to enhance scientific credibility. His work synthesizes psychological theory with robust statistical modeling to inform organizational practices, public health interventions, and economic policy.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 18,
+            "techniques": 26,
+            "platforms": 15,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

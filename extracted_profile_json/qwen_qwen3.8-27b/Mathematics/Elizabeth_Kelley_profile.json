@@ -1,0 +1,63 @@
+{
+    "Researcher Profile:": "Elizabeth Kelley",
+    "Affiliation:": "Department of Mathematics, University of Illinois Urbana Champaign",
+    "Research Domains": [
+        "Commutative Algebra",
+        "Cluster Algebras",
+        "Algebraic Geometry",
+        "Tropical Geometry",
+        "Mirror Symmetry",
+        "Combinatorics",
+        "Laurent Phenomenon Algebras",
+        "Graph Theory",
+        "Combinatorial Algebra",
+        "Teichmüller Theory",
+        "Representation Theory"
+    ],
+    "Techniques Used": [
+        "Cluster Scattering Diagrams",
+        "Theta Functions",
+        "Broken Lines",
+        "Tropicalization",
+        "Mutation Invariance",
+        "Generalized Cluster Varieties",
+        "Fock-Goncharov Duals",
+        "Sign-coherence of g-vectors",
+        "Snake Graph Construction",
+        "Hypergraph Generalization",
+        "Admissible Matchings",
+        "Perfect Matchings (Dimer Covers)",
+        "T-path Expansion",
+        "Hyper T-paths",
+        "Combinatorial Positivity Proof",
+        "Determinantal Formula for Counting Matchings",
+        "Skein relations",
+        "Snake graph calculus",
+        "Loop graph construction",
+        "Poset theory (Distributive lattices and fence posets)",
+        "Combinatorial expansion formulas",
+        "Perfect matching enumeration",
+        "Tagged arc analysis"
+    ],
+    "Data & Platforms": [
+        "arXiv",
+        "Graph LP Algebras",
+        "Musiker-Schiﬄer-Williams Snake Graphs",
+        "Type A Cluster Algebras",
+        "Triangulated Polygons",
+        "arXiv (2409.04957v2)"
+    ],
+    "Application Areas": [
+        "Establishing combinatorial positivity proofs for cluster variables in generalized and graph-based algebras",
+        "Constructing canonical bases and skein relations for cluster algebras associated with punctured surfaces and orbifolds",
+        "Developing tropical geometric frameworks and scattering diagrams for reciprocal generalized cluster varieties",
+        "Bridging combinatorial algebra with representation theory of quantum affine algebras and Donaldson-Thomas theory"
+    ],
+    "Key Research Thinking Patterns": [
+        "Combinatorial Positivity via Generalized Matchings: Extending classical T-path and snake graph expansions to hypergraph structures to prove positivity in graph Laurent Phenomenon algebras (e.g., defining 'admissible matchings' on tree graphs to derive expansion formulas where numerators consist entirely of monomials in the cluster).",
+        "Tropical-Geometric Structural Analysis: Utilizing cluster scattering diagrams and theta functions to establish the existence and structural properties of generalized cluster varieties (e.g., proving sign-coherence of g-vectors and expressing generalized cluster monomials in terms of theta functions for reciprocal algebras).",
+        "Poset-Theoretic Skein Relation Derivation: Employing distributive lattices and fence posets to formulate explicit combinatorial expansion formulas for skein relations in punctured surface cluster algebras (e.g., demonstrating that bangle and bracelet functions form spanning sets or bases for surfaces with boundary and genus 0 closed surfaces).",
+        "Generalization of Surface-Type Algebraic Structures: Systematically extending results from unpunctured or simple triangulated polygons to more complex topological settings like punctured orbifolds and generalized cluster varieties (e.g., constructing loop graphs and analyzing tagged arcs to generalize basis constructions for surface-type cluster algebras)."
+    ],
+    "Summary Description": "Elizabeth Kelley is a mathematician specializing in the intersection of commutative algebra, combinatorics, and algebraic geometry, with a primary focus on cluster algebras and their geometric realizations. Her research centers on proving positivity properties of cluster variables through combinatorial methods, such as hypergraph generalizations of snake graphs and admissible matchings in graph Laurent Phenomenon algebras. She employs tropical geometry tools, including scattering diagrams and theta functions, to analyze the structure of generalized cluster varieties and reciprocal algebras. Additionally, her work extends skein relations and basis constructions to punctured surfaces and orbifolds using poset theory and distributive lattices. By bridging combinatorial expansions with representation theory and Donaldson-Thomas theory, Kelley contributes to the foundational understanding of cluster algebra structures, offering explicit formulas and canonical bases for complex topological and algebraic systems."
+}

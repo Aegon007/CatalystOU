@@ -1,0 +1,41 @@
+{
+  "Researcher Profile:": "Kimball Martin",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "summationtext",
+    "congruences",
+    "proofs",
+    "xplanation",
+    "Corollary",
+    "heuristic",
+    "eigenvalue",
+    "theorems",
+    "HPS89",
+    "estimat",
+    "productdisplay",
+    "seeProposition",
+    "producttext",
+    "prompts",
+    "wasdimension",
+    "Yam73",
+    "diately",
+    "inimal",
+    "methods",
+    "JPMXP0619217849"
+  ],
+  "Data & Platforms": [
+    "newspaces",
+    "levelNcusp"
+  ],
+  "Application Areas": [
+    "involution",
+    "equidistribution",
+    "Forafundamentaldiscriminant",
+    "oldformcontribution",
+    "parenleftbig",
+    "uidistributed"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "arXiv:2207.08121v2 [math.NT] 14 Mar 2023ROOT NUMBER BIAS FOR NEWFORMS KIMBALL MARTIN Abstract. Previously we observed that newforms obey a strict bias towa rds root number +1in squarefree levels: at leasthalfof the newf orms inSk(Γ0(N)) with root number +1 for Nsquarefree, and it is strictly more than half outside of a few special cases. Subsequently, other authors treated levels which are cubes of squarefree numbers."
+}

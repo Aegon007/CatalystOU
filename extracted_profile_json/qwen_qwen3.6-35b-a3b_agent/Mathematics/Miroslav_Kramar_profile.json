@@ -1,0 +1,96 @@
+{
+    "Researcher Profile:": "Miroslav Kramar",
+    "Affiliation:": "Department of Mathematics, University of Oklahoma",
+    "Research Domains": [
+        "Computational Physics",
+        "Machine Learning",
+        "Granular Matter Mechanics",
+        "Topological Data Analysis",
+        "Intermittent Dynamics in Granular Matter",
+        "Stick-Slip Phenomena",
+        "Computational Topology",
+        "Photoelasticity Calibration",
+        "Force Network Evolution",
+        "Slip Precursor Detection",
+        "Computational Conley Theory",
+        "Data-Driven Dynamical Systems",
+        "Global Dynamics Characterization",
+        "Attractor Identification",
+        "Morse Theory"
+    ],
+    "Techniques Used": [
+        "Convolutional Neural Networks (CNN)",
+        "Transfer Learning",
+        "Synthetic Data Pretraining",
+        "Photoelastic Stress Analysis",
+        "Airy Stress Function Modeling",
+        "Persistent Homology (PH)",
+        "Wasserstein Distance",
+        "Discrete Element Method (DEM)",
+        "Linear Spring-Dashpot Model",
+        "Cundall-Strack Model",
+        "Fourth-order Predictor-Corrector Integration",
+        "G2 Method (Gradient-Squared Intensity Analysis)",
+        "Polynomial Calibration Curve Fitting",
+        "Shape-based Contact Detection",
+        "Persistent Homology on Experimental Networks",
+        "Third-degree Polynomial Fit for G2-to-Force Conversion",
+        "Edge Weighting via Minimum Force Magnitude",
+        "Persistence Diagrams (PDs) for Network Topology",
+        "Component and Loop Tracking in Force Networks",
+        "Conley Index Computation",
+        "Cubical Homology",
+        "Neural Network Phase Space Discretization",
+        "Parallelotope Decomposition",
+        "Labeling Function Approximation",
+        "Morse Representation Construction",
+        "Attracting Neighborhood Identification"
+    ],
+    "Data & Platforms": [
+        "ImageNet Dataset",
+        "VGG19 Architecture",
+        "InceptionResNetV2 Architecture",
+        "Xception Architecture",
+        "Synthetic Photoelastic Simulations",
+        "2D Planar Couette Geometry Simulations",
+        "Force Network Evolution Data",
+        "Contact Network Topology Data",
+        "Shapely Package",
+        "Annular Cell Experimental Setup",
+        "Dark-field Polariscope Imaging",
+        "Quasi-2D Pentagonal Particle Data",
+        "Quasi-2D Disk Particle Data",
+        "GUDHI Library",
+        "pyCHomP Library",
+        "Ordinary Differential Equations (ODE) Orbit Data",
+        "Multistable System Simulations",
+        "GitHub Repository (MLCD)"
+    ],
+    "Application Areas": [
+        "Granular Mechanics and Geophysical Hazard Prediction",
+        "Data-Driven Characterization of Nonlinear Dynamical Systems"
+    ],
+    "Key Research Thinking Patterns": [
+        "Topological Data Analysis for Mechanical Inverse Problems: Utilizing Persistent Homology and Wasserstein distances to quantify the topology of force networks and reconstruct stress fields from photoelastic images, enabling the detection of slip precursors in granular media.",
+        "Deep Learning-Enhanced Experimental Calibration: Applying Convolutional Neural Networks pretrained on synthetic photoelastic simulations to extract quantitative force data from experimental images of non-circular particles, bridging the gap between qualitative imaging and quantitative mechanics.",
+        "Rigorous Topological Dynamics Identification: Employing Conley index theory and cubical homology via the pyCHomP library to discretize neural network phase spaces, allowing for the mathematically rigorous identification of attractors and basins of attraction in complex ODE systems.",
+        "Hybrid Computational-Experimental Validation: Integrating Discrete Element Method simulations with physical annular cell experiments to validate machine learning models and topological invariants, ensuring that data-driven predictions of stick-slip phenomena are grounded in physical reality."
+    ],
+    "Summary Description": "Miroslav Kramár bridges experimental granular mechanics and computational topology to solve complex inverse problems in nonlinear dynamics. His research reconstructs force chains in granular media using CNNs pretrained on synthetic photoelastic data and predicts slip events via Persistent Homology. He extends this topological framework to data-driven dynamical systems, employing Conley index theory to rigorously identify attractors in ODEs. By unifying deep learning, computational topology, and experimental mechanics, Kramár provides robust methods for characterizing global dynamics and quantifying microscale fluctuations in both physical granular materials and abstract mathematical systems.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 15,
+            "techniques": 26,
+            "platforms": 18,
+            "applications": 2,
+            "thinking_patterns": 4
+        }
+    }
+}

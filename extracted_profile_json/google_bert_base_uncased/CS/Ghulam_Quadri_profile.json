@@ -1,0 +1,35 @@
+{
+  "Researcher Profile:": "Ghulam Quadri",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "hyperparameters",
+    "conceptualizing",
+    "hypotheses",
+    "metrics",
+    "compensating",
+    "titioners",
+    "high-dimensional",
+    "analyti-",
+    "low-dimensional",
+    "datasets",
+    "prioritized",
+    "perimental",
+    "amplify",
+    "distortions",
+    "visualizing",
+    "erences",
+    "effortful",
+    "NTRODUCTION",
+    "two-phase",
+    "tomitigate"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "mitigating",
+    "mitigation",
+    "saliency"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "Understanding Bias in Perceiving Dimensionality Reduction Projections Seoyoung Doh1*Hyeon Jeon1†Sungbok Shin2‡Ghulam Jilani Quadri3§Nam Wook Kim4¶Jinwook Seo1|| 1Seoul National University2Inria, Universit ´e Paris-Saclay3University of Oklahoma4Boston College *\u0001QSFGFSUP\u0001VTF\u0001U\u000e4/&\u0001GPS\u0001NZBOBMZTJT\u00028IZ\u0001EP\u0001ZPV\u0001UIJOL\u0001TP r$BVTFJU\u0001TFFNT\u0001UP\u0001CF\u0001WJTVBMMZ\u0001JOUFSFTUJOH\u0002\u00028IZ\u0001EPOsU\u0001ZPV\u0001VTF\u0001QSPKFDUJPOT\u0001XJUI\u0001IJHI\u0001GBJUIGVMOFTT 5IBU\u0001TFFNT\u0001JNQPSUBOU\u000f\u000f\u000f\u0001CVU\u0001XPO\bU\u0001UIFDMVTUFST\u0001JO\u0001U\u000e4/&\u0001QSPKFDUJPO\u0001MPPLHPPE 7JTVBM\u0001JOUFSFTUJOHOFTT\u0001PG\u0001U\u000e4/&\u0001QSPKFDUJPOT\u0001BDUJWBUFT4ZTUFN\u0001\u0012\u0001QSPDFTTJOH\u000f*U\u0001JT\u0001JNQPSUBOU\u0001UP\u0001TFMFDU\u0001QSPKFDUJPOT\u0001XJUI\u0001IJHI\u0001GBJUIGVMOFTT\u000f\u00015IJT\u0001SFRVJSFT\u0001UIF\u0001BDUJWBUJPO\u0001PG\u00014ZTUFN\u0001\u0013\u0001QSPDFTTJOH\u000f)PXFWFS \u0001UIF\u0001BOBMZUJDBM\u0001QSFGFSFODF\u0001GPS\u0001QSPKFDUJPOT\u0001JT\u0001CJBTFE\u0001UP\u00014ZTUFN\u0001\u0012\u0001 WJTVBM\u0001JOUFSFTUJOHOFTT \u0001PWFS\u00014ZTUFN\u0001\u0013\u0001 GBJUIGVMOFTT QPUFOUJBMMZ\u0001DPNQSPNJTJOH\u0001UIF\u0001SFMJBCJMJUZ\u0001PG\u0001WJTVBM\u0001BOBMZUJDT\u000f U\u000e4/&*TPNBQ1$\" 🐱 🐶 🐶 🐶 🐱 .%4 Figure 1: The illustration of our motivating scenario and its alignment with dual-system theory (Sect. We assume a scenario where a practitioner wants to select DR techniques that produce projections suitable for analyzing their dataset. It is crucial to select projections with high faithfulness for reliable analysis, but practitioners tend to be more biased towards the visual interestingness."
+}

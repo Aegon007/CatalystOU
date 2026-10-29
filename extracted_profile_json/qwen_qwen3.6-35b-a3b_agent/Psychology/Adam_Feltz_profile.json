@@ -1,0 +1,101 @@
+{
+    "Researcher Profile:": "Adam Feltz",
+    "Affiliation:": "Department of Psychology, University of Oklahoma",
+    "Research Domains": [
+        "Cognitive Psychology",
+        "Decision Science",
+        "Risk Literacy",
+        "Human-Animal Intergroup Relations",
+        "Animal Welfare Ethics",
+        "Consumer Psychology (Plant-based/Alternative Proteins)",
+        "Science Communication",
+        "Media Literacy",
+        "Causal Reasoning",
+        "Conservation Psychology",
+        "Wildlife Policy Attitudes",
+        "Political Polarization in Environmental Issues",
+        "Urban-Rural Divide Analysis",
+        "Interpersonal Trust Measurement",
+        "Psychometric Scale Development",
+        "Generalized Trust Theory"
+    ],
+    "Techniques Used": [
+        "Structural Equation Modeling",
+        "Psychometric Assessment (Berlin Numeracy Test)",
+        "Probabilistic Sampling",
+        "Integrated Cognitive Modeling",
+        "Extreme Groups Analysis",
+        "Test-Validation Set Splitting",
+        "Sensitivity Analysis (Power Calculation)",
+        "Mann-Whitney U Test",
+        "Chi-Square Test",
+        "Causal Theory Error Analysis",
+        "Cognitive Self-Assessment Measurement",
+        "Risk Literacy Difficulty Analysis",
+        "Longitudinal Meta-Analysis of Public Opinion",
+        "Binomial Confidence Interval Calculation",
+        "Cross-Sectional Trend Analysis",
+        "Ideological Subgroup Stratification",
+        "Exploratory Factor Analysis (EFA)",
+        "Parallel Analysis",
+        "Principal Axis Extraction",
+        "Oblimin Rotation",
+        "Convergent Validity Assessment",
+        "Discriminant Validity Assessment",
+        "Incremental Validity Testing",
+        "Predictive Validity Analysis"
+    ],
+    "Data & Platforms": [
+        "Berlin Numeracy Test",
+        "U.S. Resident Samples (n=537, n=305)",
+        "Skilled Decision Theory Framework",
+        "USDA Animal Production Data",
+        "Cint Testing Service",
+        "Animal Legal Defense Fund Rankings",
+        "Human Society of the United States Law Database",
+        "Pew Political Orientation Survey Data",
+        "CNN Health Excerpts",
+        "Scientific Reasoning Scale (SRS)",
+        "Qualtrics Panel",
+        "Defenders of Wildlife Survey Data",
+        "Endangered Species Coalition Polls",
+        "Earthjustice Survey Data",
+        "RealClear Politics Polling Data",
+        "US Endangered Species Act (ESA) Public Opinion Archives",
+        "General Interpersonal Trust Scale (GITS)",
+        "Propensity to Trust Scale (Evans & Revelle)",
+        "Trust Inventory",
+        "World Values Survey Trust Instrument",
+        "SONA Participant Pool",
+        "Open Science Framework (OSF)"
+    ],
+    "Application Areas": [
+        "Conservation Policy and Wildlife Management",
+        "Animal Welfare Ethics and Industrial Agriculture",
+        "Science Communication and Public Risk Perception"
+    ],
+    "Key Research Thinking Patterns": [
+        "Cognitive Literacy Mediation: Demonstrates that factual numeracy mitigates ideological polarization by enabling accurate risk assessment in complex domains (e.g., using the Berlin Numeracy Test to show numerate individuals better evaluate climate change and endangered species policies).",
+        "Psychometric Rigor and Validation: Employs advanced statistical modeling to ensure measurement precision for abstract social constructs (e.g., developing the General Interpersonal Trust Scale using Structural Equation Modeling and convergent/discriminant validity assessments).",
+        "Ideological and Geographic Stratification: Analyzes attitudinal differences by segmenting populations based on political orientation and urban-rural divides to identify specific barriers to policy acceptance (e.g., using Ideological Subgroup Stratification to examine conservation triage acceptance).",
+        "Longitudinal and Meta-Analytic Synthesis: Aggregates temporal data to track shifts in public opinion and scientific reasoning over time (e.g., conducting Longitudinal Meta-Analysis of Public Opinion to assess trends in misinformation susceptibility and trust).",
+        "Causal Reasoning and Misinformation Resistance: Investigates the cognitive mechanisms behind correlation-causation confusion to design interventions that improve media literacy and resistance to misinformation (e.g., using Causal Theory Error Analysis to inform public health communication strategies)."
+    ],
+    "Summary Description": "Adam Feltz specializes in cognitive psychology and decision science, focusing on how numeracy and trust influence public attitudes toward conservation, animal welfare, and science communication. His research challenges the view that numeracy exacerbates polarization, showing instead that factual knowledge mediates risk perception in domains like climate change and industrial farming. Utilizing the Berlin Numeracy Test and Structural Equation Modeling, Feltz develops rigorous psychometric tools, such as the General Interpersonal Trust Scale, to measure core attitudinal components. By stratifying populations across ideological and geographic lines, he identifies barriers to policy acceptance, including support for the Endangered Species Act and water recycling. His work integrates longitudinal meta-analysis and causal reasoning assessments to enhance public understanding of complex scientific issues, ultimately aiming to improve evidence-based decision-making and mitigate misinformation susceptibility.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 16,
+            "techniques": 24,
+            "platforms": 22,
+            "applications": 3,
+            "thinking_patterns": 5
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "Researcher Profile:": "Shangqing Zhao",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "computationally-ef",
+    "ngerprinting",
+    "multiple-feature-based",
+    "psychoacoustic",
+    "ensemble-learning-",
+    "process-",
+    "benchmark",
+    "perturbations",
+    "IVelaborates",
+    "technologi",
+    "formulate",
+    "integrates",
+    "architec-",
+    "STUDY003214",
+    "computationally",
+    "NTRODUCTION",
+    "waveform",
+    "ensemble-based",
+    "ndings",
+    "turbation"
+  ],
+  "Data & Platforms": [
+    "ICML20"
+  ],
+  "Application Areas": [
+    "embed-",
+    "human-aligned",
+    "ADVERSARIAL",
+    "human-perceived",
+    "black-box",
+    "cre-",
+    "Identi"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "IEEE TRANSACTIONS ON DEPENDABLE AND SECURE COMPUTING, VOL. 3, MAY/JUNE 2025 2959 Perception-Aware Attack Against Music Copyright Detection: Impacts and Defenses Rui Duan ,Z h eQ u , Shangqing Zhao , Leah Ding , Yao Liu , and Zhuo Lu Abstract —Recently, adversarial machine learning attacks have posed serious security threats against practical audio signal classiﬁ- cation systems, including speech recognition, speaker recognition, music copyright detection. Most existing studies have mainly fo- cused on ensuring the effectiveness of attacking an audio signal classiﬁer via creating a noise-like perturbation on the original signal, which remains a gap in preserving the human perception of adversarial audios."
+}

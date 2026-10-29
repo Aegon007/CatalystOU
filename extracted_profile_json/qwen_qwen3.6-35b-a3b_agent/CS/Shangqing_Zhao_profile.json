@@ -1,0 +1,102 @@
+{
+    "Researcher Profile:": "Shangqing Zhao",
+    "Affiliation:": "School of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Cybersecurity",
+        "Adversarial Machine Learning",
+        "Audio Signal Processing",
+        "Quantum Machine Learning",
+        "Quantum Security",
+        "Healthcare Informatics",
+        "Mobile and Wireless Security",
+        "Geolocation Privacy",
+        "Location Spoofing",
+        "Wireless Privacy",
+        "Defensive Deception",
+        "Vital Signs Inference",
+        "Crowd Counting via Wireless Signals",
+        "RFID Security",
+        "Internet of Things (IoT) Security",
+        "Physical Layer Integrity Attacks"
+    ],
+    "Techniques Used": [
+        "Siamese Neural Network (SNN) modeling",
+        "Human perception study with Likert scale regression",
+        "Multiple-feature-based optimization",
+        "Ensemble-learning-based fingerprinting",
+        "Quantum Support Vector Machines (QSVM)",
+        "Variational Quantum Algorithms (VQA)",
+        "Quantum Convolutional Neural Networks (QCNN)",
+        "Quantum Feature Maps",
+        "Simulated Quantum Computing",
+        "LLT (Location Lookup Table) Inference Attack",
+        "Black-box Localization Algorithm Reverse Engineering",
+        "Wi-Fi MAC Address and RSS Analysis",
+        "Geolocation API Exploitation",
+        "Legitimate vs. Falsified AP Differentiation",
+        "Channel State Information (CSI) Manipulation",
+        "Deceptive Communication Protocols",
+        "Ambush Location Signal Injection",
+        "Fresnel Zone Subcarrier Analysis",
+        "OFDM Signal Coefficient Multiplication",
+        "Fake CSI Profile Generation",
+        "Support Vector Machine (SVM) Classification",
+        "Decision Tree (DT) Classification",
+        "Identification Overriding (IDO) Attack",
+        "Amplitude-Shift Keying (ASK) Signal Injection",
+        "Input-Agnostic Statistical Attack Formulation",
+        "Energy Minimization Optimization for Stealth",
+        "Signal Power Threshold Manipulation",
+        "CRC-16 Integrity Bypass via Power Offset",
+        "Carrier Leakage Cancellation Exploitation"
+    ],
+    "Data & Platforms": [
+        "YouTube Copyright Detection System",
+        "Spectrogram analysis",
+        "Audio fingerprinting databases",
+        "Alzheimer’s disease dataset",
+        "IBM Qiskit software stack",
+        "scikit-learn library",
+        "Google Geolocation API",
+        "Google Location Lookup Table (LLT)",
+        "Mozilla Location Service",
+        "ESP8266 Wi-Fi Microchip",
+        "Off-the-shelf Wi-Fi Chipset",
+        "Software-Defined Radio (SDR) Platforms",
+        "IEEE 802.11a/g/n/ac/ad Wireless Infrastructure",
+        "Real-world Bedroom and Office Experimental Environments",
+        "EPC Gen-2 RFID Protocol Stack",
+        "Passive RFID Tags (Microchip/Antenna)",
+        "RFID Readers with Power-Based Decoding",
+        "FM0 and Miller Encoding Schemes",
+        "Real-world RFID Interrogation Environments"
+    ],
+    "Application Areas": [
+        "IoT and Wireless Infrastructure Security",
+        "Adversarial Machine Learning and Quantum Security",
+        "Physical Layer Privacy and Location Integrity"
+    ],
+    "Key Research Thinking Patterns": [
+        "Physical-Layer Signal Manipulation: Exploiting hardware-specific signal characteristics to bypass integrity checks, such as using CRC-16 integrity bypass via power offset and fake CSI profile generation to evade detection.",
+        "Adversarial Optimization for Stealth: Applying multi-feature-based optimization and energy minimization algorithms to craft attacks that remain imperceptible to human observers or standard classifiers, exemplified by music copyright evasion using Siamese Neural Networks.",
+        "Quantum-Classical Benchmarking: Evaluating the security and performance trade-offs between emerging quantum models and classical baselines, demonstrated by testing QSVM, VQA, and QCNN against the Alzheimer’s disease dataset using IBM Qiskit.",
+        "Protocol-Level Identity Spoofing: Leveraging low-level protocol vulnerabilities to override device identities without prior knowledge, illustrated by the Identification Overriding (IDO) attack on EPC Gen-2 RFID tags using amplitude-shift keying signal injection."
+    ],
+    "Summary Description": "Shangqing Zhao specializes in the security and privacy of wireless, IoT, and quantum systems, with a focus on physical-layer vulnerabilities. The research integrates adversarial machine learning, quantum computing, and signal processing to expose and mitigate risks in critical infrastructure. Key contributions include stealthy attacks on music copyright systems, benchmarking quantum model robustness, and exploiting geolocation APIs and RFID protocols for identity spoofing. By leveraging techniques like Channel State Information manipulation and quantum feature maps, Zhao develops both offensive strategies and defensive frameworks to protect user privacy and system integrity in increasingly connected environments.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 16,
+            "techniques": 29,
+            "platforms": 19,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

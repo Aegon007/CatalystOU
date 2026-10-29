@@ -1,0 +1,98 @@
+{
+    "Researcher Profile:": "Edward T. Cokely",
+    "Affiliation:": "Department of Psychology, University of Oklahoma, Norman, OK, USA",
+    "Research Domains": [
+        "Cognitive Psychology",
+        "Health Decision Science",
+        "Risk Literacy",
+        "Risk Communication",
+        "Affective Decision Science",
+        "Psychometrics",
+        "Climate Change Communication",
+        "Misinformation Research",
+        "Motivated Reasoning",
+        "Cultural Worldviews in Risk Perception",
+        "Choice Architecture",
+        "Nudge Theory",
+        "Educational Boosts",
+        "Environmental Psychology",
+        "Ethical Interaction Theory",
+        "Scientific Reasoning",
+        "Causal Theory Errors",
+        "Science Communication Literacy",
+        "Media Misinterpretation"
+    ],
+    "Techniques Used": [
+        "Linear Regression Analysis",
+        "Moderation Analysis (PROCESS Macro Model 1)",
+        "Bootstrap Simulation (5,000 samples)",
+        "Sensitivity Analysis (G*Power)",
+        "Variance Inflation Factor (VIF) Testing",
+        "Pearson’s Correlation",
+        "Principal Component Analysis (PCA)",
+        "Promax Rotation",
+        "Kaiser Normalization",
+        "Internal Consistency Testing",
+        "Predictive Validity Assessment",
+        "Structural Equation Modeling (SEM)",
+        "Mediation Analysis (Knowledge as mediator)",
+        "Randomized Controlled Experiments (RCTs)",
+        "Manipulation Checks (Pretest Knowledge Assessment)",
+        "Attitude-Choice Inconsistency Analysis",
+        "Post-hoc Power Analysis (Cramer’s V)",
+        "Attention Check Filtering",
+        "Scientific Reasoning Scale (SRS)",
+        "Causal Misinterpretation Assessment",
+        "Cognitive Self-Assessment (Overconfidence Measurement)",
+        "Risk Literacy Difficulty Analysis"
+    ],
+    "Data & Platforms": [
+        "IBM SPSS Statistics (v22.0)",
+        "R Statistical Environment",
+        "Berlin Numeracy Test",
+        "Subjective Numeracy Scale (SNS)",
+        "Gilliam Autism Rating Scale (GARS)",
+        "Social Network Index (SNI)",
+        "Family Quality of Life Survey (FQoLS)",
+        "ADOS-G / ADI-R",
+        "Berlin Emotional Responses to Risk Instrument (BERRI)",
+        "Positive and Negative Affect Schedule (PANAS)",
+        "Self-Assessment Manikin (SAM)",
+        "Probabilistically Representative U.S. Resident Samples",
+        "Diverse U.S. Resident Samples",
+        "Amazon Mechanical Turk (MTurk)",
+        "CloudResearch MTurk Toolkit",
+        "Mahmoud-Elhaj et al. (2020) Recycled Water Knowledge Scale",
+        "CNN Health Excerpts (Regular Science Reporting Stimuli)",
+        "Secondary Science Reports Dataset"
+    ],
+    "Application Areas": [
+        "Public Health Risk Communication and Literacy",
+        "Environmental Policy and Climate Change Mitigation",
+        "Neurodevelopmental Support and Family Quality of Life",
+        "Misinformation Resistance and Scientific Reasoning"
+    ],
+    "Key Research Thinking Patterns": [
+        "Numeracy as a Cognitive Shield: Utilizing statistical literacy metrics (e.g., Berlin Numeracy Test) to demonstrate how quantitative skills mitigate causal misinterpretations and overconfidence in secondary science reporting.",
+        "Affective-Cognitive Integration: Employing structural equation modeling to analyze how emotional responses (measured via PANAS/BERRI) interact with rational decision-making processes in high-stakes health and environmental contexts.",
+        "Psychometric Rigor and Validation: Implementing comprehensive validation frameworks (e.g., VIF testing, PCA, internal consistency) to ensure the reliability of complex constructs like scientific reasoning and risk perception across diverse populations.",
+        "Intervention Efficacy via Experimental Design: Leveraging randomized controlled experiments and mediation analysis to test how educational boosts and choice architecture influence public acceptance of infrastructure and health policies."
+    ],
+    "Summary Description": "Edward T. Cokely is a leading scholar in risk literacy and decision science, specializing in the intersection of statistical numeracy, scientific reasoning, and public health communication. His research demonstrates how quantitative literacy serves as a critical buffer against misinformation, causal confusion, and cognitive biases in media consumption. By integrating psychometric validation with advanced statistical modeling (SEM, mediation analysis), Cokely investigates how affective and cognitive factors drive judgments in high-stakes domains, including climate change, pandemic response, and environmental policy. His work also extends to neurodevelopmental contexts, addressing family quality of life in autism spectrum disorder. Ultimately, his career is defined by developing evidence-based strategies to enhance public understanding of scientific evidence, thereby improving individual agency and societal resilience against risk-related misinformation.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 19,
+            "techniques": 22,
+            "platforms": 18,
+            "applications": 4,
+            "thinking_patterns": 4
+        }
+    }
+}

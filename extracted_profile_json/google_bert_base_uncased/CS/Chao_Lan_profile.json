@@ -1,0 +1,37 @@
+{
+  "Researcher Profile:": "Chao Lan",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "PredictionTesting",
+    "hyperparameter",
+    "hyper-parameters",
+    "crowdsourced",
+    "Metrics",
+    "Generalization",
+    "BigData55660",
+    "datasets",
+    "Debiased",
+    "logarithm",
+    "parsing",
+    "Covariate",
+    "integrates",
+    "putational",
+    "mrandom",
+    "NTRODUCTION",
+    "ALGORITHMS",
+    "Schmittfull",
+    "Optimization",
+    "tweet-based"
+  ],
+  "Data & Platforms": [
+    "User-generated"
+  ],
+  "Application Areas": [
+    "user-gender-classification",
+    "LZ21F030001",
+    "minimizing"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "2022 IEEE International Conference on Big Data (Big Data) 978-1-6654-8045-1/22/$31.00 ©2022 IEEE 6827 Debiased Learning of Self-Labeled Twitter Data for User Demographic Prediction Zhen Wang† Research Institute of Artificial Intelligence Zhejiang Lab Hangzhou, ChinaMadison Cooley† School of Computing University of Utah Salt Lake City, USAYang Zhang Research Institute of Artificial Intelligence Zhejiang Lab Hangzhou, China Chao Lan School of Computer Science University of Oklahoma Norman, USAJi Zhang‡ School of Mathematics, Physics and Computing University of Southern Queensland Toowoomba, Australia Abstract —Labeling sufficient data for supervised learning re- mains an open challenge in social network analysis. An alternative is to collect self-labeled data, i.e. the data labeled by their owners."
+}

@@ -1,0 +1,91 @@
+{
+    "Researcher Profile:": "Lara Mayeux",
+    "Affiliation:": "Department of Psychology, University of Oklahoma",
+    "Research Domains": [
+        "Developmental Psychology",
+        "Social Psychology",
+        "Adolescent Peer Relations",
+        "Emerging Adulthood",
+        "Social Ecology of Higher Education",
+        "Gender Prototypicality Theory",
+        "Rural Adolescent Development",
+        "Self-Perception in Peer Relations",
+        "Forensic Engineering",
+        "Wind Engineering",
+        "Disaster Sociology",
+        "Human-Environment Interaction",
+        "Emergency Management",
+        "Transgender Health",
+        "LGBTQ+ Mental Health",
+        "Digital Sociology of Identity",
+        "Risk and Resilience Framework"
+    ],
+    "Techniques Used": [
+        "Experimental Priming",
+        "Vignette Rating",
+        "Photograph Rating",
+        "Likert Scale Assessment",
+        "Within-Subjects Design",
+        "Open-ended Qualitative Description",
+        "Retrospective Reporting",
+        "Content Category Coding",
+        "Valence Rating",
+        "Peer Nomination",
+        "Hierarchical Regression Analysis",
+        "Self-Report Questionnaires",
+        "Semistructured Survivor Interviews",
+        "Forensic Structural Engineering Assessments",
+        "Wind Indicator Documentation",
+        "Purposive Sampling in Disaster Zones",
+        "Multidisciplinary Field Deployment",
+        "Voice Recorder Narrative Capture",
+        "Geospatial Data Collection",
+        "Thematic Analysis",
+        "Moderation Analysis"
+    ],
+    "Data & Platforms": [
+        "Online Survey Database",
+        "Controlled Stimulus Images",
+        "Standardized Vignettes",
+        "Midwestern University Undergraduate Sample",
+        "Retrospective High School Peer Descriptions",
+        "Rural Midwestern School Sample",
+        "7th and 8th Grade Cohort",
+        "Fulcrum App Platform",
+        "Structural Extreme Events Reconnaissance (StEER) Protocols",
+        "Uncrewed Aerial Systems (UASs)",
+        "360 Cameras",
+        "GPS-enabled DSLR Cameras",
+        "Smartphone Video Evidence",
+        "Standardized Survey Forms",
+        "Online Community Forums",
+        "Transgender Young Adult Cohort (N=335)"
+    ],
+    "Application Areas": [
+        "Adolescent Social Development and Peer Dynamics",
+        "Disaster Resilience and Structural Safety Engineering",
+        "LGBTQ+ Mental Health and Digital Identity Support"
+    ],
+    "Key Research Thinking Patterns": [
+        "Social Status Differentiation: Distinguishing between social acceptance and prestige/power to understand developmental shifts in peer hierarchies and gender norm conformity (e.g., Peer Nomination, Vignette Rating, and Hierarchical Regression Analysis of adolescent cohorts).",
+        "Multimodal Disaster Reconstruction: Integrating forensic structural engineering data with qualitative survivor narratives to evaluate human-environment interactions and sheltering decisions during extreme weather events (e.g., StEER Protocols, UASs, and Semistructured Survivor Interviews).",
+        "Contextual Risk and Resilience Modeling: Applying hierarchical regression and thematic analysis to examine how diverse social support systems (online vs. offline) moderate psychological adjustment and mitigate internalized stigma in marginalized populations (e.g., Transgender Young Adult Cohort and Online Community Forums)."
+    ],
+    "Summary Description": "Lara Mayeux is a developmental psychologist at the University of Oklahoma specializing in adolescent peer dynamics, disaster sociology, and LGBTQ+ mental health. Her research distinguishes peer acceptance from social power, utilizing experimental priming and peer nominations to analyze gender prototypicality and status hierarchies. Mayeux uniquely bridges psychology and forensic engineering, combining structural assessments with survivor narratives to evaluate tornado survivability and sheltering efficacy. Most recently, she applies risk and resilience frameworks to transgender young adults, examining how digital and offline social support mitigate internalized transphobia. Her work consistently highlights how social contexts and environmental factors shape human resilience and identity development across diverse populations.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 17,
+            "techniques": 21,
+            "platforms": 16,
+            "applications": 3,
+            "thinking_patterns": 3
+        }
+    }
+}

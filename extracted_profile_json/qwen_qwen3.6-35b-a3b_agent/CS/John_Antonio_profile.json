@@ -1,0 +1,94 @@
+{
+    "Researcher Profile:": "John Antonio",
+    "Affiliation:": "School of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Computer Science",
+        "High-Performance Computing",
+        "Operating Systems",
+        "GPU Computing",
+        "Heterogeneous Computing",
+        "Java Virtual Machine (JVM) Performance",
+        "Concurrent Thread Scheduling",
+        "Real-time Scheduling",
+        "Process Assignment in Distributed Systems",
+        "Distributed System Scheduling",
+        "Workflow Management (DAGs)",
+        "Scheduling Robustness",
+        "Model-Based Control"
+    ],
+    "Techniques Used": [
+        "Analytical Modeling",
+        "Composite Prediction Model Derivation",
+        "Empirical Statistical Analysis",
+        "Upper/Lower-Bound Estimation",
+        "CPU Availability Modeling",
+        "Memory Availability Modeling",
+        "GPU Occupancy Modeling",
+        "Warp-Level Execution Analysis",
+        "Streaming Multi-Processor (SM) Resource Modeling",
+        "Block/Thread Scheduling Overhead Estimation",
+        "Work-Sleep Phase Modeling",
+        "Aggregate Loading Factor Calculation",
+        "Synthetic Thread Generation with Parameterized CPU Usage Factors",
+        "Confidence Interval and Moving Average Statistical Analysis",
+        "Random Phase Shift Assignment for Thread Staggering",
+        "Average CPU Availability Empirical Prediction",
+        "Composite CPU/Memory Efficiency Modeling",
+        "Dynamic Behavior Parameterization of Benchmarks",
+        "Partial Task Completion Feedback",
+        "Resource Requirement Biasing",
+        "Constant Bias Strategy",
+        "Proportionate Bias Strategy",
+        "Cost-Minimization Scheduling Algorithm (CMSA)",
+        "Proportional-Least Laxity First (PLLF)",
+        "First-Come, First-Served (FCFS)",
+        "Quadratic Cost Function",
+        "Sigmoid Cost Function",
+        "Deadline-Based Performance Evaluation"
+    ],
+    "Data & Platforms": [
+        "UNIX Systems",
+        "Real-world Benchmark Programs",
+        "Multi-core Processors",
+        "Hyper-threading Enabled Cores",
+        "Nvidia CUDA GPU Computing SDK",
+        "Tesla C1060 GPU",
+        "Kepler 20 GPU",
+        "CUDA Programming Model",
+        "Intel Xeon CPU E5540",
+        "Intel Core 2 Quad Processor",
+        "JDK 1.6 (Java Virtual Machine)",
+        "Java Monitor Implementation",
+        "Open Source Simulation Software",
+        "Directed Acyclic Graph (DAG) Workflows",
+        "Uniform Distribution Error Model"
+    ],
+    "Application Areas": [
+        "High-Performance Computing Resource Management",
+        "Distributed System Workflow Scheduling",
+        "Heterogeneous Hardware Optimization"
+    ],
+    "Key Research Thinking Patterns": [
+        "Robustness-Driven Resource Modeling: Mitigating prediction inaccuracies in heterogeneous environments by applying biasing strategies (constant, proportionate, simple) to resource requirement estimates, thereby preventing system over-commitment and ensuring stability under uniform distribution error models.",
+        "Feedback-Loop Dynamic Adjustment: Implementing partial task completion feedback mechanisms to continuously align theoretical resource models with actual runtime system states, enabling adaptive scheduling decisions in real-time distributed workflows.",
+        "Cost-Optimized Scheduling Heuristics: Designing and evaluating specific scheduling algorithms, such as the Cost-Minimization Scheduling Algorithm (CMSA) and Proportional-Least Laxity First (PLLF), to optimize task assignment and deadline compliance in Directed Acyclic Graph (DAG) workflows.",
+        "Granular Hardware Behavior Analysis: Leveraging low-level empirical statistical analysis and analytical modeling of CPU, memory, and GPU occupancy (e.g., warp-level execution, SM resource modeling) to derive composite efficiency models that inform high-level scheduling decisions."
+    ],
+    "Summary Description": "John Antonio specializes in robust scheduling and resource management for heterogeneous high-performance computing environments. His research bridges low-level hardware performance modeling—encompassing CPU, memory, and GPU occupancy—with high-level distributed system workflows. By integrating biasing strategies and partial task completion feedback loops, he develops scheduling algorithms that maintain deadline compliance and prevent resource over-commitment despite model errors. Validated through extensive simulations on multi-core and GPU platforms, his work significantly advances the reliability and efficiency of dynamic task assignment in complex, distributed computing infrastructures.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 13,
+            "techniques": 28,
+            "platforms": 15,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

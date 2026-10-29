@@ -1,0 +1,71 @@
+{
+    "Researcher Profile:": "Elizabeth Kelley",
+    "Affiliation:": "Department of Mathematics, Aarhus University",
+    "Research Domains": [
+        "Mathematics",
+        "Combinatorics",
+        "Algebraic Geometry",
+        "Cluster Algebras",
+        "Mirror Symmetry",
+        "Algebra",
+        "Mathematical Physics",
+        "Representation Theory",
+        "Graph Theory",
+        "Topology",
+        "Teichmüller Theory"
+    ],
+    "Techniques Used": [
+        "Cluster Scattering Diagrams",
+        "Theta Functions",
+        "Broken Lines",
+        "Mutation",
+        "Tropicalization",
+        "Laurent Phenomenon",
+        "Positivity Proofs",
+        "Companion Algebras",
+        "Langlands Duality",
+        "Tropical Duality",
+        "Combinatorial proof",
+        "Hypergraph generalization of snake graphs",
+        "Admissible matchings",
+        "T-path analysis",
+        "Cluster expansion formulas",
+        "Laurent phenomenon algebras",
+        "Cluster algebras",
+        "Graph LP algebras",
+        "Rooted clusters",
+        "T-paths",
+        "Nested collections",
+        "Determinant formulas",
+        "Combinatorial expansion",
+        "Skein relations",
+        "Snake graph calculus",
+        "Poset theory",
+        "Distributive lattices",
+        "Fence posets",
+        "Perfect matchings",
+        "Dimer covers",
+        "Geometric resolution of incompatibility",
+        "Tagged arcs analysis"
+    ],
+    "Data & Platforms": [
+        "arXiv",
+        "Graph LP Algebras",
+        "Polygon Cluster Algebras",
+        "arXiv:2409.04957"
+    ],
+    "Application Areas": [
+        "Combinatorial Representation Theory",
+        "Enumerative Geometry and Mirror Symmetry",
+        "Positivity Conjecture Verification in Cluster Algebras",
+        "Topological Aspects of Teichmüller Theory",
+        "Basis Construction for Quantum and Classical Algebras"
+    ],
+    "Key Research Thinking Patterns": [
+        "Generalization of Scattering Diagrams: Extending the Gross-Hacking-Keel-Kontsevich framework to reciprocal generalized cluster algebras to prove the existence of theta functions and sign-coherence of g-vectors, thereby establishing structural foundations for broader algebraic systems.",
+        "Hypergraph-Based Positivity Proofs: Utilizing hypergraph generalizations of snake graphs and admissible matchings to provide combinatorial proofs of positivity for cluster variables in Graph LP algebras, moving beyond traditional T-path analysis to handle complex graph structures.",
+        "Combinatorial Skein Calculus: Deriving explicit expansion formulas for skein relations in punctured surface cluster algebras by leveraging fence posets and distributive lattices, demonstrating that bangle and bracelet functions form spanning sets and bases for specific topological configurations.",
+        "Rooted Cluster Expansion via Hyper T-paths: Introducing rooted clusters for tree-associated graph LP algebras and employing hyper T-paths to construct explicit cluster variable formulas, offering a novel combinatorial interpretation that verifies the positivity conjecture for these specific algebraic instances."
+    ],
+    "Summary Description": "Elizabeth Kelley is a mathematician specializing in cluster algebras, combinatorics, and algebraic geometry, currently affiliated with Aarhus University. Her research focuses on establishing rigorous combinatorial foundations for cluster varieties, particularly through the development of generalized scattering diagrams and theta functions. She is renowned for proving positivity conjectures in Graph LP algebras by introducing hypergraph generalizations of snake graphs and hyper T-paths. Additionally, her work extends skein calculus to punctured surfaces, utilizing poset theory to define bases via bangle and bracelet functions. Kelley’s contributions bridge abstract algebraic structures with concrete combinatorial models, significantly advancing the understanding of mirror symmetry, Donaldson-Thomas theory, and the representation theory of quantum affine algebras."
+}

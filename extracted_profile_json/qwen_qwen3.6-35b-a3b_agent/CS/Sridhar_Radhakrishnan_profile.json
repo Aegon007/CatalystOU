@@ -1,0 +1,80 @@
+{
+    "Researcher Profile:": "Sridhar Radhakrishnan",
+    "Affiliation:": "Department of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Computer Science",
+        "Operations Research",
+        "Stochastic Optimization",
+        "Network Robustness",
+        "Causal Failure Analysis",
+        "Flow Network Theory",
+        "Disinformation Interdiction",
+        "Cyber-Physical System Security",
+        "Social Network Analysis",
+        "Information Diffusion Modeling",
+        "Safety and Reliability Engineering",
+        "Risk Analysis",
+        "Epidemiological Modeling of Information Spread",
+        "Behavioral Economics in Infrastructure",
+        "Demand-Response Management Vulnerability"
+    ],
+    "Techniques Used": [
+        "Integer Linear Programming (ILP)",
+        "NP-Hardness Reduction (Knapsack Problem)",
+        "Iterative Algorithm for Switching Cost Optimization",
+        "Stochastic Utility Modeling with Decay Functions",
+        "Mixed-Integer Linear Programming (MILP)",
+        "Greedy Approximation Algorithm",
+        "NP-Completeness Reduction (MAX-2SAT)",
+        "Causality Graph Modeling (E: A1 => A2)",
+        "Mixed-Integer Linear Programming (MILP) for Disinformation Interdiction",
+        "Linearization of Nonlinear Integer Programming Models",
+        "Competitive Information Dissemination Modeling",
+        "Interdependent Network Layer Integration (Information-Physical)",
+        "Expectation Operator for Stochastic Utility Maximization",
+        "Susceptible-Infected-Recovered (SIR) Model for Disinformation",
+        "Linear Threshold Influence Model",
+        "Cascading Influence Model Integration",
+        "Personality Trait Integration (Big Five) in Influence Modeling",
+        "Multi-Commodity Flow Network Optimization",
+        "Hybrid Epidemiological-Network Optimization Framework"
+    ],
+    "Data & Platforms": [
+        "Drone Reconnaissance Simulation Framework",
+        "Stochastic Job Scheduling Model",
+        "New York City Subway Network Dataset",
+        "Social Network Interaction Structure Data",
+        "Port Authority Trans-Hudson (PATH) System Data",
+        "Swedish Rail Network Dataset",
+        "Urban Power Grid Simulation Models",
+        "Real-time Alert Data from Transit Systems"
+    ],
+    "Application Areas": [
+        "Critical Infrastructure Resilience and Cyber-Physical Security",
+        "Disinformation Interdiction and Information Warfare Mitigation",
+        "Autonomous Resource Allocation and Disaster Response Optimization"
+    ],
+    "Key Research Thinking Patterns": [
+        "Computational Complexity-Driven Algorithm Design: Establishing NP-Hardness via reductions from Knapsack and MAX-2SAT problems to justify the development of iterative and greedy approximation algorithms for switching cost and utility optimization.",
+        "Hybrid Epidemiological-Network Optimization: Integrating Susceptible-Infected-Recovered (SIR) models with Mixed-Integer Linear Programming (MILP) to simulate and interdict the cascading spread of disinformation across interdependent information-physical networks.",
+        "Stochastic Utility Maximization under Uncertainty: Employing expectation operators and decay functions within Integer Linear Programming (ILP) frameworks to optimize resource scheduling and network robustness against probabilistic failures and adversarial manipulations.",
+        "Causal Failure Propagation Modeling: Utilizing causality graphs and multi-commodity flow theory to map and mitigate cascading failures in complex systems such as urban power grids and transit networks under demand-response manipulation."
+    ],
+    "Summary Description": "Sridhar Radhakrishnan specializes in stochastic optimization and cyber-physical security, focusing on the resilience of critical infrastructure against cascading failures and weaponized disinformation. He bridges theoretical computer science and operations research by employing Integer Linear Programming (ILP) and Mixed-Integer Linear Programming (MILP) to model dynamic utility functions and causal link failures. His work integrates epidemiological models, such as SIR, with network optimization to interdict disinformation campaigns affecting power grids and transit systems. By proving NP-Hardness and developing greedy approximations, he addresses complex resource allocation in disaster management and defense. His research ensures system functionality under uncertainty, leveraging real-world datasets from NYC subway and Swedish rail networks to mitigate adversarial impacts on societal stability.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 15,
+            "techniques": 19,
+            "platforms": 8,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

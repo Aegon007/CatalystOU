@@ -1,0 +1,40 @@
+{
+  "Researcher Profile:": "Mike Banad",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "frameworks",
+    "ML-based",
+    "managementABSTRACT",
+    "trajectories",
+    "AI-driven",
+    "sys-",
+    "Data-driven",
+    "IoT-driven",
+    "model-driven",
+    "IoT-based",
+    "synthesizing",
+    "software-based",
+    "multi-agent",
+    "paradigms",
+    "robustness",
+    "forecasting",
+    "context-aware",
+    "cost-effective",
+    "mismatches",
+    "augmenting"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "decision-making",
+    "large-scale",
+    "demand-response",
+    "human-dependent",
+    "demand-side",
+    "cyber-physical",
+    "appliance",
+    "adversarial"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "Artificial intelligence and machine learning for smart grids: from foundational paradigms to emerging technologies with digital twin and large language model-driven intelligence Yaser M. Sharif , Zahra Rezaei School of Electrical and Computer Engineering, University of Oklahoma, OK 73019, USA ARTICLE INFO Keywords: Artificial intelligence Machine learning Smart grids Renewable energy Digital twin Generative AI Large language models Energy managementABSTRACT The evolution of modern power systems into smart grids is increasingly powered by Artificial Intelligence (AI) and Machine Learning (ML), which provide effective solutions for managing renewable intermittency, dynamic demand, and cybersecurity challenges. This paper presents a comprehensive review of AI/ML applications in smart grids, tracing their development from foundational paradigms to cutting-edge technologies such as Federated Learning (FL), Generative AI (GenAI), Large Language Models (LLMs), the Artificial Intelligence of Things (AIoT), and Digital Twin (DT)-driven intelligence."
+}

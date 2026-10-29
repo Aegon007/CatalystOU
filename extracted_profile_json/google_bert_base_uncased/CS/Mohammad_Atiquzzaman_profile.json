@@ -1,0 +1,40 @@
+{
+  "Researcher Profile:": "Mohammad Atiquzzaman",
+  "Affiliation:": "University of Oklahoma",
+  "Research Domains": [],
+  "Techniques Used": [
+    "methodologies",
+    "computes",
+    "refinements",
+    "IEEEAbstrAct",
+    "synthesize",
+    "integrates",
+    "decentralizing",
+    "detects",
+    "collab-",
+    "ingeniously",
+    "simula-",
+    "technologies",
+    "algorithms",
+    "aggregating",
+    "optimization",
+    "real-time",
+    "collabo",
+    "predictive",
+    "generat-",
+    "methodology"
+  ],
+  "Data & Platforms": [],
+  "Application Areas": [
+    "distribut-",
+    "immedi-",
+    "mitigates",
+    "adversarial",
+    "real-world",
+    "next-gen-",
+    "resilience",
+    "Resilient"
+  ],
+  "Key Research Thinking Patterns": [],
+  "Summary Description": "IEEE Communications Magazine • April 202548 0163-6804/25/$25.00 © 2025 IEEEAbstrAct In the evolving landscape of federated learn- ing management systems (FLMS), ensuring robust security against adversarial attacks is paramount. However, traditional methods that filter harmful updates before aggregation often fail in already compromised networks. This research introduces a pioneering approach that integrates digital twin (DT) technology with an FLMS, bolstering the net- work’s resilience and safeguarding communica- tion among distributed networks in the 6G era."
+}

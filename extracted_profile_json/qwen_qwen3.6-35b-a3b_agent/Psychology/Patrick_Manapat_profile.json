@@ -1,0 +1,99 @@
+{
+    "Researcher Profile:": "Patrick Manapat",
+    "Affiliation:": "Department of Psychology, Arizona State University",
+    "Research Domains": [
+        "Psychometrics",
+        "Item Response Theory",
+        "Statistical Modeling",
+        "Structural Equation Modeling (SEM)",
+        "Hierarchical Factor Analysis",
+        "Second-Order Factor Models",
+        "Model Fit Evaluation",
+        "Meta-science",
+        "Replication Science",
+        "Research Integrity",
+        "Methodological Taxonomy",
+        "Exploratory Factor Analysis (EFA)",
+        "Factor Rotation Methods",
+        "Factor Determination Criteria",
+        "Practical Equivalence in Replication",
+        "Misophonia Research",
+        "Clinical Psychopathology Assessment",
+        "Multidimensional Item Response Theory (MIRT)",
+        "Scale Refinement and Short-Form Development"
+    ],
+    "Techniques Used": [
+        "Monte Carlo Simulation",
+        "Fleishman’s Power Method",
+        "Marginal Maximum Likelihood Estimation (MML-EM)",
+        "Parameter Recovery Analysis",
+        "Skew and Kurtosis Manipulation",
+        "Dynamic Fit Index (DFI) Framework",
+        "Custom Simulation for Cutoff Derivation",
+        "Classification Accuracy Analysis",
+        "Misspecification Sensitivity Testing",
+        "Conceptual Taxonomy Construction",
+        "Simulated Demonstration of Taxonomy Utility",
+        "Exploratory Factor Analysis (EFA)",
+        "Target Rotation",
+        "Factor Loading Comparison",
+        "Factor Correlation Analysis",
+        "Practical Equivalence Assessment",
+        "Multidimensional Item Response Theory (MIRT)",
+        "Multidimensional Graded Response Model (MGRM)",
+        "Item Information Functions (IIFs)",
+        "Test Information Functions (TIFs)",
+        "Fisher Information Analysis",
+        "Content Analysis of Factor Structures",
+        "Regression Analysis for Validity Evidence"
+    ],
+    "Data & Platforms": [
+        "Graded Response Model (GRM)",
+        "2-Parameter Logistic Model (2PLM)",
+        "Empirical Histogram (EH)",
+        "Ramsay-curve IRT (RC-IRT)",
+        "B-spline Functions",
+        "RMSEA (Root Mean Square Error of Approximation)",
+        "CFI (Comparative Fit Index)",
+        "SRMR (Standardized Root Mean Square Residual)",
+        "Hu and Bentler (1999) Benchmarks",
+        "Self-Compassion Scale (SCS)",
+        "Positive and Negative Affect Schedule (PANAS)",
+        "Five Facets Mindfulness Questionnaire (FFMQ)",
+        "Cattell’s 16 Personality Factors (16PF)",
+        "Brief Self-Control Scale",
+        "Center for Epidemiologic Studies-Depression Scale (CES-D)",
+        "NEO Personality Inventory-Revised (NEO-PI-R)",
+        "Duke Misophonia Questionnaire (DMQ)",
+        "SONA Research Participation Pool",
+        "Qualtrics Survey Platform"
+    ],
+    "Application Areas": [
+        "Clinical Psychopathology Assessment and Scale Refinement",
+        "Research Integrity and Methodological Standardization",
+        "Psychometric Model Validation and Structural Equivalence"
+    ],
+    "Key Research Thinking Patterns": [
+        "Simulation-Based Robustness Testing: Quantifying the stability of latent variable models under non-normal conditions using Monte Carlo simulations and Fleishman’s Power Method to derive empirical cutoffs for fit indices.",
+        "Dynamic Fit Index Framework: Developing and applying the Dynamic Fit Index (DFI) to evaluate model fit sensitivity, moving beyond static benchmarks to assess practical equivalence in structural equation modeling.",
+        "Information-Theoretic Scale Optimization: Utilizing Multidimensional Item Response Theory (MIRT) and Item/Test Information Functions to identify redundant items and enhance the precision of clinical instruments like the Duke Misophonia Questionnaire.",
+        "Empirical-Theoretical Structure Alignment: Conducting rigorous cross-model comparisons between theoretical factor structures and empirical data via Exploratory Factor Analysis (EFA) and Target Rotation to ensure measurement parsimony and replicability."
+    ],
+    "Summary Description": "Patrick Manapat is a psychometrician specializing in Item Response Theory (IRT), Exploratory Factor Analysis (EFA), and research integrity. His work quantifies the robustness of latent variable models under nonnormality using Monte Carlo simulations and develops the Dynamic Fit Index (DFI) framework. Expanding into clinical psychometrics, he applies Multidimensional IRT (MIRT) and information functions to refine complex clinical scales, such as the Duke Misophonia Questionnaire. He focuses on distinguishing theoretical from empirical factor structures to enhance measurement precision and parsimony. His research bridges methodological taxonomy and applied scale validation, ensuring that psychometric tools maintain practical equivalence and replicability across diverse clinical populations.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 19,
+            "techniques": 23,
+            "platforms": 19,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

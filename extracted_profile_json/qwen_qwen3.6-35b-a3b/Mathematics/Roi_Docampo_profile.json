@@ -1,0 +1,73 @@
+{
+    "Researcher Profile:": "Roi Docampo",
+    "Affiliation:": "Not specified in the provided text",
+    "Research Domains": [
+        "Algebraic Geometry",
+        "Singularity Theory",
+        "Scheme Theory",
+        "Commutative Algebra",
+        "Birational Geometry",
+        "Combinatorics",
+        "Cluster Algebras",
+        "Discrete Mathematics",
+        "Valuation Theory"
+    ],
+    "Techniques Used": [
+        "Nash blow-up",
+        "Jet schemes",
+        "Nash transformation",
+        "Grassmann bundles",
+        "Functor of points",
+        "Sheaf of differentials",
+        "Birational morphisms",
+        "Relative compactifications",
+        "Kähler differentials",
+        "Arc spaces",
+        "Hasse-Schmidt derivations",
+        "Motivic integration",
+        "Fitting-theoretic invariants",
+        "Birational transformation rule",
+        "Curve Selection Lemma",
+        "Determinant calculations",
+        "Linear recurrences",
+        "Matrix twists",
+        "Grassmannian parametrization",
+        "Positroid variety stratification",
+        "Duality transforms",
+        "Cluster algebra mutation rules",
+        "Ramification theory",
+        "Deformation theory",
+        "Cotangent map analysis",
+        "Jet scheme projections",
+        "Weierstrass preparation theorem",
+        "Nash problem analysis"
+    ],
+    "Data & Platforms": [
+        "arXiv:1703.07505v3",
+        "SL(k)-friezes",
+        "Juggler's friezes",
+        "Grassmannian Gr(k, k + h)",
+        "Unimodular positroid variety",
+        "k x n matrices",
+        "Arc spaces (X_\\infty)",
+        "Jet schemes (X_m)",
+        "Hasse-Schmidt higher differentials",
+        "Mather log discrepancies",
+        "Mather-Jacobian log discrepancies",
+        "Stable points of arc spaces"
+    ],
+    "Application Areas": [
+        "Resolution of singularities",
+        "Birational geometry",
+        "Enumerative combinatorics",
+        "Geometric representation theory",
+        "Singularity classification via valuations"
+    ],
+    "Key Research Thinking Patterns": [
+        "Jet Scheme Compactification: Utilizing the Nash blow-up of jet scheme components to construct relative compactifications, thereby linking the singularity structure of a variety to its higher-order jet schemes to prove that singularities propagate to main components.",
+        "Differential Sheaf Characterization: Computing sheaves of Kähler differentials for arc and jet schemes to derive the Birational Transformation Rule and characterize stable points via finite embedding dimension, simplifying fundamental proofs in singularity theory.",
+        "Combinatorial Generalization via Positroid Varieties: Extending SL(k)-friezes to 'juggler's friezes' using ragged edges defined by juggling functions, establishing periodicity and superperiodic solutions parametrized by unimodular positroid varieties through determinant and linear recurrence analyses.",
+        "Finiteness and Semicontinuity Analysis: Proving topological finiteness of fibers in arc space maps and extending Lech's theorem to establish semicontinuity of Mather log discrepancies and embedding dimensions in non-Noetherian local rings, providing effective bounds for morphism fibers."
+    ],
+    "Summary Description": "Roi Docampo is a theoretical mathematician specializing in singularity theory, birational geometry, and combinatorics. His research rigorously connects the local structure of singularities with the global geometry of arc and jet schemes, particularly through Nash blow-ups and Kähler differentials. He employs advanced algebraic techniques, such as motivic integration and Hasse-Schmidt derivations, to resolve the Nash problem and analyze divisorial valuations. Concurrently, he bridges algebraic geometry with enumerative combinatorics by generalizing frieze patterns to juggler's friezes, linking them to positroid varieties and cluster algebras. His work provides foundational insights into the semicontinuity of invariants and the finiteness properties of arc spaces, significantly advancing the understanding of singularities in characteristic zero and non-Noetherian contexts."
+}

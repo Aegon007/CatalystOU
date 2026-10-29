@@ -1,0 +1,72 @@
+{
+    "Researcher Profile:": "Micahel Jablonski",
+    "Affiliation:": "University of Illinois Urbana-Champaign Department of Mathematics",
+    "Research Domains": [
+        "Differential Geometry",
+        "Riemannian Geometry",
+        "Lie Theory",
+        "Geometric Analysis",
+        "Representation Theory",
+        "Lie Group Theory",
+        "Submanifold Geometry"
+    ],
+    "Techniques Used": [
+        "Geometric Invariant Theory (GIT)",
+        "Ricci Flow analysis",
+        "Structure theory of Einstein solvmanifolds",
+        "Nikolayevsky's technique for nilsoliton existence",
+        "Isometry group analysis",
+        "Semi-direct product decomposition",
+        "Left-invariant metrics",
+        "Gordon-Wilson modification process",
+        "Levi decomposition",
+        "Lie's Theorem",
+        "Killing form analysis",
+        "Normal modification theory",
+        "Iwasawa Decomposition",
+        "Satake Diagram Construction",
+        "Derivation Algebra Analysis",
+        "Root System Analysis",
+        "Isomorphism Theorem for Lie Algebras",
+        "Standard modification algorithm",
+        "Lie algebraic equivalence relations",
+        "Pre-Einstein derivation extension",
+        "Ado's Theorem",
+        "Nash Embedding Theorem",
+        "Adjoint Representation",
+        "Conjugation by Lower Triangular Matrices",
+        "Sum of Representations",
+        "Eigenspace Decomposition",
+        "Inductive Construction of Representations",
+        "Metric Lie Algebra Analysis"
+    ],
+    "Data & Platforms": [
+        "Lie algebras",
+        "Solvable Lie groups",
+        "Nilpotent Lie groups",
+        "Iwasawa subgroups",
+        "arXiv",
+        "Dynkin Diagrams",
+        "Killing Form",
+        "Cartan Subalgebras",
+        "Restricted Root Spaces",
+        "National Science Foundation (NSF) Grant DMS-1906351",
+        "Group of Lower Triangular Matrices T(n, R)",
+        "General Linear Group GL(n, R)",
+        "Orthogonal Group O(n, R)",
+        "Symmetric Space GL(n, R)/O(n, R)"
+    ],
+    "Application Areas": [
+        "Classification of homogeneous Einstein spaces and solvmanifolds",
+        "Analysis of stability and symmetry in Ricci flow dynamics",
+        "Structural reconstruction of semi-simple Lie algebras from subalgebras",
+        "Geometric embedding of homogeneous spaces into symmetric spaces"
+    ],
+    "Key Research Thinking Patterns": [
+        "Geometric Invariant Theory (GIT) Application: Utilizing GIT to analyze the orbit structure of the isometry group action on the space of left-invariant metrics, thereby proving that Einstein metrics on solvable Lie groups are maximally symmetric and stable under Ricci flow.",
+        "Algebraic Reconstruction via Derivation Analysis: Employing the derivation algebra and Iwasawa decomposition to uniquely reconstruct a real semi-simple Lie algebra from its Iwasawa subalgebra, linking algebraic structure to geometric uniqueness of Einstein metrics.",
+        "Symmetry Maximization via Soliton Analysis: Defining and proving 'infinitesimal maximal' symmetry for expanding homogeneous Ricci solitons by analyzing the isometry groups of solvsolitons, establishing uniqueness up to scaling and isometry on simply-connected solvable Lie groups.",
+        "Isometric Embedding Construction: Developing faithful representations of solvable Lie groups as submanifolds of symmetric spaces (e.g., GL(n, R)/O(n, R)) to affirmatively resolve embedding questions for Einstein solvmanifolds and 2-step nilpotent groups."
+    ],
+    "Summary Description": "Michael Jablonski is a mathematician specializing in Riemannian geometry, Lie theory, and geometric analysis, with a primary focus on the structure and symmetry of homogeneous spaces. His research centers on solvable Lie groups and their associated Einstein metrics and Ricci solitons. Key contributions include proving the maximal symmetry of left-invariant Einstein metrics on solvable groups, establishing the uniqueness of Ricci solitons up to isometry, and demonstrating that real semi-simple Lie algebras are uniquely determined by their Iwasawa subalgebras. Jablonski employs advanced tools such as Geometric Invariant Theory, derivation algebra analysis, and isometric embedding techniques to classify homogeneous Einstein spaces and address fundamental conjectures like the Alekseevskii Conjecture. His work bridges algebraic structure and geometric dynamics, providing rigorous frameworks for understanding stability under Ricci flow and the realization of complex Lie groups within symmetric spaces."
+}

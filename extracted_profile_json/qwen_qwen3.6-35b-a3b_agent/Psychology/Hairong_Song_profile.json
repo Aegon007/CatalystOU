@@ -1,0 +1,91 @@
+{
+    "Researcher Profile:": "Hairong Song",
+    "Affiliation:": "Department of Psychology, University of Oklahoma",
+    "Research Domains": [
+        "Public Health",
+        "Health Psychology",
+        "Epidemiology",
+        "Social Psychology",
+        "Gender Studies",
+        "Ethnicity and Identity Research",
+        "Health Communication",
+        "Preventive Medicine",
+        "Vaccine Hesitancy Research",
+        "Psychological Methods",
+        "Time Series Analysis",
+        "Intensive Longitudinal Data (ILD) Analysis",
+        "Model-Based Clustering",
+        "Dynamical Systems Modeling",
+        "Statistical Methodology",
+        "High-Dimensional Data Analysis",
+        "Regularization Techniques",
+        "Generalized Linear Mixed Models (GLMMs)"
+    ],
+    "Techniques Used": [
+        "Weighted multilevel logistic regression",
+        "Longitudinal cohort analysis",
+        "Cross-sectional association assessment",
+        "Prospective association modeling",
+        "Full information maximum likelihood (FIML) for missing data",
+        "Factorial Invariance Testing",
+        "Confirmatory Factor Analysis (CFA)",
+        "Scale Recalibration and Item Revision",
+        "Mediation Analysis",
+        "Bivariate Correlation Analysis",
+        "Vector Autoregressive (VAR) Models",
+        "Gaussian Mixture Model (GMM)",
+        "K-means Clustering",
+        "Two-step VAR-based Clustering Procedure",
+        "Temporal Order Selection (Highest Order vs. Lowest Order)",
+        "Simulation Study for Methodological Validation",
+        "Random Regularized Penalized Quasi-Likelihood (random rPQL)",
+        "Joint Variable Selection for Fixed and Random Effects",
+        "Ranking Worth Estimation",
+        "Resampling-based Regularization",
+        "Adaptive LASSO",
+        "Laplace Approximation for Likelihood Integration"
+    ],
+    "Data & Platforms": [
+        "Mplus 8.7",
+        "National Longitudinal Study of Adolescent to Adult Health (Add Health)",
+        "Honor Ideology for Manhood (HIM) Scale",
+        "Honor Ideology for Womanhood (HIW) Scale",
+        "HIM-R (Revised Masculine Honor Scale)",
+        "HPV sexual purity stigma scale (HPV-Stigma)",
+        "HPV embarrassment and shame scale (HPV-Shame)",
+        "HPV vaccination intentions scale (HPV-Intent)",
+        "HPV general knowledge questionnaire",
+        "\"How Nuts are the Dutch\" project dataset",
+        "Eco-logical Momentary Assessment (EMA) data",
+        "random rPQL R package",
+        "GitHub repository for variable selection tools"
+    ],
+    "Application Areas": [
+        "Public Health and Preventive Medicine",
+        "Health Psychology and Behavioral Epidemiology",
+        "Statistical Methodology and Data Science"
+    ],
+    "Key Research Thinking Patterns": [
+        "Cultural Mechanism Mediation: Investigating how specific cultural norms, such as feminine honor ideology, mediate health behaviors by linking stigma scales (HPV-Stigma) to preventive outcomes (HPV vaccination intentions) using longitudinal Add Health data.",
+        "Dynamic Profile Clustering: Identifying distinct subgroups within populations by applying Gaussian Mixture Models and Vector Autoregressive models to intensive longitudinal data, allowing for the development of tailored interventions based on temporal dynamics.",
+        "High-Dimensional Regularization: Addressing multicollinearity and overfitting in complex behavioral datasets by developing and applying the random rPQL algorithm, which performs joint variable selection for fixed and random effects in Generalized Linear Mixed Models.",
+        "Psychometric Rigor and Validation: Ensuring the reliability of cross-cultural constructs through factorial invariance testing, confirmatory factor analysis, and scale recalibration, as demonstrated with the Honor Ideology for Manhood/Womanhood scales."
+    ],
+    "Summary Description": "Hairong Song integrates public health epidemiology, social psychology, and advanced statistical methodology to address complex behavioral health challenges. Her research bridges cultural mechanisms—such as honor ideology and sexual purity stigma—with preventive health outcomes like HPV vaccination uptake. Methodologically, Song specializes in intensive longitudinal data analysis, utilizing Vector Autoregressive models and Gaussian Mixture Models to identify dynamic behavioral profiles. She also pioneers statistical innovations, notably the random rPQL algorithm, to handle high-dimensional, multicollinear data in mixed models. This dual focus on cultural-psychological mechanisms and sophisticated analytical tools enables rigorous, scalable insights into health disparities and behavioral dynamics.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 18,
+            "techniques": 22,
+            "platforms": 13,
+            "applications": 3,
+            "thinking_patterns": 4
+        }
+    }
+}

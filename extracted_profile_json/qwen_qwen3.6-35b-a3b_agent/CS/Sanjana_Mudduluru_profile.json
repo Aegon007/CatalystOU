@@ -1,0 +1,102 @@
+{
+    "Researcher Profile:": "Sanjana Mudduluru",
+    "Affiliation:": "School of Computer Science, University of Oklahoma",
+    "Research Domains": [
+        "Computer Science",
+        "Medical Imaging Informatics",
+        "Computer-Aided Diagnosis",
+        "Synthetic Data Generation",
+        "Data Augmentation via Lesion Projection",
+        "Hybrid Deep Learning",
+        "Joint Image Segmentation and Classification",
+        "Skin Cancer Diagnosis",
+        "Mathematical Morphology in Deep Learning",
+        "Extreme Learning Machines (ELM)",
+        "Hybrid Ensemble Learning (CNN + Random Forest)",
+        "Lightweight Model Design for Limited Data",
+        "Joint Deep Learning Architectures",
+        "Multi-Task Learning for Medical Imaging",
+        "Semantic Segmentation Optimization"
+    ],
+    "Techniques Used": [
+        "Two-stage deep-learning classification",
+        "Transfer learning with ResNet-50",
+        "SoftMax threshold optimization",
+        "K-fold cross-validation",
+        "Data augmentation (horizontal/vertical flipping)",
+        "Multi-stage synthetic data generation algorithm",
+        "Lesion blob extraction and random redistribution",
+        "Seamless lesion projection onto disease-free images",
+        "Element-wise mask addition and multiplication",
+        "Angular rotation for class balancing",
+        "Horizontal and vertical flipping of lesion masks",
+        "J-Net (Joint-Net) architecture",
+        "Two-way CNN combining U-Net with image classification",
+        "Simultaneous lesion segmentation and classification",
+        "Incremental subset training (200 to 1200 images)",
+        "Morphological-Convolutional Neural Network (MCNN)",
+        "Parallel Morphological Operations (erosion, dilation, opening, closing, residual)",
+        "Extreme Learning Machine (ELM) training",
+        "Random Forest (RF) ensemble classifier",
+        "Three-channel independent neural network approach",
+        "Stratified data splitting",
+        "Gaussian weight initialization with binarization threshold",
+        "Binary cross-entropy loss with SGD",
+        "Exponential learning rate scheduling",
+        "Multi-seed median metric aggregation",
+        "J-Net two-way CNN architecture",
+        "Combined loss optimization (LossSeg + LossClas)",
+        "Encoder-branch feature sharing for classification",
+        "Custom Sigmoid-BCE loss for segmentation",
+        "Statistical significance testing via 30-run Monte Carlo simulation",
+        "Dice score and Intersection over Union (IOU) metric analysis",
+        "Reduced convolution block size (32x32) for complexity reduction",
+        "Average pooling and linear layers for classification head"
+    ],
+    "Data & Platforms": [
+        "ResNet-50 architecture",
+        "ImageNet pre-trained weights",
+        "Google Search Engine (for dataset retrieval)",
+        "SPIE Digital Library",
+        "Indian Diabetic Retinopathy Image Dataset (IDRiD)",
+        "VGG16 architecture",
+        "Inception-v3 architecture",
+        "Clinic-provided healthy retinal fundus images (60 images)",
+        "Skin cancer dataset (1200 images with annotated lesion masks)",
+        "Melanoma nevi status annotation ('mild' and 'severe')",
+        "ORIGA-light dataset (Online Retinal Fundus Image Database for Glaucoma Analysis and Research)",
+        "German Traffic Sign Recognition Benchmark (GTSRB)",
+        "PyTorch framework",
+        "Python 3.7.14",
+        "ShuffleNet-V2 architecture",
+        "MobileNet-V2 architecture",
+        "Kaggle platform (for dataset retrieval)"
+    ],
+    "Application Areas": [
+        "Computer-Aided Diagnosis in Ophthalmology",
+        "Automated Dermatological Cancer Screening"
+    ],
+    "Key Research Thinking Patterns": [
+        "Synthetic Data Augmentation via Lesion Projection: Mitigating dataset scarcity and class imbalance by extracting pathological features from existing images and seamlessly projecting them onto healthy backgrounds to generate diverse training samples.",
+        "Joint Multi-Task Learning Architectures: Employing hybrid two-way CNNs (e.g., J-Net) that simultaneously perform semantic segmentation and disease classification to share encoder features and improve diagnostic robustness compared to independent models.",
+        "Hybrid Lightweight Model Optimization: Combining mathematical morphology operations with Extreme Learning Machines and Random Forest ensembles to create efficient, low-complexity models suitable for resource-constrained environments and small medical datasets.",
+        "Iterative Threshold Optimization and Validation: Enhancing classification precision through SoftMax threshold optimization, multi-seed Monte Carlo simulations, and incremental subset training to ensure statistical significance and reduce false positives in ambiguous cases."
+    ],
+    "Summary Description": "Sanjana Mudduluru specializes in medical imaging informatics, developing robust deep learning frameworks for computer-aided diagnosis in ophthalmology and dermatology. Her research addresses critical challenges in medical AI, including data scarcity, class imbalance, and model overfitting. She pioneers synthetic data generation techniques, such as lesion blob projection, to enhance dataset diversity. Mudduluru designs novel joint multi-task architectures like J-Net for simultaneous segmentation and classification, and develops lightweight hybrid models combining morphological operations with ensemble classifiers for efficient glaucoma and melanoma detection. Her work emphasizes rigorous validation through Monte Carlo simulations and threshold optimization, delivering clinically relevant, high-accuracy diagnostic tools optimized for limited data environments.",
+    "_agent_metadata": {
+        "model": "Qwen/Qwen3.6-35B-A3B",
+        "architecture": "Two-Stage Stateful Agent: Sequential Accumulator -> Reflective PI Synthesizer",
+        "papers_processed": 5,
+        "stages": {
+            "stage1_accumulation_turns": 5,
+            "stage2_pi_reflection_executed": true
+        },
+        "counts": {
+            "domains": 15,
+            "techniques": 33,
+            "platforms": 17,
+            "applications": 2,
+            "thinking_patterns": 4
+        }
+    }
+}

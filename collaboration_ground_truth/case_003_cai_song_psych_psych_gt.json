@@ -1,0 +1,62 @@
+{
+  "Shared Domains": [
+    "Cross-cultural psychometrics of self-esteem and self-concept measurement",
+    "Psychometric evaluation of self-report personality scales in Chinese and US samples",
+    "Behavioral genetics of narcissism and self-related personality dimensions",
+    "Developmental and longitudinal psychology of implicit and explicit self-esteem"
+  ],
+  "Method-Application Synergies": [
+    "Song's IRT-based DIF framework was applied to Cai's Chinese Rosenberg Self-Esteem Scale translation and US–China equivalence testing.",
+    "Cai's cross-cultural self-concept data were analyzed with Song's measurement-equivalence and DIF impact procedures.",
+    "Cai's Chinese twin and personality data were analyzed with behavioral genetic ACE and Cholesky models.",
+    "Cai's longitudinal implicit self-esteem data were analyzed with autoregressive SEM and latent growth modeling."
+  ],
+  "Complementary Technique Synergies": [
+    "Graded-response IRT with iterative likelihood-ratio DIF purification was paired with exploratory factor analysis.",
+    "Twin intraclass correlations were combined with univariate and bivariate ACE Cholesky decomposition modeling.",
+    "Implicit association test D-scores were combined with first-order autoregressive SEM and latent growth models.",
+    "NCDIF, item-response functions, and test-response functions quantified item and scale-level measurement bias."
+  ],
+  "Data-Method Synergies": [
+    "US and Chinese undergraduate Rosenberg Self-Esteem Scale responses were modeled with graded-response IRT and DIF tests.",
+    "Beijing Twin Study grandiosity and entitlement scores were decomposed using OpenMx ACE and bivariate Cholesky models.",
+    "Four-year university implicit self-esteem IAT data were analyzed with autoregressive SEM and latent growth modeling."
+  ],
+  "Cross-Domain Fusion Topics": [
+    "Cross-cultural DIF and measurement bias in Rosenberg Self-Esteem Scale equivalence",
+    "Behavioral genetic architecture of intrapersonal grandiosity and interpersonal entitlement",
+    "Longitudinal development and stability of implicit self-esteem during emerging adulthood",
+    "Self-concept measurement integrating psychometrics, genetics, and developmental processes"
+  ],
+  "Shared Application Areas": [
+    "Cross-cultural psychology and international self-report measurement",
+    "Personality assessment and psychometric validation in student populations",
+    "Emerging adulthood, university development, and self-concept research",
+    "Heritability estimation for grandiosity, entitlement, and related personality traits"
+  ],
+  "Joint Technique Development": [
+    "Iterative IRT likelihood-ratio DIF purification pipeline for polytomous self-report items",
+    "NCDIF, IRF, and TRF evaluation protocol for practical impact of DIF",
+    "Univariate and bivariate ACE Cholesky modeling for grandiosity and entitlement heritability",
+    "Longitudinal implicit self-esteem protocol using improved D-score and growth modeling"
+  ],
+  "Theory-Application Synergy": [
+    "Item-response theory guided DIF detection to determine whether cultural self-esteem differences were measurement artifacts.",
+    "Quantitative genetic theory informed ACE decomposition of grandiosity and entitlement variance in twin data.",
+    "Developmental self-concept theory shaped longitudinal modeling of implicit self-esteem change and stability.",
+    "Measurement equivalence theory connected item-level bias to scale-level cross-cultural inference."
+  ],
+  "Thinking Pattern Synergies": [
+    "Psychometric rigor was applied to substantive questions about self-esteem, narcissism, and identity development.",
+    "Cross-cultural comparison was paired with statistical diagnostics of response style and item functioning.",
+    "Twin genetics was used to test whether distinct narcissism dimensions share genetic and environmental sources.",
+    "Longitudinal design was used to separate rank-order stability from mean-level developmental change."
+  ],
+  "Future Research Directions": [
+    "Use DIF-corrected or culturally calibrated Rosenberg Self-Esteem Scale procedures in future cross-cultural studies.",
+    "Extend heritability analyses to other intrapersonal and interpersonal personality dimensions.",
+    "Track implicit self-esteem development across broader age ranges and longer developmental periods.",
+    "Integrate implicit, explicit, genetic, and cultural data in unified self-concept models."
+  ],
+  "Summary Collaboration Themes": "Cai and Song collaborated on self-concept measurement across cultural, genetic, and developmental contexts. Their joint work applied rigorous psychometric, behavioral genetic, and longitudinal methods to self-esteem, narcissism, and implicit self-concept. In cross-cultural research, they used IRT-based DIF analysis to assess Rosenberg Self-Esteem Scale equivalence between US and Chinese students. In genetic research, they modeled grandiosity and entitlement in twins with ACE and bivariate Cholesky models. In developmental work, they tracked implicit self-esteem over university years using IAT-based measures, autoregressive SEM, and latent growth modeling. Together, their publications show a consistent emphasis on measurement validity, quantitative modeling, and culturally sensitive interpretation of self-related psychological constructs, establishing a shared profile combining psychometrics, personality science, and quantitative behavioral genetics."
+}

@@ -1,63 +1,63 @@
 {
   "Shared Domains": [
-    "Adversarial machine learning and model extraction attacks on image classification systems",
-    "Deep learning model interpretability via capsule networks and entropy-based routing",
-    "Generative AI security, deepfake detection, and digital media forensics",
-    "Secure, reliable, and interpretable machine learning for cybersecurity applications"
+    "Ensemble learning for deep neural networks",
+    "Image retrieval systems and techniques",
+    "Artificial intelligence and machine learning",
+    "Computer vision tasks like image classification"
   ],
   "Method-Application Synergies": [
-    "Reinforcement-learning query selection methods applied to black-box security problems in image classifiers",
-    "Information-theoretic entropy methods applied to neural-network routing and interpretability in visual classification",
-    "Machine-learning detection methods analyzed against generative deepfake creation across security and societal domains"
+    "Random subspace method (ensemble learning) applied to deep neural networks for image retrieval.",
+    "Class-level and instance-level discrimination methods combined with ensemble learning for coarse-to-fine image retrieval.",
+    "SimSiam (instance-level discrimination) and SNCA (class-level discrimination) integrated with the group ensemble block for image retrieval.",
+    "Group ensemble block, designed for image retrieval, also deployed for image classification tasks like CIFAR-10."
   ],
   "Complementary Technique Synergies": [
-    "Deep Q-network variants combined with active learning for adaptive query selection",
-    "Entropy regularization merged with dynamic routing in capsule networks",
-    "Synthetic data generation methods such as FGSM and LinfPGD combined with DQN attack evaluation",
-    "PRISMA-guided systematic review combined with comparative analysis of deepfake detection techniques"
+    "Combining advantages of both averaging and concatenating strategies for merging different subspaces’ outcomes.",
+    "Integration of self-supervised learning (SimSiam) with nonparametric classification (SNCA) and the proposed ensemble block.",
+    "Masking process perturbing each subspace to increase diversity, combined with parallel linear transformations for efficiency.",
+    "Leveraging parallel processing for subspaces to achieve fast running speed and low computation cost."
   ],
   "Data-Method Synergies": [
-    "MNIST image classification models analyzed using DQN sample selection and surrogate training",
-    "CIFAR-10 image datasets evaluated using entropy-adjusted dynamic routing capsule networks",
-    "Deepfake literature and detection benchmarks analyzed using PRISMA-guided systematic review methods",
-    "Image classification benchmarks analyzed with surrogate-model training and adversarial attack evaluations"
+    "CIFAR-100 dataset used to evaluate coarse-to-fine image retrieval and kNN classification with the group ensemble block.",
+    "ImageNet-C16 and ImageNet-1K datasets utilized for state-of-the-art accuracy evaluation of the proposed method.",
+    "ResNet-50 backbone architecture used with the proposed group ensemble block for image feature extraction.",
+    "Evaluation of embedding vector length effect on coarse-to-fine retrieval and kNN classification using CIFAR-100."
   ],
   "Cross-Domain Fusion Topics": [
-    "Reinforcement-learning-driven adversarial model extraction from secure image classifiers",
-    "Information-theoretic uncertainty modeling for interpretable deep learning vision architectures",
-    "Generative AI deepfake creation versus detection in cybersecurity and public-trust settings",
-    "AI security, interpretability, and hardware-efficient deployment for neural vision models"
+    "Low-cost reusable modules for random subspace techniques in deep learning models.",
+    "Combining ensemble learning, class-level discrimination, and instance-level discrimination for image retrieval.",
+    "Improving coarse-to-fine image retrieval by enhancing subspace diversity in ensemble learning.",
+    "Developing plug-and-play ensemble blocks for deep neural networks."
   ],
   "Shared Application Areas": [
-    "Cybersecurity, machine-learning security, and intellectual property protection",
-    "Visual recognition, image classification, and interpretable AI applications",
-    "Digital forensics, media authentication, and misinformation risk mitigation",
-    "Real-time detection and scalable deployment of adversarial AI systems"
+    "Coarse-to-fine image retrieval problem.",
+    "On-the-fly kNN classification for fine-grained categories.",
+    "General image classification tasks (e.g., CIFAR-10).",
+    "Improving generalization performance in deep learning models."
   ],
   "Joint Technique Development": [
-    "Open-source framework integrating DQN extensions for model extraction attacks",
-    "Entropy-adjusted dynamic routing algorithm for capsule networks",
-    "Systematic analysis pipeline for deepfake generation and detection evaluation",
-    "Prioritized Experience Replay-based query selection for constrained model extraction"
+    "Proposed random-subspace-based group ensemble block for deep neural networks.",
+    "Development of a masking process to increase diversity among sampled subspaces.",
+    "A merging strategy combining averaging and concatenating for subspace outcomes.",
+    "Formulation of a low-complexity ensemble block that can replace a linear layer in neural networks."
   ],
   "Theory-Application Synergy": [
-    "Information-theoretic entropy principles informed routing adjustments to reduce capsule uncertainty",
-    "MDP and reinforcement-learning theory guided adaptive query selection for model extraction",
-    "Adversarial threat models informed empirical comparisons of data-free and synthetic-data attacks",
-    "PRISMA review theory guided evidence synthesis for deepfake detection research gaps"
+    "The random subspace method's potential as an ensemble learning technique informing the design of the group ensemble block.",
+    "Chebyshev’s inequality used in performance analysis to derive an upper error bound for retrieval accuracy.",
+    "Theoretical analysis of variance and covariance between subinputs guiding the design for improved diversity and performance.",
+    "The concept of diversity between subspaces guaranteeing diversity between processed results, applied to deep learning."
   ],
   "Thinking Pattern Synergies": [
-    "Security threat modeling combined with learning-system optimization to reduce query budgets",
-    "Interpretability-oriented modeling combined with performance-driven benchmarking on vision datasets",
-    "Empirical attack evaluation combined with systematic literature analysis for AI security",
-    "Algorithmic efficiency analysis combined with uncertainty-aware design for robust vision models"
+    "Addressing practical challenges of ensemble learning (cost, reusability) in deep networks with a modular design approach.",
+    "Systematic analysis of cost (parameters, computations, speed) and performance (accuracy, diversity) for proposed methods.",
+    "Empirical validation of theoretical concepts like subspace diversity and its impact on accuracy.",
+    "Identifying and filling gaps in existing literature regarding random subspaces for deep neural networks."
   ],
   "Future Research Directions": [
-    "Extending EADR routing to multimodal data tasks and multiple capsule layers",
-    "Optimizing capsule networks for hardware accelerators and computational frameworks",
-    "Developing real-time, robust, cross-modal deepfake detection systems",
-    "Exploring adaptive detection algorithms and interdisciplinary collaborations against generative AI misuse",
-    "Continuing constrained-query, data-free, and synthetic-data model extraction defenses"
+    "Extending the proposed group ensemble block to other tasks beyond image retrieval and classification.",
+    "Further exploration of masking and sampling strategies for optimal diversity and performance.",
+    "Investigating the applicability of the group ensemble block in different deep learning architectures.",
+    "Exploring the theoretical bounds and practical limits of ensemble size N for various datasets."
   ],
-  "Summary Collaboration Themes": "Their collaboration integrates computer science machine-learning methods with electrical and computer engineering perspectives on secure, interpretable AI. They use DQN-based active learning to improve black-box model extraction attacks on image classifiers, evaluate synthetic-data and data-free techniques, and develop an open-source framework. In parallel, they apply information-theoretic entropy to capsule-network dynamic routing, improving CIFAR-10 accuracy and interpretability. Their systematic review connects generative AI advances to deepfake detection, digital forensics, and societal risk mitigation. Together, these works establish a cross-discipline theme of adversarial AI security, uncertainty-aware learning, and scalable trustworthy vision systems, combining algorithm development, benchmark evaluation, and evidence-driven analysis for real-world cybersecurity applications."
+  "Summary Collaboration Themes": "This collaboration developed a low-complexity 'group ensemble block' to enhance deep learning models, specifically for coarse-to-fine image retrieval. It synergistically combined random subspace methods, class-level, and instance-level discrimination techniques, addressing the prohibitive cost and reusability issues of traditional ensemble learning. The block, acting as a plug-and-play module, significantly improved state-of-the-art accuracy on challenging image datasets, demonstrating a powerful fusion of computer science ensemble theory with electrical and computer engineering applications in computer vision."
 }

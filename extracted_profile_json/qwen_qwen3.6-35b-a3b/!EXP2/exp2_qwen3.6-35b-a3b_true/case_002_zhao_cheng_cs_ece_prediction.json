@@ -1,56 +1,59 @@
 {
   "Shared Domains": [
     "Federated Learning",
-    "Machine Learning",
-    "Privacy-Preserving Distributed Machine Learning"
+    "Distributed Systems",
+    "Machine Learning Security and Privacy",
+    "Edge Computing"
   ],
   "Method-Application Synergies": [
-    "Applying Shangqing Zhao’s statistical anomaly detection (LoMar) to Samuel Cheng’s Bayesian Federated Neural Matching (PFNM) to enhance robustness against poisoning attacks in autonomous driving data aggregation.",
-    "Integrating Cheng’s Reinforcement Learning-based active learning with Zhao’s physical-layer security constraints to optimize data selection in secure, privacy-preserving edge computing environments.",
-    "Utilizing Zhao’s reactive jamming and deception techniques to protect the communication channels used for transmitting Cheng’s capsule network updates during federated training sessions."
+    "Applying Graph Signal Processing (GSP) filter decomposition to optimize communication efficiency in Federated Learning over wireless sensor networks.",
+    "Utilizing Bayesian Nonparametric Network Fusion to enhance robustness against Byzantine attacks in distributed cognitive radio networks.",
+    "Integrating Adversarial Surrogate Modeling with Graph Neural Networks to detect topology-aware poisoning attacks in decentralized learning systems."
   ],
   "Complementary Technique Synergies": [
-    "Combining Cheng’s Bayesian Nonparametric Framework (BBP) for model fusion with Zhao’s Kernel Density Estimation (KDE) for local malicious factor detection to create a hybrid defense mechanism that identifies both structural anomalies and statistical outliers in federated models.",
-    "Merging Cheng’s Non-Iterative Capsule Routing for efficient local model compression with Zhao’s Multi-user MIMO (MU-MIMO) pre-coding to reduce bandwidth usage while simultaneously securing the transmission against eavesdropping.",
-    "Integrating Cheng’s Dueling Deep Q-Networks for sample selection with Zhao’s Channel State Information (CSI) extraction to dynamically adjust data acquisition strategies based on both information gain and physical layer security risks."
+    "Combining Shangqing Zhao’s Local Malicious Factor (LoMar) and KDE-based anomaly detection with Samuel Cheng’s Probabilistic Federated Neural Matching (PFNM) to identify and align malicious model updates in Non-IID federated settings.",
+    "Merging Zhao’s Influence-Limiting Defense mechanisms with Cheng’s Matrix Factorization techniques to create mathematically rigorous bounds on adversarial influence in graph-structured data.",
+    "Integrating Zhao’s Statistical Threshold Approximation with Cheng’s Eigenvalue Analysis of Laplacian Matrices to detect structural anomalies in network topology during distributed training."
   ],
   "Data-Method Synergies": [
-    "Applying Cheng’s semantic segmentation models (U-net, Res2Net) to analyze visual data from autonomous driving scenarios, while using Zhao’s wireless security protocols to secure the V2X (Vehicle-to-Everything) communication links transmitting this data.",
-    "Using Zhao’s USRP and SDR platforms to collect real-world wireless channel data, which can be processed by Cheng’s deep learning architectures to predict channel conditions for adaptive secure transmission in federated learning systems.",
-    "Leveraging Cheng’s CamVid dataset for training segmentation models, while employing Zhao’s side-channel attack simulations to test the vulnerability of the deployed models to non-invasive surveillance via wireless signals."
+    "Using Real-world spectrum sensing datasets (RSSI/CSI) as Graph Signals to apply Cheng’s GSP techniques for secure feature extraction in Zhao’s cognitive radio security frameworks.",
+    "Applying Cheng’s Random Graph Models (Erdős–Rényi, Watts–Strogatz) to simulate attack topologies for testing Zhao’s Byzantine Fault Tolerance mechanisms in federated learning.",
+    "Leveraging MNIST/CIFAR10 datasets within Cheng’s Bayesian Nonparametric frameworks to benchmark the robustness of Zhao’s adversarial defense strategies against label-flipping attacks."
   ],
   "Cross-Domain Fusion Topics": [
-    "Secure Federated Semantic Segmentation for Autonomous Driving: Developing privacy-preserving, attack-resilient models for real-time scene understanding in connected vehicles.",
-    "Physical-Layer Aware Federated Learning: Integrating wireless channel characteristics (CSI) into the federated aggregation process to optimize both model accuracy and communication security.",
-    "Adversarial Robustness in Distributed Vision Systems: Combining statistical anomaly detection with Bayesian aggregation to defend against both data poisoning and model inversion attacks in computer vision tasks."
+    "Secure Graph-Based Federated Learning: Integrating GSP for privacy-preserving aggregation in distributed AI.",
+    "Adversarial Robustness in Wireless Edge Computing: Combining wireless security primitives with distributed ML defenses.",
+    "Topology-Aware Byzantine Resilience: Using network graph properties to enhance fault tolerance in distributed systems.",
+    "Privacy-Preserving Key Generation for Federated Networks: Merging wireless secret key generation with distributed learning protocols."
   ],
   "Shared Application Areas": [
-    "Privacy-Preserving Distributed Machine Learning",
-    "Autonomous Driving and Scene Understanding",
-    "IoT and Network Security"
+    "Privacy-Preserving Edge Computing",
+    "Federated Learning Optimization",
+    "IoT and RFID Security",
+    "Sensor Networks"
   ],
   "Joint Technique Development": [
-    "Developing a 'Secure Capsule Federated Learning' framework that uses Cheng’s non-iterative routing for efficient local model representation and Zhao’s trap deployment techniques to detect and mitigate malicious updates during the global aggregation phase.",
-    "Creating a hybrid anomaly detection module that combines Cheng’s Variance-based Agreement Indicators with Zhao’s Local Malicious Factor (LoMar) to provide multi-dimensional defense against sophisticated poisoning attacks.",
-    "Designing a reinforcement learning agent that jointly optimizes for annotation efficiency (Cheng) and communication security overhead (Zhao) in resource-constrained edge devices."
+    "Developing a 'Graph-Aware Federated Averaging' protocol that uses Cheng’s polynomial graph filters to smooth model updates while applying Zhao’s influence metrics to filter out adversarial perturbations.",
+    "Creating a 'Bayesian Adversarial Detector' that uses Cheng’s Beta-Bernoulli Processes to model the latent distribution of clean updates and Zhao’s KDE methods to flag outliers.",
+    "Designing a 'Secure Topology-Agnostic Aggregation' scheme that combines Zhao’s trust/reputation mechanisms with Cheng’s decentralized filter decomposition for robustness in dynamic wireless networks."
   ],
   "Theory-Application Synergy": [
-    "Applying Cheng’s Bayesian theoretical guarantees for federated aggregation to Zhao’s practical SDR-based security implementations, providing formal privacy bounds for physical-layer secure communications.",
-    "Using Zhao’s empirical findings on CSI-based side-channel vulnerabilities to inform the design of Cheng’s active learning strategies, ensuring that selected data samples do not inadvertently leak sensitive information through wireless emissions.",
-    "Translating Cheng’s theoretical work on non-iterative routing into practical, low-latency security protocols for real-time defense systems monitored by Zhao’s anomaly detection algorithms."
+    "Translating Cheng’s theoretical shift-enablement conditions for random graphs into practical security guarantees for decentralized spectrum sensing in cognitive radio networks.",
+    "Applying Zhao’s theoretical security analysis of wireless secret key generation to ensure the cryptographic integrity of parameters exchanged during Cheng’s Bayesian network fusion processes.",
+    "Using Cheng’s KL-divergence based matching to align models in Zhao’s federated learning systems, ensuring that security constraints do not degrade convergence rates."
   ],
   "Thinking Pattern Synergies": [
-    "Statistical-Bayesian Fusion: Merging Zhao’s statistical inference for anomaly detection with Cheng’s Bayesian probabilistic modeling to create a more robust understanding of uncertainty in distributed learning systems.",
-    "Active Defense Mechanisms: Combining Zhao’s proactive deception (trap deployment) with Cheng’s proactive sample selection (active learning) to create systems that actively shape their own security and efficiency profiles.",
-    "Efficiency-Driven Security: Aligning Zhao’s focus on reducing signal processing overhead with Cheng’s focus on reducing neural network computational costs to develop lightweight, secure edge AI solutions."
+    "Merging 'Distributed Filter Decomposition' with 'Influence-Limiting Defense' to create localized, computationally efficient security checks that do not require global data aggregation.",
+    "Combining 'Global Posterior-Aware Federated Matching' with 'Statistical Feature-Based Anomaly Detection' to handle both data heterogeneity and adversarial poisoning simultaneously.",
+    "Integrating 'Bayesian Nonparametric Network Fusion' with 'Adversarial Surrogate Modeling' to dynamically adjust the complexity of the defense model based on the observed attack sophistication."
   ],
   "Future Research Directions": [
-    "Investigating the impact of physical-layer security constraints on the convergence rates of Bayesian federated learning algorithms.",
-    "Developing standardized benchmarks for 'Secure Federated Computer Vision' that include both algorithmic attack vectors (poisoning) and physical attack vectors (eavesdropping/jamming).",
-    "Exploring the use of capsule networks for interpreting the decision-making process of security anomaly detectors in federated settings, enhancing explainability.",
-    "Creating adaptive federated learning protocols that dynamically switch between secure and high-throughput modes based on real-time threat assessments derived from CSI analysis."
+    "Investigating the impact of graph topology on the convergence and security of federated learning in wireless IoT networks.",
+    "Developing lightweight, graph-based cryptographic protocols for secure key distribution in resource-constrained edge devices.",
+    "Exploring the use of Bayesian nonparametrics to automatically detect and mitigate novel, zero-day adversarial attacks in distributed systems.",
+    "Creating standardized benchmarks for 'Secure Graph Signal Processing' in the context of federated learning and cybersecurity."
   ],
-  "Summary Collaboration Themes": "The collaboration between Shangqing Zhao and Samuel Cheng centers on the intersection of secure, efficient, and intelligent distributed machine learning. By merging Zhao’s expertise in physical-layer wireless security, anomaly detection, and side-channel defense with Cheng’s advanced work in Bayesian federated aggregation, capsule networks, and reinforcement-driven active learning, they can develop robust frameworks for privacy-preserving computer vision in critical infrastructure like autonomous driving. Their joint efforts will focus on creating systems that are not only statistically robust against algorithmic attacks but also physically secure against wireless eavesdropping, leveraging complementary techniques in statistical inference, probabilistic modeling, and signal processing to achieve a holistic approach to secure edge AI.",
+  "Summary Collaboration Themes": "The collaboration between Shangqing Zhao and Samuel Cheng centers on 'Secure and Robust Distributed Intelligence.' By merging Zhao’s expertise in adversarial machine learning, wireless security, and statistical anomaly detection with Cheng’s strengths in Graph Signal Processing, Bayesian nonparametrics, and decentralized optimization, they can develop next-generation federated learning systems that are inherently secure against sophisticated attacks, efficient in communication, and robust to data heterogeneity. This synergy bridges the gap between theoretical network science and practical cybersecurity implementations in edge computing and IoT environments.",
   "_metadata": {
     "model": "Qwen/Qwen3.6-35B-A3B",
     "extraction_method": "Single-Pass Map-Reduce (Paper Extraction -> PI Synthesis)",

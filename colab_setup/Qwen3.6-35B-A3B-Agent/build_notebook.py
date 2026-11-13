@@ -26,7 +26,7 @@ notebook = {
                 "This notebook implements the complete **Agentic vs. Pure LLM** comparative benchmark:\n",
                 "- **Step 0: Environment Setup & Package Installation**: Synchronizes PyTorch CUDA 12.4 ABI, Hugging Face, bitsandbytes, and embedding libraries.\n",
                 "- **Code Cell 1 (Agent Profile Extraction - Exp 1)**: Runs the Two-Stage Stateful Agent (Stage 1 Investigator Accumulator gathers rich tools/platforms with persistent memory -> Stage 2 Reflective PI Synthesizer consolidates macro Application Areas, Thinking Patterns, and Summary). Includes `PILOT_MODE = True` toggle for a ~2-minute 3-researcher test before running the full 50 faculty.\n",
-                "- **Code Cell 2 (Agent Collaboration True Backtesting - Exp 2)**: Directly ingests pre-collaboration publications from `CatalystOU-pdf/~Collaborative Datasets/` (volume-balanced to ~3 papers per researcher for positive and negative pairs), extracts localized temporal profiles, and runs the 2-Pass Synthesize-and-Review Reasoner (`Pass 1: Hypothesis Synthesis -> Pass 2: Skeptic Audit & Selectivity Pruning`) across 5 historical co-authorship pairs and 5 volume-balanced negative control pairs. Automatically packages and downloads `qwen3.6_agent_exp2_true_results.zip`.\n",
+                "- **Code Cell 2 (Agent Collaboration True Backtesting - Exp 2)**: Directly ingests pre-collaboration publications from `CatalystOU-pdf/~Collaborative Datasets/` (volume-balanced to ~3 papers per researcher for positive and negative pairs), extracts localized temporal profiles, and runs the 2-Pass Synthesize-and-Review Reasoner (`Pass 1: Hypothesis Synthesis -> Pass 2: Skeptic Audit & Selectivity Pruning`) across 10 historical co-authorship pairs (5 OU Tier-1 + 5 UIUC Tier-2) and 5 volume-balanced negative control pairs. Automatically packages and downloads `qwen3.6_agent_exp2_true_results.zip`.\n",
                 "- **Code Cell 3 (Table Statistics & Agent vs. Pure LLM Comparison)**: Directly benchmarks Agent outputs against Pure LLM baselines, generating side-by-side comparison tables and LaTeX snippets for **Tables 1, 2, and 3** in the paper.\n"
             ]
         },
@@ -52,8 +52,8 @@ notebook = {
                 "# 1. Install matching PyTorch + Torchvision + Torchaudio for CUDA 12.4 (Prevents ABI mismatch)\n",
                 "!pip install -q -U torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124\n",
                 "\n",
-                "# 2. Install Hugging Face, quantization, PDF extraction, and embedding libraries\n",
-                "!pip install -q -U \"transformers>=4.48.0\" \"huggingface_hub>=0.28.0\" accelerate bitsandbytes sentencepiece pymupdf pypdf pdfplumber sentence-transformers tqdm tabulate\n",
+                "# 2. Install Hugging Face, Triton linear-attention kernels, quantization, PDF extraction, and embedding libraries\n",
+                "!pip install -q -U \"transformers>=4.48.0\" \"huggingface_hub>=0.28.0\" accelerate bitsandbytes flash-linear-attention sentencepiece pymupdf pypdf pdfplumber scipy sentence-transformers tqdm tabulate\n",
                 "\n",
                 "# 3. Verify GPU status and VRAM capacity\n",
                 "!nvidia-smi\n",
@@ -66,8 +66,9 @@ notebook = {
                 "# !git clone https://github.com/YourUsername/CatalystOU.git\n",
                 "# %cd CatalystOU\n",
                 "\n",
-                "# 6. (Optional) Unpack publication PDFs (included in repo at colab_setup/CatalystOU-pdf.zip):\n",
-                "# !unzip -q colab_setup/CatalystOU-pdf.zip -d .\n"
+                "# 6. (Optional) Unpack publication PDFs (full dataset or lightweight Exp 2-only zip):\n",
+                "# !unzip -q colab_setup/CatalystOU-pdf.zip -d .\n",
+                "# !unzip -q colab_setup/CatalystOU-exp2-pdf.zip -d .\n"
             ]
         },
         {
@@ -107,8 +108,8 @@ notebook = {
                 "  - **Pass 1 (Hypothesis Synthesis)**: Synthesizes potential collaborative mechanisms across 10 ontology categories.\n",
                 "  - **Pass 2 (Skeptic Review & Pruning)**: Audits hypotheses against negative-control plausibility to eliminate generic academic buzzwords and retain sharp causal mechanisms.\n",
                 "\n",
-                "Evaluates all 10 benchmark pairs:\n",
-                "- **5 Historical Positive Benchmark Cases** (saved to `results/exp2_qwen3.6-35b-a3b_agent_true/`)\n",
+                "Evaluates all 15 benchmark pairs:\n",
+                "- **10 Historical Positive Benchmark Cases** (5 OU Tier-1 + 5 UIUC Tier-2, saved to `results/exp2_qwen3.6-35b-a3b_agent_true/`)\n",
                 "- **5 Cross-Disciplinary Negative Controls** (saved to `results/exp2_qwen3.6-35b-a3b_agent_true_negative/`)\n",
                 "\n",
                 "Features:\n",

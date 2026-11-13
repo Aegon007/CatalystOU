@@ -25,7 +25,7 @@ notebook = {
                 "This notebook provides the complete, end-to-end execution pipeline for evaluating **Qwen 3.8-27B (Dense Baseline)**:\n",
                 "- **Step 0: Environment Setup & Package Installation**: Installs PyTorch (CUDA 12.4 ABI), Hugging Face, PDF extraction, and embedding libraries.\n",
                 "- **Code Cell 1 (Profile Extraction - Exp 1)**: Loads Qwen 3.8-27B in bfloat16 onto the A100 GPU (~54GB VRAM), runs Map-Reduce profile extraction across all 50 faculty publications, and saves profiles to `extracted_profile_json/qwen_qwen3.8-27b/`.\n",
-                "- **Code Cell 2 (True Collaboration Backtesting - Exp 2)**: Directly ingests pre-collaboration publications from `CatalystOU-pdf/~Collaborative Datasets/` (volume-balanced to ~3 papers per researcher), extracts pre-collaboration profiles using the exact same Map-Reduce pipeline as Exp 1, and runs single-pass synergy reasoning across 5 historical co-authorship pairs and 5 volume-balanced negative control pairs. Automatically packages and downloads `qwen27b_exp2_true_results.zip`.\n",
+                "- **Code Cell 2 (True Collaboration Backtesting - Exp 2)**: Directly ingests pre-collaboration publications from `CatalystOU-pdf/~Collaborative Datasets/` (volume-balanced to ~3 papers per researcher), extracts pre-collaboration profiles using the exact same Map-Reduce pipeline as Exp 1, and runs single-pass synergy reasoning across 10 historical co-authorship pairs (5 OU Tier-1 + 5 UIUC Tier-2) and 5 volume-balanced negative control pairs. Automatically packages and downloads `qwen27b_exp2_true_results.zip`.\n",
                 "- **Code Cell 3 (Benchmark Statistics & Evaluation)**: Computes automated evaluation metrics (SBERT + Hungarian matching) and outputs summary tables for Table 1 and Table 2.\n"
             ]
         },
@@ -51,8 +51,8 @@ notebook = {
                 "# 1. Install matching PyTorch + Torchvision + Torchaudio for CUDA 12.4 (Prevents ABI mismatch)\n",
                 "!pip install -q -U torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124\n",
                 "\n",
-                "# 2. Install Hugging Face, PDF extraction, and embedding libraries\n",
-                "!pip install -q -U \"transformers>=4.48.0\" \"huggingface_hub>=0.28.0\" accelerate bitsandbytes sentencepiece pymupdf pypdf sentence-transformers tqdm tabulate\n",
+                "# 2. Install Hugging Face, Triton linear-attention kernels, PDF extraction, and embedding libraries\n",
+                "!pip install -q -U \"transformers>=4.48.0\" \"huggingface_hub>=0.28.0\" accelerate bitsandbytes flash-linear-attention sentencepiece pymupdf pypdf scipy sentence-transformers tqdm tabulate\n",
                 "\n",
                 "# 3. Verify GPU status and VRAM capacity\n",
                 "!nvidia-smi\n",
@@ -65,8 +65,9 @@ notebook = {
                 "# !git clone https://github.com/YourUsername/CatalystOU.git\n",
                 "# %cd CatalystOU\n",
                 "\n",
-                "# 6. (Optional) Unpack publication PDFs (included in repo at colab_setup/CatalystOU-pdf.zip):\n",
-                "# !unzip -q colab_setup/CatalystOU-pdf.zip -d .\n"
+                "# 6. (Optional) Unpack publication PDFs (full dataset or lightweight Exp 2-only zip):\n",
+                "# !unzip -q colab_setup/CatalystOU-pdf.zip -d .\n",
+                "# !unzip -q colab_setup/CatalystOU-exp2-pdf.zip -d .\n"
             ]
         },
         {
@@ -100,8 +101,8 @@ notebook = {
                 "- **On-the-Fly Profile Extraction**: Reconstructs true pre-collaboration profiles using the exact same Map-Reduce pipeline (`PAPER_EXTRACTION_SYSTEM_PROMPT` + `SYNTHESIS_SYSTEM_PROMPT`) as Exp 1.\n",
                 "- **Single-Pass Synergy Reasoning**: Infers collaboration mechanisms across 10 ontology categories.\n",
                 "\n",
-                "Evaluates all 10 benchmark pairs:\n",
-                "- **5 Historical Positive Benchmark Cases** (saved to `results/exp2_qwen3.8-27b_true/`)\n",
+                "Evaluates all 15 benchmark pairs:\n",
+                "- **10 Historical Positive Benchmark Cases** (5 OU Tier-1 + 5 UIUC Tier-2, saved to `results/exp2_qwen3.8-27b_true/`)\n",
                 "- **5 Cross-Disciplinary Negative Controls** (saved to `results/exp2_qwen3.8-27b_true_negative/`)\n",
                 "\n",
                 "Features:\n",
@@ -142,14 +143,18 @@ notebook = {
                 "# Ensure project modules are available\n",
                 "sys.path.insert(0, str(Path.cwd()))\n",
                 "\n",
-                "print('[*] Table 1 Profile Extraction Evaluation:')\n",
+                "print('[*] Table 2 & 3 Hungarian Bipartite Matching Evaluation (Exp 2):')\n",
+                "import subprocess\n",
+                "subprocess.run([sys.executable, 'colab_setup/exp2_hungarian_eval.py', '--models', 'dense'], check=False)\n",
+                "\n",
+                "print('\\n[*] Table 1 Profile Extraction Evaluation:')\n",
                 "summary_path = Path('results/qwen_qwen3.8-27b/comprehensive_evaluation_results.json')\n",
                 "if summary_path.exists():\n",
                 "    with open(summary_path, 'r', encoding='utf-8') as f:\n",
                 "        res = json.load(f)\n",
                 "    print(json.dumps(res.get('per_key', {}), indent=2))\n",
                 "else:\n",
-                "    print('[*] Results will be available after running evaluation script or notebook cells.')\n"
+                "    print('[*] Table 1 results not present yet (run Cell 1 first if needed).')\n"
             ]
         }
     ],

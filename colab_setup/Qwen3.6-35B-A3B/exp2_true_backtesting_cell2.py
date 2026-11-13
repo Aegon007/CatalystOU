@@ -39,6 +39,23 @@ except ImportError:
     HAS_SBERT = False
 
 # ------------------------------------------------------------------------------
+# 0. EXECUTION TOGGLE: SKIP ALREADY-CACHED 7 CASES (DEFAULT: False)
+# Set SKIP_COMPLETED_7_CASES = True in Colab to skip the 7 unchanged pairs
+# (case_001, case_004, neg_001..neg_005) that are already cached locally,
+# running ONLY the 8 new/remediated positive pairs.
+# ------------------------------------------------------------------------------
+SKIP_COMPLETED_7_CASES = False
+COMPLETED_7_CASE_IDS = {
+    "case_001_ebert_xiao_cs_bio",
+    "case_004_yeary_havlicek_ece_ece",
+    "neg_001_maiti_cartersowell",
+    "neg_002_yeary_dunn",
+    "neg_003_forester_quadri",
+    "neg_004_karr_cokely",
+    "neg_005_jiang_martin",
+}
+
+# ------------------------------------------------------------------------------
 # 1. MODEL RUNNER & HARDWARE INTEGRATION
 # ------------------------------------------------------------------------------
 HF_MODEL_ID = globals().get('HF_MODEL_ID', 'Qwen/Qwen3.6-35B-A3B')
@@ -47,38 +64,12 @@ class ColabCollabRunner:
     def __init__(self, m, tok):
         self.model = m
         self.tokenizer = tok
+        self.tokenizer.padding_side = 'left'
+        if self.tokenizer.pad_token_id is None:
+            self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
 
-    def generate_json(self, system_prompt: str, user_prompt: str, max_new_tokens: int = 4096, temperature: float = 0.0):
-        messages = [
-            {'role': 'system', 'content': system_prompt},
-            {'role': 'user', 'content': user_prompt},
-        ]
-        try:
-            prompt_text = self.tokenizer.apply_chat_template(
-                messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
-            )
-        except TypeError:
-            prompt_text = self.tokenizer.apply_chat_template(
-                messages, tokenize=False, add_generation_prompt=True
-            )
-
-        inputs = self.tokenizer([prompt_text], return_tensors='pt').to(self.model.device)
-        gen_kwargs = {
-            'max_new_tokens': max_new_tokens,
-            'pad_token_id': self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
-            'eos_token_id': self.tokenizer.eos_token_id,
-            'do_sample': False if temperature == 0.0 else True,
-        }
-        if temperature > 0.0:
-            gen_kwargs['temperature'] = temperature
-            gen_kwargs['top_p'] = 0.90
-
-        with torch.inference_mode():
-            output_tokens = self.model.generate(**inputs, **gen_kwargs)
-
-        gen_slice = output_tokens[0][inputs['input_ids'].shape[1]:]
-        raw_resp = self.tokenizer.decode(gen_slice, skip_special_tokens=True).strip()
-
+    @staticmethod
+    def _parse_json_response(raw_resp: str):
         cleaned = raw_resp
         if '```json' in cleaned:
             cleaned = cleaned.split('```json')[1].split('```')[0].strip()
@@ -112,13 +103,107 @@ class ColabCollabRunner:
                     print(f'    [!] JSON Parse error: {parse_err}. Preview: {raw_resp[:120]}')
                     return None
 
+    def _format_chat_prompt(self, system_prompt: str, user_prompt: str) -> str:
+        messages = [
+            {'role': 'system', 'content': system_prompt},
+            {'role': 'user', 'content': user_prompt},
+        ]
+        try:
+            return self.tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
+            )
+        except TypeError:
+            return self.tokenizer.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+
+    def generate_json(self, system_prompt: str, user_prompt: str, max_new_tokens: int = 4096, temperature: float = 0.0):
+        prompt_text = self._format_chat_prompt(system_prompt, user_prompt)
+        inputs = self.tokenizer([prompt_text], return_tensors='pt').to(self.model.device)
+        gen_kwargs = {
+            'max_new_tokens': max_new_tokens,
+            'pad_token_id': self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
+            'eos_token_id': self.tokenizer.eos_token_id,
+            'do_sample': False if temperature == 0.0 else True,
+        }
+        if temperature > 0.0:
+            gen_kwargs['temperature'] = temperature
+            gen_kwargs['top_p'] = 0.90
+
+        with torch.inference_mode():
+            output_tokens = self.model.generate(**inputs, **gen_kwargs)
+
+        gen_slice = output_tokens[0][inputs['input_ids'].shape[1]:]
+        raw_resp = self.tokenizer.decode(gen_slice, skip_special_tokens=True).strip()
+        return self._parse_json_response(raw_resp)
+
+    def generate_json_batch(
+        self,
+        system_prompt: str,
+        user_prompts: List[str],
+        max_new_tokens: int = 4096,
+        temperature: float = 0.0,
+        batch_size: int = 3,
+    ) -> List[Dict[str, Any]]:
+        """Batched deterministic generation across a researcher's pre-collab papers with automatic sequential fallback on OOM."""
+        results: List[Dict[str, Any]] = []
+        self.tokenizer.padding_side = 'left'
+        for i in range(0, len(user_prompts), batch_size):
+            chunk = user_prompts[i : i + batch_size]
+            formatted_prompts = [self._format_chat_prompt(system_prompt, up) for up in chunk]
+            inputs = self.tokenizer(
+                formatted_prompts,
+                return_tensors='pt',
+                padding=True,
+            ).to(self.model.device)
+
+            gen_kwargs = {
+                'max_new_tokens': max_new_tokens,
+                'pad_token_id': self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
+                'eos_token_id': self.tokenizer.eos_token_id,
+                'do_sample': False if temperature == 0.0 else True,
+            }
+            if temperature > 0.0:
+                gen_kwargs['temperature'] = temperature
+                gen_kwargs['top_p'] = 0.90
+
+            try:
+                with torch.inference_mode():
+                    output_tokens = self.model.generate(**inputs, **gen_kwargs)
+            except torch.OutOfMemoryError:
+                print('    [!] Batch OOM encountered; falling back to sequential paper extraction...')
+                del inputs
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+                    gc.collect()
+                for up in chunk:
+                    pj = self.generate_json(system_prompt, up, max_new_tokens=max_new_tokens, temperature=temperature)
+                    if pj:
+                        results.append(pj)
+                continue
+
+            input_len = inputs['input_ids'].shape[1]
+            for row in output_tokens:
+                gen_slice = row[input_len:]
+                raw_resp = self.tokenizer.decode(gen_slice, skip_special_tokens=True).strip()
+                parsed = self._parse_json_response(raw_resp)
+                if parsed:
+                    results.append(parsed)
+
+            del inputs, output_tokens
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+
+        return results
+
 runner = None
-if 'model_runner' in globals() and hasattr(globals()['model_runner'], 'generate_json'):
-    print('[*] Reusing active model_runner from notebook memory.')
-    runner = globals()['model_runner']
-elif 'model' in globals() and 'tokenizer' in globals() and globals()['model'] is not None:
+if 'model' in globals() and 'tokenizer' in globals() and globals()['model'] is not None:
     print('[*] Wrapping active model & tokenizer from notebook memory.')
     runner = ColabCollabRunner(globals()['model'], globals()['tokenizer'])
+    globals()['model_runner'] = runner
+elif 'model_runner' in globals() and hasattr(globals()['model_runner'], 'generate_json'):
+    print('[*] Reusing active model_runner from notebook memory.')
+    runner = globals()['model_runner']
 else:
     print('[*] Loading Qwen 3.6-35B-A3B MoE into GPU memory (native bfloat16)...')
     gc.collect()
@@ -167,6 +252,7 @@ def extract_pdf_clean_text(pdf_path: Path, max_chars: int = 18000) -> str:
         except Exception:
             text = ""
 
+    text = re.sub(r'/C(\d+)', lambda m: chr(int(m.group(1))) if 0 <= int(m.group(1)) <= 0x10FFFF else m.group(0), text)
     text = re.sub(r'\s+', ' ', text).strip()
     ref_match = re.search(r'\b(references|bibliography|works cited)\b', text, re.IGNORECASE)
     if ref_match and ref_match.start() > 2000:
@@ -277,7 +363,7 @@ def extract_profile_for_researcher_pure_moe(
     if not valid_texts:
         return {
             "Researcher Profile:": researcher_name,
-            "Affiliation:": "University of Oklahoma",
+            "Affiliation:": "Academic Research Institution",
             "Research Domains": [discipline],
             "Techniques Used": [],
             "Data & Platforms": [],
@@ -286,13 +372,25 @@ def extract_profile_for_researcher_pure_moe(
             "Summary Description": f"Faculty researcher in {discipline}."
         }
 
-    # Map Step: Paper-level micro-JSONs
-    paper_jsons = []
-    for text in valid_texts:
-        user_prompt = f"Academic Research Paper Content:\n\"\"\"\n{text}\n\"\"\"\n\nExtract the requested scientific entities in strict JSON schema."
-        pj = runner_inst.generate_json(PAPER_EXTRACTION_SYSTEM_PROMPT, user_prompt, max_new_tokens=4096, temperature=0.0)
-        if pj:
-            paper_jsons.append(pj)
+    # Map Step: Paper-level micro-JSONs (Batched on A100 with exact prompt & deterministic temp=0.0 parity)
+    user_prompts = [
+        f"Academic Research Paper Content:\n\"\"\"\n{text}\n\"\"\"\n\nExtract the requested scientific entities in strict JSON schema."
+        for text in valid_texts
+    ]
+    if hasattr(runner_inst, "generate_json_batch"):
+        paper_jsons = runner_inst.generate_json_batch(
+            PAPER_EXTRACTION_SYSTEM_PROMPT,
+            user_prompts,
+            max_new_tokens=4096,
+            temperature=0.0,
+            batch_size=3,
+        )
+    else:
+        paper_jsons = []
+        for up in user_prompts:
+            pj = runner_inst.generate_json(PAPER_EXTRACTION_SYSTEM_PROMPT, up, max_new_tokens=4096, temperature=0.0)
+            if pj:
+                paper_jsons.append(pj)
 
     # Reduce Step: Merge entity lists
     merged_domains: List[str] = []
@@ -328,7 +426,7 @@ def extract_profile_for_researcher_pure_moe(
         merged_platforms = deduplicate_exact(merged_platforms)
         merged_applications = deduplicate_exact(merged_applications)
 
-    affiliation_candidate = "University of Oklahoma"
+    affiliation_candidate = "Academic Research Institution"
     if affiliations:
         longest_aff = max(affiliations, key=len)
         if len(longest_aff) > 10:
@@ -441,8 +539,52 @@ pos_out_dir.mkdir(parents=True, exist_ok=True)
 neg_out_dir = Path("results/exp2_qwen3.6-35b-a3b_true_negative")
 neg_out_dir.mkdir(parents=True, exist_ok=True)
 
-root_pdf_dir = Path("CatalystOU-pdf")
+root_pdf_dir = Path(os.getenv("PDF_ROOT_DIR", "CatalystOU-pdf"))
 collab_datasets_dir = root_pdf_dir / "~Collaborative Datasets"
+
+def archive_stale_exp2_cache(pos_dir: Path, prof_dir: Path):
+    """Archive pre-remediation Tier-1 cached predictions & profiles once."""
+    import shutil
+    marker = pos_dir / ".cleaned_v2_n10"
+    if marker.exists():
+        return
+    stale_preds = [
+        "case_002_zhao_cheng_cs_ece_prediction.json",
+        "case_003_cai_song_psych_psych_prediction.json",
+        "case_005_radhakrishnan_antonio_cs_cs_prediction.json",
+    ]
+    pred_bak = pos_dir / "_old_leaked_backup"
+    for fname in stale_preds:
+        src = pos_dir / fname
+        if src.exists():
+            pred_bak.mkdir(parents=True, exist_ok=True)
+            dst = pred_bak / fname
+            if not dst.exists():
+                shutil.move(str(src), str(dst))
+                print(f"[*] Archived stale Exp 2 prediction: {fname} -> {pred_bak.name}/")
+            else:
+                src.unlink()
+    stale_profs = [
+        "Shangqing_Zhao_profile.json",
+        "Samuel_Cheng_profile.json",
+        "Huajian_Cai_profile.json",
+        "Hairong_Song_profile.json",
+        "John_Antonio_profile.json",
+    ]
+    prof_bak = prof_dir / "_old_leaked_backup"
+    for fname in stale_profs:
+        src = prof_dir / fname
+        if src.exists():
+            prof_bak.mkdir(parents=True, exist_ok=True)
+            dst = prof_bak / fname
+            if not dst.exists():
+                shutil.move(str(src), str(dst))
+                print(f"[*] Archived stale pre-collab profile: {fname} -> {prof_bak.name}/")
+            else:
+                src.unlink()
+    marker.write_text("remediated N=10 benchmark validated\n", encoding="utf-8")
+
+archive_stale_exp2_cache(pos_out_dir, pre_collab_profiles_dir)
 
 def get_pre_collab_pdfs(pair_folder_name: str, author_folder_name: str) -> List[Path]:
     p = collab_datasets_dir / pair_folder_name / "Publications Before Collaboration" / author_folder_name
@@ -468,7 +610,7 @@ def get_negative_control_pdfs(disc: str, author_folder_name: str, max_papers: in
     return []
 
 all_cases = [
-    # 5 Positive Historical Cases
+    # 5 OU Tier-1 Positive Historical Cases
     {
         "type": "positive",
         "id": "case_001_ebert_xiao_cs_bio",
@@ -491,13 +633,13 @@ all_cases = [
     },
     {
         "type": "positive",
-        "id": "case_003_cai_song_psych_psych",
-        "desc": "Psych (Huajian Cai) + Psych (Hairong Song)",
+        "id": "case_003_cai_ding_psych_ece",
+        "desc": "Psych (Huajian Cai) + ECE (Lei Ding)",
         "a_name": "Huajian Cai", "a_disc": "Psychology",
-        "a_pdfs": get_pre_collab_pdfs("Huajian Cai & Hairong Song (Psych-Psych)", "Huajian Cai"),
-        "b_name": "Hairong Song", "b_disc": "Psychology",
-        "b_pdfs": get_pre_collab_pdfs("Huajian Cai & Hairong Song (Psych-Psych)", "Hairong Song"),
-        "out_file": pos_out_dir / "case_003_cai_song_psych_psych_prediction.json"
+        "a_pdfs": get_pre_collab_pdfs("Huajian Cai & Lei Ding (Psych-ECE)", "Huajian Cai"),
+        "b_name": "Lei Ding", "b_disc": "ECE",
+        "b_pdfs": get_pre_collab_pdfs("Huajian Cai & Lei Ding (Psych-ECE)", "Lei Ding"),
+        "out_file": pos_out_dir / "case_003_cai_ding_psych_ece_prediction.json"
     },
     {
         "type": "positive",
@@ -518,6 +660,57 @@ all_cases = [
         "b_name": "John Antonio", "b_disc": "CS",
         "b_pdfs": get_pre_collab_pdfs("Sridhar Radhakrishnan & John Antonio (CS-CS)", "John Antonio"),
         "out_file": pos_out_dir / "case_005_radhakrishnan_antonio_cs_cs_prediction.json"
+    },
+    # 5 UIUC Tier-2 Positive Historical Cases
+    {
+        "type": "positive",
+        "id": "case_006_chitambar_leditzky_ece_math",
+        "desc": "ECE (Eric Chitambar) + Math (Felix Leditzky)",
+        "a_name": "Eric Chitambar", "a_disc": "ECE",
+        "a_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Eric Chitambar & Felix Leditzky (ECE-Math)", "Eric Chitambar"),
+        "b_name": "Felix Leditzky", "b_disc": "Mathematics",
+        "b_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Eric Chitambar & Felix Leditzky (ECE-Math)", "Felix Leditzky"),
+        "out_file": pos_out_dir / "case_006_chitambar_leditzky_ece_math_prediction.json"
+    },
+    {
+        "type": "positive",
+        "id": "case_007_rhodes_tsai_psych_bio",
+        "desc": "Psych (Justin S. Rhodes) + Bio (Nien-Pei Tsai)",
+        "a_name": "Justin S. Rhodes", "a_disc": "Psychology",
+        "a_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Justin S. Rhodes & Nien-Pei Tsai (Psych-Bio)", "Justin S. Rhodes"),
+        "b_name": "Nien-Pei Tsai", "b_disc": "Biology",
+        "b_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Justin S. Rhodes & Nien-Pei Tsai (Psych-Bio)", "Nien-Pei Tsai"),
+        "out_file": pos_out_dir / "case_007_rhodes_tsai_psych_bio_prediction.json"
+    },
+    {
+        "type": "positive",
+        "id": "case_008_federmeier_lavalle_psych_cs",
+        "desc": "Psych (Kara D. Federmeier) + CS (Steven M. LaValle)",
+        "a_name": "Kara D. Federmeier", "a_disc": "Psychology",
+        "a_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Kara D. Federmeier & Steven M. LaVelle (Psych-CS)", "Kara D. Federmeier"),
+        "b_name": "Steven M. LaValle", "b_disc": "CS",
+        "b_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Kara D. Federmeier & Steven M. LaVelle (Psych-CS)", "Steven M. LaVelle"),
+        "out_file": pos_out_dir / "case_008_federmeier_lavalle_psych_cs_prediction.json"
+    },
+    {
+        "type": "positive",
+        "id": "case_009_raginsky_ringer_ece_cs",
+        "desc": "ECE (Maxim Raginsky) + CS (Talia Ringer)",
+        "a_name": "Maxim Raginsky", "a_disc": "ECE",
+        "a_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Maxim Raginsky & Talia Ringer (ECE-CS)", "Maxim Raginsky"),
+        "b_name": "Talia Ringer", "b_disc": "CS",
+        "b_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Maxim Raginsky & Talia Ringer (ECE-CS)", "Talia Ringer"),
+        "out_file": pos_out_dir / "case_009_raginsky_ringer_ece_cs_prediction.json"
+    },
+    {
+        "type": "positive",
+        "id": "case_010_whitaker_rapti_bio_math",
+        "desc": "Bio (Rachel J. Whitaker) + Math (Zoi Rapti)",
+        "a_name": "Rachel J. Whitaker", "a_disc": "Biology",
+        "a_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Rachel J. Whitaker & Zoi Rapti (Bio-Math)", "Rachel J. Whitaker"),
+        "b_name": "Zoi Rapti", "b_disc": "Mathematics",
+        "b_pdfs": get_pre_collab_pdfs("Tier2_UIUC_Candidates/Rachel J. Whitaker & Zoi Rapti (Bio-Math)", "Zoi Rapti"),
+        "out_file": pos_out_dir / "case_010_whitaker_rapti_bio_math_prediction.json"
     },
     # 5 Volume-Balanced Negative Controls (from benchmark cases/negative_cases.json)
     {
@@ -583,11 +776,28 @@ print(" Reasoning Paradigm: Single-Pass Synergy Reasoner (10 Ontological Categor
 print("=" * 80)
 
 total_completed = 0
+missing_inputs = [
+    c["id"] for c in all_cases
+    if not (SKIP_COMPLETED_7_CASES and c["id"] in COMPLETED_7_CASE_IDS)
+    and not c["out_file"].exists()
+    and (not c["a_pdfs"] or not c["b_pdfs"])
+]
+if missing_inputs:
+    raise FileNotFoundError(
+        f"Missing pre-collaboration PDFs in Colab workspace for: {missing_inputs}. "
+        "Please re-upload/unzip the updated CatalystOU-pdf/ folder (including Cai & Ding and Tier2_UIUC_Candidates/)."
+    )
+
 for idx, case in enumerate(all_cases):
     case_id = case["id"]
     ptype = case["type"].upper()
     out_file = case["out_file"]
-    print(f"\n[{idx+1}/10] [{ptype}] {case_id}: {case['desc']}")
+    print(f"\n[{idx+1}/{len(all_cases)}] [{ptype}] {case_id}: {case['desc']}")
+
+    if SKIP_COMPLETED_7_CASES and case_id in COMPLETED_7_CASE_IDS:
+        print(f"         [⏭] SKIP_COMPLETED_7_CASES=True: Skipping already-cached local case ({case_id})")
+        total_completed += 1
+        continue
 
     if out_file.exists():
         print(f"         [✓] Prediction already exists: {out_file.name} (Skipping)")
@@ -623,7 +833,7 @@ for idx, case in enumerate(all_cases):
     total_completed += 1
 
 print("\n" + "=" * 80)
-print(f" PURE MOE EXPERIMENT 2 COMPLETED: {total_completed}/10 PAIRS READY")
+print(f" PURE MOE EXPERIMENT 2 COMPLETED: {total_completed}/{len(all_cases)} PAIRS READY")
 print("=" * 80)
 
 # ------------------------------------------------------------------------------

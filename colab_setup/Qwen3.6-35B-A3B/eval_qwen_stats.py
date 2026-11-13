@@ -133,88 +133,27 @@ def evaluate_table1(model_dir_name: str = "qwen_qwen3.6-35b-a3b"):
 
 
 def evaluate_table2_and_3():
-    """Evaluate Experiment 2 collaboration predictions."""
-    exp2_dir = repo_root / "results" / "exp2_qwen3.6-35b-a3b"
-    gt_dir = repo_root / "collaboration_ground_truth"
+    """Evaluate Experiment 2 predictions with canonical Hungarian bipartite matching."""
+    from colab_setup.exp2_hungarian_eval import ALL_10_CATEGORIES, evaluate_exp2
 
-    print("\n" + "=" * 80)
-    print(" EVALUATION: TABLES 2 & 3 (HISTORICAL COLLABORATION BACKTESTING)")
-    print("=" * 80)
-
-    if not exp2_dir.exists() or not list(exp2_dir.glob("*.json")):
-        print(f"[!] No Experiment 2 predictions found in: {exp2_dir}")
-        print("    Please run Code Cell 2 in 'catalyst_ou_pipeline.ipynb' to generate predictions first.")
+    results = evaluate_exp2(models=["pure_moe"], save_json=True)
+    pure_res = results.get("Qwen 3.6-35B-A3B (Pure MoE)")
+    if not pure_res:
+        print("[!] No Experiment 2 predictions found for Pure MoE. Run Code Cell 2 first.")
         return
 
-    print(f"[*] Found predictions in {exp2_dir}. Computing alignment metrics against ground truth...")
-    # Reference cases
-    cases = [
-        ("case_001_ebert_xiao_cs_bio", "Cross-Discipline"),
-        ("case_002_zhao_cheng_cs_ece", "Cross-Discipline"),
-        ("case_003_cai_song_psych_psych", "Same-Discipline"),
-        ("case_004_yeary_havlicek_ece_ece", "Same-Discipline"),
-        ("case_005_radhakrishnan_antonio_cs_cs", "Same-Discipline"),
-    ]
-
-    sbert_model = SentenceTransformer("all-mpnet-base-v2")
-    similarities = []
-    hits_45 = 0
-    hits_50 = 0
-    mode_hits = {
-        "Method-Application Synergies": 0,
-        "Shared Domains": 0,
-        "Cross-Domain Fusion Topics": 0,
-        "Complementary Technique Synergies": 0,
-        "Data-Method Synergies": 0,
-    }
-
-    for cid, ctype in cases:
-        pred_file = exp2_dir / f"{cid}_prediction.json"
-        gt_file = gt_dir / f"{cid}_gt.json"
-        if not pred_file.exists() or not gt_file.exists():
-            continue
-
-        with open(pred_file, "r", encoding="utf-8") as f: pred = json.load(f)
-        with open(gt_file, "r", encoding="utf-8") as f: gt = json.load(f)
-
-        pred_summary = pred.get("Summary Collaboration Themes", "")
-        gt_summary = gt.get("Summary Collaboration Themes", "")
-
-        if pred_summary and gt_summary:
-            emb_p = sbert_model.encode(pred_summary, convert_to_tensor=True)
-            emb_g = sbert_model.encode(gt_summary, convert_to_tensor=True)
-            cos = float(torch.nn.functional.cosine_similarity(emb_p.unsqueeze(0), emb_g.unsqueeze(0)).item())
-            similarities.append(cos)
-            if cos >= 0.45: hits_45 += 1
-            if cos >= 0.50: hits_50 += 1
-
-        for mode_key in mode_hits:
-            p_items = pred.get(mode_key, [])
-            g_items = gt.get(mode_key, [])
-            if p_items and g_items:
-                emb_p_items = sbert_model.encode(p_items, convert_to_tensor=True)
-                emb_g_items = sbert_model.encode(g_items, convert_to_tensor=True)
-                # Max pairwise similarity
-                sim_mat = torch.mm(
-                    torch.nn.functional.normalize(emb_p_items, p=2, dim=1),
-                    torch.nn.functional.normalize(emb_g_items, p=2, dim=1).t()
-                )
-                max_sim = float(torch.max(sim_mat).item())
-                if max_sim >= 0.45:
-                    mode_hits[mode_key] += 1
-
-    n_cases = len(similarities) if similarities else 1
-    avg_sim = float(np.mean(similarities)) if similarities else 0.0
-    r_45 = (hits_45 / n_cases) * 100
-    r_50 = (hits_50 / n_cases) * 100
-
-    print("\n--- Table 2: Backtesting Results on Historical Coauthorship Reasoning ---")
-    print(f"Avg. Sim: {avg_sim:.4f} | R@0.45: {r_45:.1f}% | R@0.50: {r_50:.1f}%")
-
-    print("\n--- Table 3: Reasoning Mode Alignment (% at tau = 0.45) ---")
-    for mode, count in mode_hits.items():
-        pct = (count / n_cases) * 100
-        print(f"  {mode:<35}: {pct:.1f}%")
+    c6 = pure_res["core6_tau45"]
+    print("\n--- Table 2: Backtesting Results (Hungarian Core-6 tau=0.45) ---")
+    print(
+        f"N={pure_res['n_pos']}/10 | Pos Cos: {pure_res['mean_pos_summary_cosine']:.4f} | "
+        f"Neg Cos: {pure_res['mean_neg_summary_cosine']:.4f} | Margin: +{pure_res['margin_pct']:.1f}% | "
+        f"Disc: {pure_res['discrimination_accuracy']:.0f}% | "
+        f"Opp P: {c6['precision']*100:.1f}% | R: {c6['recall']*100:.1f}% | F1: {c6['f1']*100:.1f}%"
+    )
+    print("\n--- Table 3: Per-Category Hungarian Alignment (tau = 0.45) ---")
+    for cat in ALL_10_CATEGORIES:
+        cb = pure_res["category_breakdown"][cat]
+        print(f"  {cat:<35}: PairAlign={cb['pair_alignment_rate_45']*100:5.1f}% | F1={cb['f1']*100:5.1f}%")
     print("=" * 80)
 
 

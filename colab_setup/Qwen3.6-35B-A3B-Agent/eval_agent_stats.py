@@ -182,166 +182,30 @@ def evaluate_table1_agent_vs_pure():
 
 
 def evaluate_table2_and_3_agent_vs_pure():
-    """Evaluate Experiment 2 predictions across Dense 27B, Pure MoE, and Agent MoE against Ground Truth."""
-    gt_dir = repo_root / "collaboration_ground_truth"
+    """Evaluate Experiment 2 predictions across Dense 27B, Pure MoE, and Agent MoE via Hungarian bipartite matching."""
+    from colab_setup.exp2_hungarian_eval import evaluate_exp2
 
-    models_to_eval = [
-        {
-            "name": "Qwen 3.8-27B Dense",
-            "pos_dir": repo_root / "results" / "exp2_qwen3.8-27b_true",
-            "neg_dir": repo_root / "results" / "exp2_qwen3.8-27b_true_negative",
-            "legacy_pos": repo_root / "results" / "exp2_qwen_qwen3.8-27b",
-            "legacy_neg": repo_root / "results" / "exp2_qwen_qwen3.8-27b_negative",
-        },
-        {
-            "name": "Qwen 3.6-35B Pure MoE",
-            "pos_dir": repo_root / "results" / "exp2_qwen3.6-35b-a3b_true",
-            "neg_dir": repo_root / "results" / "exp2_qwen3.6-35b-a3b_true_negative",
-            "legacy_pos": repo_root / "results" / "exp2_qwen3.6-35b-a3b",
-            "legacy_neg": repo_root / "results" / "exp2_qwen3.6-35b-a3b_negative",
-        },
-        {
-            "name": "Qwen 3.6-35B Agent MoE",
-            "pos_dir": repo_root / "results" / "exp2_qwen3.6-35b-a3b_agent_true",
-            "neg_dir": repo_root / "results" / "exp2_qwen3.6-35b-a3b_agent_true_negative",
-            "legacy_pos": repo_root / "results" / "exp2_qwen3.6-35b-a3b_agent",
-            "legacy_neg": repo_root / "results" / "exp2_qwen3.6-35b-a3b_agent_negative",
-        }
+    results = evaluate_exp2(models=["dense", "pure_moe", "agent_moe"], save_json=True)
+    if not results:
+        print("[!] No Experiment 2 predictions found yet.")
+        return
+
+    mode_keys = [
+        "Method-Application Synergies",
+        "Shared Domains",
+        "Cross-Domain Fusion Topics",
+        "Complementary Technique Synergies",
+        "Data-Method Synergies",
     ]
-
-    print("\n" + "=" * 95)
-    print(" TABLE 2 & 3 BENCHMARK: TRUE HISTORICAL BACKTESTING & CONTRASTIVE SELECTIVITY")
-    print(" Evaluates 5 Historical True Co-authorship Pairs vs. 5 Volume-Balanced Negative Controls")
+    print("\n--- TABLE 3: HUNGARIAN CATEGORY ALIGNMENT (% Pairs with TP >= 1 at tau = 0.45) ---")
+    t3_hdr = f"{'Model':<30} | {'Method-App':<11} | {'Shared Dom':<11} | {'Cross-Disc':<11} | {'Tech Transfer':<14} | {'Data Reuse':<11}"
+    print(t3_hdr)
+    print("-" * len(t3_hdr))
+    for mname, d in results.items():
+        cb = d.get("category_breakdown", {})
+        vals = [cb.get(k, {}).get("pair_alignment_rate_45", 0.0) * 100 for k in mode_keys]
+        print(f"{mname:<30} | {vals[0]:5.1f}%      | {vals[1]:5.1f}%      | {vals[2]:5.1f}%      | {vals[3]:5.1f}%         | {vals[4]:5.1f}%")
     print("=" * 95)
-
-    sbert_model = SentenceTransformer("all-mpnet-base-v2")
-
-    pos_cases = [
-        "case_001_ebert_xiao_cs_bio",
-        "case_002_zhao_cheng_cs_ece",
-        "case_003_cai_song_psych_psych",
-        "case_004_yeary_havlicek_ece_ece",
-        "case_005_radhakrishnan_antonio_cs_cs",
-    ]
-
-    neg_cases = [
-        "neg_001_maiti_cartersowell",
-        "neg_002_yeary_dunn",
-        "neg_003_forester_quadri",
-        "neg_004_karr_cokely",
-        "neg_005_jiang_martin",
-    ]
-
-    def evaluate_pair_set(p_dir: Path, case_list: List[str]) -> Tuple[List[float], Dict[str, int]]:
-        sims = []
-        mode_counts = {
-            "Method-Application Synergies": 0,
-            "Shared Domains": 0,
-            "Cross-Domain Fusion Topics": 0,
-            "Complementary Technique Synergies": 0,
-            "Data-Method Synergies": 0,
-        }
-        for cid in case_list:
-            pred_file = p_dir / f"{cid}_prediction.json"
-            gt_file = gt_dir / f"{cid}_gt.json"
-            if not pred_file.exists() or not gt_file.exists():
-                continue
-
-            with open(pred_file, "r", encoding="utf-8") as f:
-                pred = json.load(f)
-            with open(gt_file, "r", encoding="utf-8") as f:
-                gt = json.load(f)
-
-            ps = pred.get("Summary Collaboration Themes", "")
-            gs = gt.get("Summary Collaboration Themes", "")
-            if ps and gs:
-                ep = sbert_model.encode(ps, convert_to_tensor=True)
-                eg = sbert_model.encode(gs, convert_to_tensor=True)
-                cos = float(torch.nn.functional.cosine_similarity(ep.unsqueeze(0), eg.unsqueeze(0)).item())
-                sims.append(cos)
-
-            for m in mode_counts:
-                pi = pred.get(m, [])
-                gi = gt.get(m, [])
-                if pi and gi:
-                    epi = sbert_model.encode(pi, convert_to_tensor=True)
-                    egi = sbert_model.encode(gi, convert_to_tensor=True)
-                    sm = torch.mm(
-                        torch.nn.functional.normalize(epi, p=2, dim=1),
-                        torch.nn.functional.normalize(egi, p=2, dim=1).t()
-                    )
-                    if float(torch.max(sm).item()) >= 0.45:
-                        mode_counts[m] += 1
-        return sims, mode_counts
-
-    table2_results = []
-    mode_results = {}
-
-    for mspec in models_to_eval:
-        mname = mspec["name"]
-        pdir = mspec["pos_dir"]
-        ndir = mspec["neg_dir"]
-
-        if not pdir.exists() or not list(pdir.glob("*.json")):
-            pdir = mspec["legacy_pos"]
-        if not ndir.exists() or not list(ndir.glob("*.json")):
-            ndir = mspec["legacy_neg"]
-
-        if not pdir.exists() or not list(pdir.glob("*.json")):
-            table2_results.append({
-                "model": mname, "status": "Pending Inference",
-                "avg_sim": 0.0, "r45": 0.0, "r50": 0.0, "margin": 0.0, "pct_gain": 0.0
-            })
-            continue
-
-        pos_sims, modes = evaluate_pair_set(pdir, pos_cases)
-        neg_sims, _ = evaluate_pair_set(ndir, neg_cases)
-
-        pos_mean = float(np.mean(pos_sims)) if pos_sims else 0.0
-        neg_mean = float(np.mean(neg_sims)) if neg_sims else 0.1358
-        margin = pos_mean - neg_mean
-        pct_gain = (margin / neg_mean * 100) if neg_mean > 0 else 0.0
-
-        r45 = (sum(1 for s in pos_sims if s >= 0.45) / len(pos_sims) * 100) if pos_sims else 0.0
-        r50 = (sum(1 for s in pos_sims if s >= 0.50) / len(pos_sims) * 100) if pos_sims else 0.0
-
-        table2_results.append({
-            "model": mname, "status": "Ready",
-            "avg_sim": pos_mean, "r45": r45, "r50": r50,
-            "neg_sim": neg_mean, "margin": margin, "pct_gain": pct_gain
-        })
-        mode_results[mname] = (modes, len(pos_sims))
-
-    print("\n--- TABLE 2: HISTORICAL CO-AUTHORSHIP BACKTESTING (ALL MODELS) ---")
-    t2_hdr = f"{'Model / Architecture':<32} | {'Avg. Sim':<9} | {'R@0.45':<8} | {'R@0.50':<8} | {'Selectivity Margin':<22}"
-    print(t2_hdr)
-    print("-" * len(t2_hdr))
-
-    for r in table2_results:
-        if r["status"] == "Pending Inference":
-            print(f"{r['model']:<32} | {'[Pending]':<9} | {'--':<8} | {'--':<8} | [Waiting for Colab run]")
-        else:
-            sign = "+" if r["margin"] >= 0 else ""
-            margin_str = f"{sign}{r['margin']:.4f} ({sign}{r['pct_gain']:.0f}%)"
-            print(f"{r['model']:<32} | {r['avg_sim']:7.4f}   | {r['r45']:5.1f}%  | {r['r50']:5.1f}%  | {margin_str:<22}")
-
-    print(f"{'Negative Controls (Baseline)':<32} | 0.1358    | 0.0%     | 0.0%     | Reference Baseline")
-    print("=" * 95)
-
-    if mode_results:
-        print("\n--- TABLE 3: REASONING MODE ALIGNMENT (% of Pairs at tau = 0.45) ---")
-        t3_hdr = f"{'Model':<30} | {'Method-App':<11} | {'Shared Dom':<11} | {'Cross-Disc':<11} | {'Tech Transfer':<14} | {'Data Reuse':<11}"
-        print(t3_hdr)
-        print("-" * len(t3_hdr))
-        for mname, (mdict, total_p) in mode_results.items():
-            tot = total_p if total_p > 0 else 1
-            p_ma = (mdict.get("Method-Application Synergies", 0) / tot) * 100
-            p_sd = (mdict.get("Shared Domains", 0) / tot) * 100
-            p_cd = (mdict.get("Cross-Domain Fusion Topics", 0) / tot) * 100
-            p_tt = (mdict.get("Complementary Technique Synergies", 0) / tot) * 100
-            p_dr = (mdict.get("Data-Method Synergies", 0) / tot) * 100
-            print(f"{mname:<30} | {p_ma:5.1f}%      | {p_sd:5.1f}%      | {p_cd:5.1f}%      | {p_tt:5.1f}%         | {p_dr:5.1f}%")
-        print("=" * 95)
 
 
 if __name__ == "__main__":
